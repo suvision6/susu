@@ -1,0 +1,4 @@
+interface:
+  display_name: "su-fenjingskill"
+  short_description: "保护完整视听过程，以真实剪切收益生成六列导演分镜"
+  default_prompt: "使用 $su-fenjingskill 锁定剧本，先理解整场并比较切与不切，经风格与拆镜规划两次 Gate 后交付 shot-data/2.4.3 六列导演分镜。"
