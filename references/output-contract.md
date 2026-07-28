@@ -1,447 +1,234 @@
 # Output Contract
 
-本文件是 `shot-data/2.4.4`、两 Gate digest、整场规划、最小镜头结构、按需导演细节、规划／终稿一致性、六列渲染、禁字段、文件名、CLI 与 validation report 的唯一规则源。
+本文件是正式四文件交付、`prompt-plan/1.0.0`、状态、诊断、hash、CLI 与复验行为的唯一规则源。
 
 ## 目录
 
-- [1. 合同身份与顶层结构](#1-合同身份与顶层结构)
-- [2. 两项人工确认与 digest](#2-两项人工确认与-digest)
-- [3. 拆镜规划合同](#3-拆镜规划合同)
-- [4. 来源与事实覆盖](#4-来源与事实覆盖)
-- [5. 最终镜头约束](#5-最终镜头约束)
-- [6. 最小结构示例](#6-最小结构示例)
-- [7. 正式四文件与六列](#7-正式四文件与六列)
-- [8. 第五列确定性渲染](#8-第五列确定性渲染)
-- [9. 禁止下游字段](#9-禁止下游字段)
-- [10. CLI 构建与校验](#10-cli-构建与校验)
-- [11. Validation report](#11-validation-report)
+- [正式交付](#1-正式交付)
+- [prompt plan](#2-prompt_planjson)
+- [Prompt 单元与局部失败](#3-prompt-单元与局部失败)
+- [诊断与状态](#4-诊断与状态)
+- [表格派生与逐格复验](#5-表格派生与逐格复验)
+- [validation report](#6-prompt_validationjson)
+- [Hash](#7-hash)
+- [CLI](#8-cli)
+- [确定性与语义边界](#9-确定性与语义边界)
 
-## 1. 合同身份与顶层结构
+## 1. 正式交付
 
-正式身份固定为 `contract_name=shot-data`、`contract_version=2.4.4`、`source_skill=su-fenjingskill`、`source_skill_version=2.4.4`。
-
-顶层允许字段为：
+一次 build 恰好交付四个正式文件：
 
 ```text
-contract_name
-contract_version
-source_skill
-source_skill_version
-project_id
-content_hash
-confirmations
-source
-source_analysis
-director_style_options
-selected_style_option_id
-director_profile
-shot_plan
-scene_plans
-scenes
-beats
-emotion_arcs
-performance_chains
-shots
+<input-slug>-prompt-plan.json
+<input-slug>-prompt-table.md
+<input-slug>-prompt-table.xlsx
+<input-slug>-prompt-validation.json
 ```
 
-其中 `director_style_options`、`selected_style_option_id`、`emotion_arcs` 与 `performance_chains` 为按需字段。为兼容 2.4.0，存在时继续校验；2.4.4 新生成不为填空而输出空分析结构。
+`input-slug` 从实际输入文件名派生：ASCII 小写 kebab-case，并去除 `shot-data`、`storyboard`、`screenplay`、`script` 等来源类型后缀。输入名没有可用 ASCII 标识时，使用稳定的 `source-<hash前8位>`。四个文件名都必须包含 `prompt`。
 
-`project_id` 以 ASCII 字母或数字开头，只含字母、数字、点、下划线或短横线。
+不得创建第五个正式文件。`<input-slug>-prompt-plan.json` 是机器事实源；另外三个文件只能从同一个 plan 确定性派生。它们都属于 `su-promptskill`，不得替代、修改或回写来源材料。
 
-`content_hash` 对删除自身后的完整 JSON 使用 UTF-8、`sort_keys=true` 和紧凑分隔符生成 canonical JSON，再计算 64个小写十六进制字符的 SHA-256。构建器负责写入；draft 可留空。
-
-## 2. 两项人工确认与 digest
-
-`confirmations` 必须恰含 `gate_1` 与 `gate_2`，每项恰含：
+Markdown 与 Excel 固定四列，列名和顺序不得变化：
 
 ```text
-status
-stage_digest
-confirmation_order
-notes
+Prompt 段号｜来源镜号｜总时长（秒）｜Prompt
 ```
 
-- `status` 在正式交付中必须为 `confirmed`。
-- `confirmation_order` 对 Gate 1 为 `1`，对 Gate 2 为 `2`。
-- `stage_digest` 是 64个小写十六进制字符的 SHA-256。
-- `notes` 是普通字符串，只记录确认语境。
-- 不保存 `confirmed_by`、用户 ID、签名或其他身份字段；合同不声称认证用户身份。
+每个 Prompt 单元恰好对应一行。`来源镜号` 按 Cut 顺序连接，`Prompt` 逐字等于单元的 `prompt_text`；局部编译失败行保留来源覆盖，Prompt 单元格为空。
 
-Gate 1 canonical payload 恰含当前：
-
-```text
-source
-source_analysis
-director_profile
-```
-
-实际展示候选时，再加入 `director_style_options` 与 `selected_style_option_id`。
-
-Gate 2 canonical payload 恰含：
-
-```text
-gate_1_digest
-scene_plans
-shot_plan
-```
-
-`scene_plans` 是 `scenes[]` 的派生字段，只提取每场实际展示的 `scene_id + scene + directing_plan`。计算前统一规范化 `locked_text`、源 hash 与全部 span hash。源、分析、风格或选择变化会使 Gate 1 与 Gate 2 旧确认失效；场级导演策略或规划变化会使 Gate 2 旧确认失效。未展示的情绪分析、表演链、状态台账或 Fact 分类不冒充用户确认内容。
-
-脚本公开 `stage_digest(data, 1 | 2)` 供 Gate 阶段计算。构建器只验证用户已经明确确认的 digest，绝不自动改写 digest 以越过 Gate。
-
-## 3. 拆镜规划合同
-
-每个 scene 必须有 `directing_plan`。必需字段：
-
-```text
-scene_objective
-progression[]
-pov_flow[]
-```
-
-只在场景需要时增加：
-
-```text
-entry_state
-exit_state
-rhythm_curve[]
-dialogue_geometry
-protected_processes[]
-visual_turns[]
-```
-
-该对象表达整场导演判断，不证明表格填写完整度。核心目标、推进或视点缺失为 FAIL；其他维度按场景需要使用。
-
-`shot_plan` 恰含：
-
-```text
-planned_shot_count
-planned_edit_point_count
-planned_total_duration_seconds
-planned_units
-edit_points
-reorders
-```
-
-统计公式、长镜语义和转场映射以 [shot-design.md](shot-design.md) 为准。机器重新计算三项统计，不接受自报数值。
-
-每个 `planned_units[]` 必须含：
-
-```text
-plan_unit_id
-plan_order
-scene_id
-beat_ids
-source_spans
-estimated_duration_seconds
-narrative_purpose
-```
-
-只有明确采用长镜头时增加 `shot_form=long_take`。只有相关时增加 `source_reuse` 与 `dialogue_design`。规划单元禁止出现 `shot_id`、camera、composition、movement、blocking、完整执行描述或最终六列内容。
-
-`dialogue_design` 只在对白存在特殊观看策略或空间风险时提供。对象存在时 `speaker_sequence[]` 与 `justification` 必需；`mode`、`face_readable_speakers[]`、`listener_reaction_characters[]` 与 `axis_id` 按需使用。普通对白通过镜头单元目的和最终执行承接。
-
-只有当前单元与同场上一单元完全复用同一 source spans 且结构上不可合并时，才使用 `source_reuse`：
+## 2. `<input-slug>-prompt-plan.json`
 
 ```json
 {
-  "from_plan_unit_id": "PU001",
-  "reason": "simultaneous_isolation | indivisible_source_action | unavoidable_overlap",
-  "justification": "具体说明为何不能合并"
-}
-```
-
-三个 reason 值的含义：
-
-- `simultaneous_isolation`：同一 source span 内存在两条必须同时被隔离观察的叙事线，无法合并为单一镜头。
-- `indivisible_source_action`：单一动作在 source 中连续，但导演明确需要用两个不同观察位置的镜头分别呈现同一动作的不同方面。
-- `unavoidable_overlap`：相邻镜头必须复用同一 source 范围以维持时间或空间上的重叠关系，无法通过切分来源边界避免。
-
-每个 `edit_points[]` 必须含 `edit_point_id`、相邻前后 `plan_unit_id`、`source_spans`、具体 `trigger` 和相对于不剪的 `editorial_gain`。类别词不能单独充当理由；剪辑点必须覆盖所有相邻规划边界且不得多出。
-
-每个 `reorders[]` 恰含 `reorder_id`、按规划顺序排列的连续 `plan_unit_ids`、坐标包含全部重排单元的 `source_spans` 和具体 `reason`。无实际来源倒序的空声明为 FAIL。
-
-## 4. 来源与事实覆盖
-
-`source` 必须包含合法 `input_kind`、`boundary_lock`、`scope`、规范化 `locked_text`、`locked_text_hash` 与 `approved_corrections`。
-
-每个 source span 使用 0-based Unicode code point 左闭右开坐标与 `text_hash`。hash 是对应切片的 64个小写十六进制字符的 SHA-256。构建器可从 draft 的坐标补写 hash。
-
-fact span 必须按坐标包含于所属 Beat span；镜头 span 必须按坐标包含每个 covered fact span。相同字面不能替代坐标关系。
-
-每个 fact 必须由至少一个同场镜头的 `covered_fact_ids` 覆盖，并满足：
-
-- fact span 包含于所属 Beat。
-- 镜头 span 包含该 fact span。
-- fact、Beat 与镜头属于同一场景。
-- 对白在 `dialogue[]` 与权威执行正文中逐字出现。
-- 不可逆动作、关键状态、因果与现实层不被执行正文改写。
-
-`coverage_evidence[]` 是 2.4.0 兼容字段。存在时仍验证路径和 quote 的真实性，但 2.4.4 不要求逐 fact 重复举证。复杂画面中的关键信息可用自然语言 `presentation_note` 指明观看重点。
-
-对白 fact 与镜头对白的 `text` 只保存正文，不含角色名前缀、冒号、表演说明及任何非对白文字。
-
-## 5. 最终镜头约束
-
-`shots[]` 数量和数组顺序必须一对一匹配 `planned_units[]`。每镜最少保留：
-
-- `shot_id`、`shot_order`、`plan_unit_id`；只有长镜头才增加 `shot_form=long_take`。
-- scene、Beat、source spans 与 covered facts。
-- 正整数 `duration_seconds`、标准 `duration_blocks[]`、`cut_design`、最小 camera、`execution_text` 与逐字 `dialogue[]`。
-- `transition_to_next`、确定性渲染结果和 notes；只有长镜头才增加长镜审计。
-
-以下字段按真实场景需要出现：`blocking`、`performance`、`speaker_presentation[]`、`visible_characters[]`、`visible_props[]`、`environment_behavior[]`、`continuity_updates[]`、`end_state[]`、`coverage_evidence[]`、`primary_fact_id`。
-
-`performance_chains[]` 只在自然语言受保护过程不足以表达复杂跨镜表演时使用。对象存在时继续验证步骤与真实断点。
-
-最小 `camera` 包含 `shot_size`、`angle`、`composition` 与 `movement`。`shot_size` 对应第五列三元组中的“景别”。`position`、`framing_mode`、`primary_subjects[]`、`foreground_characters[]`、`logic` 按需使用；已登记字段不得互相矛盾或暴露内部 ID。`start_frame` 与 `end_frame` 仅用于动作接续编号，类型为字符串，不得进入第五列。
-
-`execution_text` 是第五列正文的唯一权威自然语言描述。正式新建正文不再拆分为【镜头调度】【人物表演与声音】【镜头结束】三段，而是写成一个连续的【画面内容】段落，撰写顺序固定为：
-
-```text
-当前环境描写 → 摄影机当前相对位置和朝向 → 画面可见内容描写 → 人物动作与表情描写 → 人物台词 → 人物状态描写
-```
-
-镜内出现环境变化或人物位移（行走、奔跑、摔倒等）必须写明。逐字保留对白。原文动作可以进入画面内容，但只复制或改述原文、没有镜内调度、表演／声音处理和结束状态时不构成完整导演执行。可逆表演细节可以进入导演执行或按需 `performance.visible_behavior`，不得改变剧情状态或补写因果。
-
-旧版 `execution_passages[]` 只能作为迁移来源，不能代替 2.4.4 交付中的 `execution_text`，也不得与其并列成为第二套权威正文。
-
-每镜字符串字段 `notes` 必须以构建器从 `duration_blocks[]` 生成的 `[时长估算]` 开头：
-
-```text
-[时长估算]同步动作A秒；同步台词B秒；非同步动作C秒；情绪留白D秒；前两项取 max 后再加后两项，共T秒。
-```
-
-`T` 必须精确等于 `duration_seconds`。人物状态、场景／现实层、关键道具、连续性例外、特殊声音／特效或安全要求在需要时追加为 `[执行提醒]...`；不得复制第五列、写内部 ID，或以“无”“同上”等占位语代替。构建器覆盖人工编写的旧时长前缀，但保留合法执行提醒。
-
-`shot_id` 必须按最终数组顺序连续编号为 `SH001`、`SH002`……。最终 `scene_id`、`beat_ids`、source spans 与存在的长镜意图必须匹配对应规划单元。每个非末镜的 `transition_to_next` 必须包含 `type` 与匹配该规划边界的 `edit_point_id`；末镜的 `transition_to_next` 固定为 `{ "type": "scene_end", "edit_point_id": null }`。任何增删、换序、长镜意图或剪辑点改变都先修改规划并重新 Gate 2。
-
-## 6. 最小结构示例
-
-以下片段只说明 2.4.4 的规划关系，不是可直接构建的完整 draft：
-
-```json
-{
-  "contract_name": "shot-data",
-  "contract_version": "2.4.4",
-  "source_skill": "su-fenjingskill",
-  "source_skill_version": "2.4.4",
-  "shot_plan": {
-    "planned_shot_count": 2,
-    "planned_edit_point_count": 1,
-    "planned_total_duration_seconds": 8,
-    "planned_units": [
-      {
-        "plan_unit_id": "PU001",
-        "plan_order": 1,
-        "scene_id": "SC001",
-        "beat_ids": ["B001"],
-        "source_spans": [{"start": 0, "end": 12}],
-        "estimated_duration_seconds": 5,
-        "narrative_purpose": "先留在倾听者身上，让画外问话形成压力。",
-        "dialogue_design": {
-          "mode": "listener_hold",
-          "speaker_sequence": ["A"],
-          "justification": "A 的声音作用于 B，暂不交出画面所有权。"
-        }
-      },
-      {
-        "plan_unit_id": "PU002",
-        "plan_order": 2,
-        "scene_id": "SC001",
-        "beat_ids": ["B002"],
-        "source_spans": [{"start": 13, "end": 24}],
-        "estimated_duration_seconds": 3,
-        "narrative_purpose": "在 B 作出决定后改变观察位置。"
-      }
-    ],
-    "edit_points": [
-      {
-        "edit_point_id": "EP001",
-        "after_plan_unit_id": "PU001",
-        "before_plan_unit_id": "PU002",
-        "source_spans": [{"start": 10, "end": 16}],
-        "trigger": "B 的沉默结束并作出决定。",
-        "editorial_gain": "把持续承压与主动回应分成两个观看阶段。"
-      }
-    ],
-    "reorders": []
-  }
-}
-```
-
-普通镜头省略 `shot_form` 和 `director_audit`。只有明确采用长镜头时增加：
-
-```json
-{
-  "shot_form": "long_take",
-  "director_audit": {
-    "long_take": {
-      "status": "supported",
-      "reason": "表演与空间关系持续发展。",
-      "supports": ["performance_development", "spatial_progression"]
+  "contract_name": "prompt-plan",
+  "contract_version": "1.0.0",
+  "skill": {"name": "su-promptskill", "version": "1.3.1"},
+  "delivery": {
+    "slug": "ep15-dibati",
+    "files": {
+      "plan": "ep15-dibati-prompt-plan.json",
+      "markdown": "ep15-dibati-prompt-table.md",
+      "xlsx": "ep15-dibati-prompt-table.xlsx",
+      "validation": "ep15-dibati-prompt-validation.json"
     }
-  }
+  },
+  "compiler_inputs": {
+    "contract": "prompt-compiler-inputs/1.0.0",
+    "normalized_source": {},
+    "normalized_source_hash": "sha256",
+    "decisions_snapshot": null,
+    "runtime_decisions_hash": null,
+    "runtime_profile": {},
+    "runtime_profile_hash": "sha256"
+  },
+  "source": {
+    "source_mode": "upstream_structured",
+    "source_contract": "shot-data/2.4.3",
+    "source_skill": "su-fenjingskill",
+    "source_skill_version": "2.4.3",
+    "project_id": "PROJECT-001",
+    "source_content_hash": "sha256-or-null",
+    "observed_content_hash": "sha256",
+    "local_content_hash": "sha256",
+    "source_read_only": true,
+    "source_shot_count": 3
+  },
+  "generation": {
+    "mode": "i2v",
+    "mode_source": "decisions",
+    "available_reference_tags": ["@Image1"],
+    "reference_role_map": [],
+    "edit_scope": [],
+    "edit_deltas": [],
+    "extend_context": {},
+    "runtime_decisions_hash": "sha256-or-null",
+    "global_blocked": false,
+    "invalid_shot_ids": []
+  },
+  "model_profile": {},
+  "prompt_units": [],
+  "diagnostics": [],
+  "validation": {},
+  "content_hash": "sha256"
 }
 ```
 
-### 六列渲染示例
+`compiler_inputs` 是复验所需的最小确定性输入快照：当前来源重新标准化后必须逐字段匹配 `normalized_source`，decisions 与 runtime Profile 必须匹配各自 hash；plan 的 `generation` 与 `model_profile` 也必须由这些输入重算一致。快照只服务下游复验，不改变来源所有权。
 
-```text
-SH001 | 场景显示名 | B001～锁定原文 | 5秒 | 【平视，中景，固定】…… | [时长估算]同步动作2秒；同步台词5秒；非同步动作0秒；情绪留白0秒；前两项取 max 后再加后两项，共5秒。
-```
+`source_contract`、`source_skill` 与 `source_skill_version` 记录实际来源 provenance，可以是任意值或空值；它们不构成版本配对校验，也不决定是否允许编译。
 
-## 7. 正式四文件与六列
+`generation.global_blocked` 只表示未知 mode、Profile 不支持 mode 或全局 generation 合同不可解析。可定位的 role、tag、edit、extend 错误必须写入 `invalid_shot_ids`，不得阻断其他镜头。
 
-正式交付基础文件名为四文件；若用户额外提供剧本名称，可扩展为带剧本名的四文件。文件名禁止使用通用名 `storyboard.xlsx` / `storyboard.md` 等。文件名须使用用户提供的剧本名称、标题、编号作为前缀；未显式提供时，从锁定的剧本首行解析编号与标题，构建为：
-
-```text
-{编号}_{标题}_shot_data.json
-{编号}_{标题}_storyboard.md
-{编号}_{标题}_storyboard.xlsx
-{编号}_{标题}_storyboard_validation.json
-```
-
-若用户额外提供了剧本名称，则扩展为：
-
-```text
-{剧本名称}_{编号}_{标题}_shot_data.json
-{剧本名称}_{编号}_{标题}_storyboard.md
-{剧本名称}_{编号}_{标题}_storyboard.xlsx
-{剧本名称}_{编号}_{标题}_storyboard_validation.json
-```
-
-例如锁定剧本首行为“第15集·《第八天》”时，输出文件应为：
-
-```text
-ep15_dibati_shot_data.json
-ep15_dibati_storyboard.md
-ep15_dibati_storyboard.xlsx
-ep15_dibati_storyboard_validation.json
-```
-
-标题到标识符的转换规则：
-
-1. 优先使用用户显式提供的 `project_id`、罗马字标识或英文标题。
-2. 用户未提供时，对中文标题使用标准拼音（不带声调，小写，连续书写，去掉空格和标点），多音字取剧本语境下最常见读音；若存在歧义，使用用户提供的元数据覆盖。
-3. 编号统一为阿拉伯数字，前置 `ep` 或保留原前缀（如“第15集”→ `ep15`）。
-4. 最终文件名只使用 ASCII 字母、数字、下划线和点。
-
-`shot_data.json` 是机器事实源；其余文件必须由同一次构建确定性派生，不得手改。
-
-六列名称和顺序固定：
-
-```text
-镜号
-场景
-原剧本段落
-镜头时长
-运镜＋主画面描述
-备注
-```
-
-- 镜号来自 `shot_id`。
-- 场景来自清洁的 `scenes[].scene`，不得包含“约一分钟”“约55秒”等预计场长。
-- 原剧本段落按 `covered_fact_ids` 对应的 source spans 回切，按 Beat 顺序渲染为 `Bxxx～原文`；过滤标题、场景头和人物表，去除重复片段、首尾空白和连续多余空行，动作与对白之间最多保留一个有意义空行。
-- 时长来自 `duration_seconds`。
-- 第五列逐字等于 `rendered_shot_description`。
-- 备注来自由时间块确定性规范化后的 `notes`。
-
-## 8. 第五列确定性渲染
-
-按固定顺序渲染：
-
-```text
-【角度，景别，运镜】
-【画面内容】
-```
-
-不再单列【机位与构图】【站位位移】【人物表演与声音】【镜头结束】等段落。机位、构图关系、人物位移、表演与声音处理全部自然融入【画面内容】段落中。
-
-三元组统一为标准格式【角度，景别，运镜】，使用清楚、可执行的自然导演语言。第二项在提供 `framing_mode` 时按语义映射：
-
-```text
-single              -> 景别
-over_shoulder       -> 过肩／景别
-two_shot            -> 双人／景别
-multi_shot          -> 多人／景别
-continuous_reframe  -> 连续重构／景别
-subjective          -> 景别／主观视角
-insert              -> 景别／插入镜头
-environment         -> 景别／环境镜头
-```
-
-景别变化可用“→”连接，例如【中景→特写】。不得把 `framing_mode` 与已经带前缀的景别盲目拼接。
-
-【画面内容】为单一连续自然语言段落，撰写逻辑固定为：
-
-```text
-当前环境描写 → 摄影机当前相对位置和朝向 → 画面可见内容描写 → 人物动作与表情描写 → 人物台词 → 人物状态描写
-```
-
-镜内出现环境变化或人物位移（行走、奔跑、摔倒等）必须写明。同一人物在同镜内的动作—反应—台词写成连续过程，逐字对白必须出现。不能使用“按原文”“完成信息”“结束状态”等占位语，不得为了通过校验堆叠微表情。不得显示 duration block ID、coverage 路径、内部转场 ID、机器状态或模板占位语。
-
-## 9. 禁止下游字段
-
-JSON 任意层级递归禁止：
-
-```text
-prompt
-prompt_text
-prompt_units
-model_profile
-timeline
-```
-
-同时禁止任何包含 `prompt` 的 key，禁止 `model`、`model_name`、`model_config`、`model_settings`、`max_clip_duration_seconds`，以及 `cut_label`、`cut_index`、`grouping_reason`、`standalone_reason` 等下游 Cut 链／分组字段。允许的 `cut_design` 及其 `action_cut` 类型只表达导演剪辑意图。
-
-## 10. CLI 构建与校验
-
-从 Skill 根目录运行：
-
-```text
-python scripts/storyboard_delivery.py build --input <draft.json> --output-dir <目录>
-python scripts/storyboard_delivery.py validate --output-dir <目录>
-python scripts/test_storyboard_delivery.py
-```
-
-`build`：
-
-1. 读取 draft，拒绝非标准 JSON 数值。
-2. 在任何 UTF-8 hash 或编码前检测孤立 surrogate。
-3. 规范化锁定文本并补写源 hash 与 span hash。
-4. 生成确定性第五列与 `content_hash`。
-5. 校验身份、两 Gate、digest、整场规划、具体剪切触发与收益、来源覆盖、逐字对白、时长、已登记的连续性、规划／终稿、六列格式与禁字段；详细导演结构存在时再校验其内部一致性。
-6. 在目标目录建立同级临时文件并回读自检，成功后原子替换四文件。
-
-`validate` 重新读取四文件，重算结构、渲染、hash，并逐单元格比较 Markdown 与 Excel。
-
-语义 FAIL、输入读取失败和 Unicode 失败都输出结构化 FAIL JSON 或稳定 issue code；CLI 不得泄漏裸 `UnicodeEncodeError`。build 失败不写正式四文件。
-
-测试必须使用系统临时目录并自动清理；不得在 Skill 目录创建 `.test-*` 或 `__pycache__`。
-
-## 11. Validation report
-
-报告结构：
+## 3. Prompt 单元与局部失败
 
 ```json
 {
-  "contract": "shot-data/2.4.4",
-  "status": "PASS",
-  "source_content_hash": "64个小写十六进制字符的 SHA-256",
-  "errors": [],
-  "warnings": [],
-  "summary": {
-    "scenes": 1,
-    "beats": 2,
-    "shots": 2,
-    "duration_seconds": 8,
-    "planned_shots": 2,
-    "planned_edit_points": 1
+  "prompt_unit_id": "PU001",
+  "source_shot_ids": ["SH001", "SH002"],
+  "source_shot_hashes": ["sha256", "sha256"],
+  "total_duration_seconds": 11,
+  "grouping_reason": "来源中的对白—反应链连续",
+  "standalone_reason": null,
+  "semantic_compatibility": {},
+  "timeline": [],
+  "prompt_text": "",
+  "prompt_validation": {
+    "status": "PASS",
+    "checks": {},
+    "diagnostic_codes": []
   }
 }
 ```
 
-每条 issue 使用稳定 `code`、`path`、`message`。身份、Gate、digest、来源、逐字对白、Fact 覆盖、规划与终稿、已声明特殊观看策略、明确状态连续性、无具体触发或剪辑收益、模板占位语、场景预计时长、对白标点拆镜、时长、转场、Unicode、禁字段、hash 或四文件不一致为 FAIL。
+单镜单元的 `grouping_reason` 与 `semantic_compatibility` 为 null，并提供稳定 `standalone_reason`。短镜单独不是错误。
 
-镜头密度、对白独立成镜比例、景别循环、构图／运镜重复、摄影术语纯度、表演是否俗套、长镜是否有价值和剪切是否“电影化”不由机器裁决。`long_take.needs_review` 与有理由的连续性例外可保留为 WARN。
+reference 或 mode 前置条件只对某源镜失败时：
+
+- 把该镜隔离为单镜单元；
+- 仍保留 source ID、hash、时长与唯一 Cut；
+- `prompt_text` 为空，不伪造可执行正文；
+- `prompt_validation.status=PARTIAL`；
+- `diagnostic_codes` 包含 `GENERATION_CONTEXT_INVALID`；
+- 其余合法镜头继续编译。
+
+若原计划多镜组包含局部失败镜头，拆开的是下游 Prompt 分组，不是来源镜头；所有源镜仍按原顺序恰好覆盖一次。
+
+来源镜头没有画面、blocking、visible performance、对白或其他可编译内容时，也隔离为单镜单元：保留覆盖与 Cut provenance，`prompt_text=""`，单元 `status=FAIL`，诊断为 `INPUT_MATERIAL_UNREADABLE`。不得生成“画面内容：来源未提供”的伪可执行正文。
+
+## 4. 诊断与状态
+
+```json
+{
+  "code": "DURATION_MISSING",
+  "severity": "ERROR",
+  "scope": "shot",
+  "path": "shots[0].duration_seconds",
+  "message": "来源未提供时长；该镜保持单镜且不生成伪时间。",
+  "blocks": ["multi_shot_grouping", "timed_cut_timeline"]
+}
+```
+
+诊断必须定位到 source、shot、group、unit、cut、prompt 或 package；合法单镜语义以 [grouping-rules.md](grouping-rules.md) 为准。
+
+| status | 含义 |
+| --- | --- |
+| `PASS` | 全部确定性检查通过 |
+| `WARN` | 可交付，只有非阻断语义审阅项 |
+| `PARTIAL` | 至少一个局部单元失败，并且仍有其他可执行单元一致交付 |
+| `FAIL` | 没有可执行单元、来源／Mode Gate 全局阻断、重编译不一致或四文件完整性失败 |
+
+局部错误存在时，只要来源覆盖账本可建立，就不得把整个 plan 降为空。完全不可读时 build 仍可交付一致的四文件 FAIL 诊断包，但不得伪造 Prompt 单元。
+
+## 5. 表格派生与逐格复验
+
+Markdown 与 Excel 必须从 `prompt_table_rows(prompt_plan)` 的同一四列行集生成。复验必须同时证明：
+
+- 当前来源重新标准化后逐字段匹配只读快照；
+- decisions snapshot、generation context 与 runtime Profile hash／内容一致；
+- 每个单元从上述输入重新确定性编译，`prompt_text` 逐字一致；
+- 单元 `checks`、`status`、诊断账本及顶层 `validation` 均为重算结果；
+- plan 中登记的四个动态命名文件都存在，命名与输入前缀一致；
+- plan JSON 是确定性字节序列；
+- Markdown 表头、行数及每个单元格等于 plan；
+- Excel 表头、行数及每个单元格等于 plan；
+- Markdown 与 Excel 彼此逐格一致；
+- 表格文件字节等于当前实现对同一 plan 的确定性派生；
+- `<input-slug>-prompt-validation.json` 的状态、行账本与文件 hash 等于当前 plan 和两个表格。
+
+任一正式文件被篡改、缺失或换成非确定性派生时，validate 返回 `FAIL`，且不覆盖原文件。
+
+不得把 plan 自报的 `prompt_validation`、`source_read_only`、顶层 `validation` 或重新计算后的 `content_hash` 当作通过依据。即使调用者从同一篡改 plan 重新派生四个表面一致文件，只要 Prompt 或账本不等于确定性重编译结果，validate 仍返回 `FAIL`。
+
+## 6. `<input-slug>-prompt-validation.json`
+
+正式报告包含：
+
+- `prompt-validation/1.0.0` 合同身份；
+- plan 的 `content_hash`；
+- 与 plan 一致的 status 和 validation；
+- 固定列名、行数及四列行账本；
+- 实际动态命名的 plan、Markdown 与 Excel 文件 SHA-256；
+- 删除报告自身 `content_hash` 后计算的报告 hash。
+
+报告不记录时间戳、随机值、机器绝对路径，也不对自身文件做循环 hash。
+
+## 7. Hash
+
+Prompt plan 的 `content_hash` 必须按以下唯一流程计算一次：
+
+1. 删除或忽略 plan 顶层已有 `content_hash`；
+2. 对剩余完整 plan 做 canonical JSON；
+3. 计算 SHA-256；
+4. 把结果写回 `content_hash`，不得再次把该字段纳入输入。
+
+来源 hash 的定义只以 `input-normalization.md` 为准。表格与报告使用实际交付字节的 SHA-256。所有输出禁止时间戳、随机数和运行机器路径。
+
+## 8. CLI
+
+正式构建：
+
+```text
+python scripts/prompt_delivery.py build \
+  --input <source.json> \
+  --output-dir <delivery-directory> \
+  [--decisions <decisions.json>] \
+  [--profile-id seedance-2.0-default] \
+  [--profile-file <profile.json>]
+```
+
+正式复验：
+
+```text
+python scripts/prompt_delivery.py validate \
+  --input <source.json> \
+  --output-dir <delivery-directory>
+```
+
+`--profile-id` 与 `--profile-file` 互斥。未提供 decisions 时逐镜交付，不报“未合镜”错误。build 对 PARTIAL/FAIL 写完四文件后返回非零；validate 只读来源与交付目录，把复验结果写到标准输出。
+
+## 9. 确定性与语义边界
+
+脚本确定性校验输入身份、顺序、ID、时长、hash、分组求和、Cut 映射、时间线、reference scope、主要动作与连续性覆盖、正文标签、对白、metadata、重编译结果、四列和文件 hash。字面 provenance 与 anti-slop 只以 [prompt-compiler.md](prompt-compiler.md#7-anti-slop-与-provenance) 为准。
+
+空间、时间、现实层、动作链、叙事意图、自然语言事实忠实与情绪外化仍由模型审阅；报告必须保留这一限制。
