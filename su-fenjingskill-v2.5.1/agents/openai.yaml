@@ -1,4 +1,0 @@
-interface:
-  display_name: "su-fenjingskill"
-  short_description: "以屏幕事件、观看决策和DOP设计生成六列导演分镜"
-  default_prompt: "使用 $su-fenjingskill 锁定剧本和来源声音；Gate 1 给出主选、替代、对照三个导演策略并确认最终 profile；随后按发言权、观看主体、尺度、认知落点和动作发起者建立原子屏幕事件，默认切镜，仅以明确 non_cut_basis 保留同镜，并完成可执行 DOP 设计。Gate 2 展示事件、切镜地图、镜头表、节奏指标及轴线和空间风险；确认后以纯三元素镜头头交付 shot-data/2.5.1 六列导演分镜。"
