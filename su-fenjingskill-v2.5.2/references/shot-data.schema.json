@@ -1,0 +1,733 @@
+{
+  "$comment": "Machine authority for public keys and basic types. Cross-object director semantics are validated by storyboard_delivery.py.",
+  "$defs": {
+    "dialogue_language_policy": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "const": "original_with_translation"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "original_language",
+              "translation_languages"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "const": "multilingual_actual"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "spoken_languages"
+            ]
+          }
+        }
+      ],
+      "properties": {
+        "evidence": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "mode": {
+          "enum": [
+            "original_with_translation",
+            "multilingual_actual"
+          ]
+        },
+        "original_language": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "resolution": {
+          "enum": [
+            "source_explicit",
+            "user_confirmed"
+          ]
+        },
+        "spoken_languages": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 2,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "translation_languages": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "mode",
+        "resolution",
+        "evidence"
+      ],
+      "type": "object"
+    },
+    "director_profile": {
+      "additionalProperties": false,
+      "properties": {
+        "camera_energy": {
+          "enum": [
+            "static",
+            "responsive",
+            "assertive"
+          ]
+        },
+        "natural_language_intent": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "performance_focus": {
+          "enum": [
+            "body",
+            "face",
+            "blocking",
+            "ensemble",
+            "mixed"
+          ]
+        },
+        "priorities": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 3,
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "rhythm": {
+          "enum": [
+            "restrained",
+            "balanced",
+            "kinetic"
+          ]
+        },
+        "space_strategy": {
+          "enum": [
+            "establish_then_enter",
+            "embedded_reveal",
+            "subjective",
+            "mixed"
+          ]
+        },
+        "transition_language": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "visual_distance": {
+          "enum": [
+            "observational",
+            "intimate",
+            "mixed"
+          ]
+        }
+      },
+      "required": [
+        "camera_energy",
+        "natural_language_intent",
+        "performance_focus",
+        "priorities",
+        "rhythm",
+        "space_strategy",
+        "transition_language",
+        "visual_distance"
+      ],
+      "type": "object"
+    },
+    "project_dialogue_language_policy": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "const": "original_with_translation"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "original_language",
+              "translation_languages"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "const": "multilingual_actual"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "spoken_languages"
+            ]
+          }
+        }
+      ],
+      "properties": {
+        "evidence": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "exceptions_require_confirmation": {
+          "const": true
+        },
+        "mode": {
+          "enum": [
+            "original_with_translation",
+            "multilingual_actual"
+          ]
+        },
+        "original_language": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "resolution": {
+          "enum": [
+            "source_explicit",
+            "user_confirmed"
+          ]
+        },
+        "scope": {
+          "const": "project"
+        },
+        "spoken_languages": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 2,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "translation_languages": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "mode",
+        "resolution",
+        "evidence",
+        "scope",
+        "exceptions_require_confirmation"
+      ],
+      "type": "object"
+    },
+    "source_span": {
+      "additionalProperties": false,
+      "properties": {
+        "end": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "start": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "text_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "end",
+        "start",
+        "text_hash"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://suvision6.github.io/susu/shot-data-2.5.2.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "beats": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "confirmations": {
+      "additionalProperties": false,
+      "properties": {
+        "gate_1": {
+          "additionalProperties": false,
+          "properties": {
+            "confirmation_order": {
+              "maximum": 2,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "notes": {
+              "type": "string"
+            },
+            "stage_digest": {
+              "type": "string"
+            },
+            "status": {
+              "enum": [
+                "pending",
+                "confirmed"
+              ]
+            }
+          },
+          "required": [
+            "confirmation_order",
+            "notes",
+            "stage_digest",
+            "status"
+          ],
+          "type": "object"
+        },
+        "gate_2": {
+          "additionalProperties": false,
+          "properties": {
+            "confirmation_order": {
+              "maximum": 2,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "notes": {
+              "type": "string"
+            },
+            "stage_digest": {
+              "type": "string"
+            },
+            "status": {
+              "enum": [
+                "pending",
+                "confirmed"
+              ]
+            }
+          },
+          "required": [
+            "confirmation_order",
+            "notes",
+            "stage_digest",
+            "status"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "gate_1",
+        "gate_2"
+      ],
+      "type": "object"
+    },
+    "content_hash": {
+      "type": "string"
+    },
+    "contract_name": {
+      "const": "shot-data"
+    },
+    "contract_version": {
+      "const": "2.5.2"
+    },
+    "director_profile": {
+      "additionalProperties": false,
+      "properties": {
+        "camera_energy": {
+          "enum": [
+            "static",
+            "responsive",
+            "assertive"
+          ]
+        },
+        "natural_language_intent": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "performance_focus": {
+          "enum": [
+            "body",
+            "face",
+            "blocking",
+            "ensemble",
+            "mixed"
+          ]
+        },
+        "priorities": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 3,
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "rhythm": {
+          "enum": [
+            "restrained",
+            "balanced",
+            "kinetic"
+          ]
+        },
+        "space_strategy": {
+          "enum": [
+            "establish_then_enter",
+            "embedded_reveal",
+            "subjective",
+            "mixed"
+          ]
+        },
+        "transition_language": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "visual_distance": {
+          "enum": [
+            "observational",
+            "intimate",
+            "mixed"
+          ]
+        }
+      },
+      "required": [
+        "camera_energy",
+        "natural_language_intent",
+        "performance_focus",
+        "priorities",
+        "rhythm",
+        "space_strategy",
+        "transition_language",
+        "visual_distance"
+      ],
+      "type": "object"
+    },
+    "director_style_options": {},
+    "emotion_arcs": {},
+    "performance_chains": {},
+    "project_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "scenes": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "screen_events": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "selected_style_option_id": {},
+    "shot_plan": {
+      "additionalProperties": false,
+      "properties": {
+        "edit_points": {},
+        "planned_edit_point_count": {},
+        "planned_shot_count": {},
+        "planned_total_duration_seconds": {},
+        "planned_units": {},
+        "reorders": {},
+        "viewing_decisions": {},
+        "visual_uniformity_reviews": {}
+      },
+      "required": [
+        "edit_points",
+        "planned_edit_point_count",
+        "planned_shot_count",
+        "planned_total_duration_seconds",
+        "planned_units",
+        "reorders",
+        "viewing_decisions",
+        "visual_uniformity_reviews"
+      ],
+      "type": "object"
+    },
+    "shots": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "source": {
+      "additionalProperties": false,
+      "properties": {
+        "approved_corrections": {
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "boundary_lock": {
+          "enum": [
+            "entire_submitted_text",
+            "explicit_continuous_range",
+            "user_locked_fragment"
+          ]
+        },
+        "delivery_slug": {
+          "maxLength": 80,
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "type": "string"
+        },
+        "dialogue_language_policy": {
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "mode": {
+                    "const": "original_with_translation"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "original_language",
+                  "translation_languages"
+                ]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "mode": {
+                    "const": "multilingual_actual"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "spoken_languages"
+                ]
+              }
+            }
+          ],
+          "properties": {
+            "evidence": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "mode": {
+              "enum": [
+                "original_with_translation",
+                "multilingual_actual"
+              ]
+            },
+            "original_language": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "resolution": {
+              "enum": [
+                "source_explicit",
+                "user_confirmed"
+              ]
+            },
+            "spoken_languages": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "minItems": 2,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "translation_languages": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "mode",
+            "resolution",
+            "evidence"
+          ],
+          "type": "object"
+        },
+        "input_kind": {
+          "enum": [
+            "full_screenplay",
+            "screenplay_segment",
+            "continuous_text"
+          ]
+        },
+        "locked_text": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "locked_text_hash": {
+          "type": "string"
+        },
+        "project_dialogue_language_policy": {
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "mode": {
+                    "const": "original_with_translation"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "original_language",
+                  "translation_languages"
+                ]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "mode": {
+                    "const": "multilingual_actual"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "spoken_languages"
+                ]
+              }
+            }
+          ],
+          "properties": {
+            "evidence": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "exceptions_require_confirmation": {
+              "const": true
+            },
+            "mode": {
+              "enum": [
+                "original_with_translation",
+                "multilingual_actual"
+              ]
+            },
+            "original_language": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "resolution": {
+              "enum": [
+                "source_explicit",
+                "user_confirmed"
+              ]
+            },
+            "scope": {
+              "const": "project"
+            },
+            "spoken_languages": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "minItems": 2,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "translation_languages": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "mode",
+            "resolution",
+            "evidence",
+            "scope",
+            "exceptions_require_confirmation"
+          ],
+          "type": "object"
+        },
+        "scope": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "approved_corrections",
+        "boundary_lock",
+        "delivery_slug",
+        "input_kind",
+        "locked_text",
+        "locked_text_hash",
+        "scope"
+      ],
+      "type": "object"
+    },
+    "source_analysis": {},
+    "source_skill": {
+      "const": "su-fenjingskill"
+    },
+    "source_skill_version": {
+      "const": "2.5.2"
+    }
+  },
+  "required": [
+    "beats",
+    "confirmations",
+    "content_hash",
+    "contract_name",
+    "contract_version",
+    "director_profile",
+    "project_id",
+    "scenes",
+    "screen_events",
+    "shot_plan",
+    "shots",
+    "source",
+    "source_analysis",
+    "source_skill",
+    "source_skill_version"
+  ],
+  "title": "shot-data/2.5.2 public structure",
+  "type": "object"
+}

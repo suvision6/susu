@@ -9,19 +9,28 @@ import io
 import importlib.util
 import json
 import os
+import random
 import re
 import subprocess
 import sys
 import tempfile
 import unittest
-from contextlib import redirect_stdout
+from contextlib import redirect_stderr, redirect_stdout
 from pathlib import Path
 from unittest import mock
 
 
 sys.dont_write_bytecode = True
 SCRIPT_DIR = Path(__file__).resolve().parent
+if str(SCRIPT_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPT_DIR))
+
+import contract_schema
+import language_contract
+import scene_workspace
+
 EP15_FAILURE_FIXTURE = SCRIPT_DIR / "fixtures" / "ep15-v251-failure-cases.json"
+POSITIVE_252_FIXTURE = SCRIPT_DIR / "fixtures" / "shot-data-252-positive-draft.json"
 SKILL_ROOT = SCRIPT_DIR.parent
 MODULE_PATH = SCRIPT_DIR / "storyboard_delivery.py"
 SPEC = importlib.util.spec_from_file_location("su_fenjingskill_storyboard_delivery", MODULE_PATH)
@@ -2053,7 +2062,7 @@ class StoryboardDeliveryTests(unittest.TestCase):
     def test_output_contract_is_concise_and_avoids_coverage_bias(self) -> None:
         contract_path = SCRIPT_DIR.parent / "references" / "output-contract.md"
         contract_text = contract_path.read_text(encoding="utf-8")
-        self.assertLess(len(contract_text.splitlines()), 560)
+        self.assertLess(len(contract_text.splitlines()), 620)
         self.assertIn("最小结构示例", contract_text)
         self.assertIn("六列渲染示例", contract_text)
         self.assertNotIn("可直接构建的合法 draft", contract_text)
@@ -4546,7 +4555,7 @@ class StoryboardDeliveryTests(unittest.TestCase):
         payload = delivery.stage_payload(draft, 2)
         self.assertEqual(
             payload["gate_2_rule_revision"],
-            "2.5.2-binding-integrity-r1",
+            "2.5.2-binding-integrity-r2",
         )
         original = delivery.GATE_2_RULE_REVISION
         try:
@@ -4586,6 +4595,258 @@ class StoryboardDeliveryTests(unittest.TestCase):
             self.prepared(valid_draft())["shots"][0]["camera"]["composition"],
             header,
         )
+
+    def test_scene_style_anchor_required_but_per_shot_references_are_optional(self) -> None:
+        draft = valid_draft()
+        for unit in draft["shot_plan"]["planned_units"]:
+            unit["visual_plan"].pop("style_anchor_ids", None)
+        result = delivery.validate_data(self.prepared(draft))
+        self.assertFalse(result.errors)
+
+        draft = valid_draft()
+        draft["scenes"][0]["directing_plan"]["style_anchors"] = []
+        result = delivery.validate_data(self.prepared(draft))
+        self.assertIn("STYLE_ANCHORS", issue_codes(result))
+
+    def test_director_priorities_accept_one_to_three_and_reject_four(self) -> None:
+        for count in (1, 2, 3):
+            with self.subTest(count=count):
+                draft = valid_draft()
+                values = [f"场景优先级{index}" for index in range(1, count + 1)]
+                draft["director_style_options"][0]["profile"]["priorities"] = values
+                draft["director_profile"] = copy.deepcopy(
+                    draft["director_style_options"][0]["profile"]
+                )
+                result = delivery.validate_data(self.prepared(draft))
+                self.assertNotIn(
+                    "DIRECTOR_PROFILE_PRIORITIES_COUNT", issue_codes(result)
+                )
+
+        draft = valid_draft()
+        values = [f"场景优先级{index}" for index in range(1, 5)]
+        draft["director_style_options"][0]["profile"]["priorities"] = values
+        draft["director_profile"] = copy.deepcopy(
+            draft["director_style_options"][0]["profile"]
+        )
+        result = delivery.validate_data(self.prepared(draft))
+        self.assertIn("DIRECTOR_PROFILE_PRIORITIES_COUNT", issue_codes(result))
+
+    def test_build_warn_writes_bundle_and_returns_two(self) -> None:
+        draft = valid_draft()
+        draft["shot_plan"]["planned_units"][0]["shot_form"] = "long_take"
+        draft["shot_plan"]["planned_units"][0]["long_take_design"] = {
+            "reason": "保护周在倾听中逐渐承受压力的连续表演。",
+            "supports": ["performance_development"],
+            "protected_event_ids": ["SEV001"],
+        }
+        draft["shots"][0]["shot_form"] = "long_take"
+        draft["shots"][0]["director_audit"] = {
+            "long_take": {"status": "needs_review", "reason": "", "supports": []}
+        }
+        refresh_confirmation_digests(draft)
+        self.write_draft(draft)
+        completed = subprocess.run(
+            [
+                sys.executable,
+                str(MODULE_PATH),
+                "build",
+                "--input",
+                str(self.draft_path),
+                "--output-dir",
+                str(self.output_dir),
+            ],
+            check=False,
+            capture_output=True,
+            text=True,
+            env={**os.environ, "PYTHONDONTWRITEBYTECODE": "1"},
+        )
+        self.assertEqual(completed.returncode, 2, completed.stderr)
+        self.assertTrue(list(self.output_dir.glob("*-shot-data.json")))
+        self.assertTrue(
+            (self.output_dir / ".storyboard-delivery-manifest.json").is_file()
+        )
+
+    def test_public_schema_is_static_deterministic_and_cli_export_is_no_overwrite(self) -> None:
+        static_path = SKILL_ROOT / "references" / "shot-data.schema.json"
+        self.assertEqual(static_path.read_bytes(), contract_schema.schema_bytes())
+        schema = json.loads(static_path.read_text(encoding="utf-8"))
+        self.assertEqual(schema["$schema"], "https://json-schema.org/draft/2020-12/schema")
+        self.assertEqual(
+            set(schema["properties"]), contract_schema.TOP_LEVEL_KEYS
+        )
+        output = self.root / "schema.json"
+        with redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
+            first_status = delivery.main(["schema", "--output", str(output)])
+        self.assertEqual(first_status, 0)
+        self.assertEqual(output.read_bytes(), static_path.read_bytes())
+        with redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
+            second_status = delivery.main(["schema", "--output", str(output)])
+        self.assertEqual(second_status, 1)
+
+    def test_init_draft_is_source_bound_pending_and_never_overwrites(self) -> None:
+        source_path = self.root / "source.txt"
+        source_path.write_text(SOURCE_TEXT, encoding="utf-8")
+        output = self.root / "new-draft.json"
+        arguments = [
+            "init-draft",
+            "--source-file",
+            str(source_path),
+            "--project-id",
+            "project-01",
+            "--delivery-slug",
+            "episode-one",
+            "--input-kind",
+            "screenplay_segment",
+            "--boundary-lock",
+            "entire_submitted_text",
+            "--scope",
+            "本轮完整输入",
+            "--output",
+            str(output),
+        ]
+        with redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
+            first_status = delivery.main(arguments)
+        self.assertEqual(first_status, 0)
+        draft = delivery.load_json(output)
+        self.assertEqual(draft["source"]["locked_text_hash"], delivery.sha256_text(SOURCE_TEXT))
+        self.assertEqual(draft["confirmations"]["gate_1"]["status"], "pending")
+        self.assertEqual(draft["confirmations"]["gate_2"]["status"], "pending")
+        before = output.read_bytes()
+        with redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
+            second_status = delivery.main(arguments)
+        self.assertEqual(second_status, 1)
+        self.assertEqual(output.read_bytes(), before)
+
+    def test_project_language_policy_is_reused_and_episode_exception_is_reconfirmed(self) -> None:
+        locked_text = "哈珀：因为我爱上了你。\n哈珀：Because I fell in love."
+        project_policy = {
+            "mode": "original_with_translation",
+            "original_language": "en",
+            "translation_languages": ["zh-CN"],
+            "resolution": "user_confirmed",
+            "evidence": "本项目英文为原始台词，中文为对照译文",
+            "scope": "project",
+            "exceptions_require_confirmation": True,
+        }
+        source = {
+            "locked_text": locked_text,
+            "approved_corrections": [],
+            "project_dialogue_language_policy": project_policy,
+        }
+        result = delivery.ValidationResult()
+        policy = delivery.validate_dialogue_language_policy(source, locked_text, result)
+        self.assertFalse(result.errors)
+        self.assertEqual(policy, project_policy)
+
+        exception = {
+            "mode": "multilingual_actual",
+            "spoken_languages": ["zh-CN", "en"],
+            "resolution": "source_explicit",
+            "evidence": "本集两行均为实际发言",
+        }
+        source["dialogue_language_policy"] = exception
+        result = delivery.ValidationResult()
+        delivery.validate_dialogue_language_policy(source, locked_text, result)
+        self.assertIn(
+            "DIALOGUE_LANGUAGE_EXCEPTION_CONFIRMATION", issue_codes(result)
+        )
+
+        exception["resolution"] = "user_confirmed"
+        source["approved_corrections"] = [
+            {
+                "from": "未锁定",
+                "to": exception["evidence"],
+                "reason": "用户确认本集语言例外",
+            }
+        ]
+        result = delivery.ValidationResult()
+        delivery.validate_dialogue_language_policy(source, locked_text, result)
+        self.assertFalse(result.errors)
+
+    def test_unicode_language_detection_and_mixed_script_tokenization(self) -> None:
+        cases = {
+            "안녕하세요": "hangul",
+            "こんにちは": "kana",
+            "مرحبا": "arabic",
+            "Привет": "cyrillic",
+        }
+        for text_value, family in cases.items():
+            with self.subTest(family=family):
+                self.assertIn(family, language_contract.script_families(text_value))
+        self.assertEqual(
+            language_contract.script_tokens("摄影机保持POV关系"),
+            ["摄影机保持", "POV", "关系"],
+        )
+        self.assertEqual(
+            language_contract.disallowed_generated_tokens(
+                "摄影机保持POV关系， затем停止。",
+                locked_text=SOURCE_TEXT,
+                standard_terms={"POV"},
+            ),
+            ["затем"],
+        )
+
+    def test_separate_speaker_line_bilingual_pair_is_detected(self) -> None:
+        self.assertTrue(
+            delivery.bilingual_dialogue_pairs(
+                "HARPER\nBecause I fell in love.\n因为我爱上了你。"
+            )
+        )
+        self.assertTrue(
+            delivery.bilingual_dialogue_pairs(
+                "HARPER\nBecause I fell in love.\nHARPER\n因为我爱上了你。"
+            )
+        )
+
+    def test_scene_workspace_merge_is_bound_and_resets_gate_two(self) -> None:
+        data = self.prepared(valid_draft())
+        workspace = scene_workspace.extract_scene(data, "SC001")
+        workspace["scene"]["directing_plan"]["scene_objective"] = "修改后的场景目标。"
+        merged = scene_workspace.merge_scene(data, workspace)
+        self.assertEqual(
+            merged["scenes"][0]["directing_plan"]["scene_objective"],
+            "修改后的场景目标。",
+        )
+        self.assertEqual(merged["confirmations"]["gate_2"]["status"], "pending")
+        self.assertEqual(merged["confirmations"]["gate_2"]["stage_digest"], "")
+        stale = copy.deepcopy(workspace)
+        stale["locked_text_hash"] = "0" * 64
+        with self.assertRaisesRegex(ValueError, "来源 hash"):
+            scene_workspace.merge_scene(data, stale)
+
+    def test_manifest_detects_bundle_tampering(self) -> None:
+        _, _, paths = self.build()
+        paths["markdown"].write_text(
+            paths["markdown"].read_text(encoding="utf-8") + "\n篡改\n",
+            encoding="utf-8",
+        )
+        _, result = delivery.validate_delivery(self.output_dir)
+        self.assertIn("DELIVERY_MANIFEST", issue_codes(result))
+
+    def test_positive_252_golden_fixture_builds_and_validates(self) -> None:
+        draft = delivery.load_json(POSITIVE_252_FIXTURE)
+        self.write_draft(draft)
+        built, report, _ = delivery.build_delivery(self.draft_path, self.output_dir)
+        self.assertEqual(report["contract_status"], "PASS")
+        self.assertEqual(report["director_readiness"], "READY")
+        self.assertFalse(delivery.validate_data(built).errors)
+        _, result = delivery.validate_delivery(self.output_dir)
+        self.assertFalse(result.errors)
+
+    def test_unicode_source_span_hash_property(self) -> None:
+        generator = random.Random(252)
+        alphabet = "林周钥匙ABCПриветمرحباこんにちは안녕"
+        for _ in range(100):
+            text_value = "".join(
+                generator.choice(alphabet) for _ in range(generator.randint(2, 40))
+            )
+            start = generator.randrange(0, len(text_value) - 1)
+            end = generator.randrange(start + 1, len(text_value) + 1)
+            span = {"start": start, "end": end}
+            delivery.populate_span_hashes([span], text_value)
+            self.assertEqual(
+                span["text_hash"], delivery.sha256_text(text_value[start:end])
+            )
 
 
 if __name__ == "__main__":

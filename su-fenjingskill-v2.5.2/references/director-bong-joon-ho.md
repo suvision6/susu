@@ -19,4 +19,4 @@
 ## 禁止事项
 禁止强加社会寓意、任意加笑点、用快速剪辑掩盖空间关系。
 ## Profile 编译提示
-常从 `balanced/kinetic`、`responsive`、`mixed`、`ensemble/mixed`、`embedded_reveal` 中选择；优先 `action_cut`、`hard_cut`、`sound_bridge`，再按本场写两三条 priorities。
+常从 `balanced/kinetic`、`responsive`、`mixed`、`ensemble/mixed`、`embedded_reveal` 中选择；优先 `action_cut`、`hard_cut`、`sound_bridge`，再按本场写一至三条 priorities。

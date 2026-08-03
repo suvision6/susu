@@ -20,13 +20,57 @@ from typing import Any
 from xml.etree import ElementTree
 from xml.sax.saxutils import escape as xml_escape
 
+from contract_schema import (
+    CONFIRMATION_ITEM_KEYS,
+    CONFIRMATION_KEYS,
+    CONTRACT_NAME,
+    CONTRACT_VERSION,
+    DIALOGUE_MULTILINGUAL_POLICY_KEYS,
+    DIALOGUE_TRANSLATION_POLICY_KEYS,
+    DIRECTING_PLAN_OPTIONAL_KEYS,
+    DIRECTING_PLAN_REQUIRED_KEYS,
+    ENTRY_STRATEGY_REQUIRED_KEYS,
+    GATE_2_RULE_REVISION,
+    MOVEMENT_PLAN_KEYS,
+    PLAN_UNIT_OPTIONAL_KEYS,
+    PLAN_UNIT_REQUIRED_KEYS,
+    PROFILE_REQUIRED_KEYS,
+    PROJECT_LANGUAGE_POLICY_EXTRA_KEYS,
+    SCREEN_EVENT_REQUIRED_KEYS,
+    SHOT_PHASE_KEYS,
+    SHOT_PLAN_KEYS,
+    SOURCE_OPTIONAL_KEYS,
+    SOURCE_REQUIRED_KEYS,
+    SOURCE_SKILL,
+    SOURCE_SKILL_VERSION,
+    SPATIAL_STRATEGY_KEYS,
+    STYLE_ANCHOR_KEYS,
+    STYLE_OPTION_KEYS,
+    STYLE_PROFILE_BASIS_KEYS,
+    TOP_LEVEL_KEYS,
+    TOP_LEVEL_OPTIONAL_KEYS,
+    TOP_LEVEL_REQUIRED_KEYS,
+    VIEWING_DECISION_KEYS,
+    VISUAL_PLAN_OPTIONAL_KEYS,
+    VISUAL_PLAN_REQUIRED_KEYS,
+    draft_scaffold,
+    schema_bytes,
+)
+from language_contract import (
+    dialogue_script_family,
+    disallowed_generated_tokens,
+    text_matches_language,
+)
+from delivery_transaction import (
+    MANIFEST_FILENAME,
+    exclusive_output_lock,
+    manifest_bytes,
+    manifest_payload,
+    validate_manifest,
+)
+
 
 SKILL_VERSION = "2.5.2"
-CONTRACT_NAME = "shot-data"
-CONTRACT_VERSION = "2.5.2"
-SOURCE_SKILL_VERSION = "2.5.2"
-SOURCE_SKILL = "su-fenjingskill"
-GATE_2_RULE_REVISION = "2.5.2-binding-integrity-r1"
 ORDINARY_SHOT_MAX_SECONDS = 10
 OUTPUT_SUFFIXES = {
     "json": "shot-data.json",
@@ -42,41 +86,6 @@ HEADERS = [
     "运镜＋主画面描述",
     "备注",
 ]
-TOP_LEVEL_KEYS = {
-    "contract_name",
-    "contract_version",
-    "source_skill",
-    "source_skill_version",
-    "project_id",
-    "content_hash",
-    "confirmations",
-    "source",
-    "source_analysis",
-    "director_style_options",
-    "selected_style_option_id",
-    "director_profile",
-    "screen_events",
-    "shot_plan",
-    "scenes",
-    "beats",
-    "emotion_arcs",
-    "performance_chains",
-    "shots",
-}
-TOP_LEVEL_OPTIONAL_KEYS = {
-    "director_style_options",
-    "selected_style_option_id",
-    "emotion_arcs",
-    "performance_chains",
-}
-TOP_LEVEL_REQUIRED_KEYS = TOP_LEVEL_KEYS - TOP_LEVEL_OPTIONAL_KEYS
-CONFIRMATION_KEYS = ("gate_1", "gate_2")
-CONFIRMATION_ITEM_KEYS = {
-    "status",
-    "stage_digest",
-    "confirmation_order",
-    "notes",
-}
 FORBIDDEN_EXACT_KEYS = {
     "prompt",
     "prompt_text",
@@ -136,19 +145,6 @@ FACT_TYPES = {
     "sound",
     "reality",
 }
-DIALOGUE_TRANSLATION_POLICY_KEYS = {
-    "mode",
-    "original_language",
-    "translation_languages",
-    "resolution",
-    "evidence",
-}
-DIALOGUE_MULTILINGUAL_POLICY_KEYS = {
-    "mode",
-    "spoken_languages",
-    "resolution",
-    "evidence",
-}
 DIALOGUE_LANGUAGE_POLICY_KEYS = (
     DIALOGUE_TRANSLATION_POLICY_KEYS | DIALOGUE_MULTILINGUAL_POLICY_KEYS
 )
@@ -180,28 +176,6 @@ DIRECTOR_ANALYSIS_FIELDS = (
 DIRECTOR_ANALYSIS_FIELD_SET = set(DIRECTOR_ANALYSIS_FIELDS)
 PRESENTATION_REQUIREMENTS = {"must_be_clear", "supporting"}
 SHOT_ISOLATION_VALUES = {"director_required", "not_required"}
-DIRECTING_PLAN_REQUIRED_KEYS = {
-    "scene_objective",
-    "progression",
-    "pov_flow",
-    "entry_strategy",
-    "style_anchors",
-}
-DIRECTING_PLAN_OPTIONAL_KEYS = {
-    "entry_state",
-    "exit_state",
-    "rhythm_curve",
-    "dialogue_geometry",
-    "protected_processes",
-    "visual_turns",
-}
-ENTRY_STRATEGY_REQUIRED_KEYS = {
-    "mode",
-    "observer_position",
-    "required_spatial_information",
-    "withheld_information",
-    "reason",
-}
 ENTRY_STRATEGY_MODES = {
     "spatial_establish",
     "relational_entry",
@@ -327,24 +301,6 @@ SPEAKER_PRESENTATIONS = {
     "not_visible",
     "mediated_source",
 }
-SCREEN_EVENT_REQUIRED_KEYS = {
-    "screen_event_id",
-    "scene_id",
-    "event_order",
-    "beat_ids",
-    "source_spans",
-    "covered_fact_ids",
-    "visual_subjects",
-    "visual_action",
-    "viewing_requirement",
-    "scale_requirement",
-    "spatial_zone",
-    "temporal_relation",
-    "sound_fact_ids",
-    "event_role",
-    "primary_viewing_subject",
-    "focus_scale",
-}
 SCREEN_EVENT_ROLES = {
     "spatial",
     "dialogue_turn",
@@ -361,18 +317,6 @@ SCREEN_EVENT_TEMPORAL_RELATIONS = {
     "simultaneous_with_previous",
     "continuous_from_previous",
 }
-VIEWING_DECISION_KEYS = {
-    "viewing_decision_id",
-    "scene_id",
-    "from_screen_event_id",
-    "to_screen_event_id",
-    "mode",
-    "trigger",
-    "viewing_change",
-    "director_reason",
-    "reframe_method",
-    "non_cut_basis",
-}
 VIEWING_DECISION_MODES = {"cut", "hold", "reframe"}
 REFRAME_METHODS = {"blocking", "camera_move", "focus_shift", "scale_change"}
 NON_CUT_BASES = {
@@ -383,23 +327,6 @@ NON_CUT_BASES = {
     "shared_staging",
     "delayed_reverse",
     "simultaneous_event",
-}
-MOVEMENT_PLAN_KEYS = {
-    "class",
-    "trigger",
-    "speed",
-    "path",
-    "end_condition",
-    "hold_reason",
-}
-SPATIAL_STRATEGY_KEYS = {"type", "description"}
-SHOT_PHASE_KEYS = {
-    "phase_id",
-    "phase_order",
-    "screen_event_ids",
-    "duration_seconds",
-    "camera_state",
-    "sound_fact_ids",
 }
 EXECUTION_PASSAGE_KINDS = {
     "performance",
@@ -419,11 +346,6 @@ PROFILE_VALUES = {
     "visual_distance": {"observational", "intimate", "mixed"},
     "performance_focus": {"body", "face", "blocking", "ensemble", "mixed"},
     "space_strategy": {"establish_then_enter", "embedded_reveal", "subjective", "mixed"},
-}
-PROFILE_REQUIRED_KEYS = set(PROFILE_VALUES) | {
-    "transition_language",
-    "priorities",
-    "natural_language_intent",
 }
 TRANSITION_LANGUAGE_TO_TYPE = {
     "hard_cut": "cut",
@@ -482,7 +404,6 @@ SOURCE_ANALYSIS_FIELDS = {
     "character_relations",
     "source_constraints",
 }
-STYLE_OPTION_KEYS = {"option_id", "label", "rationale", "profile"}
 STYLE_OPTION_COUNTS = {3, 4}
 STYLE_RATIONALE_SECTIONS = (
     "适配依据",
@@ -493,44 +414,10 @@ STYLE_RATIONALE_SECTIONS = (
     "主要收益",
     "主要风险",
 )
-STYLE_ANCHOR_KEYS = {
-    "style_anchor_id",
-    "profile_basis",
-    "scene_application",
-    "avoidance",
-}
-STYLE_PROFILE_BASIS_KEYS = {"field", "value"}
 STYLE_PROFILE_BASIS_FIELDS = set(PROFILE_VALUES) | {
     "transition_language",
     "priorities",
     "natural_language_intent",
-}
-SHOT_PLAN_KEYS = {
-    "planned_shot_count",
-    "planned_edit_point_count",
-    "planned_total_duration_seconds",
-    "planned_units",
-    "viewing_decisions",
-    "edit_points",
-    "reorders",
-    "visual_uniformity_reviews",
-}
-PLAN_UNIT_REQUIRED_KEYS = {
-    "plan_unit_id",
-    "plan_order",
-    "scene_id",
-    "beat_ids",
-    "screen_event_ids",
-    "source_spans",
-    "estimated_duration_seconds",
-    "narrative_purpose",
-    "visual_plan",
-}
-PLAN_UNIT_OPTIONAL_KEYS = {
-    "shot_form",
-    "source_reuse",
-    "dialogue_design",
-    "long_take_design",
 }
 LONG_TAKE_DESIGN_KEYS = {"reason", "supports", "protected_event_ids"}
 LONG_TAKE_SUPPORTS = {
@@ -540,23 +427,6 @@ LONG_TAKE_SUPPORTS = {
     "blocking_proof",
     "real_time_tension",
 }
-VISUAL_PLAN_REQUIRED_KEYS = {
-    "viewpoint_owner",
-    "primary_subjects",
-    "secondary_subjects",
-    "shot_size",
-    "angle",
-    "camera_position",
-    "framing_relation",
-    "perspective_intent",
-    "focus_plan",
-    "spatial_strategy",
-    "movement_plan",
-    "start_frame",
-    "end_frame",
-    "motivation",
-}
-VISUAL_PLAN_OPTIONAL_KEYS = {"style_anchor_ids", "focal_length_mm"}
 PERSPECTIVE_INTENTS = {
     "wide_spatial",
     "natural_relation",
@@ -998,14 +868,11 @@ def validate_picture_language(
     path: str,
     result: ValidationResult,
 ) -> None:
-    disallowed: list[str] = []
-    for token in visible_ascii_tokens(picture_content):
-        if standard_term_key(token) in VISIBLE_STANDARD_TERMS:
-            continue
-        if token in locked_text:
-            continue
-        if token not in disallowed:
-            disallowed.append(token)
+    disallowed = disallowed_generated_tokens(
+        picture_content,
+        locked_text=locked_text,
+        standard_terms=VISIBLE_STANDARD_TERMS,
+    )
     if disallowed:
         result.error(
             "EXECUTION_LANGUAGE_DEFAULT",
@@ -1982,18 +1849,6 @@ def validate_confirmations(data: dict[str, Any], result: ValidationResult) -> No
         require_string(item.get("notes"), path=f"{path}.notes", result=result)
 
 
-def dialogue_script_family(text: str) -> str | None:
-    han_count = len(re.findall(r"[\u3400-\u4dbf\u4e00-\u9fff]", text))
-    latin_count = len(re.findall(r"[A-Za-z]", text))
-    if han_count and not latin_count:
-        return "han"
-    if latin_count and not han_count:
-        return "latin"
-    if han_count or latin_count:
-        return "mixed"
-    return None
-
-
 def normalize_dialogue_speaker(value: str) -> str:
     return re.sub(r"[\s*（(].*$", "", value).strip().casefold()
 
@@ -2006,7 +1861,7 @@ def bilingual_dialogue_pairs(locked_text: str) -> list[tuple[int, int]]:
         if not match:
             continue
         family = dialogue_script_family(match.group("text"))
-        if family in {"han", "latin"}:
+        if family is not None:
             stripped = line.strip()
             is_italic_parallel = (
                 family == "latin"
@@ -2042,7 +1897,42 @@ def bilingual_dialogue_pairs(locked_text: str) -> list[tuple[int, int]]:
             )
         ):
             pairs.append((left_index, right_index))
-    return pairs
+
+    # Also recognize the common screenplay form where the speaker occupies its
+    # own line.  Accept either one shared speaker followed by two language lines
+    # or the same speaker repeated before each language line.
+    nonempty = [(index, line.strip()) for index, line in enumerate(lines) if line.strip()]
+    for offset in range(len(nonempty) - 2):
+        first_index, first = nonempty[offset]
+        second_index, second = nonempty[offset + 1]
+        third_index, third = nonempty[offset + 2]
+        second_family = dialogue_script_family(second)
+        third_family = dialogue_script_family(third)
+        first_looks_like_speaker = (
+            len(first) <= 40
+            and not re.search(r"[。！？!?；;：:]", first)
+        )
+        if (
+            first_looks_like_speaker
+            and second_family
+            and third_family
+            and second_family != third_family
+        ):
+            pairs.append((second_index, third_index))
+        if offset + 3 >= len(nonempty):
+            continue
+        fourth_index, fourth = nonempty[offset + 3]
+        fourth_family = dialogue_script_family(fourth)
+        if (
+            first_looks_like_speaker
+            and normalize_dialogue_speaker(first)
+            == normalize_dialogue_speaker(third)
+            and second_family
+            and fourth_family
+            and second_family != fourth_family
+        ):
+            pairs.append((second_index, fourth_index))
+    return sorted(set(pairs))
 
 
 def bilingual_pair_has_source_marker(
@@ -2065,83 +1955,142 @@ def validate_dialogue_language_policy(
     result: ValidationResult,
 ) -> dict[str, Any] | None:
     pairs = bilingual_dialogue_pairs(locked_text)
-    policy = source.get("dialogue_language_policy")
+    local_policy = source.get("dialogue_language_policy")
+    project_policy = source.get("project_dialogue_language_policy")
+    if local_policy is not None and project_policy is not None:
+        project_only_source = dict(source)
+        project_only_source.pop("dialogue_language_policy", None)
+        validate_dialogue_language_policy(project_only_source, locked_text, result)
+        if isinstance(local_policy, dict):
+            if local_policy.get("resolution") != "user_confirmed":
+                result.error(
+                    "DIALOGUE_LANGUAGE_EXCEPTION_CONFIRMATION",
+                    "$.source.dialogue_language_policy.resolution",
+                    "本集策略覆盖项目默认时必须重新取得用户确认并使用 user_confirmed。",
+                )
+            if isinstance(project_policy, dict):
+                local_core = {
+                    key: value
+                    for key, value in local_policy.items()
+                    if key not in {"resolution", "evidence"}
+                }
+                project_core = {
+                    key: value
+                    for key, value in project_policy.items()
+                    if key
+                    not in {
+                        "resolution",
+                        "evidence",
+                        "scope",
+                        "exceptions_require_confirmation",
+                    }
+                }
+                if local_core == project_core:
+                    result.error(
+                        "DIALOGUE_LANGUAGE_EXCEPTION_REDUNDANT",
+                        "$.source.dialogue_language_policy",
+                        "本集策略仅用于覆盖不同于项目默认的语言角色；相同时直接继承项目策略。",
+                    )
+    policy = local_policy if local_policy is not None else project_policy
+    is_project = project_policy is not None and local_policy is None
+    path = (
+        "$.source.project_dialogue_language_policy"
+        if is_project
+        else "$.source.dialogue_language_policy"
+    )
     if not pairs:
-        if policy is not None:
+        if local_policy is not None:
             result.error(
                 "DIALOGUE_LANGUAGE_POLICY_UNUSED",
-                "$.source.dialogue_language_policy",
-                "只有来源含相邻双语台词候选时才填写该策略。",
+                path,
+                "单集语言例外只在来源含相邻双语台词候选时填写；项目级默认政策可预先锁定。",
             )
-        return None
+        if project_policy is None:
+            return None
     if not isinstance(policy, dict):
         result.error(
             "DIALOGUE_LANGUAGE_AMBIGUOUS",
-            "$.source.dialogue_language_policy",
+            path,
             "检测到相邻双语台词，但原文与译文主次未锁定；必须先由来源明确标注或取得用户确认。",
         )
         return None
     mode = policy.get("mode")
-    expected_keys = (
+    base_expected_keys = (
         DIALOGUE_TRANSLATION_POLICY_KEYS
         if mode == "original_with_translation"
         else DIALOGUE_MULTILINGUAL_POLICY_KEYS
         if mode == "multilingual_actual"
         else DIALOGUE_LANGUAGE_POLICY_KEYS
     )
+    expected_keys = base_expected_keys | (
+        PROJECT_LANGUAGE_POLICY_EXTRA_KEYS if is_project else set()
+    )
     actual_keys = set(policy)
     for key in sorted(expected_keys - actual_keys):
         result.error(
             "DIALOGUE_LANGUAGE_POLICY",
-            f"$.source.dialogue_language_policy.{key}",
+            f"{path}.{key}",
             "缺少双语台词语言策略字段。",
         )
     for key in sorted(actual_keys - expected_keys):
         result.error(
             "DIALOGUE_LANGUAGE_POLICY",
-            f"$.source.dialogue_language_policy.{key}",
+            f"{path}.{key}",
             "不是双语台词语言策略允许的字段。",
         )
+    if is_project:
+        if policy.get("scope") != "project":
+            result.error(
+                "DIALOGUE_LANGUAGE_POLICY",
+                f"{path}.scope",
+                "项目级语言政策必须声明 scope=project。",
+            )
+        if policy.get("exceptions_require_confirmation") is not True:
+            result.error(
+                "DIALOGUE_LANGUAGE_POLICY",
+                f"{path}.exceptions_require_confirmation",
+                "项目政策必须让不一致场景重新确认。",
+            )
     if mode not in DIALOGUE_LANGUAGE_POLICY_MODES:
         result.error(
             "DIALOGUE_LANGUAGE_POLICY",
-            "$.source.dialogue_language_policy.mode",
+            f"{path}.mode",
             "必须为 original_with_translation 或 multilingual_actual。",
         )
     if mode == "multilingual_actual":
         spoken_languages = list_of_unique_strings(
             policy.get("spoken_languages"),
-            path="$.source.dialogue_language_policy.spoken_languages",
+            path=f"{path}.spoken_languages",
             result=result,
             allow_empty=False,
         )
         if len(spoken_languages) < 2:
             result.error(
                 "DIALOGUE_LANGUAGE_POLICY",
-                "$.source.dialogue_language_policy.spoken_languages",
+                f"{path}.spoken_languages",
                 "multilingual_actual 必须登记至少两种实际说出的语言。",
             )
         for index, language in enumerate(spoken_languages):
             if not LANGUAGE_TAG_PATTERN.fullmatch(language):
                 result.error(
                     "DIALOGUE_LANGUAGE_POLICY",
-                    f"$.source.dialogue_language_policy.spoken_languages[{index}]",
+                    f"{path}.spoken_languages[{index}]",
                     "必须是规范语言标签，例如 en、zh-CN。",
                 )
         resolution = policy.get("resolution")
         if resolution not in DIALOGUE_LANGUAGE_RESOLUTIONS:
             result.error(
                 "DIALOGUE_LANGUAGE_POLICY",
-                "$.source.dialogue_language_policy.resolution",
+                f"{path}.resolution",
                 "必须为 source_explicit 或 user_confirmed。",
             )
         evidence = require_nonempty_string(
             policy.get("evidence"),
-            path="$.source.dialogue_language_policy.evidence",
+            path=f"{path}.evidence",
             result=result,
             code="DIALOGUE_LANGUAGE_POLICY",
         )
-        if resolution == "user_confirmed":
+        if resolution == "user_confirmed" and not is_project:
             corrections = source.get("approved_corrections")
             confirmed = any(
                 isinstance(correction, dict)
@@ -2156,26 +2105,26 @@ def validate_dialogue_language_policy(
             if not confirmed:
                 result.error(
                     "DIALOGUE_LANGUAGE_CONFIRMATION",
-                    "$.source.dialogue_language_policy.evidence",
+                    f"{path}.evidence",
                     "user_confirmed 必须以相同 evidence 写入 approved_corrections.to，且 reason 明确记录用户确认。",
                 )
         return policy
 
     original_language = require_nonempty_string(
         policy.get("original_language"),
-        path="$.source.dialogue_language_policy.original_language",
+        path=f"{path}.original_language",
         result=result,
         code="DIALOGUE_LANGUAGE_POLICY",
     )
     if original_language and not LANGUAGE_TAG_PATTERN.fullmatch(original_language):
         result.error(
             "DIALOGUE_LANGUAGE_POLICY",
-            "$.source.dialogue_language_policy.original_language",
+            f"{path}.original_language",
             "必须是规范语言标签，例如 en、zh-CN。",
         )
     translation_languages = list_of_unique_strings(
         policy.get("translation_languages"),
-        path="$.source.dialogue_language_policy.translation_languages",
+        path=f"{path}.translation_languages",
         result=result,
         allow_empty=False,
     )
@@ -2183,25 +2132,25 @@ def validate_dialogue_language_policy(
         if not LANGUAGE_TAG_PATTERN.fullmatch(language):
             result.error(
                 "DIALOGUE_LANGUAGE_POLICY",
-                f"$.source.dialogue_language_policy.translation_languages[{index}]",
+                f"{path}.translation_languages[{index}]",
                 "必须是规范语言标签，例如 en、zh-CN。",
             )
         if original_language and language.casefold() == original_language.casefold():
             result.error(
                 "DIALOGUE_LANGUAGE_POLICY",
-                f"$.source.dialogue_language_policy.translation_languages[{index}]",
+                f"{path}.translation_languages[{index}]",
                 "译文语言不得与原始台词语言相同。",
             )
     resolution = policy.get("resolution")
     if resolution not in DIALOGUE_LANGUAGE_RESOLUTIONS:
         result.error(
             "DIALOGUE_LANGUAGE_POLICY",
-            "$.source.dialogue_language_policy.resolution",
+            f"{path}.resolution",
             "必须为 source_explicit 或 user_confirmed。",
         )
     evidence = require_nonempty_string(
         policy.get("evidence"),
-        path="$.source.dialogue_language_policy.evidence",
+        path=f"{path}.evidence",
         result=result,
         code="DIALOGUE_LANGUAGE_POLICY",
     )
@@ -2211,10 +2160,10 @@ def validate_dialogue_language_policy(
     ):
         result.error(
             "DIALOGUE_LANGUAGE_EVIDENCE",
-            "$.source.dialogue_language_policy.resolution",
+            f"{path}.resolution",
             "来源相邻范围没有原文、译文或字幕角色标记，不能声明 source_explicit。",
         )
-    if resolution == "user_confirmed":
+    if resolution == "user_confirmed" and not is_project:
         corrections = source.get("approved_corrections")
         confirmed = any(
             isinstance(correction, dict)
@@ -2225,7 +2174,7 @@ def validate_dialogue_language_policy(
         if not confirmed:
             result.error(
                 "DIALOGUE_LANGUAGE_CONFIRMATION",
-                "$.source.dialogue_language_policy.evidence",
+                f"{path}.evidence",
                 "user_confirmed 必须以相同 evidence 写入 approved_corrections.to，且 reason 明确记录用户确认。",
             )
     return policy
@@ -2264,6 +2213,14 @@ def validate_dialogue_fact_language(
                 f"{path}.source_role",
                 "multilingual_actual 中的对白 fact 必须标记为 spoken_dialogue。",
             )
+        if language and isinstance(fact.get("text"), str) and not text_matches_language(
+            fact["text"], language
+        ):
+            result.error(
+                "DIALOGUE_LANGUAGE_TEXT_MISMATCH",
+                f"{path}.text",
+                "dialogue fact 的文字体系与 language 标记不一致。",
+            )
         return
     expected_language = policy.get("original_language")
     language = require_nonempty_string(
@@ -2291,13 +2248,7 @@ def validate_dialogue_fact_language(
     fact_text = fact.get("text")
     if not isinstance(fact_text, str) or not isinstance(expected_language, str):
         return
-    family = dialogue_script_family(fact_text)
-    base_language = expected_language.split("-", 1)[0].casefold()
-    mismatch = (
-        (base_language == "en" and family != "latin")
-        or (base_language == "zh" and family not in {"han", "mixed"})
-    )
-    if mismatch:
+    if not text_matches_language(fact_text, expected_language):
         result.error(
             "DIALOGUE_LANGUAGE_TEXT_MISMATCH",
             f"{path}.text",
@@ -2310,6 +2261,14 @@ def validate_source(data: dict[str, Any], result: ValidationResult) -> str:
     if not isinstance(source, dict):
         result.error("SOURCE", "$.source", "必须是对象。")
         return ""
+    validate_required_optional_fields(
+        source,
+        required=SOURCE_REQUIRED_KEYS,
+        optional=SOURCE_OPTIONAL_KEYS,
+        path="$.source",
+        code_prefix="SOURCE",
+        result=result,
+    )
     if source.get("input_kind") not in INPUT_KINDS:
         result.error(
             "SOURCE_INPUT_KIND",
@@ -2408,12 +2367,18 @@ def validate_profile(profile: Any, *, path: str, result: ValidationResult) -> No
                 f"{path}.transition_language[{index}]",
                 "不是允许的导演转场语言。",
             )
-    list_of_unique_strings(
+    priorities = list_of_unique_strings(
         profile.get("priorities"),
         path=f"{path}.priorities",
         result=result,
         allow_empty=False,
     )
+    if len(priorities) > 3:
+        result.error(
+            "DIRECTOR_PROFILE_PRIORITIES_COUNT",
+            f"{path}.priorities",
+            "场景专属 priorities 必须为一至三条；不得为填表堆叠优先级。",
+        )
     require_nonempty_string(
         profile.get("natural_language_intent"),
         path=f"{path}.natural_language_intent",
@@ -3079,11 +3044,16 @@ def validate_beats(
         return {}, {}, {}, {}
     source = as_dict(data.get("source"))
     raw_language_policy = source.get("dialogue_language_policy")
+    if raw_language_policy is None:
+        raw_language_policy = source.get("project_dialogue_language_policy")
     language_policy = (
         raw_language_policy
         if isinstance(raw_language_policy, dict)
         and raw_language_policy.get("mode") in DIALOGUE_LANGUAGE_POLICY_MODES
-        and bilingual_dialogue_pairs(locked_text)
+        and (
+            bilingual_dialogue_pairs(locked_text)
+            or raw_language_policy.get("scope") == "project"
+        )
         else None
     )
     beat_lookup: dict[str, dict[str, Any]] = {}
@@ -8842,7 +8812,7 @@ def restore_bytes(path: Path, payload: bytes) -> None:
         temporary.unlink(missing_ok=True)
 
 
-def atomic_write_delivery(
+def _atomic_write_delivery_locked(
     data: dict[str, Any],
     report: dict[str, Any],
     output_dir: Path,
@@ -8862,30 +8832,55 @@ def atomic_write_delivery(
     }
     if any((output_dir / name).exists() for name in legacy_names):
         raise ValueError("输出目录含旧版固定文件名；2.5.2 必须使用带剧本前缀的新目录。")
-    temporary = {key: temporary_sibling(path) for key, path in paths.items()}
+    manifest_path = output_dir / MANIFEST_FILENAME
+    all_paths = {**paths, "manifest": manifest_path}
+    temporary = {key: temporary_sibling(path) for key, path in all_paths.items()}
     try:
         write_temp_delivery(data, report, temporary)
         self_validate_temporary(data, report, temporary)
+        official_payloads = {
+            paths[key].name: temporary[key].read_bytes()
+            for key in ("json", "markdown", "excel", "report")
+        }
+        temporary["manifest"].write_bytes(
+            manifest_bytes(
+                manifest_payload(
+                    official_payloads,
+                    contract=f"{CONTRACT_NAME}/{CONTRACT_VERSION}",
+                    gate_2_rule_revision=GATE_2_RULE_REVISION,
+                )
+            )
+        )
         backups = {
-            key: path.read_bytes() if path.exists() else None for key, path in paths.items()
+            key: path.read_bytes() if path.exists() else None
+            for key, path in all_paths.items()
         }
         committed: list[str] = []
         try:
-            for key in ("json", "markdown", "excel", "report"):
-                os.replace(temporary[key], paths[key])
+            for key in ("json", "markdown", "excel", "report", "manifest"):
+                os.replace(temporary[key], all_paths[key])
                 committed.append(key)
         except Exception:
             for key in reversed(committed):
                 backup = backups[key]
                 if backup is None:
-                    paths[key].unlink(missing_ok=True)
+                    all_paths[key].unlink(missing_ok=True)
                 else:
-                    restore_bytes(paths[key], backup)
+                    restore_bytes(all_paths[key], backup)
             raise
     finally:
         for path in temporary.values():
             path.unlink(missing_ok=True)
     return paths
+
+
+def atomic_write_delivery(
+    data: dict[str, Any],
+    report: dict[str, Any],
+    output_dir: Path,
+) -> dict[str, Path]:
+    with exclusive_output_lock(output_dir):
+        return _atomic_write_delivery_locked(data, report, output_dir)
 
 
 def build_delivery(input_path: Path, output_dir: Path) -> tuple[dict[str, Any], dict[str, Any], dict[str, Path]]:
@@ -8933,6 +8928,18 @@ def validate_delivery(output_dir: Path) -> tuple[dict[str, Any] | None, Validati
     compare_markdown(data, paths["markdown"], result)
     compare_excel(data, paths["excel"], result)
     compare_report(expected_report, paths["report"], result)
+    manifest_ok, manifest_message = validate_manifest(
+        output_dir,
+        {path.name: path for path in paths.values()},
+        contract=f"{CONTRACT_NAME}/{CONTRACT_VERSION}",
+        gate_2_rule_revision=GATE_2_RULE_REVISION,
+    )
+    if not manifest_ok:
+        result.error(
+            "DELIVERY_MANIFEST",
+            str(output_dir / MANIFEST_FILENAME),
+            manifest_message,
+        )
     return data, result
 
 
@@ -8978,7 +8985,7 @@ def command_build(args: argparse.Namespace) -> int:
         "files": {key: str(path) for key, path in paths.items()},
     }
     print(json.dumps(output, ensure_ascii=False, indent=2, sort_keys=True))
-    return 0
+    return 2 if report["status"] == "WARN" else 0
 
 
 def command_validate(args: argparse.Namespace) -> int:
@@ -9038,6 +9045,99 @@ def command_review_gate_2(args: argparse.Namespace) -> int:
     return 2 if result.warnings else 0
 
 
+def command_schema(args: argparse.Namespace) -> int:
+    payload = schema_bytes()
+    if args.output:
+        output_path = Path(args.output)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        with output_path.open("xb") as handle:
+            handle.write(payload)
+        print(json.dumps({"status": "PASS", "schema": str(output_path)}, ensure_ascii=False))
+    else:
+        sys.stdout.buffer.write(payload)
+    return 0
+
+
+def command_init_draft(args: argparse.Namespace) -> int:
+    source_path = Path(args.source_file)
+    output_path = Path(args.output)
+    try:
+        locked_text = source_path.read_text(encoding="utf-8")
+        ensure_utf8_encodable(locked_text)
+        project_policy = None
+        if args.project_language_policy:
+            project_policy = load_json(Path(args.project_language_policy))
+        draft = draft_scaffold(
+            project_id=args.project_id,
+            delivery_slug=args.delivery_slug,
+            locked_text=locked_text,
+            input_kind=args.input_kind,
+            boundary_lock=args.boundary_lock,
+            scope=args.scope,
+            project_language_policy=project_policy,
+        )
+        normalized = normalize_locked_text(as_dict(draft.get("source")).get("locked_text"))
+        draft["source"]["locked_text"] = normalized
+        draft["source"]["locked_text_hash"] = sha256_text(normalized)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        with output_path.open("xb") as handle:
+            handle.write(json_bytes(draft))
+    except FileExistsError:
+        report = diagnostic_report(
+            "INIT_DRAFT_EXISTS",
+            str(output_path),
+            "目标 draft 已存在；为避免覆盖，请选择新路径。",
+        )
+        print_report(report, sys.stderr)
+        return 1
+    except (OSError, UnicodeError, ValueError, json.JSONDecodeError) as exc:
+        report = diagnostic_report(
+            "INIT_DRAFT_INPUT",
+            str(source_path),
+            f"无法建立 draft：{safe_exception_text(exc)}",
+        )
+        print_report(report, sys.stderr)
+        return 1
+    print(
+        json.dumps(
+            {
+                "status": "PASS",
+                "draft": str(output_path),
+                "gate_1": "pending",
+                "gate_2": "pending",
+            },
+            ensure_ascii=False,
+            indent=2,
+            sort_keys=True,
+        )
+    )
+    return 0
+
+
+def command_stage_digest(args: argparse.Namespace) -> int:
+    try:
+        raw = load_json(Path(args.input))
+        data = prepare_data(raw)
+        digest = stage_digest(data, args.gate)
+    except (OSError, UnicodeError, ValueError, json.JSONDecodeError) as exc:
+        report = diagnostic_report(
+            "STAGE_DIGEST_INPUT",
+            str(args.input),
+            f"阶段材料无法形成 digest：{safe_exception_text(exc)}",
+        )
+        print_report(report, sys.stderr)
+        return 1
+    print(
+        json.dumps(
+            {"status": "PASS", "gate": args.gate, "stage_digest": digest},
+            ensure_ascii=False,
+            indent=2,
+            sort_keys=True,
+        )
+    )
+    return 0
+
+
 def make_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -9054,6 +9154,43 @@ def make_parser() -> argparse.ArgumentParser:
     )
     review_gate_2.add_argument("--input", required=True, help="Gate 2 draft shot-data JSON")
     review_gate_2.set_defaults(func=command_review_gate_2)
+    schema = subparsers.add_parser(
+        "schema",
+        help="print or write the machine-authoritative public JSON Schema",
+    )
+    schema.add_argument("--output", help="new schema path; stdout when omitted")
+    schema.set_defaults(func=command_schema)
+    init_draft = subparsers.add_parser(
+        "init-draft",
+        help="create a complete top-level draft scaffold from locked source text",
+    )
+    init_draft.add_argument("--source-file", required=True, help="UTF-8 source text")
+    init_draft.add_argument("--project-id", required=True)
+    init_draft.add_argument("--delivery-slug", required=True)
+    init_draft.add_argument(
+        "--input-kind",
+        required=True,
+        choices=sorted(INPUT_KINDS),
+    )
+    init_draft.add_argument(
+        "--boundary-lock",
+        required=True,
+        choices=sorted(BOUNDARY_LOCKS),
+    )
+    init_draft.add_argument("--scope", required=True)
+    init_draft.add_argument("--output", required=True, help="new draft JSON path")
+    init_draft.add_argument(
+        "--project-language-policy",
+        help="optional project_dialogue_language_policy JSON object file",
+    )
+    init_draft.set_defaults(func=command_init_draft)
+    digest = subparsers.add_parser(
+        "stage-digest",
+        help="compute a Gate 1 or Gate 2 digest without recording confirmation",
+    )
+    digest.add_argument("--input", required=True)
+    digest.add_argument("--gate", required=True, type=int, choices=(1, 2))
+    digest.set_defaults(func=command_stage_digest)
     return parser
 
 

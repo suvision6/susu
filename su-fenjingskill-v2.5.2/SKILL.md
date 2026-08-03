@@ -7,7 +7,7 @@ description: 将完整剧本、未编号剧本段落，或边界明确的连续�
 
 ## 职责与边界
 
-- 当前 Skill 与正式合同版本统一为 `2.5.2`；内部规则修订号为 `2.5.2-binding-integrity-r1`。该修订号进入 Gate 2 digest，因此 `2.5.1` 及更早 Gate 2 确认全部失效。
+- 当前 Skill 与正式合同版本统一为 `2.5.2`；内部规则修订号为 `2.5.2-binding-integrity-r2`。该修订号进入 Gate 2 digest，因此旧规则修订产生的 Gate 2 确认全部失效。
 - 接受完整剧本、未编号剧本段落，以及用户明确提交或锁定边界的连续台词／场景片段；不要求外部场号、剧本编号或既有 `scene_id`。
 - 只有梗概、零散设想或无法确定连续原文边界时，拒绝正式拆镜；用户明确把该文本本身锁定为待拆片段后才可继续。
 - 把锁定文本视为内容权威：逐字、逐语言保留对白，不翻译、转写或改换语言；不改变剧情事实、因果、人物关系、关键动作、道具状态与现实层。只有用户明确追加翻译需求时，译文才作为独立辅助内容出现，绝不替换来源对白。来源把两种语言并列却未明确原文／译文身份时必须暂停并请用户确认，不得凭排版、字符体系或上下顺序推断。
@@ -16,7 +16,7 @@ description: 将完整剧本、未编号剧本段落，或边界明确的连续�
 
 ## 必读路由
 
-进入对应阶段前，完整读取其唯一权威文件：
+进入对应阶段前，完整读取其语义权威文件：
 
 | 阶段 | 文件 | 唯一职责 |
 | --- | --- | --- |
@@ -28,15 +28,22 @@ description: 将完整剧本、未编号剧本段落，或边界明确的连续�
 | 对白调度 | [dialogue-staging.md](references/dialogue-staging.md) | 发言权、画面所有权、声音位置与特殊观看策略 |
 | 情绪与表演 | [performance-arc.md](references/performance-arc.md) | 可见表演、阶段分析与跨镜继承 |
 | 连续性 | [continuity-contract.md](references/continuity-contract.md) | 必要状态追踪、轴线、方向与动作接续 |
-| 数据与交付 | [output-contract.md](references/output-contract.md) | shot-data/2.5.2、两 Gate digest、DOP 规划绑定、六列与报告 |
+| 数据与交付 | [output-contract.md](references/output-contract.md) | shot-data/2.5.2 到四文件的交付映射、两 Gate digest、六列与报告 |
 
-不要在其他文件重定义 owner 细则。
+结构与语义按以下优先级裁决：
+
+1. `scripts/contract_schema.py` 及其导出的 [shot-data.schema.json](references/shot-data.schema.json) 唯一拥有字段、必填／可选、基础类型和闭合对象结构。
+2. 上表 owner reference 唯一拥有对应领域语义；不要在其他文件重定义 owner 细则。
+3. [output-contract.md](references/output-contract.md) 只拥有结构化事实到 JSON、Markdown、Excel、报告和 CLI 的交付映射。
+4. `scripts/storyboard_delivery.py` 执行跨对象、digest、连续性和导演可执行性审计；它不得创造与 Schema 或 owner reference 竞争的公开合同。
+
+发生规则竞争时依次保护：锁定来源与对白语言、人工 Gate 绑定、事件与剪切原子性、连续性、已确认 DOP 规划、场级风格锚点、统计复核。下游交付便利不得反向覆盖上游事实或确认。
 
 ## 工作流
 
 ### 1. 锁源与 Gate 1
 
-1. 锁定全文、批准修正、边界与 hash；缺少外部编号时按来源顺序生成稳定内部 ID。若检测到相邻双语台词候选，先锁定 `dialogue_language_policy`：原文与译文并列时使用 `original_with_translation`；两种语言都是角色实际说出的台词时使用 `multilingual_actual`。来源不能明确证明角色时暂停并取得用户确认，把确认同时写入 `approved_corrections`；语言角色未锁定不得进入 Gate 1。
+1. 锁定全文、批准修正、边界与 hash；缺少外部编号时按来源顺序生成稳定内部 ID。项目可一次确认 `project_dialogue_language_policy`；各集默认继承，只有出现与项目策略不同的语言角色时才以本集 `dialogue_language_policy` 重新确认例外。没有项目策略时，检测到相邻双语台词候选便先锁定本集策略：原文与译文并列时使用 `original_with_translation`；两种语言都是角色实际说出的台词时使用 `multilingual_actual`。来源不能明确证明角色时暂停并取得用户确认，把确认同时写入 `approved_corrections`；语言角色未锁定不得进入 Gate 1。
 2. 内部提取场景的风格需求；用户未指定导演时，按 [director-profile.md](references/director-profile.md) 默认展示主选、替代、对照三个完整候选。用户指定导演时直接编译该风格。
 3. 用户选择候选后，单独展示最终 `director_profile`；STYLE／MORE 选择只是普通选择，不是 Gate，也不等于确认。
 4. 只有用户看到最终 `director_profile` 后明确说“确认”，才把实际展示的 Gate 1 材料绑定到 digest；绑定成功后自动进入并展示 Gate 2，不等待“继续”。
@@ -46,7 +53,7 @@ description: 将完整剧本、未编号剧本段落，或边界明确的连续�
 1. Gate 1 后建立 Beat、受保护 facts 与逐字锁定的 `script_voice_type`；VO、OS 与现场对白不得根据相邻人物或反应对象推断。
 2. 把来源事实转译为原子 `screen_events[]`：先按发言权、主要观看主体、观看尺度、信息落点和动作发起者拆开，再讨论镜头。
 3. 为同场每对相邻事件先建立默认 `cut` 边界；只有连续动作、遮挡证明、倾听者所有权、V.O./O.S.、共享调度、延迟反打或真正同时事件具有明确收益时，才以带 `non_cut_basis` 的 `hold | reframe` 撤销切点。
-4. 把 Gate 1 profile 编译为场级视听语法：时间组织、摄影机参与、空间揭示、表演距离和声音策略。逐镜风格锚点只在关键应用或有意例外时登记。
+4. 把 Gate 1 profile 编译为场级视听语法：每场至少一个 `directing_plan.style_anchors[]`，明确时间组织、摄影机参与、空间揭示、表演距离和声音策略。逐镜 `style_anchor_ids[]` 可省略，只在关键应用、有意例外或命中风格复核时登记。
 5. 为每个规划单元完成 DOP 设计：观看主体、景别、角度、机位、构图关系、透视、焦点、空间策略、运镜计划、起始画面、结束画面和动机。
 6. 景别不由物理距离机械决定。空间两端人物可分别使用近景或特写；检查的是既定空间、视线、轴线、银幕方向和切换是否成立。
 7. Gate 2 按场展示视觉与声音策略、屏幕事件、切／留／重构地图、DOP 镜头表和执行风险；全部场次展示完成后只确认一次，并自动生成最终交付，不等待“继续”。
@@ -58,7 +65,7 @@ description: 将完整剧本、未编号剧本段落，或边界明确的连续�
 3. 每镜用有序 `shot_phases[]` 表达镜内时间。第五列自然语言必须依次读出初始画面、镜内动作／焦点／摄影机变化和结束画面，但不显示“起幅／过程／落幅”标签。
 4. 第五列镜头头严格为 `【景别｜角度｜运镜】`：景别、角度、运镜只写各自纯摄影元素。机位、构图、主体、焦点与空间策略保留在 DOP 结构及自然语言画面内容中。除通用标准术语和原剧本输入中逐字出现的内容外，画面描述词默认使用中文；不得把内部英文枚举或字段名写入正文。正文不得出现“所在区域”“处于主要观看位置”等模板套话。第六列备注固定留空，作为人工预留列；声音、表演与连续性写入第五列或对应结构化字段。
 5. 在 `source.delivery_slug` 中明确写入不超过 80 字符的 ASCII 小写 kebab-case 标识；四文件名固定由该值派生为 `{delivery-slug}-shot-data.json`、`{delivery-slug}-storyboard.md`、`{delivery-slug}-storyboard.xlsx` 与 `{delivery-slug}-storyboard-validation.json`。可从用户元数据或首行提取编号和已有罗马字；中文标题没有可靠罗马字时询问用户，不得假装脚本会自动生成拼音。
-6. 读取 [output-contract.md](references/output-contract.md) 构建并独立校验四文件。JSON 是机器事实源；任何 FAIL 停止正式交付，WARN 只保留真实导演审计信号。
+6. 读取 [output-contract.md](references/output-contract.md) 构建并独立校验四文件。JSON 是机器事实源；任何 FAIL 停止正式交付。WARN 仍写入完整四文件，但 `build` 返回退出码 `2`，自动化不得当作成功。
 
 ## 不可违反
 

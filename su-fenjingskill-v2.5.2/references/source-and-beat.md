@@ -49,6 +49,8 @@ entire_submitted_text | explicit_continuous_range | user_locked_fragment
 - 未锁定主次时返回 `DIALOGUE_LANGUAGE_AMBIGUOUS`，不得选择较易理解的语言、中文在前的一行或英文斜体的一行作为对白。
 - 原始台词＋对照译文使用 `mode=original_with_translation`。若多种语言都是角色实际发言，使用 `mode=multilingual_actual`，登记至少两项 `spoken_languages[]`，并按来源事实分别建 dialogue fact，不得伪装成译文关系。
 
+连续剧项目可把已经确认的默认关系保存为 `project_dialogue_language_policy`，后续各集直接继承，不重复要求同一确认。项目对象在普通策略字段之外必须含 `scope="project"` 与 `exceptions_require_confirmation=true`。若某一集的语言角色不同，才增加本集 `dialogue_language_policy` 覆盖项目默认；该例外必须使用 `resolution=user_confirmed`，并把同一 `evidence` 写入本集 `approved_corrections`。本集策略与项目默认相同属于冗余错误，应删除本集对象。
+
 结构化策略为：
 
 ```json
@@ -72,6 +74,22 @@ entire_submitted_text | explicit_continuous_range | user_locked_fragment
     "spoken_languages": ["zh-CN", "en"],
     "resolution": "user_confirmed",
     "evidence": "两行都是角色实际说出的台词，不是互译"
+  }
+}
+```
+
+项目级示例：
+
+```json
+{
+  "project_dialogue_language_policy": {
+    "mode": "original_with_translation",
+    "original_language": "en",
+    "translation_languages": ["zh-CN"],
+    "resolution": "user_confirmed",
+    "evidence": "本项目英文为原始台词，中文为对照译文",
+    "scope": "project",
+    "exceptions_require_confirmation": true
   }
 }
 ```
@@ -193,6 +211,7 @@ character | action | dialogue | prop | space | position | emotion | sound | real
 - dialogue fact 的 `text` 同时锁定原文语言：原文为中文就保留中文，原文为英文或其他语言就保留该语言。不得翻译、音译、转写、改换字符体系或用双语改写替换来源对白。
 - 用户明确追加翻译需求时，把译文作为独立辅助内容交付；来源 fact、镜头 `dialogue[].text` 与【画面内容】中的台词仍保留原文。若输入明确标注某行是译文、字幕或对照文本，不把它误认成新的原始对白；若输入把多种语言都明确写成角色实际发言，则分别逐字保留。
 - `original_with_translation` 下，每个 dialogue fact 必须增加 `language=original_language` 与 `source_role=original_dialogue`；译文不得成为 dialogue fact。`multilingual_actual` 下，每个 dialogue fact 必须增加属于 `spoken_languages[]` 的 `language` 与 `source_role=spoken_dialogue`。
+- 未出现本集覆盖对象时，dialogue fact 使用项目级策略；出现已确认例外时，只对本集使用覆盖策略，不回写项目默认。
 - 同时登记 `speaker` 与来源声音性质 `script_voice_type`。闭合值为 `scene_dialogue | vo | os | mediated`。
 - 角色名、VO、OS 标记与台词正文必须从原文直接锁定；禁止根据相邻人物、反应对象或画面主体推断说话者。
 - `script_voice_type=vo` 永远是来源层 VO；摄影设计不能把它改成现场对白或 O.S.。现场对白即使在当前镜头看不见说话者，来源层仍是 `scene_dialogue`。

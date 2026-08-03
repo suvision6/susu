@@ -2,6 +2,17 @@
 
 本文件是 Gate 1 导演风格选项、候选选择与唯一确认、风格轴及导演库编译的唯一规则源。导演姓名只说明参考来源，不构成对在世或已故创作者的逐镜模仿指令。
 
+## 目录
+
+- [1. 风格的职责](#1-风格的职责)
+- [2. Gate 1 内部需求提取](#2-gate-1-内部需求提取)
+- [3. 默认三候选](#3-默认三候选)
+- [4. 更多选择](#4-更多选择)
+- [5. 用户已指定导演](#5-用户已指定导演)
+- [6. 候选选择不是 Gate](#6-候选选择不是-gategate-1-只确认一次)
+- [7. Profile 闭合轴](#7-profile-闭合轴)
+- [8. 应用与边界](#8-应用与边界)
+
 ## 1. 风格的职责
 
 导演风格是候选镜头的选择偏置，不是剧情改写器。先从锁定事实、表演与空间生成可行解，再用风格决定时间组织、摄影机参与、空间揭示、表演观看及转场语言。风格不得改变事实、对白、人物关系、因果、现实层、动作结果或连续性。
@@ -65,7 +76,7 @@
 
 - “STYLE-02”“选第二个”“就这个”只确定候选，不通过 Gate。
 - 选择 `MORE-*` 后编译为 `STYLE-04` 也不通过 Gate。
-- 选择后展示最终 `director_profile`，包括闭合轴、两三条场景专属 `priorities` 与 `natural_language_intent`。
+- 选择后展示最终 `director_profile`，包括闭合轴、一至三条场景专属 `priorities` 与 `natural_language_intent`。
 
 最终 profile 展示后才进入唯一的 Gate 1 确认：
 
@@ -98,7 +109,7 @@
 | `space_strategy` | `establish_then_enter \| embedded_reveal \| subjective \| mixed` |
 | `transition_language[]` | `hard_cut \| action_cut \| gaze_cut \| sound_bridge \| long_hold \| dissolve \| fade` |
 
-`priorities` 只保留真正影响本场镜头选择的两三条，不照抄导演卡；`natural_language_intent` 用普通导演语言总结最终观看方式。转场术语到最终类型的映射仍由 [shot-design.md](shot-design.md) 负责。
+`priorities` 必须为一至三条，只保留真正影响本场镜头选择的项目，不照抄导演卡、不为达到三条而填充；`natural_language_intent` 用普通导演语言总结最终观看方式。转场术语到最终类型的映射仍由 [shot-design.md](shot-design.md) 负责。
 
 上述五个闭合轴、`transition_language[]`、`priorities[]` 与 `natural_language_intent` 全部必需；缺少任一字段或出现未定义字段都 FAIL。候选 profile 与最终 profile 使用同一闭合结构。
 
@@ -122,6 +133,6 @@ Gate 1 确认后，必须在每场 `directing_plan.style_anchors[]` 中把 profi
 - `profile_basis[]` 至少引用一个已确认 profile 字段和值；字段可为闭合轴、`transition_language`、`priorities` 或 `natural_language_intent`，值必须完全匹配 Gate 1。
 - `scene_application` 说明该场的时间、摄影机、空间、构图或表演观看如何执行这些值。
 - `avoidance` 明确该场最容易出现的表面化模仿或误用。
-- 每个 Gate 2 `visual_plan` 至少引用一个本场锚点；锚点随 Gate 2 digest 一起确认。改变 profile 先使 Gate 1 失效，改变锚点或引用关系使 Gate 2 失效。
+- 每场 `directing_plan.style_anchors[]` 至少有一个场级锚点，并随 Gate 2 digest 一起确认。普通 `visual_plan` 可省略 `style_anchor_ids[]`；只有关键风格应用、有意例外或命中 `visual_uniformity_reviews[]` 时才逐镜引用。改变 profile 先使 Gate 1 失效；改变场级锚点、既有逐镜引用或复核引用使 Gate 2 失效。
 
 对每场戏先识别发言权、主要观看主体、观看尺度、认知落点和动作发起者，建立默认切镜边界；最后才审查连续动作、遮挡证明或特殊表演是否足以用 `non_cut_basis` 撤销切点。profile 与场级锚点决定这些边界的节奏、距离和观看方法，不能用“停留感”减少必要覆盖。风格不设固定镜头、特写、运动镜头、长镜、景别或角度百分比；统计是 Gate 2 复核证据，不能为了满足比例而增删镜头。

@@ -1,6 +1,20 @@
 # Output Contract
 
-本文件是 `shot-data/2.5.2`、两 Gate digest、屏幕事件、观看决策、DOP 视觉规划、六列渲染、文件名、CLI 与 validation report 的唯一规则源。
+本文件只拥有 `shot-data/2.5.2` 到 JSON、Markdown、Excel、validation report 与 CLI 的交付映射。字段、必填／可选、基础类型和闭合对象以 [shot-data.schema.json](shot-data.schema.json) 为机器权威；屏幕事件、DOP、来源、风格等含义以各自 owner reference 为语义权威。本文中的字段清单用于解释映射，不形成第二套结构合同；发生不一致时按“Schema 结构 → owner 语义 → 本文件交付映射 → validator 跨对象审计”裁决。
+
+## 目录
+
+- [1. 合同身份与顶层结构](#1-合同身份与顶层结构)
+- [2. 两项人工确认与 digest](#2-两项人工确认与-digest)
+- [3. 拆镜规划合同](#3-拆镜规划合同)
+- [4. 来源与事实覆盖](#4-来源与事实覆盖)
+- [5. 最终镜头约束](#5-最终镜头约束)
+- [6. 最小结构示例](#6-最小结构示例)
+- [7. 正式四文件与六列](#7-正式四文件与六列)
+- [8. 第五列确定性渲染](#8-第五列确定性渲染)
+- [9. 禁止下游字段](#9-禁止下游字段)
+- [10. CLI 构建与校验](#10-cli-构建与校验)
+- [11. Validation report](#11-validation-report)
 
 ## 1. 合同身份与顶层结构
 
@@ -77,7 +91,7 @@ visual_design
 director_readiness
 ```
 
-`gate_2_rule_revision` 固定为 `2.5.2-binding-integrity-r1`。`scene_plans` 是 `scenes[]` 的派生字段；原子事件字段、`non_cut_basis`、长镜保护范围、节奏指标、`shot_plan`、DOP 字段、`visual_design` 与 `director_readiness` 全部进入 Gate 2 digest。计算前统一规范化 `locked_text`、源 hash 与全部 span hash。任何相关内容或规则修订号变化都会使旧 Gate 2 确认失效。
+`gate_2_rule_revision` 固定为 `2.5.2-binding-integrity-r2`。`scene_plans` 是 `scenes[]` 的派生字段；原子事件字段、`non_cut_basis`、长镜保护范围、节奏指标、`shot_plan`、DOP 字段、`visual_design` 与 `director_readiness` 全部进入 Gate 2 digest。计算前统一规范化 `locked_text`、源 hash 与全部 span hash。任何相关内容或规则修订号变化都会使旧 Gate 2 确认失效。
 
 脚本公开 `stage_digest(data, 1 | 2)` 供 Gate 阶段计算。构建器只验证用户已经明确确认的 digest，绝不自动改写 digest 以越过 Gate。
 
@@ -197,7 +211,7 @@ end_frame
 motivation
 ```
 
-可选 `style_anchor_ids[]` 与确有拍摄意义时的焦段毫米数。`perspective_intent` 只允许 `wide_spatial | natural_relation | compressed_distance | detail_isolation`。`spatial_strategy` 与 `movement_plan` 必须使用正式闭合结构。
+每场 `directing_plan.style_anchors[]` 至少有一个场级锚点。逐镜 `style_anchor_ids[]` 可选，只在关键风格应用、有意例外或风格复核中登记；普通镜头不机械复制。焦段毫米数也只在确有拍摄意义时增加。闭合结构由机器 Schema 定义，具体导演语义以 [shot-design.md](shot-design.md) 与 [angle-and-camera-execution.md](angle-and-camera-execution.md) 为准。
 
 `visual_uniformity_reviews[]` 没有命中高占比审计时为空数组；命中后必须逐项登记：
 
@@ -241,13 +255,14 @@ style_anchor_ids[]
 
 `source` 必须包含合法 `input_kind`、`boundary_lock`、`scope`、ASCII 小写 kebab-case 的 `delivery_slug`、规范化 `locked_text`、`locked_text_hash` 与 `approved_corrections`。`delivery_slug` 不进入 Gate digest，只负责四文件命名。
 
-相邻双语台词候选还必须含一种 `dialogue_language_policy`：
+没有项目默认时，相邻双语台词候选必须含一种本集 `dialogue_language_policy`：
 
 - 原文／译文并列：`mode=original_with_translation`，并提供 `original_language`、不含原始语言的 `translation_languages[]`、`resolution` 与 `evidence`。
 - 两种语言都是角色实际说出的对白：`mode=multilingual_actual`，并提供至少两项 `spoken_languages[]`、`resolution` 与 `evidence`。
 
-`resolution` 只能为 `source_explicit | user_confirmed`。原文／译文的 `source_explicit` 须有邻近来源角色标记；`user_confirmed` 须与 `approved_corrections[].to` 的用户确认记录逐字一致。
-双语候选缺少策略时返回 `DIALOGUE_LANGUAGE_AMBIGUOUS`；中文在前、英文斜体、字符体系和阅读便利性都不是主次依据。该对象属于 Gate 1 source payload，修改会使 Gate 1 及下游 Gate 2 确认失效。
+项目可一次确认 `project_dialogue_language_policy`，对象必须声明 `scope=project` 与 `exceptions_require_confirmation=true`；后续各集默认继承。某集与项目默认不同时才增加本集 `dialogue_language_policy`，且必须 `resolution=user_confirmed` 并写入本集 `approved_corrections`；相同策略不得重复声明为例外。
+
+`resolution` 只能为 `source_explicit | user_confirmed`。原文／译文的 `source_explicit` 须有邻近来源角色标记；本集 `user_confirmed` 须与 `approved_corrections[].to` 的用户确认记录逐字一致。双语候选缺少任何可用策略时返回 `DIALOGUE_LANGUAGE_AMBIGUOUS`；中文在前、英文斜体、字符体系和阅读便利性都不是主次依据。项目默认和本集覆盖都属于 Gate 1 source payload，修改会使 Gate 1 及下游 Gate 2 确认失效。
 
 每个 source span 使用 0-based Unicode code point 左闭右开坐标与 `text_hash`。hash 是对应切片的 64个小写十六进制字符的 SHA-256。构建器可从 draft 的坐标补写 hash。
 fact span 必须按坐标包含于所属 Beat span；镜头 span 必须按坐标包含每个 covered fact span。相同字面不能替代坐标关系。
@@ -482,10 +497,17 @@ timeline
 python scripts/storyboard_delivery.py build --input <draft.json> --output-dir <目录>
 python scripts/storyboard_delivery.py validate --output-dir <目录>
 python scripts/storyboard_delivery.py review-gate-2 --input <draft.json>
+python scripts/storyboard_delivery.py init-draft --source-file <source.txt> --project-id <id> --delivery-slug <slug> --input-kind <kind> --boundary-lock <lock> --scope <说明> --output <draft.json>
+python scripts/storyboard_delivery.py stage-digest --input <draft.json> --gate <1|2>
+python scripts/storyboard_delivery.py schema --output <new-schema.json>
+python scripts/scene_workspace.py extract --input <draft.json> --scene-id <SCxxx> --output <scene-workspace.json>
+python scripts/scene_workspace.py merge --input <draft.json> --scene-workspace <scene-workspace.json> --output <new-draft.json>
 python scripts/test_storyboard_delivery.py
 ```
 
 `review-gate-2` 是 Gate 2 确认前的只读审计。它输出预计 `gate_2_digest`、逐场与全片视觉分布、平均镜头时长、每分钟剪辑点、超过 10 秒普通镜头数、说话者交接与实际切镜数、多事件单元、非切例外、长镜保护范围及 `READY | REVIEW_REQUIRED | BLOCKED`；不得写入确认、修改输入或生成正式四文件。
+
+`init-draft` 从 UTF-8 锁定来源建立完整顶层脚手架；两个 Gate 均为 `pending`，不会伪造确认，且拒绝覆盖既有目标。`stage-digest` 与 `schema` 分别提供只读 digest 和机器结构导出。超长剧本可用 `scene_workspace.py` 提取单场工作集；merge 必须匹配 `project_id`、锁源 hash 与 Gate 1 digest，并把 Gate 2 重置为 `pending`，防止局部修改沿用旧确认。
 
 CLI 退出码固定为：`0=READY/PASS`、`1=BLOCKED/FAIL`、`2=REVIEW_REQUIRED/WARN`。自动化流程不得把需要人工复核的状态当作成功。
 
@@ -496,11 +518,11 @@ CLI 退出码固定为：`0=READY/PASS`、`1=BLOCKED/FAIL`、`2=REVIEW_REQUIRED/
 3. 规范化锁定文本并补写源 hash 与 span hash。
 4. 生成确定性第五列与 `content_hash`。
 5. 重新执行原子事件、默认切镜、非切依据、长镜保护范围和摄影三元素审计，并校验身份、两 Gate、digest、场级风格锚点、逐镜视觉规划、来源覆盖、逐字逐语言对白、画面内容中文默认规则、空白备注、时长、连续性、规划／终稿一致、六列格式与禁字段。
-6. 在目标目录建立同级临时文件并回读自检，成功后原子替换四文件。
+6. 取得输出目录独占锁，在目标目录建立同级临时文件并回读自检；随后提交四个正式文件和隐藏的 `.storyboard-delivery-manifest.json`。manifest 记录四文件 SHA-256 与字节数，用于识别并发、残留或外部篡改；提交异常按已有文件逐项回滚。
 
-`validate` 重新读取四文件，重算结构、渲染、hash，并逐单元格比较 Markdown 与 Excel。
+`validate` 重新读取四文件和 manifest，重算结构、渲染、hash，并逐单元格比较 Markdown 与 Excel。
 
-语义 FAIL、输入读取失败和 Unicode 失败都输出结构化 FAIL JSON 或稳定 issue code；CLI 不得泄漏裸 `UnicodeEncodeError`。build 失败不写正式四文件。
+语义 FAIL、输入读取失败和 Unicode 失败都输出结构化 FAIL JSON 或稳定 issue code；CLI 不得泄漏裸 `UnicodeEncodeError`。FAIL 不写正式四文件。WARN 写入可审计的完整交付，但 `build` 返回退出码 `2`；调用方必须显式处理后才能发布。
 
 测试必须使用系统临时目录并自动清理；不得在 Skill 目录创建 `.test-*` 或 `__pycache__`。
 
@@ -511,7 +533,7 @@ CLI 退出码固定为：`0=READY/PASS`、`1=BLOCKED/FAIL`、`2=REVIEW_REQUIRED/
 ```json
 {
   "contract": "shot-data/2.5.2",
-  "gate_2_rule_revision": "2.5.2-binding-integrity-r1",
+  "gate_2_rule_revision": "2.5.2-binding-integrity-r2",
   "contract_status": "PASS",
   "director_readiness": "READY",
   "status": "PASS",
