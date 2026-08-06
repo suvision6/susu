@@ -1,0 +1,4 @@
+interface:
+  display_name: "导演分镜 v2.5.3"
+  short_description: "把锁定剧本转换为经两次门禁确认的可审计六列导演分镜交付"
+  default_prompt: "使用 $su-fenjingskill 锁定剧本，经两次人工 Gate 生成与 DOP 规划完全绑定的 shot-data/2.5.3 六列导演分镜。"

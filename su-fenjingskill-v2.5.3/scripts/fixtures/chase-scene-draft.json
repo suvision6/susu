@@ -1,0 +1,2804 @@
+{
+  "beats": [
+    {
+      "beat_id": "B001",
+      "beat_order": 1,
+      "dramatic_change": "节拍1：推动戏剧动作。",
+      "facts": [
+        {
+          "fact_id": "F001",
+          "performers": [
+            "逃犯",
+            "警察甲",
+            "警察乙"
+          ],
+          "source_fragment": "深夜巷口，逃犯、警察甲、警察乙形成追逐三角。",
+          "source_spans": [
+            {
+              "end": 22,
+              "start": 0,
+              "text_hash": "003f48014a5a3f74c1fd25aef13d8850e2b08e874642fe1e16ce1798e98fd128"
+            }
+          ],
+          "text": "深夜巷口，逃犯、警察甲、警察乙形成追逐三角。",
+          "type": "position"
+        },
+        {
+          "fact_id": "F002",
+          "performers": [
+            "逃犯"
+          ],
+          "source_fragment": "逃犯冲出拐角。",
+          "source_spans": [
+            {
+              "end": 30,
+              "start": 23,
+              "text_hash": "3f7ca16d54be4500c60824930e9de64e613a69e90b27b14440ba50aa82bc3f6e"
+            }
+          ],
+          "text": "逃犯冲出拐角",
+          "type": "action"
+        }
+      ],
+      "scene_id": "SC001",
+      "source_spans": [
+        {
+          "end": 30,
+          "start": 0,
+          "text_hash": "6f2aaa4a11eeaffae3fbbe6ed03b294d4977017b94c4afd29df557968278a5d4"
+        }
+      ]
+    },
+    {
+      "beat_id": "B002",
+      "beat_order": 2,
+      "dramatic_change": "节拍2：推动戏剧动作。",
+      "facts": [
+        {
+          "fact_id": "F003",
+          "performers": [
+            "警察甲"
+          ],
+          "source_fragment": "警察甲拔腿追去：站住！",
+          "source_spans": [
+            {
+              "end": 42,
+              "start": 31,
+              "text_hash": "db5e89876747d5eeace32f556cceeccec7099575ef600913810437cfca8c0b1f"
+            }
+          ],
+          "text": "警察甲拔腿追去",
+          "type": "action"
+        },
+        {
+          "fact_id": "F004",
+          "performers": [
+            "警察甲"
+          ],
+          "script_voice_type": "scene_dialogue",
+          "source_fragment": "警察甲拔腿追去：站住！",
+          "source_spans": [
+            {
+              "end": 42,
+              "start": 31,
+              "text_hash": "db5e89876747d5eeace32f556cceeccec7099575ef600913810437cfca8c0b1f"
+            }
+          ],
+          "speaker": "警察甲",
+          "text": "站住！",
+          "type": "dialogue"
+        }
+      ],
+      "scene_id": "SC001",
+      "source_spans": [
+        {
+          "end": 42,
+          "start": 31,
+          "text_hash": "db5e89876747d5eeace32f556cceeccec7099575ef600913810437cfca8c0b1f"
+        }
+      ]
+    },
+    {
+      "beat_id": "B003",
+      "beat_order": 3,
+      "dramatic_change": "节拍3：推动戏剧动作。",
+      "facts": [
+        {
+          "fact_id": "F005",
+          "performers": [
+            "逃犯"
+          ],
+          "source_fragment": "逃犯翻过矮墙，落地不稳。",
+          "source_spans": [
+            {
+              "end": 55,
+              "start": 43,
+              "text_hash": "5834221ac5376962df6133342d977d41d080a218d00bc50671f68fe8497ecaac"
+            }
+          ],
+          "text": "逃犯翻过矮墙，落地不稳",
+          "type": "action"
+        }
+      ],
+      "scene_id": "SC001",
+      "source_spans": [
+        {
+          "end": 55,
+          "start": 43,
+          "text_hash": "5834221ac5376962df6133342d977d41d080a218d00bc50671f68fe8497ecaac"
+        }
+      ]
+    },
+    {
+      "beat_id": "B004",
+      "beat_order": 4,
+      "dramatic_change": "节拍4：推动戏剧动作。",
+      "facts": [
+        {
+          "fact_id": "F006",
+          "performers": [
+            "警察乙"
+          ],
+          "source_fragment": "警察乙从另一侧包抄：别跑！",
+          "source_spans": [
+            {
+              "end": 69,
+              "start": 56,
+              "text_hash": "9832558a1eb8d2df541da1d68a530e662799b700f1f98e8d237290156d6c7530"
+            }
+          ],
+          "text": "警察乙从另一侧包抄",
+          "type": "action"
+        },
+        {
+          "fact_id": "F007",
+          "performers": [
+            "警察乙"
+          ],
+          "script_voice_type": "scene_dialogue",
+          "source_fragment": "警察乙从另一侧包抄：别跑！",
+          "source_spans": [
+            {
+              "end": 69,
+              "start": 56,
+              "text_hash": "9832558a1eb8d2df541da1d68a530e662799b700f1f98e8d237290156d6c7530"
+            }
+          ],
+          "speaker": "警察乙",
+          "text": "别跑！",
+          "type": "dialogue"
+        }
+      ],
+      "scene_id": "SC001",
+      "source_spans": [
+        {
+          "end": 69,
+          "start": 56,
+          "text_hash": "9832558a1eb8d2df541da1d68a530e662799b700f1f98e8d237290156d6c7530"
+        }
+      ]
+    },
+    {
+      "beat_id": "B005",
+      "beat_order": 5,
+      "dramatic_change": "节拍5：推动戏剧动作。",
+      "facts": [
+        {
+          "fact_id": "F008",
+          "performers": [
+            "逃犯"
+          ],
+          "source_fragment": "逃犯撞翻货架，水果滚落一地。",
+          "source_spans": [
+            {
+              "end": 84,
+              "start": 70,
+              "text_hash": "772d78fd08d5eb6327f8bd4eebacbccc208678560c63e54518440dfaf6ff5817"
+            }
+          ],
+          "text": "逃犯撞翻货架，水果滚落一地",
+          "type": "action"
+        }
+      ],
+      "scene_id": "SC001",
+      "source_spans": [
+        {
+          "end": 84,
+          "start": 70,
+          "text_hash": "772d78fd08d5eb6327f8bd4eebacbccc208678560c63e54518440dfaf6ff5817"
+        }
+      ]
+    },
+    {
+      "beat_id": "B006",
+      "beat_order": 6,
+      "dramatic_change": "节拍6：推动戏剧动作。",
+      "facts": [
+        {
+          "fact_id": "F009",
+          "performers": [
+            "警察甲"
+          ],
+          "source_fragment": "警察甲扑上前，按住逃犯肩膀：你跑不掉了。",
+          "source_spans": [
+            {
+              "end": 105,
+              "start": 85,
+              "text_hash": "9aa61085e3d560ee0dcd5b90931382c8b0e9cbccd4189b25cc4ef566c3eb70e2"
+            }
+          ],
+          "text": "警察甲扑上前，按住逃犯肩膀",
+          "type": "action"
+        },
+        {
+          "fact_id": "F010",
+          "performers": [
+            "警察甲"
+          ],
+          "script_voice_type": "scene_dialogue",
+          "source_fragment": "警察甲扑上前，按住逃犯肩膀：你跑不掉了。",
+          "source_spans": [
+            {
+              "end": 105,
+              "start": 85,
+              "text_hash": "9aa61085e3d560ee0dcd5b90931382c8b0e9cbccd4189b25cc4ef566c3eb70e2"
+            }
+          ],
+          "speaker": "警察甲",
+          "text": "你跑不掉了。",
+          "type": "dialogue"
+        }
+      ],
+      "scene_id": "SC001",
+      "source_spans": [
+        {
+          "end": 105,
+          "start": 85,
+          "text_hash": "9aa61085e3d560ee0dcd5b90931382c8b0e9cbccd4189b25cc4ef566c3eb70e2"
+        }
+      ]
+    },
+    {
+      "beat_id": "B007",
+      "beat_order": 7,
+      "dramatic_change": "节拍7：推动戏剧动作。",
+      "facts": [
+        {
+          "fact_id": "F011",
+          "performers": [
+            "逃犯"
+          ],
+          "source_fragment": "逃犯喘息着抬头：我认了。",
+          "source_spans": [
+            {
+              "end": 118,
+              "start": 106,
+              "text_hash": "c36934edd39b09589bee1b0978bd4790e01bb0a25e1a443e2b035d74370764d6"
+            }
+          ],
+          "text": "逃犯喘息着抬头",
+          "type": "action"
+        },
+        {
+          "fact_id": "F012",
+          "performers": [
+            "逃犯"
+          ],
+          "script_voice_type": "scene_dialogue",
+          "source_fragment": "逃犯喘息着抬头：我认了。",
+          "source_spans": [
+            {
+              "end": 118,
+              "start": 106,
+              "text_hash": "c36934edd39b09589bee1b0978bd4790e01bb0a25e1a443e2b035d74370764d6"
+            }
+          ],
+          "speaker": "逃犯",
+          "text": "我认了。",
+          "type": "dialogue"
+        }
+      ],
+      "scene_id": "SC001",
+      "source_spans": [
+        {
+          "end": 118,
+          "start": 106,
+          "text_hash": "c36934edd39b09589bee1b0978bd4790e01bb0a25e1a443e2b035d74370764d6"
+        }
+      ]
+    }
+  ],
+  "confirmations": {
+    "gate_1": {
+      "confirmation_order": 1,
+      "notes": "fixture 自动确认",
+      "stage_digest": "dee375dbd7f7cac7165ffc177d150c9430aa1a0d4cd3cd346baa5dc70b07cdd1",
+      "status": "confirmed"
+    },
+    "gate_2": {
+      "confirmation_order": 2,
+      "notes": "fixture 自动确认",
+      "stage_digest": "729fa38da2b02e8e2a48a44774d9c5f1fde6705a3e3772ff8275a8c39656e7df",
+      "status": "confirmed"
+    }
+  },
+  "content_hash": "ca4fcc7be0486ddaba1a2356b21e419ac2469c246150c60ec31f68f11b6b67b8",
+  "contract_name": "shot-data",
+  "contract_version": "2.5.3",
+  "director_profile": {
+    "camera_energy": "assertive",
+    "natural_language_intent": "让摄影机被追逃动作牵引，以空间变化放大惊慌与压迫。",
+    "performance_focus": "blocking",
+    "priorities": [
+      "让空间位移牵引观看",
+      "捕捉喘息与身体失衡"
+    ],
+    "rhythm": "kinetic",
+    "space_strategy": "subjective",
+    "transition_language": [
+      "action_cut",
+      "sound_bridge"
+    ],
+    "visual_distance": "mixed"
+  },
+  "director_style_options": [
+    {
+      "label": "追逐中的动能紧迫（参考保罗·格林格拉斯）",
+      "option_id": "STYLE-01",
+      "profile": {
+        "camera_energy": "assertive",
+        "natural_language_intent": "让摄影机被追逃动作牵引，以空间变化放大惊慌与压迫。",
+        "performance_focus": "blocking",
+        "priorities": [
+          "让空间位移牵引观看",
+          "捕捉喘息与身体失衡"
+        ],
+        "rhythm": "kinetic",
+        "space_strategy": "subjective",
+        "transition_language": [
+          "action_cut",
+          "sound_bridge"
+        ],
+        "visual_distance": "mixed"
+      },
+      "rationale": "适配依据：追逃关系由身体位移和喘息推进。\n时间与剪辑：在动作边界处快速切换，不拖泥带水。\n摄影机：手持与跟拍让摄影机成为追击者。\n空间与调度：让巷道纵深和障碍物制造压迫。\n表演与观看：捕捉逃犯的惊慌与警察的果断。\n主要收益：让观众在追逐中感受呼吸节奏。\n主要风险：过度晃动可能导致空间失读。"
+    },
+    {
+      "label": "冷静观察下的暴力距离（参考是枝裕和）",
+      "option_id": "STYLE-02",
+      "profile": {
+        "camera_energy": "responsive",
+        "natural_language_intent": "保持观察距离，以完整身体动作建立巷道空间。",
+        "performance_focus": "body",
+        "priorities": [
+          "先建立巷道空间",
+          "让奔跑动作承担节奏"
+        ],
+        "rhythm": "balanced",
+        "space_strategy": "establish_then_enter",
+        "transition_language": [
+          "hard_cut"
+        ],
+        "visual_distance": "observational"
+      },
+      "rationale": "适配依据：追逐作为社会冲突的缩影。\n时间与剪辑：保留动作之间的沉默间隙。\n摄影机：保持观察距离，让动作自行完成。\n空间与调度：先建立巷道空间，再进入人物动作。\n表演与观看：观看奔跑、翻越与倒地后的余波。\n主要收益：保留事件的纪实质感。\n主要风险：可能削弱追逐的紧迫感。"
+    },
+    {
+      "label": "夜色中的情绪失衡（参考保罗·索伦蒂诺）",
+      "option_id": "STYLE-03",
+      "profile": {
+        "camera_energy": "static",
+        "natural_language_intent": "以静态与缓推捕捉追逃后的疲惫与认输。",
+        "performance_focus": "face",
+        "priorities": [
+          "保留追逃后的面部余波",
+          "让环境细节缓慢显露"
+        ],
+        "rhythm": "restrained",
+        "space_strategy": "embedded_reveal",
+        "transition_language": [
+          "long_hold",
+          "gaze_cut"
+        ],
+        "visual_distance": "intimate"
+      },
+      "rationale": "适配依据：巷道可以成为情绪巡游的舞台。\n时间与剪辑：用音乐和光影位移放大被捕瞬间。\n摄影机：允许环绕与慢速推进。\n空间与调度：让路灯、货架与墙壁形成几何舞台。\n表演与观看：用身体姿态外化惊慌与疲惫。\n主要收益：放大被捕时刻的仪式感。\n主要风险：过度风格化会损害真实追逃质感。"
+    }
+  ],
+  "project_id": "P-FIXTURE-253",
+  "scenes": [
+    {
+      "axes": [
+        {
+          "axis_id": "AX001",
+          "axis_type": "eyeline",
+          "endpoint_a": "警察甲",
+          "endpoint_b": "逃犯"
+        },
+        {
+          "axis_id": "AX002",
+          "axis_type": "eyeline",
+          "endpoint_a": "警察乙",
+          "endpoint_b": "逃犯"
+        }
+      ],
+      "directing_plan": {
+        "entry_strategy": {
+          "mode": "spatial_establish",
+          "observer_position": "巷口二楼，俯视追逐三角",
+          "reason": "先建立巷道空间与三人位置，让追逐有清晰的空间容器。",
+          "required_spatial_information": [
+            "逃犯、警察甲、警察乙形成追逐三角"
+          ],
+          "withheld_information": [
+            "逃犯最终是否被制服"
+          ]
+        },
+        "pov_flow": [
+          "先建立巷道纵深",
+          "随追逃动作切换观察位置"
+        ],
+        "progression": [
+          "建立三人追逐空间",
+          "警察甲追击并喊停",
+          "逃犯翻越矮墙",
+          "警察乙包抄拦截",
+          "逃犯撞翻货架",
+          "警察甲制服逃犯",
+          "逃犯喘息认罪"
+        ],
+        "scene_objective": "通过巷道追逐展示逃犯惊慌、警察合围与最终认命的过程。",
+        "style_anchors": [
+          {
+            "avoidance": "避免全场固定或同一景别重复切换。",
+            "profile_basis": [
+              {
+                "field": "priorities",
+                "value": "让空间位移牵引观看"
+              }
+            ],
+            "scene_application": "用手持跟拍与快速动作切让摄影机跟随奔跑与翻越。",
+            "style_anchor_id": "SA001"
+          }
+        ]
+      },
+      "inherited_states": [],
+      "inherits_from": null,
+      "initial_continuity": {
+        "characters": [
+          {
+            "eyeline": "警察甲",
+            "facing": "巷内",
+            "name": "逃犯",
+            "position": "巷口拐角",
+            "presence": "onscreen",
+            "state": "逃窜"
+          },
+          {
+            "eyeline": "逃犯",
+            "facing": "逃犯",
+            "name": "警察甲",
+            "position": "逃犯身后",
+            "presence": "onscreen",
+            "state": "追击"
+          },
+          {
+            "eyeline": "逃犯",
+            "facing": "逃犯",
+            "name": "警察乙",
+            "position": "巷口另一侧",
+            "presence": "onscreen",
+            "state": "包抄"
+          }
+        ],
+        "fixed_objects": [
+          {
+            "name": "路灯",
+            "position": "巷道两侧",
+            "state": "亮着"
+          },
+          {
+            "name": "砖墙",
+            "position": "巷道两侧",
+            "state": "完好"
+          }
+        ],
+        "props": [
+          {
+            "name": "矮墙",
+            "owner": "环境",
+            "position": "巷道尽头",
+            "state": "完好"
+          },
+          {
+            "name": "货架",
+            "owner": "摊贩",
+            "position": "巷口小摊",
+            "state": "被撞翻"
+          },
+          {
+            "name": "水果",
+            "owner": "摊贩",
+            "position": "货架上",
+            "state": "散落"
+          }
+        ],
+        "reality_layer": "现实",
+        "sound_sources": []
+      },
+      "reality_layer": "现实",
+      "scene": "深夜巷道",
+      "scene_id": "SC001"
+    }
+  ],
+  "screen_events": [
+    {
+      "beat_ids": [
+        "B001"
+      ],
+      "covered_fact_ids": [
+        "F001"
+      ],
+      "event_order": 1,
+      "event_role": "spatial",
+      "focus_scale": "relation",
+      "primary_viewing_subject": "逃犯",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV001",
+      "sound_fact_ids": [],
+      "source_spans": [
+        {
+          "end": 22,
+          "start": 0,
+          "text_hash": "003f48014a5a3f74c1fd25aef13d8850e2b08e874642fe1e16ce1798e98fd128"
+        }
+      ],
+      "spatial_zone": "深夜巷道",
+      "temporal_relation": "sequential",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "深夜巷口，逃犯、警察甲、警察乙形成追逐三角。",
+      "visual_subjects": [
+        "逃犯"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B001"
+      ],
+      "covered_fact_ids": [
+        "F002"
+      ],
+      "event_order": 2,
+      "event_role": "action",
+      "focus_scale": "body",
+      "primary_viewing_subject": "逃犯",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV002",
+      "sound_fact_ids": [],
+      "source_spans": [
+        {
+          "end": 30,
+          "start": 23,
+          "text_hash": "3f7ca16d54be4500c60824930e9de64e613a69e90b27b14440ba50aa82bc3f6e"
+        }
+      ],
+      "spatial_zone": "深夜巷道",
+      "temporal_relation": "continuous_from_previous",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "逃犯冲出拐角",
+      "visual_subjects": [
+        "逃犯"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B002"
+      ],
+      "covered_fact_ids": [
+        "F003"
+      ],
+      "event_order": 3,
+      "event_role": "action",
+      "focus_scale": "body",
+      "primary_viewing_subject": "警察甲",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV003",
+      "sound_fact_ids": [],
+      "source_spans": [
+        {
+          "end": 42,
+          "start": 31,
+          "text_hash": "db5e89876747d5eeace32f556cceeccec7099575ef600913810437cfca8c0b1f"
+        }
+      ],
+      "spatial_zone": "深夜巷道",
+      "temporal_relation": "sequential",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "警察甲拔腿追去",
+      "visual_subjects": [
+        "警察甲"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B002"
+      ],
+      "covered_fact_ids": [
+        "F004"
+      ],
+      "event_order": 4,
+      "event_role": "dialogue_turn",
+      "focus_scale": "face",
+      "primary_viewing_subject": "警察甲",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV004",
+      "sound_fact_ids": [
+        "F004"
+      ],
+      "source_spans": [
+        {
+          "end": 42,
+          "start": 31,
+          "text_hash": "db5e89876747d5eeace32f556cceeccec7099575ef600913810437cfca8c0b1f"
+        }
+      ],
+      "spatial_zone": "深夜巷道",
+      "temporal_relation": "continuous_from_previous",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "站住！",
+      "visual_subjects": [
+        "警察甲"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B003"
+      ],
+      "covered_fact_ids": [
+        "F005"
+      ],
+      "event_order": 5,
+      "event_role": "action",
+      "focus_scale": "body",
+      "primary_viewing_subject": "逃犯",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV005",
+      "sound_fact_ids": [],
+      "source_spans": [
+        {
+          "end": 55,
+          "start": 43,
+          "text_hash": "5834221ac5376962df6133342d977d41d080a218d00bc50671f68fe8497ecaac"
+        }
+      ],
+      "spatial_zone": "深夜巷道",
+      "temporal_relation": "sequential",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "逃犯翻过矮墙，落地不稳",
+      "visual_subjects": [
+        "逃犯"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B004"
+      ],
+      "covered_fact_ids": [
+        "F006"
+      ],
+      "event_order": 6,
+      "event_role": "action",
+      "focus_scale": "body",
+      "primary_viewing_subject": "警察乙",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV006",
+      "sound_fact_ids": [],
+      "source_spans": [
+        {
+          "end": 69,
+          "start": 56,
+          "text_hash": "9832558a1eb8d2df541da1d68a530e662799b700f1f98e8d237290156d6c7530"
+        }
+      ],
+      "spatial_zone": "深夜巷道",
+      "temporal_relation": "sequential",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "警察乙从另一侧包抄",
+      "visual_subjects": [
+        "警察乙"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B004"
+      ],
+      "covered_fact_ids": [
+        "F007"
+      ],
+      "event_order": 7,
+      "event_role": "dialogue_turn",
+      "focus_scale": "face",
+      "primary_viewing_subject": "警察乙",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV007",
+      "sound_fact_ids": [
+        "F007"
+      ],
+      "source_spans": [
+        {
+          "end": 69,
+          "start": 56,
+          "text_hash": "9832558a1eb8d2df541da1d68a530e662799b700f1f98e8d237290156d6c7530"
+        }
+      ],
+      "spatial_zone": "深夜巷道",
+      "temporal_relation": "continuous_from_previous",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "别跑！",
+      "visual_subjects": [
+        "警察乙"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B005"
+      ],
+      "covered_fact_ids": [
+        "F008"
+      ],
+      "event_order": 8,
+      "event_role": "action",
+      "focus_scale": "body",
+      "primary_viewing_subject": "逃犯",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV008",
+      "sound_fact_ids": [],
+      "source_spans": [
+        {
+          "end": 84,
+          "start": 70,
+          "text_hash": "772d78fd08d5eb6327f8bd4eebacbccc208678560c63e54518440dfaf6ff5817"
+        }
+      ],
+      "spatial_zone": "深夜巷道",
+      "temporal_relation": "sequential",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "逃犯撞翻货架，水果滚落一地",
+      "visual_subjects": [
+        "逃犯"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B006"
+      ],
+      "covered_fact_ids": [
+        "F009"
+      ],
+      "event_order": 9,
+      "event_role": "action",
+      "focus_scale": "body",
+      "primary_viewing_subject": "警察甲",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV009",
+      "sound_fact_ids": [],
+      "source_spans": [
+        {
+          "end": 105,
+          "start": 85,
+          "text_hash": "9aa61085e3d560ee0dcd5b90931382c8b0e9cbccd4189b25cc4ef566c3eb70e2"
+        }
+      ],
+      "spatial_zone": "深夜巷道",
+      "temporal_relation": "sequential",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "警察甲扑上前，按住逃犯肩膀",
+      "visual_subjects": [
+        "警察甲"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B006"
+      ],
+      "covered_fact_ids": [
+        "F010"
+      ],
+      "event_order": 10,
+      "event_role": "dialogue_turn",
+      "focus_scale": "face",
+      "primary_viewing_subject": "警察甲",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV010",
+      "sound_fact_ids": [
+        "F010"
+      ],
+      "source_spans": [
+        {
+          "end": 105,
+          "start": 85,
+          "text_hash": "9aa61085e3d560ee0dcd5b90931382c8b0e9cbccd4189b25cc4ef566c3eb70e2"
+        }
+      ],
+      "spatial_zone": "深夜巷道",
+      "temporal_relation": "continuous_from_previous",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "你跑不掉了。",
+      "visual_subjects": [
+        "警察甲"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B007"
+      ],
+      "covered_fact_ids": [
+        "F011"
+      ],
+      "event_order": 11,
+      "event_role": "action",
+      "focus_scale": "body",
+      "primary_viewing_subject": "逃犯",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV011",
+      "sound_fact_ids": [],
+      "source_spans": [
+        {
+          "end": 118,
+          "start": 106,
+          "text_hash": "c36934edd39b09589bee1b0978bd4790e01bb0a25e1a443e2b035d74370764d6"
+        }
+      ],
+      "spatial_zone": "深夜巷道",
+      "temporal_relation": "sequential",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "逃犯喘息着抬头",
+      "visual_subjects": [
+        "逃犯"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B007"
+      ],
+      "covered_fact_ids": [
+        "F012"
+      ],
+      "event_order": 12,
+      "event_role": "dialogue_turn",
+      "focus_scale": "face",
+      "primary_viewing_subject": "逃犯",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV012",
+      "sound_fact_ids": [
+        "F012"
+      ],
+      "source_spans": [
+        {
+          "end": 118,
+          "start": 106,
+          "text_hash": "c36934edd39b09589bee1b0978bd4790e01bb0a25e1a443e2b035d74370764d6"
+        }
+      ],
+      "spatial_zone": "深夜巷道",
+      "temporal_relation": "continuous_from_previous",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "我认了。",
+      "visual_subjects": [
+        "逃犯"
+      ]
+    }
+  ],
+  "selected_style_option_id": "STYLE-01",
+  "shot_plan": {
+    "edit_points": [
+      {
+        "after_plan_unit_id": "PU001",
+        "before_plan_unit_id": "PU002",
+        "edit_point_id": "EP001",
+        "editorial_gain": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "source_spans": [
+          {
+            "end": 30,
+            "start": 23,
+            "text_hash": "3f7ca16d54be4500c60824930e9de64e613a69e90b27b14440ba50aa82bc3f6e"
+          },
+          {
+            "end": 42,
+            "start": 31,
+            "text_hash": "db5e89876747d5eeace32f556cceeccec7099575ef600913810437cfca8c0b1f"
+          }
+        ],
+        "trigger": "观看主体与关系重心发生明确变化。"
+      },
+      {
+        "after_plan_unit_id": "PU002",
+        "before_plan_unit_id": "PU003",
+        "edit_point_id": "EP002",
+        "editorial_gain": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "source_spans": [
+          {
+            "end": 42,
+            "start": 31,
+            "text_hash": "db5e89876747d5eeace32f556cceeccec7099575ef600913810437cfca8c0b1f"
+          },
+          {
+            "end": 55,
+            "start": 43,
+            "text_hash": "5834221ac5376962df6133342d977d41d080a218d00bc50671f68fe8497ecaac"
+          }
+        ],
+        "trigger": "观看主体与关系重心发生明确变化。"
+      },
+      {
+        "after_plan_unit_id": "PU003",
+        "before_plan_unit_id": "PU004",
+        "edit_point_id": "EP003",
+        "editorial_gain": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "source_spans": [
+          {
+            "end": 55,
+            "start": 43,
+            "text_hash": "5834221ac5376962df6133342d977d41d080a218d00bc50671f68fe8497ecaac"
+          },
+          {
+            "end": 69,
+            "start": 56,
+            "text_hash": "9832558a1eb8d2df541da1d68a530e662799b700f1f98e8d237290156d6c7530"
+          }
+        ],
+        "trigger": "观看主体与关系重心发生明确变化。"
+      },
+      {
+        "after_plan_unit_id": "PU004",
+        "before_plan_unit_id": "PU005",
+        "edit_point_id": "EP004",
+        "editorial_gain": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "source_spans": [
+          {
+            "end": 69,
+            "start": 56,
+            "text_hash": "9832558a1eb8d2df541da1d68a530e662799b700f1f98e8d237290156d6c7530"
+          },
+          {
+            "end": 84,
+            "start": 70,
+            "text_hash": "772d78fd08d5eb6327f8bd4eebacbccc208678560c63e54518440dfaf6ff5817"
+          }
+        ],
+        "trigger": "观看主体与关系重心发生明确变化。"
+      },
+      {
+        "after_plan_unit_id": "PU005",
+        "before_plan_unit_id": "PU006",
+        "edit_point_id": "EP005",
+        "editorial_gain": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "source_spans": [
+          {
+            "end": 84,
+            "start": 70,
+            "text_hash": "772d78fd08d5eb6327f8bd4eebacbccc208678560c63e54518440dfaf6ff5817"
+          },
+          {
+            "end": 105,
+            "start": 85,
+            "text_hash": "9aa61085e3d560ee0dcd5b90931382c8b0e9cbccd4189b25cc4ef566c3eb70e2"
+          }
+        ],
+        "trigger": "观看主体与关系重心发生明确变化。"
+      },
+      {
+        "after_plan_unit_id": "PU006",
+        "before_plan_unit_id": "PU007",
+        "edit_point_id": "EP006",
+        "editorial_gain": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "source_spans": [
+          {
+            "end": 105,
+            "start": 85,
+            "text_hash": "9aa61085e3d560ee0dcd5b90931382c8b0e9cbccd4189b25cc4ef566c3eb70e2"
+          },
+          {
+            "end": 118,
+            "start": 106,
+            "text_hash": "c36934edd39b09589bee1b0978bd4790e01bb0a25e1a443e2b035d74370764d6"
+          }
+        ],
+        "trigger": "观看主体与关系重心发生明确变化。"
+      }
+    ],
+    "planned_edit_point_count": 6,
+    "planned_shot_count": 7,
+    "planned_total_duration_seconds": 21,
+    "planned_units": [
+      {
+        "beat_ids": [
+          "B001"
+        ],
+        "dialogue_design": null,
+        "estimated_duration_seconds": 3,
+        "narrative_purpose": "呈现B001的戏剧动作。",
+        "plan_order": 1,
+        "plan_unit_id": "PU001",
+        "scene_id": "SC001",
+        "screen_event_ids": [
+          "SEV001",
+          "SEV002"
+        ],
+        "source_spans": [
+          {
+            "end": 30,
+            "start": 0,
+            "text_hash": "6f2aaa4a11eeaffae3fbbe6ed03b294d4977017b94c4afd29df557968278a5d4"
+          }
+        ],
+        "visual_plan": {
+          "angle": "微俯视",
+          "camera_position": "巷口二楼向下",
+          "end_frame": "逃犯冲出拐角前",
+          "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+          "framing_relation": "深夜巷口，逃犯、警察甲、警察乙形成追逐三角。巷道纵深",
+          "motivation": "先建立巷道空间与三人追逐位置。",
+          "movement_plan": {
+            "class": "compound_move_then_fixed",
+            "end_condition": "逃犯冲出拐角前",
+            "hold_reason": "",
+            "path": "缓慢推进后固定",
+            "speed": "缓慢",
+            "trigger": "主体动作或观看关系开始变化。"
+          },
+          "perspective_intent": "wide_spatial",
+          "primary_subjects": [
+            "逃犯"
+          ],
+          "secondary_subjects": [
+            "警察甲",
+            "警察乙"
+          ],
+          "shot_size": "全景→中景",
+          "spatial_strategy": {
+            "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+            "type": "sequential_reframe"
+          },
+          "start_frame": "三人形成追逐三角",
+          "style_anchor_ids": [
+            "SA001"
+          ],
+          "viewpoint_owner": "逃犯"
+        }
+      },
+      {
+        "beat_ids": [
+          "B002"
+        ],
+        "dialogue_design": {
+          "axis_id": "AX001",
+          "face_readable_speakers": [
+            "警察甲"
+          ],
+          "justification": "按本单元真实说话权安排可读面孔，并保持既定轴线。",
+          "listener_reaction_characters": [
+            "逃犯",
+            "警察乙"
+          ],
+          "mode": "single_speaker",
+          "speaker_sequence": [
+            "警察甲"
+          ]
+        },
+        "estimated_duration_seconds": 3,
+        "narrative_purpose": "呈现B002的戏剧动作。",
+        "plan_order": 2,
+        "plan_unit_id": "PU002",
+        "scene_id": "SC001",
+        "screen_event_ids": [
+          "SEV003",
+          "SEV004"
+        ],
+        "source_spans": [
+          {
+            "end": 42,
+            "start": 31,
+            "text_hash": "db5e89876747d5eeace32f556cceeccec7099575ef600913810437cfca8c0b1f"
+          }
+        ],
+        "visual_plan": {
+          "angle": "平视",
+          "camera_position": "警察甲身侧",
+          "end_frame": "警察甲喊完站住",
+          "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+          "framing_relation": "警察甲拔腿追去，面部转向逃犯",
+          "motivation": "让观众与警察甲一同追击逃犯。",
+          "movement_plan": {
+            "class": "compound_move_then_fixed",
+            "end_condition": "警察甲喊完站住",
+            "hold_reason": "",
+            "path": "手持跟随后固定",
+            "speed": "缓慢",
+            "trigger": "主体动作或观看关系开始变化。"
+          },
+          "perspective_intent": "natural_relation",
+          "primary_subjects": [
+            "警察甲"
+          ],
+          "secondary_subjects": [],
+          "shot_size": "中近景→近景",
+          "spatial_strategy": {
+            "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+            "type": "sequential_reframe"
+          },
+          "start_frame": "警察甲拔腿追去",
+          "style_anchor_ids": [
+            "SA001"
+          ],
+          "viewpoint_owner": "警察甲"
+        }
+      },
+      {
+        "beat_ids": [
+          "B003"
+        ],
+        "dialogue_design": null,
+        "estimated_duration_seconds": 3,
+        "narrative_purpose": "呈现B003的戏剧动作。",
+        "plan_order": 3,
+        "plan_unit_id": "PU003",
+        "scene_id": "SC001",
+        "screen_event_ids": [
+          "SEV005"
+        ],
+        "source_spans": [
+          {
+            "end": 55,
+            "start": 43,
+            "text_hash": "5834221ac5376962df6133342d977d41d080a218d00bc50671f68fe8497ecaac"
+          }
+        ],
+        "visual_plan": {
+          "angle": "低位平视",
+          "camera_position": "矮墙下方",
+          "end_frame": "逃犯落地不稳",
+          "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+          "framing_relation": "逃犯翻过矮墙，落地不稳",
+          "motivation": "以低角度强化逃犯翻越的狼狈。",
+          "movement_plan": {
+            "class": "compound_move_then_fixed",
+            "end_condition": "逃犯落地不稳",
+            "hold_reason": "",
+            "path": "手持上摇后固定",
+            "speed": "缓慢",
+            "trigger": "主体动作或观看关系开始变化。"
+          },
+          "perspective_intent": "natural_relation",
+          "primary_subjects": [
+            "逃犯"
+          ],
+          "secondary_subjects": [],
+          "shot_size": "中景→近景",
+          "spatial_strategy": {
+            "description": "",
+            "type": "not_applicable"
+          },
+          "start_frame": "逃犯跃起翻墙",
+          "style_anchor_ids": [
+            "SA001"
+          ],
+          "viewpoint_owner": "逃犯"
+        }
+      },
+      {
+        "beat_ids": [
+          "B004"
+        ],
+        "dialogue_design": {
+          "axis_id": "AX001",
+          "face_readable_speakers": [
+            "警察乙"
+          ],
+          "justification": "按本单元真实说话权安排可读面孔，并保持既定轴线。",
+          "listener_reaction_characters": [
+            "逃犯",
+            "警察甲"
+          ],
+          "mode": "single_speaker",
+          "speaker_sequence": [
+            "警察乙"
+          ]
+        },
+        "estimated_duration_seconds": 3,
+        "narrative_purpose": "呈现B004的戏剧动作。",
+        "plan_order": 4,
+        "plan_unit_id": "PU004",
+        "scene_id": "SC001",
+        "screen_event_ids": [
+          "SEV006",
+          "SEV007"
+        ],
+        "source_spans": [
+          {
+            "end": 69,
+            "start": 56,
+            "text_hash": "9832558a1eb8d2df541da1d68a530e662799b700f1f98e8d237290156d6c7530"
+          }
+        ],
+        "visual_plan": {
+          "angle": "平视",
+          "camera_position": "警察乙身后",
+          "end_frame": "警察乙喊完别跑",
+          "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+          "framing_relation": "警察乙从另一侧包抄，逃犯在背景",
+          "motivation": "展示合围视角，让逃犯无路可退。",
+          "movement_plan": {
+            "class": "compound_move_then_fixed",
+            "end_condition": "警察乙喊完别跑",
+            "hold_reason": "",
+            "path": "手持跟随后固定",
+            "speed": "缓慢",
+            "trigger": "主体动作或观看关系开始变化。"
+          },
+          "perspective_intent": "natural_relation",
+          "primary_subjects": [
+            "警察乙"
+          ],
+          "secondary_subjects": [],
+          "shot_size": "中近景→近景",
+          "spatial_strategy": {
+            "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+            "type": "sequential_reframe"
+          },
+          "start_frame": "警察乙从另一侧包抄",
+          "style_anchor_ids": [
+            "SA001"
+          ],
+          "viewpoint_owner": "警察乙"
+        }
+      },
+      {
+        "beat_ids": [
+          "B005"
+        ],
+        "dialogue_design": null,
+        "estimated_duration_seconds": 3,
+        "narrative_purpose": "呈现B005的戏剧动作。",
+        "plan_order": 5,
+        "plan_unit_id": "PU005",
+        "scene_id": "SC001",
+        "screen_event_ids": [
+          "SEV008"
+        ],
+        "source_spans": [
+          {
+            "end": 84,
+            "start": 70,
+            "text_hash": "772d78fd08d5eb6327f8bd4eebacbccc208678560c63e54518440dfaf6ff5817"
+          }
+        ],
+        "visual_plan": {
+          "angle": "平视",
+          "camera_position": "货架侧前方",
+          "end_frame": "水果滚落一地",
+          "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+          "framing_relation": "逃犯撞翻货架，水果滚落一地",
+          "motivation": "捕捉障碍物被撞翻的失控瞬间。",
+          "movement_plan": {
+            "class": "compound_move_then_fixed",
+            "end_condition": "水果滚落一地",
+            "hold_reason": "",
+            "path": "手持横移后固定",
+            "speed": "缓慢",
+            "trigger": "主体动作或观看关系开始变化。"
+          },
+          "perspective_intent": "natural_relation",
+          "primary_subjects": [
+            "逃犯"
+          ],
+          "secondary_subjects": [],
+          "shot_size": "中景",
+          "spatial_strategy": {
+            "description": "",
+            "type": "not_applicable"
+          },
+          "start_frame": "逃犯冲向货架",
+          "style_anchor_ids": [
+            "SA001"
+          ],
+          "viewpoint_owner": "逃犯"
+        }
+      },
+      {
+        "beat_ids": [
+          "B006"
+        ],
+        "dialogue_design": {
+          "axis_id": "AX001",
+          "face_readable_speakers": [
+            "警察甲"
+          ],
+          "justification": "按本单元真实说话权安排可读面孔，并保持既定轴线。",
+          "listener_reaction_characters": [
+            "逃犯",
+            "警察乙"
+          ],
+          "mode": "single_speaker",
+          "speaker_sequence": [
+            "警察甲"
+          ]
+        },
+        "estimated_duration_seconds": 3,
+        "narrative_purpose": "呈现B006的戏剧动作。",
+        "plan_order": 6,
+        "plan_unit_id": "PU006",
+        "scene_id": "SC001",
+        "screen_event_ids": [
+          "SEV009",
+          "SEV010"
+        ],
+        "source_spans": [
+          {
+            "end": 105,
+            "start": 85,
+            "text_hash": "9aa61085e3d560ee0dcd5b90931382c8b0e9cbccd4189b25cc4ef566c3eb70e2"
+          }
+        ],
+        "visual_plan": {
+          "angle": "平视",
+          "camera_position": "逃犯身后近处",
+          "end_frame": "警察甲说完你跑不掉了",
+          "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+          "framing_relation": "警察甲扑上前，按住逃犯肩膀",
+          "motivation": "记录制服逃犯的决定性动作。",
+          "movement_plan": {
+            "class": "compound_move_then_fixed",
+            "end_condition": "警察甲说完你跑不掉了",
+            "hold_reason": "",
+            "path": "手持跟随后固定",
+            "speed": "缓慢",
+            "trigger": "主体动作或观看关系开始变化。"
+          },
+          "perspective_intent": "natural_relation",
+          "primary_subjects": [
+            "警察甲"
+          ],
+          "secondary_subjects": [
+            "逃犯"
+          ],
+          "shot_size": "中近景→近景",
+          "spatial_strategy": {
+            "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+            "type": "sequential_reframe"
+          },
+          "start_frame": "警察甲扑上前",
+          "style_anchor_ids": [
+            "SA001"
+          ],
+          "viewpoint_owner": "警察甲"
+        }
+      },
+      {
+        "beat_ids": [
+          "B007"
+        ],
+        "dialogue_design": {
+          "axis_id": "AX001",
+          "face_readable_speakers": [
+            "逃犯"
+          ],
+          "justification": "按本单元真实说话权安排可读面孔，并保持既定轴线。",
+          "listener_reaction_characters": [
+            "警察甲",
+            "警察乙"
+          ],
+          "mode": "single_speaker",
+          "speaker_sequence": [
+            "逃犯"
+          ]
+        },
+        "estimated_duration_seconds": 3,
+        "narrative_purpose": "呈现B007的戏剧动作。",
+        "plan_order": 7,
+        "plan_unit_id": "PU007",
+        "scene_id": "SC001",
+        "screen_event_ids": [
+          "SEV011",
+          "SEV012"
+        ],
+        "source_spans": [
+          {
+            "end": 118,
+            "start": 106,
+            "text_hash": "c36934edd39b09589bee1b0978bd4790e01bb0a25e1a443e2b035d74370764d6"
+          }
+        ],
+        "visual_plan": {
+          "angle": "微俯视",
+          "camera_position": "逃犯面前略高处",
+          "end_frame": "逃犯说完我认了",
+          "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+          "framing_relation": "逃犯喘息着抬头，面部为主位",
+          "motivation": "以俯视角度呈现逃犯最终的认输。",
+          "movement_plan": {
+            "class": "fixed",
+            "end_condition": "",
+            "hold_reason": "保护完整表演与空间关系。",
+            "path": "",
+            "speed": "",
+            "trigger": ""
+          },
+          "perspective_intent": "natural_relation",
+          "primary_subjects": [
+            "逃犯"
+          ],
+          "secondary_subjects": [],
+          "shot_size": "近景",
+          "spatial_strategy": {
+            "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+            "type": "sequential_reframe"
+          },
+          "start_frame": "逃犯喘息抬头",
+          "style_anchor_ids": [
+            "SA001"
+          ],
+          "viewpoint_owner": "逃犯"
+        }
+      }
+    ],
+    "reorders": [],
+    "viewing_decisions": [
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV001",
+        "mode": "reframe",
+        "non_cut_basis": "continuous_action",
+        "reframe_method": "scale_change",
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV002",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD001"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV002",
+        "mode": "cut",
+        "non_cut_basis": null,
+        "reframe_method": null,
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV003",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD002"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV003",
+        "mode": "reframe",
+        "non_cut_basis": "continuous_action",
+        "reframe_method": "scale_change",
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV004",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD003"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV004",
+        "mode": "cut",
+        "non_cut_basis": null,
+        "reframe_method": null,
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV005",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD004"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV005",
+        "mode": "cut",
+        "non_cut_basis": null,
+        "reframe_method": null,
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV006",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD005"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV006",
+        "mode": "reframe",
+        "non_cut_basis": "continuous_action",
+        "reframe_method": "scale_change",
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV007",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD006"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV007",
+        "mode": "cut",
+        "non_cut_basis": null,
+        "reframe_method": null,
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV008",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD007"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV008",
+        "mode": "cut",
+        "non_cut_basis": null,
+        "reframe_method": null,
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV009",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD008"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV009",
+        "mode": "reframe",
+        "non_cut_basis": "continuous_action",
+        "reframe_method": "scale_change",
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV010",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD009"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV010",
+        "mode": "cut",
+        "non_cut_basis": null,
+        "reframe_method": null,
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV011",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD010"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV011",
+        "mode": "reframe",
+        "non_cut_basis": "continuous_action",
+        "reframe_method": "scale_change",
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV012",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD011"
+      }
+    ],
+    "visual_uniformity_reviews": [
+      {
+        "dimension": "movement_class",
+        "dominant_value": "compound_move_then_fixed",
+        "reason": "本场景以movement_class=compound_move_then_fixed作为统一观看策略。",
+        "review_id": "VR001",
+        "scene_id": "SC001",
+        "scope": "scene",
+        "style_anchor_ids": [
+          "SA001"
+        ]
+      }
+    ]
+  },
+  "shots": [
+    {
+      "beat_ids": [
+        "B001"
+      ],
+      "blocking": [
+        {
+          "action": "逃犯冲出拐角",
+          "character": "逃犯",
+          "end_position": "原位",
+          "eyeline": "警察甲",
+          "facing": "警察甲",
+          "start_position": "原位"
+        },
+        {
+          "action": "警察甲准备追击",
+          "character": "警察甲",
+          "end_position": "原位",
+          "eyeline": "警察甲",
+          "facing": "警察甲",
+          "start_position": "原位"
+        },
+        {
+          "action": "警察乙准备包抄",
+          "character": "警察乙",
+          "end_position": "原位",
+          "eyeline": "警察甲",
+          "facing": "警察甲",
+          "start_position": "原位"
+        }
+      ],
+      "camera": {
+        "angle": "微俯视",
+        "composition": "深夜巷口，逃犯、警察甲、警察乙形成追逐三角。巷道纵深",
+        "end_frame": "逃犯冲出拐角前",
+        "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+        "foreground_characters": [],
+        "framing_mode": "single",
+        "logic": "从巷口高处向下观察追逐起点",
+        "motivation": "先建立巷道空间与三人追逐位置。",
+        "movement": "缓慢推进后固定",
+        "movement_plan": {
+          "class": "compound_move_then_fixed",
+          "end_condition": "逃犯冲出拐角前",
+          "hold_reason": "",
+          "path": "缓慢推进后固定",
+          "speed": "缓慢",
+          "trigger": "主体动作或观看关系开始变化。"
+        },
+        "perspective_intent": "wide_spatial",
+        "position": "巷口二楼向下",
+        "primary_subjects": [
+          "逃犯"
+        ],
+        "secondary_subjects": [
+          "警察甲",
+          "警察乙"
+        ],
+        "shot_size": "全景→中景",
+        "spatial_strategy": {
+          "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+          "type": "sequential_reframe"
+        },
+        "start_frame": "三人形成追逐三角",
+        "viewpoint_owner": "逃犯"
+      },
+      "continuity": {
+        "action_match": {
+          "incoming": null,
+          "outgoing": null
+        },
+        "axis_id": "AX001",
+        "axis_side": "side_a",
+        "eyelines": [
+          {
+            "character": "逃犯",
+            "direction": "screen_right",
+            "target": "警察甲"
+          },
+          {
+            "character": "警察甲",
+            "direction": "screen_right",
+            "target": "警察甲"
+          },
+          {
+            "character": "警察乙",
+            "direction": "screen_right",
+            "target": "警察甲"
+          }
+        ],
+        "intentional_exceptions": [],
+        "screen_directions": [
+          {
+            "direction": "screen_right",
+            "entity": "逃犯",
+            "kind": "eyeline"
+          },
+          {
+            "direction": "screen_right",
+            "entity": "警察甲",
+            "kind": "eyeline"
+          },
+          {
+            "direction": "screen_right",
+            "entity": "警察乙",
+            "kind": "eyeline"
+          }
+        ]
+      },
+      "continuity_updates": [],
+      "coverage_evidence": [
+        {
+          "evidence_quote": "深夜巷口，逃犯、警察甲、警察乙形成追逐三角。",
+          "fact_id": "F001",
+          "target_path": "camera.composition"
+        },
+        {
+          "evidence_quote": "逃犯冲出拐角",
+          "fact_id": "F002",
+          "target_path": "blocking[0].action"
+        }
+      ],
+      "covered_fact_ids": [
+        "F001",
+        "F002"
+      ],
+      "cut_design": {
+        "entry_trigger": "进入B001。",
+        "exit_trigger": "离开B001。",
+        "isolation_intent": "none"
+      },
+      "dialogue": [],
+      "duration_seconds": 3,
+      "end_state": [
+        "逃犯冲出拐角",
+        "警察甲准备追击",
+        "警察乙准备包抄"
+      ],
+      "environment_behavior": [],
+      "execution_text": "【画面内容】深夜巷口，路灯昏暗；摄影机位于巷口二楼向下，从巷口高处向下观察追逐起点；画面中深夜巷口，逃犯、警察甲、警察乙形成追逐三角。巷道纵深。深夜巷口，逃犯、警察甲、警察乙形成追逐三角。。逃犯冲出拐角。三人形成对峙，逃犯准备冲刺。动作完成后，逃犯冲出拐角；警察甲准备追击；警察乙准备包抄。",
+      "notes": "",
+      "performance": {
+        "emotion_arc_id": null,
+        "emotion_intent": "三人形成对峙，逃犯准备冲刺",
+        "phase": "steady",
+        "visible_behavior": [
+          "三人形成对峙，逃犯准备冲刺"
+        ]
+      },
+      "plan_unit_id": "PU001",
+      "primary_fact_id": "F002",
+      "rendered_shot_description": "【全景→中景｜微俯视｜缓慢推进后固定】\n【画面内容】深夜巷口，路灯昏暗；摄影机位于巷口二楼向下，从巷口高处向下观察追逐起点；画面中深夜巷口，逃犯、警察甲、警察乙形成追逐三角。巷道纵深。深夜巷口，逃犯、警察甲、警察乙形成追逐三角。。逃犯冲出拐角。三人形成对峙，逃犯准备冲刺。动作完成后，逃犯冲出拐角；警察甲准备追击；警察乙准备包抄。",
+      "scene_id": "SC001",
+      "shot_id": "SH001",
+      "shot_order": 1,
+      "shot_phases": [
+        {
+          "camera_state": "第1阶段从既定画面继续，执行缓慢推进后固定，并朝林问话结束，周肩背仍在前景收束。",
+          "duration_seconds": 1,
+          "phase_id": "PH001-01",
+          "phase_order": 1,
+          "screen_event_ids": [
+            "SEV001"
+          ],
+          "sound_fact_ids": []
+        },
+        {
+          "camera_state": "第2阶段从既定画面继续，执行缓慢推进后固定，并朝林问话结束，周肩背仍在前景收束。",
+          "duration_seconds": 2,
+          "phase_id": "PH001-02",
+          "phase_order": 2,
+          "screen_event_ids": [
+            "SEV002"
+          ],
+          "sound_fact_ids": []
+        }
+      ],
+      "source_spans": [
+        {
+          "end": 30,
+          "start": 0,
+          "text_hash": "6f2aaa4a11eeaffae3fbbe6ed03b294d4977017b94c4afd29df557968278a5d4"
+        }
+      ],
+      "speaker_presentation": [],
+      "transition_to_next": {
+        "edit_point_id": "EP001",
+        "notes": "",
+        "type": "gaze_cut"
+      },
+      "visible_characters": [
+        "逃犯",
+        "警察甲",
+        "警察乙"
+      ],
+      "visible_props": []
+    },
+    {
+      "beat_ids": [
+        "B002"
+      ],
+      "blocking": [
+        {
+          "action": "警察甲拔腿追去",
+          "character": "警察甲",
+          "end_position": "原位",
+          "eyeline": "逃犯",
+          "facing": "逃犯",
+          "start_position": "原位"
+        }
+      ],
+      "camera": {
+        "angle": "平视",
+        "composition": "警察甲拔腿追去，面部转向逃犯",
+        "end_frame": "警察甲喊完站住",
+        "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+        "foreground_characters": [],
+        "framing_mode": "single",
+        "logic": "沿警察甲运动方向朝逃犯观察，保持警察甲逃犯轴线同侧",
+        "motivation": "让观众与警察甲一同追击逃犯。",
+        "movement": "手持跟随后固定",
+        "movement_plan": {
+          "class": "compound_move_then_fixed",
+          "end_condition": "警察甲喊完站住",
+          "hold_reason": "",
+          "path": "手持跟随后固定",
+          "speed": "缓慢",
+          "trigger": "主体动作或观看关系开始变化。"
+        },
+        "perspective_intent": "natural_relation",
+        "position": "警察甲身侧",
+        "primary_subjects": [
+          "警察甲"
+        ],
+        "secondary_subjects": [],
+        "shot_size": "中近景→近景",
+        "spatial_strategy": {
+          "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+          "type": "sequential_reframe"
+        },
+        "start_frame": "警察甲拔腿追去",
+        "viewpoint_owner": "警察甲"
+      },
+      "continuity": {
+        "action_match": {
+          "incoming": null,
+          "outgoing": null
+        },
+        "axis_id": "AX001",
+        "axis_side": "side_a",
+        "eyelines": [
+          {
+            "character": "警察甲",
+            "direction": "screen_right",
+            "target": "逃犯"
+          }
+        ],
+        "intentional_exceptions": [],
+        "screen_directions": [
+          {
+            "direction": "screen_right",
+            "entity": "警察甲",
+            "kind": "eyeline"
+          }
+        ]
+      },
+      "continuity_updates": [],
+      "coverage_evidence": [
+        {
+          "evidence_quote": "警察甲拔腿追去",
+          "fact_id": "F003",
+          "target_path": "blocking[0].action"
+        },
+        {
+          "evidence_quote": "站住！",
+          "fact_id": "F004",
+          "target_path": "dialogue[0].text"
+        }
+      ],
+      "covered_fact_ids": [
+        "F003",
+        "F004"
+      ],
+      "cut_design": {
+        "entry_trigger": "进入B002。",
+        "exit_trigger": "离开B002。",
+        "isolation_intent": "none"
+      },
+      "dialogue": [
+        {
+          "addressee": "逃犯",
+          "fact_id": "F004",
+          "shot_delivery": "onscreen",
+          "speaker": "警察甲",
+          "text": "站住！",
+          "timing": "PH002-02"
+        }
+      ],
+      "duration_seconds": 3,
+      "end_state": [
+        "警察甲喊完站住"
+      ],
+      "environment_behavior": [],
+      "execution_text": "【画面内容】深夜巷道，脚步声回响；摄影机位于警察甲身侧，沿警察甲运动方向朝逃犯观察，保持警察甲逃犯轴线同侧；画面中警察甲拔腿追去，面部转向逃犯。警察甲拔腿追去。警察甲说：“站住！”。警察甲拔腿追去，口中高喊。动作完成后，警察甲喊完站住。",
+      "notes": "",
+      "performance": {
+        "emotion_arc_id": null,
+        "emotion_intent": "警察甲拔腿追去，口中高喊",
+        "phase": "steady",
+        "visible_behavior": [
+          "警察甲拔腿追去，口中高喊"
+        ]
+      },
+      "plan_unit_id": "PU002",
+      "primary_fact_id": "F004",
+      "rendered_shot_description": "【中近景→近景｜平视｜手持跟随后固定】\n【画面内容】深夜巷道，脚步声回响；摄影机位于警察甲身侧，沿警察甲运动方向朝逃犯观察，保持警察甲逃犯轴线同侧；画面中警察甲拔腿追去，面部转向逃犯。警察甲拔腿追去。警察甲说：“站住！”。警察甲拔腿追去，口中高喊。动作完成后，警察甲喊完站住。",
+      "scene_id": "SC001",
+      "shot_id": "SH002",
+      "shot_order": 2,
+      "shot_phases": [
+        {
+          "camera_state": "第1阶段从既定画面继续，执行缓慢拉出后固定，并朝警察甲喊完站住收束。",
+          "duration_seconds": 1,
+          "phase_id": "PH002-01",
+          "phase_order": 1,
+          "screen_event_ids": [
+            "SEV003"
+          ],
+          "sound_fact_ids": []
+        },
+        {
+          "camera_state": "第2阶段从既定画面继续，执行缓慢拉出后固定，并朝警察甲喊完站住收束。",
+          "duration_seconds": 2,
+          "phase_id": "PH002-02",
+          "phase_order": 2,
+          "screen_event_ids": [
+            "SEV004"
+          ],
+          "sound_fact_ids": [
+            "F004"
+          ]
+        }
+      ],
+      "source_spans": [
+        {
+          "end": 42,
+          "start": 31,
+          "text_hash": "db5e89876747d5eeace32f556cceeccec7099575ef600913810437cfca8c0b1f"
+        }
+      ],
+      "speaker_presentation": [
+        {
+          "fact_id": "F004",
+          "presentation": "primary_face",
+          "speaker": "警察甲"
+        }
+      ],
+      "transition_to_next": {
+        "edit_point_id": "EP002",
+        "notes": "",
+        "type": "gaze_cut"
+      },
+      "visible_characters": [
+        "警察甲"
+      ],
+      "visible_props": []
+    },
+    {
+      "beat_ids": [
+        "B003"
+      ],
+      "blocking": [
+        {
+          "action": "逃犯翻过矮墙，落地不稳",
+          "character": "逃犯",
+          "end_position": "原位",
+          "eyeline": "警察甲",
+          "facing": "警察甲",
+          "start_position": "原位"
+        }
+      ],
+      "camera": {
+        "angle": "低位平视",
+        "composition": "逃犯翻过矮墙，落地不稳",
+        "end_frame": "逃犯落地不稳",
+        "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+        "foreground_characters": [],
+        "framing_mode": "single",
+        "logic": "从矮墙下方向上观察逃犯翻越动作",
+        "motivation": "以低角度强化逃犯翻越的狼狈。",
+        "movement": "手持上摇后固定",
+        "movement_plan": {
+          "class": "compound_move_then_fixed",
+          "end_condition": "逃犯落地不稳",
+          "hold_reason": "",
+          "path": "手持上摇后固定",
+          "speed": "缓慢",
+          "trigger": "主体动作或观看关系开始变化。"
+        },
+        "perspective_intent": "natural_relation",
+        "position": "矮墙下方",
+        "primary_subjects": [
+          "逃犯"
+        ],
+        "secondary_subjects": [],
+        "shot_size": "中景→近景",
+        "spatial_strategy": {
+          "description": "",
+          "type": "not_applicable"
+        },
+        "start_frame": "逃犯跃起翻墙",
+        "viewpoint_owner": "逃犯"
+      },
+      "continuity": {
+        "action_match": {
+          "incoming": null,
+          "outgoing": null
+        },
+        "axis_id": "AX001",
+        "axis_side": "side_a",
+        "eyelines": [
+          {
+            "character": "逃犯",
+            "direction": "screen_right",
+            "target": "警察甲"
+          }
+        ],
+        "intentional_exceptions": [],
+        "screen_directions": [
+          {
+            "direction": "screen_right",
+            "entity": "逃犯",
+            "kind": "eyeline"
+          }
+        ]
+      },
+      "continuity_updates": [],
+      "coverage_evidence": [
+        {
+          "evidence_quote": "逃犯翻过矮墙，落地不稳",
+          "fact_id": "F005",
+          "target_path": "blocking[0].action"
+        }
+      ],
+      "covered_fact_ids": [
+        "F005"
+      ],
+      "cut_design": {
+        "entry_trigger": "进入B003。",
+        "exit_trigger": "离开B003。",
+        "isolation_intent": "none"
+      },
+      "dialogue": [],
+      "duration_seconds": 3,
+      "end_state": [
+        "逃犯落地不稳"
+      ],
+      "environment_behavior": [],
+      "execution_text": "【画面内容】巷道尽头矮墙，墙后黑暗；摄影机位于矮墙下方，从矮墙下方向上观察逃犯翻越动作；画面中逃犯翻过矮墙，落地不稳。逃犯翻过矮墙，落地不稳。逃犯翻过矮墙，落地不稳。动作完成后，逃犯落地不稳。",
+      "notes": "",
+      "performance": {
+        "emotion_arc_id": null,
+        "emotion_intent": "逃犯翻过矮墙，落地不稳",
+        "phase": "steady",
+        "visible_behavior": [
+          "逃犯翻过矮墙，落地不稳"
+        ]
+      },
+      "plan_unit_id": "PU003",
+      "primary_fact_id": "F005",
+      "rendered_shot_description": "【中景→近景｜低位平视｜手持上摇后固定】\n【画面内容】巷道尽头矮墙，墙后黑暗；摄影机位于矮墙下方，从矮墙下方向上观察逃犯翻越动作；画面中逃犯翻过矮墙，落地不稳。逃犯翻过矮墙，落地不稳。逃犯翻过矮墙，落地不稳。动作完成后，逃犯落地不稳。",
+      "scene_id": "SC001",
+      "shot_id": "SH003",
+      "shot_order": 3,
+      "shot_phases": [
+        {
+          "camera_state": "第1阶段从既定画面继续，执行手持上摇后固定，并朝逃犯落地不稳收束。",
+          "duration_seconds": 3,
+          "phase_id": "PH003-01",
+          "phase_order": 1,
+          "screen_event_ids": [
+            "SEV005"
+          ],
+          "sound_fact_ids": []
+        }
+      ],
+      "source_spans": [
+        {
+          "end": 55,
+          "start": 43,
+          "text_hash": "5834221ac5376962df6133342d977d41d080a218d00bc50671f68fe8497ecaac"
+        }
+      ],
+      "speaker_presentation": [],
+      "transition_to_next": {
+        "edit_point_id": "EP003",
+        "notes": "",
+        "type": "gaze_cut"
+      },
+      "visible_characters": [
+        "逃犯"
+      ],
+      "visible_props": []
+    },
+    {
+      "beat_ids": [
+        "B004"
+      ],
+      "blocking": [
+        {
+          "action": "警察乙从另一侧包抄",
+          "character": "警察乙",
+          "end_position": "原位",
+          "eyeline": "逃犯",
+          "facing": "逃犯",
+          "start_position": "原位"
+        }
+      ],
+      "camera": {
+        "angle": "平视",
+        "composition": "警察乙从另一侧包抄，逃犯在背景",
+        "end_frame": "警察乙喊完别跑",
+        "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+        "foreground_characters": [],
+        "framing_mode": "single",
+        "logic": "从警察乙身后朝逃犯观察，保持警察乙逃犯轴线同侧",
+        "motivation": "展示合围视角，让逃犯无路可退。",
+        "movement": "手持跟随后固定",
+        "movement_plan": {
+          "class": "compound_move_then_fixed",
+          "end_condition": "警察乙喊完别跑",
+          "hold_reason": "",
+          "path": "手持跟随后固定",
+          "speed": "缓慢",
+          "trigger": "主体动作或观看关系开始变化。"
+        },
+        "perspective_intent": "natural_relation",
+        "position": "警察乙身后",
+        "primary_subjects": [
+          "警察乙"
+        ],
+        "secondary_subjects": [],
+        "shot_size": "中近景→近景",
+        "spatial_strategy": {
+          "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+          "type": "sequential_reframe"
+        },
+        "start_frame": "警察乙从另一侧包抄",
+        "viewpoint_owner": "警察乙"
+      },
+      "continuity": {
+        "action_match": {
+          "incoming": null,
+          "outgoing": null
+        },
+        "axis_id": "AX001",
+        "axis_side": "side_a",
+        "eyelines": [
+          {
+            "character": "警察乙",
+            "direction": "screen_right",
+            "target": "逃犯"
+          }
+        ],
+        "intentional_exceptions": [],
+        "screen_directions": [
+          {
+            "direction": "screen_right",
+            "entity": "警察乙",
+            "kind": "eyeline"
+          }
+        ]
+      },
+      "continuity_updates": [],
+      "coverage_evidence": [
+        {
+          "evidence_quote": "警察乙从另一侧包抄",
+          "fact_id": "F006",
+          "target_path": "blocking[0].action"
+        },
+        {
+          "evidence_quote": "别跑！",
+          "fact_id": "F007",
+          "target_path": "dialogue[0].text"
+        }
+      ],
+      "covered_fact_ids": [
+        "F006",
+        "F007"
+      ],
+      "cut_design": {
+        "entry_trigger": "进入B004。",
+        "exit_trigger": "离开B004。",
+        "isolation_intent": "none"
+      },
+      "dialogue": [
+        {
+          "addressee": "逃犯",
+          "fact_id": "F007",
+          "shot_delivery": "onscreen",
+          "speaker": "警察乙",
+          "text": "别跑！",
+          "timing": "PH004-02"
+        }
+      ],
+      "duration_seconds": 3,
+      "end_state": [
+        "警察乙喊完别跑"
+      ],
+      "environment_behavior": [],
+      "execution_text": "【画面内容】深夜巷道，回声杂乱；摄影机位于警察乙身后，从警察乙身后朝逃犯观察，保持警察乙逃犯轴线同侧；画面中警察乙从另一侧包抄，逃犯在背景。警察乙从另一侧包抄。警察乙说：“别跑！”。警察乙从另一侧包抄，口中高喊。动作完成后，警察乙喊完别跑。",
+      "notes": "",
+      "performance": {
+        "emotion_arc_id": null,
+        "emotion_intent": "警察乙从另一侧包抄，口中高喊",
+        "phase": "steady",
+        "visible_behavior": [
+          "警察乙从另一侧包抄，口中高喊"
+        ]
+      },
+      "plan_unit_id": "PU004",
+      "primary_fact_id": "F007",
+      "rendered_shot_description": "【中近景→近景｜平视｜手持跟随后固定】\n【画面内容】深夜巷道，回声杂乱；摄影机位于警察乙身后，从警察乙身后朝逃犯观察，保持警察乙逃犯轴线同侧；画面中警察乙从另一侧包抄，逃犯在背景。警察乙从另一侧包抄。警察乙说：“别跑！”。警察乙从另一侧包抄，口中高喊。动作完成后，警察乙喊完别跑。",
+      "scene_id": "SC001",
+      "shot_id": "SH004",
+      "shot_order": 4,
+      "shot_phases": [
+        {
+          "camera_state": "第1阶段从既定画面继续，执行手持跟随后固定，并朝警察乙喊完别跑收束。",
+          "duration_seconds": 1,
+          "phase_id": "PH004-01",
+          "phase_order": 1,
+          "screen_event_ids": [
+            "SEV006"
+          ],
+          "sound_fact_ids": []
+        },
+        {
+          "camera_state": "第2阶段从既定画面继续，执行手持跟随后固定，并朝警察乙喊完别跑收束。",
+          "duration_seconds": 2,
+          "phase_id": "PH004-02",
+          "phase_order": 2,
+          "screen_event_ids": [
+            "SEV007"
+          ],
+          "sound_fact_ids": [
+            "F007"
+          ]
+        }
+      ],
+      "source_spans": [
+        {
+          "end": 69,
+          "start": 56,
+          "text_hash": "9832558a1eb8d2df541da1d68a530e662799b700f1f98e8d237290156d6c7530"
+        }
+      ],
+      "speaker_presentation": [
+        {
+          "fact_id": "F007",
+          "presentation": "primary_face",
+          "speaker": "警察乙"
+        }
+      ],
+      "transition_to_next": {
+        "edit_point_id": "EP004",
+        "notes": "",
+        "type": "gaze_cut"
+      },
+      "visible_characters": [
+        "警察乙"
+      ],
+      "visible_props": []
+    },
+    {
+      "beat_ids": [
+        "B005"
+      ],
+      "blocking": [
+        {
+          "action": "逃犯撞翻货架，水果滚落一地",
+          "character": "逃犯",
+          "end_position": "原位",
+          "eyeline": "警察甲",
+          "facing": "警察甲",
+          "start_position": "原位"
+        }
+      ],
+      "camera": {
+        "angle": "平视",
+        "composition": "逃犯撞翻货架，水果滚落一地",
+        "end_frame": "水果滚落一地",
+        "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+        "foreground_characters": [],
+        "framing_mode": "single",
+        "logic": "从货架侧前方朝逃犯观察，保持警察甲逃犯轴线同侧",
+        "motivation": "捕捉障碍物被撞翻的失控瞬间。",
+        "movement": "手持横移后固定",
+        "movement_plan": {
+          "class": "compound_move_then_fixed",
+          "end_condition": "水果滚落一地",
+          "hold_reason": "",
+          "path": "手持横移后固定",
+          "speed": "缓慢",
+          "trigger": "主体动作或观看关系开始变化。"
+        },
+        "perspective_intent": "natural_relation",
+        "position": "货架侧前方",
+        "primary_subjects": [
+          "逃犯"
+        ],
+        "secondary_subjects": [],
+        "shot_size": "中景",
+        "spatial_strategy": {
+          "description": "",
+          "type": "not_applicable"
+        },
+        "start_frame": "逃犯冲向货架",
+        "viewpoint_owner": "逃犯"
+      },
+      "continuity": {
+        "action_match": {
+          "incoming": null,
+          "outgoing": null
+        },
+        "axis_id": "AX001",
+        "axis_side": "side_a",
+        "eyelines": [
+          {
+            "character": "逃犯",
+            "direction": "screen_right",
+            "target": "警察甲"
+          }
+        ],
+        "intentional_exceptions": [],
+        "screen_directions": [
+          {
+            "direction": "screen_right",
+            "entity": "逃犯",
+            "kind": "eyeline"
+          }
+        ]
+      },
+      "continuity_updates": [],
+      "coverage_evidence": [
+        {
+          "evidence_quote": "逃犯撞翻货架，水果滚落一地",
+          "fact_id": "F008",
+          "target_path": "blocking[0].action"
+        }
+      ],
+      "covered_fact_ids": [
+        "F008"
+      ],
+      "cut_design": {
+        "entry_trigger": "进入B005。",
+        "exit_trigger": "离开B005。",
+        "isolation_intent": "none"
+      },
+      "dialogue": [],
+      "duration_seconds": 3,
+      "end_state": [
+        "水果滚落一地"
+      ],
+      "environment_behavior": [],
+      "execution_text": "【画面内容】巷口小摊，水果散落；摄影机位于货架侧前方，从货架侧前方朝逃犯观察，保持警察甲逃犯轴线同侧；画面中逃犯撞翻货架，水果滚落一地。逃犯撞翻货架，水果滚落一地。逃犯撞翻货架，水果滚落一地。动作完成后，水果滚落一地。",
+      "notes": "",
+      "performance": {
+        "emotion_arc_id": null,
+        "emotion_intent": "逃犯撞翻货架，水果滚落一地",
+        "phase": "steady",
+        "visible_behavior": [
+          "逃犯撞翻货架，水果滚落一地"
+        ]
+      },
+      "plan_unit_id": "PU005",
+      "primary_fact_id": "F008",
+      "rendered_shot_description": "【中景｜平视｜手持横移后固定】\n【画面内容】巷口小摊，水果散落；摄影机位于货架侧前方，从货架侧前方朝逃犯观察，保持警察甲逃犯轴线同侧；画面中逃犯撞翻货架，水果滚落一地。逃犯撞翻货架，水果滚落一地。逃犯撞翻货架，水果滚落一地。动作完成后，水果滚落一地。",
+      "scene_id": "SC001",
+      "shot_id": "SH005",
+      "shot_order": 5,
+      "shot_phases": [
+        {
+          "camera_state": "第1阶段从既定画面继续，执行手持横移后固定，并朝水果滚落一地收束。",
+          "duration_seconds": 3,
+          "phase_id": "PH005-01",
+          "phase_order": 1,
+          "screen_event_ids": [
+            "SEV008"
+          ],
+          "sound_fact_ids": []
+        }
+      ],
+      "source_spans": [
+        {
+          "end": 84,
+          "start": 70,
+          "text_hash": "772d78fd08d5eb6327f8bd4eebacbccc208678560c63e54518440dfaf6ff5817"
+        }
+      ],
+      "speaker_presentation": [],
+      "transition_to_next": {
+        "edit_point_id": "EP005",
+        "notes": "",
+        "type": "gaze_cut"
+      },
+      "visible_characters": [
+        "逃犯"
+      ],
+      "visible_props": []
+    },
+    {
+      "beat_ids": [
+        "B006"
+      ],
+      "blocking": [
+        {
+          "action": "警察甲扑上前，按住逃犯肩膀",
+          "character": "警察甲",
+          "end_position": "原位",
+          "eyeline": "逃犯",
+          "facing": "逃犯",
+          "start_position": "原位"
+        },
+        {
+          "action": "逃犯被按住",
+          "character": "逃犯",
+          "end_position": "原位",
+          "eyeline": "逃犯",
+          "facing": "逃犯",
+          "start_position": "原位"
+        }
+      ],
+      "camera": {
+        "angle": "平视",
+        "composition": "警察甲扑上前，按住逃犯肩膀",
+        "end_frame": "警察甲说完你跑不掉了",
+        "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+        "foreground_characters": [],
+        "framing_mode": "single",
+        "logic": "从逃犯身后朝警察甲观察，保持警察甲逃犯轴线同侧",
+        "motivation": "记录制服逃犯的决定性动作。",
+        "movement": "手持跟随后固定",
+        "movement_plan": {
+          "class": "compound_move_then_fixed",
+          "end_condition": "警察甲说完你跑不掉了",
+          "hold_reason": "",
+          "path": "手持跟随后固定",
+          "speed": "缓慢",
+          "trigger": "主体动作或观看关系开始变化。"
+        },
+        "perspective_intent": "natural_relation",
+        "position": "逃犯身后近处",
+        "primary_subjects": [
+          "警察甲"
+        ],
+        "secondary_subjects": [
+          "逃犯"
+        ],
+        "shot_size": "中近景→近景",
+        "spatial_strategy": {
+          "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+          "type": "sequential_reframe"
+        },
+        "start_frame": "警察甲扑上前",
+        "viewpoint_owner": "警察甲"
+      },
+      "continuity": {
+        "action_match": {
+          "incoming": null,
+          "outgoing": null
+        },
+        "axis_id": "AX001",
+        "axis_side": "side_a",
+        "eyelines": [
+          {
+            "character": "警察甲",
+            "direction": "screen_right",
+            "target": "逃犯"
+          },
+          {
+            "character": "逃犯",
+            "direction": "screen_right",
+            "target": "逃犯"
+          }
+        ],
+        "intentional_exceptions": [],
+        "screen_directions": [
+          {
+            "direction": "screen_right",
+            "entity": "警察甲",
+            "kind": "eyeline"
+          },
+          {
+            "direction": "screen_right",
+            "entity": "逃犯",
+            "kind": "eyeline"
+          }
+        ]
+      },
+      "continuity_updates": [],
+      "coverage_evidence": [
+        {
+          "evidence_quote": "警察甲扑上前，按住逃犯肩膀",
+          "fact_id": "F009",
+          "target_path": "blocking[0].action"
+        },
+        {
+          "evidence_quote": "你跑不掉了。",
+          "fact_id": "F010",
+          "target_path": "dialogue[0].text"
+        }
+      ],
+      "covered_fact_ids": [
+        "F009",
+        "F010"
+      ],
+      "cut_design": {
+        "entry_trigger": "进入B006。",
+        "exit_trigger": "离开B006。",
+        "isolation_intent": "none"
+      },
+      "dialogue": [
+        {
+          "addressee": "逃犯",
+          "fact_id": "F010",
+          "shot_delivery": "onscreen",
+          "speaker": "警察甲",
+          "text": "你跑不掉了。",
+          "timing": "PH006-02"
+        }
+      ],
+      "duration_seconds": 3,
+      "end_state": [
+        "警察甲按住逃犯肩膀"
+      ],
+      "environment_behavior": [],
+      "execution_text": "【画面内容】巷道地面湿滑；摄影机位于逃犯身后近处，从逃犯身后朝警察甲观察，保持警察甲逃犯轴线同侧；画面中警察甲扑上前，按住逃犯肩膀。警察甲扑上前，按住逃犯肩膀。警察甲说：“你跑不掉了。”。警察甲扑上前，按住逃犯肩膀。动作完成后，警察甲按住逃犯肩膀。",
+      "notes": "",
+      "performance": {
+        "emotion_arc_id": null,
+        "emotion_intent": "警察甲扑上前，按住逃犯肩膀",
+        "phase": "steady",
+        "visible_behavior": [
+          "警察甲扑上前，按住逃犯肩膀"
+        ]
+      },
+      "plan_unit_id": "PU006",
+      "primary_fact_id": "F010",
+      "rendered_shot_description": "【中近景→近景｜平视｜手持跟随后固定】\n【画面内容】巷道地面湿滑；摄影机位于逃犯身后近处，从逃犯身后朝警察甲观察，保持警察甲逃犯轴线同侧；画面中警察甲扑上前，按住逃犯肩膀。警察甲扑上前，按住逃犯肩膀。警察甲说：“你跑不掉了。”。警察甲扑上前，按住逃犯肩膀。动作完成后，警察甲按住逃犯肩膀。",
+      "scene_id": "SC001",
+      "shot_id": "SH006",
+      "shot_order": 6,
+      "shot_phases": [
+        {
+          "camera_state": "第1阶段从既定画面继续，执行手持跟随后固定，并朝警察甲说完你跑不掉了收束。",
+          "duration_seconds": 1,
+          "phase_id": "PH006-01",
+          "phase_order": 1,
+          "screen_event_ids": [
+            "SEV009"
+          ],
+          "sound_fact_ids": []
+        },
+        {
+          "camera_state": "第2阶段从既定画面继续，执行手持跟随后固定，并朝警察甲说完你跑不掉了收束。",
+          "duration_seconds": 2,
+          "phase_id": "PH006-02",
+          "phase_order": 2,
+          "screen_event_ids": [
+            "SEV010"
+          ],
+          "sound_fact_ids": [
+            "F010"
+          ]
+        }
+      ],
+      "source_spans": [
+        {
+          "end": 105,
+          "start": 85,
+          "text_hash": "9aa61085e3d560ee0dcd5b90931382c8b0e9cbccd4189b25cc4ef566c3eb70e2"
+        }
+      ],
+      "speaker_presentation": [
+        {
+          "fact_id": "F010",
+          "presentation": "primary_face",
+          "speaker": "警察甲"
+        }
+      ],
+      "transition_to_next": {
+        "edit_point_id": "EP006",
+        "notes": "",
+        "type": "gaze_cut"
+      },
+      "visible_characters": [
+        "警察甲",
+        "逃犯"
+      ],
+      "visible_props": []
+    },
+    {
+      "beat_ids": [
+        "B007"
+      ],
+      "blocking": [
+        {
+          "action": "逃犯喘息着抬头",
+          "character": "逃犯",
+          "end_position": "原位",
+          "eyeline": "警察甲",
+          "facing": "警察甲",
+          "start_position": "原位"
+        }
+      ],
+      "camera": {
+        "angle": "微俯视",
+        "composition": "逃犯喘息着抬头，面部为主位",
+        "end_frame": "逃犯说完我认了",
+        "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+        "foreground_characters": [],
+        "framing_mode": "single",
+        "logic": "从略高处向下观察逃犯面部",
+        "motivation": "以俯视角度呈现逃犯最终的认输。",
+        "movement": "固定",
+        "movement_plan": {
+          "class": "fixed",
+          "end_condition": "",
+          "hold_reason": "保护完整表演与空间关系。",
+          "path": "",
+          "speed": "",
+          "trigger": ""
+        },
+        "perspective_intent": "natural_relation",
+        "position": "逃犯面前略高处",
+        "primary_subjects": [
+          "逃犯"
+        ],
+        "secondary_subjects": [],
+        "shot_size": "近景",
+        "spatial_strategy": {
+          "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+          "type": "sequential_reframe"
+        },
+        "start_frame": "逃犯喘息抬头",
+        "viewpoint_owner": "逃犯"
+      },
+      "continuity": {
+        "action_match": {
+          "incoming": null,
+          "outgoing": null
+        },
+        "axis_id": "AX001",
+        "axis_side": "side_a",
+        "eyelines": [
+          {
+            "character": "逃犯",
+            "direction": "screen_right",
+            "target": "警察甲"
+          }
+        ],
+        "intentional_exceptions": [],
+        "screen_directions": [
+          {
+            "direction": "screen_right",
+            "entity": "逃犯",
+            "kind": "eyeline"
+          }
+        ]
+      },
+      "continuity_updates": [],
+      "coverage_evidence": [
+        {
+          "evidence_quote": "逃犯喘息着抬头",
+          "fact_id": "F011",
+          "target_path": "blocking[0].action"
+        },
+        {
+          "evidence_quote": "我认了。",
+          "fact_id": "F012",
+          "target_path": "dialogue[0].text"
+        }
+      ],
+      "covered_fact_ids": [
+        "F011",
+        "F012"
+      ],
+      "cut_design": {
+        "entry_trigger": "进入B007。",
+        "exit_trigger": "离开B007。",
+        "isolation_intent": "none"
+      },
+      "dialogue": [
+        {
+          "addressee": "警察甲",
+          "fact_id": "F012",
+          "shot_delivery": "onscreen",
+          "speaker": "逃犯",
+          "text": "我认了。",
+          "timing": "PH007-02"
+        }
+      ],
+      "duration_seconds": 3,
+      "end_state": [
+        "逃犯说完我认了"
+      ],
+      "environment_behavior": [],
+      "execution_text": "【画面内容】深夜巷道，远处警笛；摄影机位于逃犯面前略高处，从略高处向下观察逃犯面部；画面中逃犯喘息着抬头，面部为主位。逃犯喘息着抬头。逃犯说：“我认了。”。逃犯喘息着抬头，眼神涣散。动作完成后，逃犯说完我认了。",
+      "notes": "",
+      "performance": {
+        "emotion_arc_id": null,
+        "emotion_intent": "逃犯喘息着抬头，眼神涣散",
+        "phase": "steady",
+        "visible_behavior": [
+          "逃犯喘息着抬头，眼神涣散"
+        ]
+      },
+      "plan_unit_id": "PU007",
+      "primary_fact_id": "F012",
+      "rendered_shot_description": "【近景｜微俯视｜固定】\n【画面内容】深夜巷道，远处警笛；摄影机位于逃犯面前略高处，从略高处向下观察逃犯面部；画面中逃犯喘息着抬头，面部为主位。逃犯喘息着抬头。逃犯说：“我认了。”。逃犯喘息着抬头，眼神涣散。动作完成后，逃犯说完我认了。",
+      "scene_id": "SC001",
+      "shot_id": "SH007",
+      "shot_order": 7,
+      "shot_phases": [
+        {
+          "camera_state": "第1阶段从既定画面继续，执行固定，并朝逃犯说完我认了收束。",
+          "duration_seconds": 1,
+          "phase_id": "PH007-01",
+          "phase_order": 1,
+          "screen_event_ids": [
+            "SEV011"
+          ],
+          "sound_fact_ids": []
+        },
+        {
+          "camera_state": "第2阶段从既定画面继续，执行固定，并朝逃犯说完我认了收束。",
+          "duration_seconds": 2,
+          "phase_id": "PH007-02",
+          "phase_order": 2,
+          "screen_event_ids": [
+            "SEV012"
+          ],
+          "sound_fact_ids": [
+            "F012"
+          ]
+        }
+      ],
+      "source_spans": [
+        {
+          "end": 118,
+          "start": 106,
+          "text_hash": "c36934edd39b09589bee1b0978bd4790e01bb0a25e1a443e2b035d74370764d6"
+        }
+      ],
+      "speaker_presentation": [
+        {
+          "fact_id": "F012",
+          "presentation": "primary_face",
+          "speaker": "逃犯"
+        }
+      ],
+      "transition_to_next": {
+        "edit_point_id": null,
+        "notes": "",
+        "type": "scene_end"
+      },
+      "visible_characters": [
+        "逃犯"
+      ],
+      "visible_props": []
+    }
+  ],
+  "source": {
+    "approved_corrections": [],
+    "boundary_lock": "entire_submitted_text",
+    "delivery_slug": "chase-scene",
+    "input_kind": "continuous_text",
+    "locked_text": "深夜巷口，逃犯、警察甲、警察乙形成追逐三角。\n逃犯冲出拐角。\n警察甲拔腿追去：站住！\n逃犯翻过矮墙，落地不稳。\n警察乙从另一侧包抄：别跑！\n逃犯撞翻货架，水果滚落一地。\n警察甲扑上前，按住逃犯肩膀：你跑不掉了。\n逃犯喘息着抬头：我认了。\n",
+    "locked_text_hash": "119198088513856f32eb04cf84397beb6caa8e7165af9d0ea74661a5fd43064a",
+    "scope": "chase-scene 端到端 fixture"
+  },
+  "source_analysis": {
+    "character_relations": [
+      "逃犯处于被动逃窜状态",
+      "警察甲正面追击并喊停",
+      "警察乙从侧面包抄合围"
+    ],
+    "dramatic_progression": "逃犯冲出拐角，警察甲追击，逃犯翻墙，警察乙包抄，逃犯撞翻货架，警察甲制服逃犯，逃犯认罪。",
+    "narrative_function": "通过巷道追逐展示逃犯惊慌、警察合围与最终认命的过程。",
+    "source_boundary": "从三人形成追逐三角到逃犯说完我认了。",
+    "source_constraints": [
+      "逐字保留四句对白",
+      "逃犯最终被制服并认罪"
+    ]
+  },
+  "source_skill": "su-fenjingskill",
+  "source_skill_version": "2.5.3"
+}

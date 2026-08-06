@@ -1,0 +1,139 @@
+{
+  "source_excerpt": "沈夜VO：晓彤——",
+  "voice_identity": {
+    "speaker": "沈夜",
+    "script_voice_type": "vo",
+    "text": "晓彤——"
+  },
+  "known_template_phrases": [
+    "所在区域",
+    "处于主要观看位置"
+  ],
+  "cognitive_landings": [
+    "八天",
+    "谁？"
+  ],
+  "legal_corridor_closeups": {
+    "shots": [
+      {
+        "shot_size": "特写",
+        "axis_side": "side_a",
+        "eyeline": "screen_right"
+      },
+      {
+        "shot_size": "特写",
+        "axis_side": "side_a",
+        "eyeline": "screen_left"
+      }
+    ],
+    "space_established": true
+  },
+  "blocked_single_shot": {
+    "spatial_zones": [
+      "走廊近端",
+      "走廊远端"
+    ],
+    "spatial_strategy": {
+      "type": "not_applicable",
+      "description": ""
+    }
+  },
+  "failed_shots": [
+    {
+      "shot_id": "SH003",
+      "violations": ["speaker_handoff_without_cut"],
+      "required_boundaries": ["林景行：你来了。", "林晓彤：爸。"]
+    },
+    {
+      "shot_id": "SH004",
+      "violations": ["speaker_handoff_without_cut", "ordinary_duration_over_10"],
+      "duration_seconds": 14
+    },
+    {
+      "shot_id": "SH007",
+      "violations": ["viewing_subject_overload", "sequential_action_overload"],
+      "viewing_landings": ["父亲台词", "女儿回望", "父亲点头", "女儿点头", "转身离开"]
+    },
+    {
+      "shot_id": "SH013",
+      "violations": ["speaker_handoff_without_cut", "information_landing_missing"],
+      "information_landing": "八天"
+    },
+    {
+      "shot_id": "SH016",
+      "violations": ["speaker_handoff_without_cut", "reaction_missing"],
+      "information_landing": "谁？"
+    },
+    {
+      "shot_id": "SH018",
+      "violations": ["spatial_action_reveal_overload"],
+      "viewing_landings": ["走出病房", "建立长廊", "发现远端男人"]
+    },
+    {
+      "shot_id": "SH022",
+      "violations": ["protected_process_scope_overreach"],
+      "protected_core": ["药品推车开始遮挡", "药品推车驶离并显露空窗边"]
+    },
+    {
+      "shot_id": "SH026",
+      "violations": ["speaker_handoff_without_cut", "action_owner_overload"],
+      "viewing_landings": ["发现咖啡馆", "命令停车", "顾成反应", "车辆靠边"]
+    },
+    {
+      "shot_id": "SH028",
+      "violations": ["protected_process_scope_overreach"],
+      "protected_core": ["公交车开始遮挡", "公交车驶离并显露灰墙"]
+    },
+    {
+      "shot_id": "SH029",
+      "violations": ["focus_scale_overload"],
+      "focus_scales": ["space", "detail", "face"]
+    },
+    {
+      "shot_id": "SH033",
+      "violations": ["focus_scale_overload"],
+      "focus_scales": ["body", "detail"]
+    },
+    {
+      "shot_id": "SH035",
+      "violations": ["sequential_action_overload", "ordinary_duration_over_10"],
+      "duration_seconds": 12
+    },
+    {
+      "shot_id": "SH041",
+      "violations": ["information_density_overload"],
+      "viewing_landings": ["材质生成", "手环成形", "裂纹", "数字计时"]
+    }
+  ],
+  "blocking_proof_cases": [
+    {
+      "name": "hospital_cart",
+      "non_cut_basis": "blocking_proof",
+      "spatial_strategy": "blocking_reveal",
+      "pre_relation_requires_own_decision": true,
+      "post_reaction_requires_own_decision": true
+    },
+    {
+      "name": "yellow_bus",
+      "non_cut_basis": "blocking_proof",
+      "spatial_strategy": "blocking_reveal",
+      "pre_relation_requires_own_decision": true,
+      "post_reaction_requires_own_decision": true
+    }
+  ],
+  "required_issue_codes": [
+    "SCREEN_EVENT_MULTI_SPEAKER",
+    "SCREEN_EVENT_ATOMICITY_OVERLOAD",
+    "DIALOGUE_HANDOFF_CUT_REQUIRED",
+    "NONCUT_BASIS_REQUIRED",
+    "NONCUT_VISUAL_PLAN_MISMATCH",
+    "ORDINARY_SHOT_DURATION_EXCEEDED",
+    "LONG_TAKE_DESIGN_REQUIRED",
+    "PROTECTED_PROCESS_SCOPE_OVERREACH",
+    "CAMERA_HEADER_NOT_TRIAD"
+  ],
+  "camera_header": {
+    "format": "【景别｜角度｜运镜】",
+    "separator_count": 2
+  }
+}
