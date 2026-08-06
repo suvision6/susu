@@ -1,0 +1,83 @@
+{
+  "skill": "su-image9",
+  "version": "2.1.2",
+  "schema_version": "2.1",
+  "source_file_sha256": "b017579c2b115daa027714a5391bfd2e0e98a00558428ffbafda339997037e0d",
+  "pages": [
+    {
+      "page_no": 1,
+      "page": "PAGE-01",
+      "source": "PAGE-01.png",
+      "header": "S01 现实｜镜头001-002",
+      "scene_id": "S01",
+      "reality_layer": "现实",
+      "spatial_anchor_panel": "PANEL-1",
+      "panels": [
+        {
+          "panel_no": 1,
+          "panel": "PANEL-1",
+          "source_shot": 1,
+          "variant_suffix": null,
+          "display_label": "C001"
+        },
+        {
+          "panel_no": 2,
+          "panel": "PANEL-2",
+          "source_shot": 1,
+          "variant_suffix": "A",
+          "display_label": "C001-A"
+        },
+        {
+          "panel_no": 3,
+          "panel": "PANEL-3",
+          "source_shot": 1,
+          "variant_suffix": "B",
+          "display_label": "C001-B"
+        },
+        {
+          "panel_no": 4,
+          "panel": "PANEL-4",
+          "source_shot": 1,
+          "variant_suffix": "C",
+          "display_label": "C001-C"
+        },
+        {
+          "panel_no": 5,
+          "panel": "PANEL-5",
+          "source_shot": 1,
+          "variant_suffix": "D",
+          "display_label": "C001-D"
+        },
+        {
+          "panel_no": 6,
+          "panel": "PANEL-6",
+          "source_shot": 2,
+          "variant_suffix": null,
+          "display_label": "C002"
+        },
+        {
+          "panel_no": 7,
+          "panel": "PANEL-7",
+          "source_shot": 2,
+          "variant_suffix": "A",
+          "display_label": "C002-A"
+        },
+        {
+          "panel_no": 8,
+          "panel": "PANEL-8",
+          "source_shot": 2,
+          "variant_suffix": "B",
+          "display_label": "C002-B"
+        },
+        {
+          "panel_no": 9,
+          "panel": "PANEL-9",
+          "source_shot": 2,
+          "variant_suffix": "C",
+          "display_label": "C002-C"
+        }
+      ]
+    }
+  ],
+  "release_ready": true
+}

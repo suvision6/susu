@@ -1,0 +1,4 @@
+interface:
+  display_name: "Image2 9格石墨分镜"
+  short_description: "从已锁定分镜数据生成可复验的3x3黑白石墨九格分镜，支持中文语义优化与叙事驱动的创意派生"
+  default_prompt: "Use $su-image9 with validated su-fenjingskill-zh shot_data.json. Preserve every source shot's order and camera composition, keep each page within one scene and one reality layer, use panel_plan.json as the only machine source, run Chinese semantic audit before derivation, choose derived angles by narrative function rather than fixed rotation, allow render_delta=allowed only under story_delta=none, compile the monochrome graphite canon, validate every artifact deterministically, and annotate generated PNG pages only outside the untouched source pixels. Never modify the director's storyboard table, never auto-fix upstream semantic conflicts, and never produce text-only or unlisted package artifacts."
