@@ -1,0 +1,4 @@
+interface:
+  display_name: "su-promptskill"
+  short_description: "编译并复验Seedance2.5多模态生成编辑与延长Prompt"
+  default_prompt: "使用 $su-promptskill 将当前剧本、分镜或多模态素材只读标准化，按 Seedance 2.5 官方规则编译并复验四文件 Prompt 交付。"
