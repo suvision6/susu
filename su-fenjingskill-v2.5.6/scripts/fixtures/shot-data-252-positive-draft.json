@@ -1,0 +1,1105 @@
+{
+  "beats": [
+    {
+      "beat_id": "B001",
+      "beat_order": 1,
+      "dramatic_change": "试探在稳定压力中推进。",
+      "facts": [
+        {
+          "fact_id": "F001",
+          "performers": [
+            "林",
+            "周"
+          ],
+          "source_spans": [
+            {
+              "end": 12,
+              "start": 0,
+              "text_hash": "6cd827ba08a743604a967b04d240a35b0ebc8fc36b2a2453b9f8ac4178a24958"
+            }
+          ],
+          "text": "林站在门口，周坐在桌边。",
+          "type": "position"
+        },
+        {
+          "fact_id": "F002",
+          "performers": [
+            "林"
+          ],
+          "script_voice_type": "scene_dialogue",
+          "source_spans": [
+            {
+              "end": 21,
+              "start": 15,
+              "text_hash": "905880fb3ce11ff643bb5566fc783ece1c145c44c136f325cf30c5b81bc9c4dd"
+            }
+          ],
+          "speaker": "林",
+          "text": "你听见了吗？",
+          "type": "dialogue"
+        }
+      ],
+      "scene_id": "SC001",
+      "source_spans": [
+        {
+          "end": 12,
+          "start": 0,
+          "text_hash": "6cd827ba08a743604a967b04d240a35b0ebc8fc36b2a2453b9f8ac4178a24958"
+        },
+        {
+          "end": 21,
+          "start": 13,
+          "text_hash": "189ff8520f8893879b03dd186b55d6bd5f90fa2171841f3f20ad1f3336277337"
+        }
+      ]
+    },
+    {
+      "beat_id": "B002",
+      "beat_order": 2,
+      "dramatic_change": "周从既有警觉进入明确回应。",
+      "facts": [
+        {
+          "fact_id": "F003",
+          "performers": [
+            "周"
+          ],
+          "source_spans": [
+            {
+              "end": 30,
+              "start": 22,
+              "text_hash": "d1b7ee96f5563265b86cf89bd8bc07e1f9b37ec72304f636686eb7afbb849e52"
+            }
+          ],
+          "text": "周抬眼，握紧钥匙",
+          "type": "action"
+        },
+        {
+          "fact_id": "F004",
+          "performers": [
+            "周"
+          ],
+          "script_voice_type": "scene_dialogue",
+          "source_spans": [
+            {
+              "end": 35,
+              "start": 31,
+              "text_hash": "1264ec38f33bc2050fe5d552a84fae1f20d7d2ab726349c9a5d751c43fe825c6"
+            }
+          ],
+          "speaker": "周",
+          "text": "听见了。",
+          "type": "dialogue"
+        }
+      ],
+      "scene_id": "SC001",
+      "source_spans": [
+        {
+          "end": 35,
+          "start": 22,
+          "text_hash": "c12453b2dd55efbf664e6b3834b37ee7ebe045a48106c5f8c09791384e0fefe1"
+        }
+      ]
+    }
+  ],
+  "confirmations": {
+    "gate_1": {
+      "confirmation_order": 1,
+      "notes": "已查看源分析并明确选择克制观察风格。",
+      "stage_digest": "fa0138a5b2e51649a3c7f9160d6c0e2e03dcc374e4fff3623752a4529af881e0",
+      "status": "confirmed"
+    },
+    "gate_2": {
+      "confirmation_order": 2,
+      "notes": "已确认两单元、一剪辑点的拆镜规划。",
+      "stage_digest": "c35261f77ca824d2c3ddc60daaa385359602bc6fd3109ba7e3d72eadfbf0cbc3",
+      "status": "confirmed"
+    }
+  },
+  "content_hash": "d167ccd2d6ae5f2268b90afd1aab7d22a03cc60be91700e57b43f18dadefd72c",
+  "contract_name": "shot-data",
+  "contract_version": "2.5.3",
+  "director_profile": {
+    "camera_energy": "responsive",
+    "natural_language_intent": "摄影机克制靠近人物，不抢表演。",
+    "performance_focus": "face",
+    "priorities": [
+      "保留问话后的停顿",
+      "让空间在人物关系中显露"
+    ],
+    "rhythm": "restrained",
+    "space_strategy": "embedded_reveal",
+    "transition_language": [
+      "gaze_cut",
+      "long_hold",
+      "action_cut"
+    ],
+    "visual_distance": "intimate"
+  },
+  "director_style_options": [
+    {
+      "label": "行为控制下的心理压迫（参考大卫·芬奇）",
+      "option_id": "STYLE-01",
+      "profile": {
+        "camera_energy": "responsive",
+        "natural_language_intent": "摄影机克制靠近人物，不抢表演。",
+        "performance_focus": "face",
+        "priorities": [
+          "保留问话后的停顿",
+          "让空间在人物关系中显露"
+        ],
+        "rhythm": "restrained",
+        "space_strategy": "embedded_reveal",
+        "transition_language": [
+          "gaze_cut",
+          "long_hold",
+          "action_cut"
+        ],
+        "visual_distance": "intimate"
+      },
+      "rationale": "适配依据：两人的试探由可见行为和信息控制推进。\n时间与剪辑：保留问句后的停顿，在周抬眼时转移观看权。\n摄影机：克制响应动作，不用运动替代压力。\n空间与调度：在门口与桌边的距离中显露控制关系。\n表演与观看：贴近周抬眼和握钥匙的微小行为。\n主要收益：让心理压力落到可见证据。\n主要风险：过度冷控可能削弱未知声源的不安。"
+    },
+    {
+      "label": "家庭日常中的反应余波（参考是枝裕和）",
+      "option_id": "STYLE-02",
+      "profile": {
+        "camera_energy": "static",
+        "natural_language_intent": "保持观察距离，以完整身体动作建立空间。",
+        "performance_focus": "body",
+        "priorities": [
+          "先建立人物空间关系",
+          "让动作承担节奏变化"
+        ],
+        "rhythm": "balanced",
+        "space_strategy": "establish_then_enter",
+        "transition_language": [
+          "hard_cut"
+        ],
+        "visual_distance": "observational"
+      },
+      "rationale": "适配依据：日常空间和迟到反应可以承载关系。\n时间与剪辑：让完整身体动作自然决定停留与切点。\n摄影机：保持观察距离，少于演员主动。\n空间与调度：先建立门口与桌边的共同空间。\n表演与观看：观看倾听、抬眼和握紧后的余波。\n主要收益：保留关系的生活质感。\n主要风险：可能减弱来源里的悬疑压力。"
+    },
+    {
+      "label": "日常裂缝中的梦境恐惧（参考大卫·林奇）",
+      "option_id": "STYLE-03",
+      "profile": {
+        "camera_energy": "assertive",
+        "natural_language_intent": "让摄影机被未知声源牵引，以空间变化放大试探。",
+        "performance_focus": "blocking",
+        "priorities": [
+          "让声源牵引观看位置",
+          "用人物走位重组空间压力"
+        ],
+        "rhythm": "kinetic",
+        "space_strategy": "subjective",
+        "transition_language": [
+          "sound_bridge",
+          "action_cut"
+        ],
+        "visual_distance": "mixed"
+      },
+      "rationale": "适配依据：未知声源可让普通室内逐渐失去安全感。\n时间与剪辑：延迟解释，用停顿和声音维持不适。\n摄影机：允许被声源牵引的缓慢、主观响应。\n空间与调度：让门口、桌边与画外声源形成断裂。\n表演与观看：观看周的迟疑和身体紧缩。\n主要收益：放大无法解释的恐惧。\n主要风险：若过度神秘化会损害事件清楚度。"
+    }
+  ],
+  "emotion_arcs": [
+    {
+      "baseline": "警觉但克制。",
+      "character": "周",
+      "emotion_arc_id": "EA001",
+      "phases": [
+        {
+          "beat_ids": [
+            "B001"
+          ],
+          "intent": "维持警觉，不先暴露判断。",
+          "phase": "steady",
+          "visible_direction": [
+            "视线停在林身上",
+            "呼吸保持浅而稳"
+          ]
+        },
+        {
+          "beat_ids": [
+            "B002"
+          ],
+          "intent": "从警觉转为承认自己已经听见。",
+          "phase": "existing_transition",
+          "visible_direction": [
+            "手指收紧钥匙",
+            "抬眼后才回应"
+          ]
+        }
+      ],
+      "trigger_fact_ids": [
+        "F002"
+      ]
+    }
+  ],
+  "performance_chains": [
+    {
+      "chain_id": "PC001",
+      "character": "周",
+      "scene_id": "SC001",
+      "steps": [
+        {
+          "fact_ids": [
+            "F003"
+          ],
+          "role": "action"
+        },
+        {
+          "fact_ids": [
+            "F004"
+          ],
+          "role": "dialogue"
+        }
+      ]
+    }
+  ],
+  "project_id": "PROJECT-001",
+  "scenes": [
+    {
+      "axes": [
+        {
+          "axis_id": "AX001",
+          "axis_type": "eyeline",
+          "endpoint_a": "林",
+          "endpoint_b": "周"
+        }
+      ],
+      "directing_plan": {
+        "dialogue_geometry": "对白按说话权和面孔可读性规划；共享构图必须同时容纳发言者。",
+        "entry_state": "承接本场开端已经成立的人物、空间与关系状态。",
+        "entry_strategy": {
+          "mode": "character_entry",
+          "observer_position": "周右肩后，先贴近林的问话与周的受压关系",
+          "reason": "先贴近问话关系，同时由过肩位置保留两人的空间联系",
+          "required_spatial_information": [
+            "林在门口，周在桌边"
+          ],
+          "withheld_information": []
+        },
+        "exit_state": "人物、道具与信息停在可供下一场继承的明确状态。",
+        "pov_flow": [
+          "先建立主要观察位置",
+          "只在发言权或视觉转折真实改变时转移"
+        ],
+        "progression": [
+          "建立关系与空间",
+          "推动行动或对白",
+          "停在新的可见状态"
+        ],
+        "protected_processes": [
+          "同一人物连续动作、反应与台词不作机械切分"
+        ],
+        "rhythm_curve": [
+          "进入",
+          "推进",
+          "停顿或收束"
+        ],
+        "scene_objective": "让本场核心行动和信息变化形成完整、连续的导演过程。",
+        "style_anchors": [
+          {
+            "avoidance": "避免把风格简化为全场固定、平视或同一景别。",
+            "profile_basis": [
+              {
+                "field": "priorities",
+                "value": "保留问话后的停顿"
+              }
+            ],
+            "scene_application": "让观察位置随本场关系与信息变化，而不是按模板轮换镜头。",
+            "style_anchor_id": "SA001"
+          }
+        ],
+        "visual_turns": [
+          "以来源中的动作、信息或关系变化作为视觉转折"
+        ]
+      },
+      "inherited_states": [],
+      "inherits_from": null,
+      "initial_continuity": {
+        "characters": [
+          {
+            "eyeline": "周",
+            "facing": "桌边",
+            "name": "林",
+            "position": "门口",
+            "presence": "onscreen",
+            "state": "试探"
+          },
+          {
+            "eyeline": "林",
+            "facing": "门口",
+            "name": "周",
+            "position": "桌边",
+            "presence": "onscreen",
+            "state": "警觉"
+          }
+        ],
+        "fixed_objects": [
+          {
+            "name": "桌",
+            "position": "房间中央",
+            "state": "完好"
+          }
+        ],
+        "props": [
+          {
+            "name": "钥匙",
+            "owner": "周",
+            "position": "周右手",
+            "state": "松握"
+          }
+        ],
+        "reality_layer": "现实",
+        "sound_sources": []
+      },
+      "reality_layer": "现实",
+      "scene": "未编号连续片段（内部 SC001）",
+      "scene_id": "SC001"
+    }
+  ],
+  "screen_events": [
+    {
+      "beat_ids": [
+        "B001"
+      ],
+      "covered_fact_ids": [
+        "F001"
+      ],
+      "event_order": 1,
+      "event_role": "spatial",
+      "focus_scale": "relation",
+      "primary_viewing_subject": "林",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV001",
+      "sound_fact_ids": [],
+      "source_spans": [
+        {
+          "end": 12,
+          "start": 0,
+          "text_hash": "6cd827ba08a743604a967b04d240a35b0ebc8fc36b2a2453b9f8ac4178a24958"
+        }
+      ],
+      "spatial_zone": "未编号连续片段（内部 SC001）",
+      "temporal_relation": "sequential",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "林站在门口，周坐在桌边。",
+      "visual_subjects": [
+        "林"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B001"
+      ],
+      "covered_fact_ids": [
+        "F002"
+      ],
+      "event_order": 2,
+      "event_role": "dialogue_turn",
+      "focus_scale": "face",
+      "primary_viewing_subject": "林",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV002",
+      "sound_fact_ids": [
+        "F002"
+      ],
+      "source_spans": [
+        {
+          "end": 21,
+          "start": 15,
+          "text_hash": "905880fb3ce11ff643bb5566fc783ece1c145c44c136f325cf30c5b81bc9c4dd"
+        }
+      ],
+      "spatial_zone": "未编号连续片段（内部 SC001）",
+      "temporal_relation": "continuous_from_previous",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "你听见了吗？",
+      "visual_subjects": [
+        "林"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B002"
+      ],
+      "covered_fact_ids": [
+        "F003"
+      ],
+      "event_order": 3,
+      "event_role": "action",
+      "focus_scale": "body",
+      "primary_viewing_subject": "周",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV003",
+      "sound_fact_ids": [],
+      "source_spans": [
+        {
+          "end": 30,
+          "start": 22,
+          "text_hash": "d1b7ee96f5563265b86cf89bd8bc07e1f9b37ec72304f636686eb7afbb849e52"
+        }
+      ],
+      "spatial_zone": "未编号连续片段（内部 SC001）",
+      "temporal_relation": "sequential",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "周抬眼，握紧钥匙",
+      "visual_subjects": [
+        "周"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B002"
+      ],
+      "covered_fact_ids": [
+        "F004"
+      ],
+      "event_order": 4,
+      "event_role": "dialogue_turn",
+      "focus_scale": "face",
+      "primary_viewing_subject": "周",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV004",
+      "sound_fact_ids": [
+        "F004"
+      ],
+      "source_spans": [
+        {
+          "end": 35,
+          "start": 31,
+          "text_hash": "1264ec38f33bc2050fe5d552a84fae1f20d7d2ab726349c9a5d751c43fe825c6"
+        }
+      ],
+      "spatial_zone": "未编号连续片段（内部 SC001）",
+      "temporal_relation": "continuous_from_previous",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "听见了。",
+      "visual_subjects": [
+        "周"
+      ]
+    }
+  ],
+  "selected_style_option_id": "STYLE-01",
+  "shot_plan": {
+    "edit_points": [
+      {
+        "after_plan_unit_id": "PU001",
+        "before_plan_unit_id": "PU002",
+        "edit_point_id": "EP001",
+        "editorial_gain": "把问句形成的压力与周的连续回应分到两个明确观察位置。",
+        "source_spans": [
+          {
+            "end": 21,
+            "start": 15,
+            "text_hash": "905880fb3ce11ff643bb5566fc783ece1c145c44c136f325cf30c5b81bc9c4dd"
+          },
+          {
+            "end": 30,
+            "start": 22,
+            "text_hash": "d1b7ee96f5563265b86cf89bd8bc07e1f9b37ec72304f636686eb7afbb849e52"
+          }
+        ],
+        "trigger": "周抬眼并握紧钥匙，回应权由林转向周。"
+      }
+    ],
+    "planned_edit_point_count": 1,
+    "planned_shot_count": 2,
+    "planned_total_duration_seconds": 5,
+    "planned_units": [
+      {
+        "beat_ids": [
+          "B001"
+        ],
+        "dialogue_design": {
+          "axis_id": "AX001",
+          "face_readable_speakers": [
+            "林"
+          ],
+          "justification": "按本单元真实说话权安排可读面孔，并保持既定轴线。",
+          "listener_reaction_characters": [
+            "周"
+          ],
+          "mode": "single_speaker",
+          "speaker_sequence": [
+            "林"
+          ]
+        },
+        "estimated_duration_seconds": 3,
+        "narrative_purpose": "建立站位并让林的问句形成压力。",
+        "plan_order": 1,
+        "plan_unit_id": "PU001",
+        "scene_id": "SC001",
+        "screen_event_ids": [
+          "SEV001",
+          "SEV002"
+        ],
+        "source_spans": [
+          {
+            "end": 12,
+            "start": 0,
+            "text_hash": "6cd827ba08a743604a967b04d240a35b0ebc8fc36b2a2453b9f8ac4178a24958"
+          },
+          {
+            "end": 21,
+            "start": 13,
+            "text_hash": "189ff8520f8893879b03dd186b55d6bd5f90fa2171841f3f20ad1f3336277337"
+          }
+        ],
+        "visual_plan": {
+          "angle": "平视",
+          "camera_position": "周右肩后",
+          "end_frame": "林问话结束，周肩背仍在前景",
+          "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+          "framing_relation": "周肩背在前景，林正脸为主位",
+          "motivation": "让当前人物、空间与观看权的变化在这一观察位置中清楚成立。",
+          "movement_plan": {
+            "class": "compound_move_then_fixed",
+            "end_condition": "林问话结束，周肩背仍在前景",
+            "hold_reason": "",
+            "path": "缓慢推进后固定",
+            "speed": "缓慢",
+            "trigger": "主体动作或观看关系开始变化。"
+          },
+          "perspective_intent": "natural_relation",
+          "primary_subjects": [
+            "林"
+          ],
+          "secondary_subjects": [
+            "周"
+          ],
+          "shot_size": "中近景",
+          "spatial_strategy": {
+            "description": "",
+            "type": "not_applicable"
+          },
+          "start_frame": "林站在门口，周坐在桌边",
+          "style_anchor_ids": [
+            "SA001"
+          ],
+          "viewpoint_owner": "林"
+        }
+      },
+      {
+        "beat_ids": [
+          "B002"
+        ],
+        "dialogue_design": {
+          "axis_id": "AX001",
+          "face_readable_speakers": [
+            "周"
+          ],
+          "justification": "按本单元真实说话权安排可读面孔，并保持既定轴线。",
+          "listener_reaction_characters": [
+            "林"
+          ],
+          "mode": "single_speaker",
+          "speaker_sequence": [
+            "周"
+          ]
+        },
+        "estimated_duration_seconds": 2,
+        "narrative_purpose": "保留周抬眼、握紧钥匙与回应的连续过程。",
+        "plan_order": 2,
+        "plan_unit_id": "PU002",
+        "scene_id": "SC001",
+        "screen_event_ids": [
+          "SEV003",
+          "SEV004"
+        ],
+        "source_spans": [
+          {
+            "end": 35,
+            "start": 22,
+            "text_hash": "c12453b2dd55efbf664e6b3834b37ee7ebe045a48106c5f8c09791384e0fefe1"
+          }
+        ],
+        "visual_plan": {
+          "angle": "平视",
+          "camera_position": "周正侧近处",
+          "end_frame": "周的右手紧握钥匙，脸和手同框",
+          "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+          "framing_relation": "周的脸与握钥匙的右手同处画面",
+          "motivation": "让当前人物、空间与观看权的变化在这一观察位置中清楚成立。",
+          "movement_plan": {
+            "class": "compound_move_then_fixed",
+            "end_condition": "周的右手紧握钥匙，脸和手同框",
+            "hold_reason": "",
+            "path": "缓慢拉出后固定",
+            "speed": "缓慢",
+            "trigger": "主体动作或观看关系开始变化。"
+          },
+          "perspective_intent": "natural_relation",
+          "primary_subjects": [
+            "周"
+          ],
+          "secondary_subjects": [],
+          "shot_size": "近景",
+          "spatial_strategy": {
+            "description": "",
+            "type": "not_applicable"
+          },
+          "start_frame": "周保持坐姿，目光仍对着林",
+          "style_anchor_ids": [
+            "SA001"
+          ],
+          "viewpoint_owner": "周"
+        }
+      }
+    ],
+    "reorders": [],
+    "viewing_decisions": [
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV001",
+        "mode": "reframe",
+        "non_cut_basis": "continuous_action",
+        "reframe_method": "scale_change",
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV002",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD001"
+      },
+      {
+        "director_reason": "把问句形成的压力与周的连续回应分到两个明确观察位置。",
+        "from_screen_event_id": "SEV002",
+        "mode": "cut",
+        "non_cut_basis": null,
+        "reframe_method": null,
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV003",
+        "trigger": "周抬眼并握紧钥匙，回应权由林转向周。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD002"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV003",
+        "mode": "reframe",
+        "non_cut_basis": "continuous_action",
+        "reframe_method": "scale_change",
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV004",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD003"
+      }
+    ],
+    "visual_uniformity_reviews": []
+  },
+  "shots": [
+    {
+      "beat_ids": [
+        "B001"
+      ],
+      "blocking": [
+        {
+          "action": "站定并向周发问",
+          "character": "林",
+          "end_position": "门口",
+          "eyeline": "周",
+          "facing": "桌边",
+          "start_position": "门口"
+        },
+        {
+          "action": "保持坐姿听问",
+          "character": "周",
+          "end_position": "桌边",
+          "eyeline": "林",
+          "facing": "门口",
+          "start_position": "桌边"
+        }
+      ],
+      "camera": {
+        "angle": "平视",
+        "composition": "周肩背在前景，林正脸为主位",
+        "end_frame": "林问话结束，周肩背仍在前景",
+        "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+        "foreground_characters": [
+          "周"
+        ],
+        "framing_mode": "over_shoulder",
+        "logic": "朝向林，保持林周视线轴同侧",
+        "motivation": "让当前人物、空间与观看权的变化在这一观察位置中清楚成立。",
+        "movement": "缓慢推进后固定",
+        "movement_plan": {
+          "class": "compound_move_then_fixed",
+          "end_condition": "林问话结束，周肩背仍在前景",
+          "hold_reason": "",
+          "path": "缓慢推进后固定",
+          "speed": "缓慢",
+          "trigger": "主体动作或观看关系开始变化。"
+        },
+        "perspective_intent": "natural_relation",
+        "position": "周右肩后",
+        "primary_subjects": [
+          "林"
+        ],
+        "secondary_subjects": [
+          "周"
+        ],
+        "shot_size": "中近景",
+        "spatial_strategy": {
+          "description": "",
+          "type": "not_applicable"
+        },
+        "start_frame": "林站在门口，周坐在桌边",
+        "viewpoint_owner": "林"
+      },
+      "continuity": {
+        "action_match": {
+          "incoming": null,
+          "outgoing": null
+        },
+        "axis_id": "AX001",
+        "axis_side": "side_a",
+        "eyelines": [
+          {
+            "character": "林",
+            "direction": "screen_right",
+            "target": "周"
+          },
+          {
+            "character": "周",
+            "direction": "screen_left",
+            "target": "林"
+          }
+        ],
+        "intentional_exceptions": [],
+        "screen_directions": [
+          {
+            "direction": "screen_right",
+            "entity": "林",
+            "kind": "eyeline"
+          },
+          {
+            "direction": "screen_left",
+            "entity": "周",
+            "kind": "eyeline"
+          }
+        ]
+      },
+      "continuity_updates": [],
+      "coverage_evidence": [
+        {
+          "evidence_quote": "林站在门口，周坐在桌边",
+          "fact_id": "F001",
+          "target_path": "camera.start_frame"
+        },
+        {
+          "evidence_quote": "你听见了吗？",
+          "fact_id": "F002",
+          "target_path": "dialogue[0].text"
+        }
+      ],
+      "covered_fact_ids": [
+        "F001",
+        "F002"
+      ],
+      "cut_design": {
+        "entry_trigger": "从门口关系开始。",
+        "exit_trigger": "问题落下，保留周的反应入口。",
+        "isolation_intent": "none"
+      },
+      "dialogue": [
+        {
+          "addressee": "周",
+          "fact_id": "F002",
+          "shot_delivery": "onscreen",
+          "speaker": "林",
+          "text": "你听见了吗？",
+          "timing": "PH001-02"
+        }
+      ],
+      "duration_seconds": 3,
+      "end_state": [
+        "林仍在门口",
+        "周仍坐在桌边并注视林"
+      ],
+      "environment_behavior": [],
+      "execution_text": "【画面内容】室内环境保持安静，人物之间只保留现场底噪。摄影机位于周右肩后，朝向林，保持林周视线轴同侧；周肩背在前景，林正脸占据画面。林站在门口，周坐在桌边。林问：“你听见了吗？”周的视线停在林身上；呼吸保持浅而稳；林以现场方式说：你听见了吗？；现场声保持在人物动作与停顿之间，不另造剧情信息。最后停在林仍在门口；周仍坐在桌边并注视林。",
+      "notes": "",
+      "performance": {
+        "emotion_arc_id": "EA001",
+        "emotion_intent": "周维持警觉，不先暴露判断。",
+        "phase": "steady",
+        "visible_behavior": [
+          "周的视线停在林身上",
+          "呼吸保持浅而稳"
+        ]
+      },
+      "plan_unit_id": "PU001",
+      "primary_fact_id": "F002",
+      "rendered_shot_description": "【中近景｜平视｜缓慢推进后固定】\n【画面内容】室内环境保持安静，人物之间只保留现场底噪。摄影机位于周右肩后，朝向林，保持林周视线轴同侧；画面中周肩背在前景，林正脸为主位。林站在门口，周坐在桌边。林问：“你听见了吗？”周的视线停在林身上；呼吸保持浅而稳；林以现场方式说：“你听见了吗？”；现场声保持在人物动作与停顿之间，不另造剧情信息。动作完成后，林仍在门口；周仍坐在桌边并注视林。",
+      "scene_id": "SC001",
+      "shot_id": "SH001",
+      "shot_order": 1,
+      "shot_phases": [
+        {
+          "camera_state": "第1阶段从既定画面继续，执行缓慢推进后固定，并朝林问话结束，周肩背仍在前景收束。",
+          "duration_seconds": 1,
+          "phase_id": "PH001-01",
+          "phase_order": 1,
+          "screen_event_ids": [
+            "SEV001"
+          ],
+          "sound_fact_ids": []
+        },
+        {
+          "camera_state": "第2阶段从既定画面继续，执行缓慢推进后固定，并朝林问话结束，周肩背仍在前景收束。",
+          "duration_seconds": 2,
+          "phase_id": "PH001-02",
+          "phase_order": 2,
+          "screen_event_ids": [
+            "SEV002"
+          ],
+          "sound_fact_ids": [
+            "F002"
+          ]
+        }
+      ],
+      "source_spans": [
+        {
+          "end": 12,
+          "start": 0,
+          "text_hash": "6cd827ba08a743604a967b04d240a35b0ebc8fc36b2a2453b9f8ac4178a24958"
+        },
+        {
+          "end": 21,
+          "start": 13,
+          "text_hash": "189ff8520f8893879b03dd186b55d6bd5f90fa2171841f3f20ad1f3336277337"
+        }
+      ],
+      "speaker_presentation": [
+        {
+          "fact_id": "F002",
+          "presentation": "primary_face",
+          "speaker": "林"
+        }
+      ],
+      "transition_to_next": {
+        "edit_point_id": "EP001",
+        "notes": "沿周的目光进入回应。",
+        "type": "gaze_cut"
+      },
+      "visible_characters": [
+        "林",
+        "周"
+      ],
+      "visible_props": []
+    },
+    {
+      "beat_ids": [
+        "B002"
+      ],
+      "blocking": [
+        {
+          "action": "抬眼并握紧钥匙后回应",
+          "character": "周",
+          "end_position": "桌边",
+          "eyeline": "林",
+          "facing": "门口",
+          "start_position": "桌边"
+        }
+      ],
+      "camera": {
+        "angle": "平视",
+        "composition": "周的脸与握钥匙的右手同处画面",
+        "end_frame": "周的右手紧握钥匙，脸和手同框",
+        "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+        "foreground_characters": [],
+        "framing_mode": "single",
+        "logic": "朝向周，保持林周视线轴同侧",
+        "motivation": "让当前人物、空间与观看权的变化在这一观察位置中清楚成立。",
+        "movement": "缓慢拉出后固定",
+        "movement_plan": {
+          "class": "compound_move_then_fixed",
+          "end_condition": "周的右手紧握钥匙，脸和手同框",
+          "hold_reason": "",
+          "path": "缓慢拉出后固定",
+          "speed": "缓慢",
+          "trigger": "主体动作或观看关系开始变化。"
+        },
+        "perspective_intent": "natural_relation",
+        "position": "周正侧近处",
+        "primary_subjects": [
+          "周"
+        ],
+        "secondary_subjects": [],
+        "shot_size": "近景",
+        "spatial_strategy": {
+          "description": "",
+          "type": "not_applicable"
+        },
+        "start_frame": "周保持坐姿，目光仍对着林",
+        "viewpoint_owner": "周"
+      },
+      "continuity": {
+        "action_match": {
+          "incoming": null,
+          "outgoing": null
+        },
+        "axis_id": "AX001",
+        "axis_side": "side_a",
+        "eyelines": [
+          {
+            "character": "周",
+            "direction": "screen_left",
+            "target": "林"
+          }
+        ],
+        "intentional_exceptions": [],
+        "screen_directions": [
+          {
+            "direction": "screen_left",
+            "entity": "周",
+            "kind": "eyeline"
+          }
+        ]
+      },
+      "continuity_updates": [
+        {
+          "entity": "钥匙",
+          "entity_type": "prop",
+          "evidence_fact_ids": [
+            "F003"
+          ],
+          "field": "state",
+          "from": "松握",
+          "to": "紧握"
+        }
+      ],
+      "coverage_evidence": [
+        {
+          "evidence_quote": "握紧钥匙",
+          "fact_id": "F003",
+          "target_path": "blocking[0].action"
+        },
+        {
+          "evidence_quote": "听见了。",
+          "fact_id": "F004",
+          "target_path": "dialogue[0].text"
+        }
+      ],
+      "covered_fact_ids": [
+        "F003",
+        "F004"
+      ],
+      "cut_design": {
+        "entry_trigger": "承接周的目光。",
+        "exit_trigger": "回应结束并停在紧握钥匙的新状态。",
+        "isolation_intent": "none"
+      },
+      "dialogue": [
+        {
+          "addressee": "林",
+          "fact_id": "F004",
+          "shot_delivery": "onscreen",
+          "speaker": "周",
+          "text": "听见了。",
+          "timing": "PH002-02"
+        }
+      ],
+      "duration_seconds": 2,
+      "end_state": [
+        "周仍坐在桌边",
+        "钥匙由松握变为紧握"
+      ],
+      "environment_behavior": [],
+      "execution_text": "【画面内容】室内环境保持安静，人物之间只保留现场底噪。摄影机位于周正侧近处，朝向周，保持林周视线轴同侧；周的脸与握钥匙的右手同处画面。周抬眼，握紧钥匙，对林说：“听见了。”周抬眼后手指收紧钥匙；回应前短暂停住呼吸；周以现场方式说：听见了。；现场声保持在人物动作与停顿之间，不另造剧情信息。最后停在周仍坐在桌边；钥匙由松握变为紧握。",
+      "notes": "",
+      "performance": {
+        "emotion_arc_id": "EA001",
+        "emotion_intent": "周从警觉转为承认自己已经听见。",
+        "phase": "existing_transition",
+        "visible_behavior": [
+          "周抬眼后手指收紧钥匙",
+          "回应前短暂停住呼吸"
+        ]
+      },
+      "plan_unit_id": "PU002",
+      "primary_fact_id": "F003",
+      "rendered_shot_description": "【近景｜平视｜缓慢拉出后固定】\n【画面内容】室内环境保持安静，人物之间只保留现场底噪。摄影机位于周正侧近处，朝向周，保持林周视线轴同侧；画面中周的脸与握钥匙的右手同处画面。周抬眼，握紧钥匙，对林说：“听见了。”周抬眼后手指收紧钥匙；回应前短暂停住呼吸；周以现场方式说：“听见了。”；现场声保持在人物动作与停顿之间，不另造剧情信息。动作完成后，周仍坐在桌边；钥匙由松握变为紧握。",
+      "scene_id": "SC001",
+      "shot_id": "SH002",
+      "shot_order": 2,
+      "shot_phases": [
+        {
+          "camera_state": "第1阶段从既定画面继续，执行缓慢拉出后固定，并朝周的右手紧握钥匙，脸和手同框收束。",
+          "duration_seconds": 1,
+          "phase_id": "PH002-01",
+          "phase_order": 1,
+          "screen_event_ids": [
+            "SEV003"
+          ],
+          "sound_fact_ids": []
+        },
+        {
+          "camera_state": "第2阶段从既定画面继续，执行缓慢拉出后固定，并朝周的右手紧握钥匙，脸和手同框收束。",
+          "duration_seconds": 1,
+          "phase_id": "PH002-02",
+          "phase_order": 2,
+          "screen_event_ids": [
+            "SEV004"
+          ],
+          "sound_fact_ids": [
+            "F004"
+          ]
+        }
+      ],
+      "source_spans": [
+        {
+          "end": 35,
+          "start": 22,
+          "text_hash": "c12453b2dd55efbf664e6b3834b37ee7ebe045a48106c5f8c09791384e0fefe1"
+        }
+      ],
+      "speaker_presentation": [
+        {
+          "fact_id": "F004",
+          "presentation": "primary_face",
+          "speaker": "周"
+        }
+      ],
+      "transition_to_next": {
+        "edit_point_id": null,
+        "notes": "停在回应后的新状态。",
+        "type": "scene_end"
+      },
+      "visible_characters": [
+        "周"
+      ],
+      "visible_props": [
+        "钥匙"
+      ]
+    }
+  ],
+  "source": {
+    "approved_corrections": [],
+    "boundary_lock": "entire_submitted_text",
+    "delivery_slug": "lin-zhou-shiting",
+    "input_kind": "continuous_text",
+    "locked_text": "林站在门口，周坐在桌边。\n林：你听见了吗？\n周抬眼，握紧钥匙：听见了。\n",
+    "locked_text_hash": "b9fae49f498773602894c7e3beaad7840e94bef701eca4ef48c44d2f8d7b27d2",
+    "scope": "用户明确提交并锁定的未编号连续场景片段"
+  },
+  "source_analysis": {
+    "character_relations": [
+      "林主动发问，周控制回应时机"
+    ],
+    "dramatic_progression": "问话施压，周以动作和短答承认听见。",
+    "narrative_function": "建立两人围绕未知声源的试探关系。",
+    "source_boundary": "从林、周站位开始，到周明确回应结束。",
+    "source_constraints": [
+      "逐字保留两句对白",
+      "钥匙由松握变为紧握"
+    ]
+  },
+  "source_skill": "su-fenjingskill",
+  "source_skill_version": "2.5.5"
+}

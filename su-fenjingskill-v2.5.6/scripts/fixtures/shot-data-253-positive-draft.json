@@ -1,0 +1,2562 @@
+{
+  "beats": [
+    {
+      "beat_id": "B001",
+      "beat_order": 1,
+      "dramatic_change": "节拍1：推动戏剧动作。",
+      "facts": [
+        {
+          "fact_id": "F001",
+          "performers": [
+            "陈",
+            "刘",
+            "周"
+          ],
+          "source_fragment": "包厢内，陈、刘、周三人对坐圆桌。",
+          "source_spans": [
+            {
+              "end": 16,
+              "start": 0,
+              "text_hash": "c46333276bcaafdde196783ca7518d3f044f62a4f215ce5a9b6c1ac9e8384346"
+            }
+          ],
+          "text": "包厢内，陈、刘、周三人对坐圆桌。",
+          "type": "position"
+        },
+        {
+          "fact_id": "F002",
+          "performers": [
+            "陈"
+          ],
+          "source_fragment": "陈举起酒杯：这杯我先敬大家。",
+          "source_spans": [
+            {
+              "end": 31,
+              "start": 17,
+              "text_hash": "6dc3726e033acbd1e0da08ea421c338dfb6d46db6bf244deb2badf108474eacf"
+            }
+          ],
+          "text": "陈举起酒杯",
+          "type": "action"
+        }
+      ],
+      "scene_id": "SC001",
+      "source_spans": [
+        {
+          "end": 31,
+          "start": 0,
+          "text_hash": "de7cd61faf88a927cb4485639e9b1c5aceac3503562c7678fce1e582df8e5c16"
+        }
+      ]
+    },
+    {
+      "beat_id": "B002",
+      "beat_order": 2,
+      "dramatic_change": "节拍2：推动戏剧动作。",
+      "facts": [
+        {
+          "fact_id": "F003",
+          "performers": [
+            "陈"
+          ],
+          "script_voice_type": "scene_dialogue",
+          "source_fragment": "陈举起酒杯：这杯我先敬大家。",
+          "source_spans": [
+            {
+              "end": 31,
+              "start": 17,
+              "text_hash": "6dc3726e033acbd1e0da08ea421c338dfb6d46db6bf244deb2badf108474eacf"
+            }
+          ],
+          "speaker": "陈",
+          "text": "这杯我先敬大家。",
+          "type": "dialogue"
+        }
+      ],
+      "scene_id": "SC001",
+      "source_spans": [
+        {
+          "end": 31,
+          "start": 17,
+          "text_hash": "6dc3726e033acbd1e0da08ea421c338dfb6d46db6bf244deb2badf108474eacf"
+        }
+      ]
+    },
+    {
+      "beat_id": "B003",
+      "beat_order": 3,
+      "dramatic_change": "节拍3：推动戏剧动作。",
+      "facts": [
+        {
+          "fact_id": "F004",
+          "performers": [
+            "刘"
+          ],
+          "source_fragment": "刘笑着摆手：陈总客气了，我先干为敬。",
+          "source_spans": [
+            {
+              "end": 50,
+              "start": 32,
+              "text_hash": "0c00acef9cc7cd8d2d5662419f29ebf4ad3eb865586a7e4745d9c7b24f6e3838"
+            }
+          ],
+          "text": "刘笑着摆手",
+          "type": "action"
+        },
+        {
+          "fact_id": "F005",
+          "performers": [
+            "刘"
+          ],
+          "script_voice_type": "scene_dialogue",
+          "source_fragment": "刘笑着摆手：陈总客气了，我先干为敬。",
+          "source_spans": [
+            {
+              "end": 50,
+              "start": 32,
+              "text_hash": "0c00acef9cc7cd8d2d5662419f29ebf4ad3eb865586a7e4745d9c7b24f6e3838"
+            }
+          ],
+          "speaker": "刘",
+          "text": "陈总客气了，我先干为敬。",
+          "type": "dialogue"
+        }
+      ],
+      "scene_id": "SC001",
+      "source_spans": [
+        {
+          "end": 50,
+          "start": 32,
+          "text_hash": "0c00acef9cc7cd8d2d5662419f29ebf4ad3eb865586a7e4745d9c7b24f6e3838"
+        }
+      ]
+    },
+    {
+      "beat_id": "B004",
+      "beat_order": 4,
+      "dramatic_change": "节拍4：推动戏剧动作。",
+      "facts": [
+        {
+          "fact_id": "F006",
+          "performers": [
+            "周"
+          ],
+          "source_fragment": "周沉默片刻，端起茶杯：我以茶代酒。",
+          "source_spans": [
+            {
+              "end": 68,
+              "start": 51,
+              "text_hash": "fa205803978790c9f598b20d4a59301b3bf63744d6edf7c9bb3bae9363c83362"
+            }
+          ],
+          "text": "周沉默片刻，端起茶杯",
+          "type": "action"
+        },
+        {
+          "fact_id": "F007",
+          "performers": [
+            "周"
+          ],
+          "script_voice_type": "scene_dialogue",
+          "source_fragment": "周沉默片刻，端起茶杯：我以茶代酒。",
+          "source_spans": [
+            {
+              "end": 68,
+              "start": 51,
+              "text_hash": "fa205803978790c9f598b20d4a59301b3bf63744d6edf7c9bb3bae9363c83362"
+            }
+          ],
+          "speaker": "周",
+          "text": "我以茶代酒。",
+          "type": "dialogue"
+        }
+      ],
+      "scene_id": "SC001",
+      "source_spans": [
+        {
+          "end": 68,
+          "start": 51,
+          "text_hash": "fa205803978790c9f598b20d4a59301b3bf63744d6edf7c9bb3bae9363c83362"
+        }
+      ]
+    },
+    {
+      "beat_id": "B005",
+      "beat_order": 5,
+      "dramatic_change": "节拍5：推动戏剧动作。",
+      "facts": [
+        {
+          "fact_id": "F008",
+          "performers": [
+            "陈"
+          ],
+          "source_fragment": "陈放下酒杯，看向周：周小姐还是不赏脸？",
+          "source_spans": [
+            {
+              "end": 88,
+              "start": 69,
+              "text_hash": "10e25d16d15f2907df6c8aca84a0d0eec03096f88ff73a5410361c129c28479b"
+            }
+          ],
+          "text": "陈放下酒杯，看向周",
+          "type": "action"
+        },
+        {
+          "fact_id": "F009",
+          "performers": [
+            "陈"
+          ],
+          "script_voice_type": "scene_dialogue",
+          "source_fragment": "陈放下酒杯，看向周：周小姐还是不赏脸？",
+          "source_spans": [
+            {
+              "end": 88,
+              "start": 69,
+              "text_hash": "10e25d16d15f2907df6c8aca84a0d0eec03096f88ff73a5410361c129c28479b"
+            }
+          ],
+          "speaker": "陈",
+          "text": "周小姐还是不赏脸？",
+          "type": "dialogue"
+        }
+      ],
+      "scene_id": "SC001",
+      "source_spans": [
+        {
+          "end": 88,
+          "start": 69,
+          "text_hash": "10e25d16d15f2907df6c8aca84a0d0eec03096f88ff73a5410361c129c28479b"
+        }
+      ]
+    },
+    {
+      "beat_id": "B006",
+      "beat_order": 6,
+      "dramatic_change": "节拍6：推动戏剧动作。",
+      "facts": [
+        {
+          "fact_id": "F010",
+          "performers": [
+            "周"
+          ],
+          "source_fragment": "周起身，将茶杯轻轻搁在桌上：我身体不舒服，先告辞。",
+          "source_spans": [
+            {
+              "end": 114,
+              "start": 89,
+              "text_hash": "cc034a2211bb1d17d70f77759e48624d06233f321fa6a068b8294375407aa0bc"
+            }
+          ],
+          "text": "周起身，将茶杯轻轻搁在桌上",
+          "type": "action"
+        },
+        {
+          "fact_id": "F011",
+          "performers": [
+            "周"
+          ],
+          "script_voice_type": "scene_dialogue",
+          "source_fragment": "周起身，将茶杯轻轻搁在桌上：我身体不舒服，先告辞。",
+          "source_spans": [
+            {
+              "end": 114,
+              "start": 89,
+              "text_hash": "cc034a2211bb1d17d70f77759e48624d06233f321fa6a068b8294375407aa0bc"
+            }
+          ],
+          "speaker": "周",
+          "text": "我身体不舒服，先告辞。",
+          "type": "dialogue"
+        }
+      ],
+      "scene_id": "SC001",
+      "source_spans": [
+        {
+          "end": 114,
+          "start": 89,
+          "text_hash": "cc034a2211bb1d17d70f77759e48624d06233f321fa6a068b8294375407aa0bc"
+        }
+      ]
+    }
+  ],
+  "confirmations": {
+    "gate_1": {
+      "confirmation_order": 1,
+      "notes": "fixture 自动确认",
+      "stage_digest": "03b7753cf50ef8c8d3fbbdb2ffb2ab19837d907d421cc16ca645554e5c7cc4a6",
+      "status": "confirmed"
+    },
+    "gate_2": {
+      "confirmation_order": 2,
+      "notes": "fixture 自动确认",
+      "stage_digest": "1f25c47f32b04249c9282823e098de4a89c1c83e735bd2e26b811f7bccaeb764",
+      "status": "confirmed"
+    }
+  },
+  "content_hash": "4ddc1ec532cedfd25ca49ad6fe4b4102cf1484907252814c67cbc4b40867da86",
+  "contract_name": "shot-data",
+  "contract_version": "2.5.3",
+  "director_profile": {
+    "camera_energy": "responsive",
+    "natural_language_intent": "摄影机贴近人物表情与动作，用圆桌空间承载权力张力。",
+    "performance_focus": "face",
+    "priorities": [
+      "捕捉敬酒时的微表情",
+      "让圆桌空间成为关系压力的容器"
+    ],
+    "rhythm": "restrained",
+    "space_strategy": "embedded_reveal",
+    "transition_language": [
+      "gaze_cut",
+      "long_hold",
+      "action_cut"
+    ],
+    "visual_distance": "intimate"
+  },
+  "director_style_options": [
+    {
+      "label": "权力餐桌上的克制压迫（参考大卫·芬奇）",
+      "option_id": "STYLE-01",
+      "profile": {
+        "camera_energy": "responsive",
+        "natural_language_intent": "摄影机贴近人物表情与动作，用圆桌空间承载权力张力。",
+        "performance_focus": "face",
+        "priorities": [
+          "捕捉敬酒时的微表情",
+          "让圆桌空间成为关系压力的容器"
+        ],
+        "rhythm": "restrained",
+        "space_strategy": "embedded_reveal",
+        "transition_language": [
+          "gaze_cut",
+          "long_hold",
+          "action_cut"
+        ],
+        "visual_distance": "intimate"
+      },
+      "rationale": "适配依据：敬酒场景的权力施压由动作与沉默推进。\n时间与剪辑：在陈举杯与周拒绝之间保留停顿。\n摄影机：贴近持杯手势与面部反应，不频繁运动。\n空间与调度：圆桌成为三角权力关系的视觉容器。\n表演与观看：捕捉陈的控制、刘的逢迎、周的克制。\n主要收益：让观众在敬酒礼仪中感受到关系压力。\n主要风险：过度克制可能削弱冲突爆发力。"
+    },
+    {
+      "label": "家庭饭局中的隐忍距离（参考是枝裕和）",
+      "option_id": "STYLE-02",
+      "profile": {
+        "camera_energy": "static",
+        "natural_language_intent": "保持观察距离，以完整身体动作建立空间。",
+        "performance_focus": "body",
+        "priorities": [
+          "先建立人物空间关系",
+          "让动作承担节奏变化"
+        ],
+        "rhythm": "balanced",
+        "space_strategy": "establish_then_enter",
+        "transition_language": [
+          "hard_cut"
+        ],
+        "visual_distance": "observational"
+      },
+      "rationale": "适配依据：日常饭局的空间与迟到反应可以承载关系。\n时间与剪辑：让身体动作和沉默自然决定镜头停留。\n摄影机：保持观察距离，少于演员主动。\n空间与调度：先建立圆桌共同空间，再进入个人反应。\n表演与观看：观看举杯、拒绝与起身后的余波。\n主要收益：保留关系的生活质感。\n主要风险：可能减弱权力冲突的戏剧压力。"
+    },
+    {
+      "label": "群像巡游中的情绪失衡（参考保罗·索伦蒂诺）",
+      "option_id": "STYLE-03",
+      "profile": {
+        "camera_energy": "assertive",
+        "natural_language_intent": "让摄影机被人物动作牵引，以空间变化放大情绪。",
+        "performance_focus": "blocking",
+        "priorities": [
+          "让空间位移牵引观看",
+          "用身体姿态外化情绪"
+        ],
+        "rhythm": "kinetic",
+        "space_strategy": "subjective",
+        "transition_language": [
+          "sound_bridge",
+          "action_cut"
+        ],
+        "visual_distance": "mixed"
+      },
+      "rationale": "适配依据：圆桌与身体动作可以成为情绪巡游的舞台。\n时间与剪辑：用音乐和空间位移放大拒绝时刻。\n摄影机：允许缓慢的环绕与推进。\n空间与调度：让圆桌、酒杯与起身形成几何舞台。\n表演与观看：观看身体姿态与空间位移的情绪外化。\n主要收益：放大拒绝时刻的仪式感。\n主要风险：过度舞台化会损害真实饭局质感。"
+    }
+  ],
+  "project_id": "P-POSITIVE-253",
+  "scenes": [
+    {
+      "axes": [
+        {
+          "axis_id": "AX001",
+          "axis_type": "eyeline",
+          "endpoint_a": "陈",
+          "endpoint_b": "周"
+        },
+        {
+          "axis_id": "AX002",
+          "axis_type": "eyeline",
+          "endpoint_a": "刘",
+          "endpoint_b": "陈"
+        }
+      ],
+      "directing_plan": {
+        "entry_strategy": {
+          "mode": "spatial_establish",
+          "observer_position": "包厢顶部中央，垂直俯视圆桌",
+          "reason": "先建立空间与人物关系，为后续权力张力提供容器。",
+          "required_spatial_information": [
+            "陈、刘、周三人对坐圆桌"
+          ],
+          "withheld_information": [
+            "周的真实态度"
+          ]
+        },
+        "pov_flow": [
+          "先建立三人空间关系",
+          "随敬酒权转移观察位置"
+        ],
+        "progression": [
+          "建立圆桌权力三角",
+          "陈敬酒施压",
+          "周以茶代酒抵抗",
+          "冲突爆发并退场"
+        ],
+        "scene_objective": "通过敬酒与拒绝展示三人权力与亲疏关系。",
+        "style_anchors": [
+          {
+            "avoidance": "避免全景固定或景别单调轮换。",
+            "profile_basis": [
+              {
+                "field": "priorities",
+                "value": "捕捉敬酒时的微表情"
+              }
+            ],
+            "scene_application": "贴近持杯与举杯动作，捕捉面部微表情。",
+            "style_anchor_id": "SA001"
+          }
+        ]
+      },
+      "inherited_states": [],
+      "inherits_from": null,
+      "initial_continuity": {
+        "characters": [
+          {
+            "eyeline": "周",
+            "facing": "圆桌中央",
+            "name": "陈",
+            "position": "圆桌主位",
+            "presence": "onscreen",
+            "state": "主导"
+          },
+          {
+            "eyeline": "陈",
+            "facing": "圆桌中央",
+            "name": "刘",
+            "position": "陈右侧",
+            "presence": "onscreen",
+            "state": "逢迎"
+          },
+          {
+            "eyeline": "陈",
+            "facing": "圆桌中央",
+            "name": "周",
+            "position": "陈对面",
+            "presence": "onscreen",
+            "state": "克制"
+          }
+        ],
+        "fixed_objects": [
+          {
+            "name": "圆桌",
+            "position": "包厢中央",
+            "state": "完好"
+          },
+          {
+            "name": "椅子",
+            "position": "圆桌周围",
+            "state": "有人落座"
+          }
+        ],
+        "props": [
+          {
+            "name": "酒杯",
+            "owner": "陈",
+            "position": "圆桌中央",
+            "state": "空置"
+          },
+          {
+            "name": "茶杯",
+            "owner": "周",
+            "position": "周右手边",
+            "state": "半满"
+          }
+        ],
+        "reality_layer": "现实",
+        "sound_sources": []
+      },
+      "reality_layer": "现实",
+      "scene": "饭局包厢",
+      "scene_id": "SC001"
+    }
+  ],
+  "screen_events": [
+    {
+      "beat_ids": [
+        "B001"
+      ],
+      "covered_fact_ids": [
+        "F001"
+      ],
+      "event_order": 1,
+      "event_role": "spatial",
+      "focus_scale": "relation",
+      "primary_viewing_subject": "陈",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV001",
+      "sound_fact_ids": [],
+      "source_spans": [
+        {
+          "end": 16,
+          "start": 0,
+          "text_hash": "c46333276bcaafdde196783ca7518d3f044f62a4f215ce5a9b6c1ac9e8384346"
+        }
+      ],
+      "spatial_zone": "饭局包厢",
+      "temporal_relation": "sequential",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "包厢内，陈、刘、周三人对坐圆桌。",
+      "visual_subjects": [
+        "陈"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B001"
+      ],
+      "covered_fact_ids": [
+        "F002"
+      ],
+      "event_order": 2,
+      "event_role": "action",
+      "focus_scale": "body",
+      "primary_viewing_subject": "陈",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV002",
+      "sound_fact_ids": [],
+      "source_spans": [
+        {
+          "end": 31,
+          "start": 17,
+          "text_hash": "6dc3726e033acbd1e0da08ea421c338dfb6d46db6bf244deb2badf108474eacf"
+        }
+      ],
+      "spatial_zone": "饭局包厢",
+      "temporal_relation": "continuous_from_previous",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "陈举起酒杯",
+      "visual_subjects": [
+        "陈"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B002"
+      ],
+      "covered_fact_ids": [
+        "F003"
+      ],
+      "event_order": 3,
+      "event_role": "dialogue_turn",
+      "focus_scale": "face",
+      "primary_viewing_subject": "陈",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV003",
+      "sound_fact_ids": [
+        "F003"
+      ],
+      "source_spans": [
+        {
+          "end": 31,
+          "start": 17,
+          "text_hash": "6dc3726e033acbd1e0da08ea421c338dfb6d46db6bf244deb2badf108474eacf"
+        }
+      ],
+      "spatial_zone": "饭局包厢",
+      "temporal_relation": "sequential",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "这杯我先敬大家。",
+      "visual_subjects": [
+        "陈"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B003"
+      ],
+      "covered_fact_ids": [
+        "F004"
+      ],
+      "event_order": 4,
+      "event_role": "action",
+      "focus_scale": "body",
+      "primary_viewing_subject": "刘",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV004",
+      "sound_fact_ids": [],
+      "source_spans": [
+        {
+          "end": 50,
+          "start": 32,
+          "text_hash": "0c00acef9cc7cd8d2d5662419f29ebf4ad3eb865586a7e4745d9c7b24f6e3838"
+        }
+      ],
+      "spatial_zone": "饭局包厢",
+      "temporal_relation": "sequential",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "刘笑着摆手",
+      "visual_subjects": [
+        "刘"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B003"
+      ],
+      "covered_fact_ids": [
+        "F005"
+      ],
+      "event_order": 5,
+      "event_role": "dialogue_turn",
+      "focus_scale": "face",
+      "primary_viewing_subject": "刘",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV005",
+      "sound_fact_ids": [
+        "F005"
+      ],
+      "source_spans": [
+        {
+          "end": 50,
+          "start": 32,
+          "text_hash": "0c00acef9cc7cd8d2d5662419f29ebf4ad3eb865586a7e4745d9c7b24f6e3838"
+        }
+      ],
+      "spatial_zone": "饭局包厢",
+      "temporal_relation": "continuous_from_previous",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "陈总客气了，我先干为敬。",
+      "visual_subjects": [
+        "刘"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B004"
+      ],
+      "covered_fact_ids": [
+        "F006"
+      ],
+      "event_order": 6,
+      "event_role": "action",
+      "focus_scale": "body",
+      "primary_viewing_subject": "周",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV006",
+      "sound_fact_ids": [],
+      "source_spans": [
+        {
+          "end": 68,
+          "start": 51,
+          "text_hash": "fa205803978790c9f598b20d4a59301b3bf63744d6edf7c9bb3bae9363c83362"
+        }
+      ],
+      "spatial_zone": "饭局包厢",
+      "temporal_relation": "sequential",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "周沉默片刻，端起茶杯",
+      "visual_subjects": [
+        "周"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B004"
+      ],
+      "covered_fact_ids": [
+        "F007"
+      ],
+      "event_order": 7,
+      "event_role": "dialogue_turn",
+      "focus_scale": "face",
+      "primary_viewing_subject": "周",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV007",
+      "sound_fact_ids": [
+        "F007"
+      ],
+      "source_spans": [
+        {
+          "end": 68,
+          "start": 51,
+          "text_hash": "fa205803978790c9f598b20d4a59301b3bf63744d6edf7c9bb3bae9363c83362"
+        }
+      ],
+      "spatial_zone": "饭局包厢",
+      "temporal_relation": "continuous_from_previous",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "我以茶代酒。",
+      "visual_subjects": [
+        "周"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B005"
+      ],
+      "covered_fact_ids": [
+        "F008"
+      ],
+      "event_order": 8,
+      "event_role": "action",
+      "focus_scale": "body",
+      "primary_viewing_subject": "陈",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV008",
+      "sound_fact_ids": [],
+      "source_spans": [
+        {
+          "end": 88,
+          "start": 69,
+          "text_hash": "10e25d16d15f2907df6c8aca84a0d0eec03096f88ff73a5410361c129c28479b"
+        }
+      ],
+      "spatial_zone": "饭局包厢",
+      "temporal_relation": "sequential",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "陈放下酒杯，看向周",
+      "visual_subjects": [
+        "陈"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B005"
+      ],
+      "covered_fact_ids": [
+        "F009"
+      ],
+      "event_order": 9,
+      "event_role": "dialogue_turn",
+      "focus_scale": "face",
+      "primary_viewing_subject": "陈",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV009",
+      "sound_fact_ids": [
+        "F009"
+      ],
+      "source_spans": [
+        {
+          "end": 88,
+          "start": 69,
+          "text_hash": "10e25d16d15f2907df6c8aca84a0d0eec03096f88ff73a5410361c129c28479b"
+        }
+      ],
+      "spatial_zone": "饭局包厢",
+      "temporal_relation": "continuous_from_previous",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "周小姐还是不赏脸？",
+      "visual_subjects": [
+        "陈"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B006"
+      ],
+      "covered_fact_ids": [
+        "F010"
+      ],
+      "event_order": 10,
+      "event_role": "action",
+      "focus_scale": "body",
+      "primary_viewing_subject": "周",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV010",
+      "sound_fact_ids": [],
+      "source_spans": [
+        {
+          "end": 114,
+          "start": 89,
+          "text_hash": "cc034a2211bb1d17d70f77759e48624d06233f321fa6a068b8294375407aa0bc"
+        }
+      ],
+      "spatial_zone": "饭局包厢",
+      "temporal_relation": "sequential",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "周起身，将茶杯轻轻搁在桌上",
+      "visual_subjects": [
+        "周"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B006"
+      ],
+      "covered_fact_ids": [
+        "F011"
+      ],
+      "event_order": 11,
+      "event_role": "dialogue_turn",
+      "focus_scale": "face",
+      "primary_viewing_subject": "周",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV011",
+      "sound_fact_ids": [
+        "F011"
+      ],
+      "source_spans": [
+        {
+          "end": 114,
+          "start": 89,
+          "text_hash": "cc034a2211bb1d17d70f77759e48624d06233f321fa6a068b8294375407aa0bc"
+        }
+      ],
+      "spatial_zone": "饭局包厢",
+      "temporal_relation": "continuous_from_previous",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "我身体不舒服，先告辞。",
+      "visual_subjects": [
+        "周"
+      ]
+    }
+  ],
+  "selected_style_option_id": "STYLE-01",
+  "shot_plan": {
+    "edit_points": [
+      {
+        "after_plan_unit_id": "PU001",
+        "before_plan_unit_id": "PU002",
+        "edit_point_id": "EP001",
+        "editorial_gain": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "source_spans": [
+          {
+            "end": 31,
+            "start": 17,
+            "text_hash": "6dc3726e033acbd1e0da08ea421c338dfb6d46db6bf244deb2badf108474eacf"
+          }
+        ],
+        "trigger": "观看主体与关系重心发生明确变化。"
+      },
+      {
+        "after_plan_unit_id": "PU002",
+        "before_plan_unit_id": "PU003",
+        "edit_point_id": "EP002",
+        "editorial_gain": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "source_spans": [
+          {
+            "end": 31,
+            "start": 17,
+            "text_hash": "6dc3726e033acbd1e0da08ea421c338dfb6d46db6bf244deb2badf108474eacf"
+          },
+          {
+            "end": 50,
+            "start": 32,
+            "text_hash": "0c00acef9cc7cd8d2d5662419f29ebf4ad3eb865586a7e4745d9c7b24f6e3838"
+          }
+        ],
+        "trigger": "观看主体与关系重心发生明确变化。"
+      },
+      {
+        "after_plan_unit_id": "PU003",
+        "before_plan_unit_id": "PU004",
+        "edit_point_id": "EP003",
+        "editorial_gain": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "source_spans": [
+          {
+            "end": 50,
+            "start": 32,
+            "text_hash": "0c00acef9cc7cd8d2d5662419f29ebf4ad3eb865586a7e4745d9c7b24f6e3838"
+          },
+          {
+            "end": 68,
+            "start": 51,
+            "text_hash": "fa205803978790c9f598b20d4a59301b3bf63744d6edf7c9bb3bae9363c83362"
+          }
+        ],
+        "trigger": "观看主体与关系重心发生明确变化。"
+      },
+      {
+        "after_plan_unit_id": "PU004",
+        "before_plan_unit_id": "PU005",
+        "edit_point_id": "EP004",
+        "editorial_gain": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "source_spans": [
+          {
+            "end": 68,
+            "start": 51,
+            "text_hash": "fa205803978790c9f598b20d4a59301b3bf63744d6edf7c9bb3bae9363c83362"
+          },
+          {
+            "end": 88,
+            "start": 69,
+            "text_hash": "10e25d16d15f2907df6c8aca84a0d0eec03096f88ff73a5410361c129c28479b"
+          }
+        ],
+        "trigger": "观看主体与关系重心发生明确变化。"
+      },
+      {
+        "after_plan_unit_id": "PU005",
+        "before_plan_unit_id": "PU006",
+        "edit_point_id": "EP005",
+        "editorial_gain": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "source_spans": [
+          {
+            "end": 88,
+            "start": 69,
+            "text_hash": "10e25d16d15f2907df6c8aca84a0d0eec03096f88ff73a5410361c129c28479b"
+          },
+          {
+            "end": 114,
+            "start": 89,
+            "text_hash": "cc034a2211bb1d17d70f77759e48624d06233f321fa6a068b8294375407aa0bc"
+          }
+        ],
+        "trigger": "观看主体与关系重心发生明确变化。"
+      }
+    ],
+    "planned_edit_point_count": 5,
+    "planned_shot_count": 6,
+    "planned_total_duration_seconds": 19,
+    "planned_units": [
+      {
+        "beat_ids": [
+          "B001"
+        ],
+        "dialogue_design": null,
+        "estimated_duration_seconds": 4,
+        "narrative_purpose": "呈现B001的戏剧动作。",
+        "plan_order": 1,
+        "plan_unit_id": "PU001",
+        "scene_id": "SC001",
+        "screen_event_ids": [
+          "SEV001",
+          "SEV002"
+        ],
+        "source_spans": [
+          {
+            "end": 31,
+            "start": 0,
+            "text_hash": "de7cd61faf88a927cb4485639e9b1c5aceac3503562c7678fce1e582df8e5c16"
+          }
+        ],
+        "visual_plan": {
+          "angle": "俯视",
+          "camera_position": "包厢顶部中央",
+          "end_frame": "陈举起酒杯",
+          "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+          "framing_relation": "包厢内，陈、刘、周三人对坐圆桌。三人关系清楚可读",
+          "motivation": "先建立三人空间关系，让权力三角清楚可读。",
+          "movement_plan": {
+            "class": "compound_move_then_fixed",
+            "end_condition": "陈举起酒杯",
+            "hold_reason": "",
+            "path": "缓慢推进后固定",
+            "speed": "缓慢",
+            "trigger": "主体动作或观看关系开始变化。"
+          },
+          "perspective_intent": "wide_spatial",
+          "primary_subjects": [
+            "陈"
+          ],
+          "secondary_subjects": [
+            "刘",
+            "周"
+          ],
+          "shot_size": "全景→中景",
+          "spatial_strategy": {
+            "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+            "type": "sequential_reframe"
+          },
+          "start_frame": "三人落座圆桌",
+          "style_anchor_ids": [
+            "SA001"
+          ],
+          "viewpoint_owner": "陈"
+        }
+      },
+      {
+        "beat_ids": [
+          "B002"
+        ],
+        "dialogue_design": {
+          "axis_id": "AX001",
+          "face_readable_speakers": [
+            "陈"
+          ],
+          "justification": "按本单元真实说话权安排可读面孔，并保持既定轴线。",
+          "listener_reaction_characters": [
+            "刘",
+            "周"
+          ],
+          "mode": "single_speaker",
+          "speaker_sequence": [
+            "陈"
+          ]
+        },
+        "estimated_duration_seconds": 3,
+        "narrative_purpose": "呈现B002的戏剧动作。",
+        "plan_order": 2,
+        "plan_unit_id": "PU002",
+        "scene_id": "SC001",
+        "screen_event_ids": [
+          "SEV003"
+        ],
+        "source_spans": [
+          {
+            "end": 31,
+            "start": 17,
+            "text_hash": "6dc3726e033acbd1e0da08ea421c338dfb6d46db6bf244deb2badf108474eacf"
+          }
+        ],
+        "visual_plan": {
+          "angle": "平视",
+          "camera_position": "陈面前近处",
+          "end_frame": "陈说完敬酒词",
+          "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+          "framing_relation": "陈手持酒杯，面部为主位",
+          "motivation": "让陈的敬酒姿态与表情成为观看中心。",
+          "movement_plan": {
+            "class": "fixed",
+            "end_condition": "",
+            "hold_reason": "保护完整表演与空间关系。",
+            "path": "",
+            "speed": "",
+            "trigger": ""
+          },
+          "perspective_intent": "natural_relation",
+          "primary_subjects": [
+            "陈"
+          ],
+          "secondary_subjects": [],
+          "shot_size": "近景",
+          "spatial_strategy": {
+            "description": "",
+            "type": "not_applicable"
+          },
+          "start_frame": "陈举杯说话前",
+          "style_anchor_ids": [
+            "SA001"
+          ],
+          "viewpoint_owner": "陈"
+        }
+      },
+      {
+        "beat_ids": [
+          "B003"
+        ],
+        "dialogue_design": {
+          "axis_id": "AX001",
+          "face_readable_speakers": [
+            "刘"
+          ],
+          "justification": "按本单元真实说话权安排可读面孔，并保持既定轴线。",
+          "listener_reaction_characters": [
+            "陈",
+            "周"
+          ],
+          "mode": "single_speaker",
+          "speaker_sequence": [
+            "刘"
+          ]
+        },
+        "estimated_duration_seconds": 3,
+        "narrative_purpose": "呈现B003的戏剧动作。",
+        "plan_order": 3,
+        "plan_unit_id": "PU003",
+        "scene_id": "SC001",
+        "screen_event_ids": [
+          "SEV004",
+          "SEV005"
+        ],
+        "source_spans": [
+          {
+            "end": 50,
+            "start": 32,
+            "text_hash": "0c00acef9cc7cd8d2d5662419f29ebf4ad3eb865586a7e4745d9c7b24f6e3838"
+          }
+        ],
+        "visual_plan": {
+          "angle": "平视",
+          "camera_position": "陈肩后",
+          "end_frame": "刘说完敬酒词",
+          "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+          "framing_relation": "刘面部为主位，陈肩背在前景",
+          "motivation": "在过肩关系中捕捉刘的逢迎反应。",
+          "movement_plan": {
+            "class": "compound_move_then_fixed",
+            "end_condition": "刘说完敬酒词",
+            "hold_reason": "",
+            "path": "缓慢推进后固定",
+            "speed": "缓慢",
+            "trigger": "主体动作或观看关系开始变化。"
+          },
+          "perspective_intent": "natural_relation",
+          "primary_subjects": [
+            "刘"
+          ],
+          "secondary_subjects": [
+            "陈",
+            "周"
+          ],
+          "shot_size": "中近景→近景",
+          "spatial_strategy": {
+            "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+            "type": "sequential_reframe"
+          },
+          "start_frame": "刘笑着摆手",
+          "style_anchor_ids": [
+            "SA001"
+          ],
+          "viewpoint_owner": "刘"
+        }
+      },
+      {
+        "beat_ids": [
+          "B004"
+        ],
+        "dialogue_design": {
+          "axis_id": "AX001",
+          "face_readable_speakers": [
+            "周"
+          ],
+          "justification": "按本单元真实说话权安排可读面孔，并保持既定轴线。",
+          "listener_reaction_characters": [
+            "陈",
+            "刘"
+          ],
+          "mode": "single_speaker",
+          "speaker_sequence": [
+            "周"
+          ]
+        },
+        "estimated_duration_seconds": 3,
+        "narrative_purpose": "呈现B004的戏剧动作。",
+        "plan_order": 4,
+        "plan_unit_id": "PU004",
+        "scene_id": "SC001",
+        "screen_event_ids": [
+          "SEV006",
+          "SEV007"
+        ],
+        "source_spans": [
+          {
+            "end": 68,
+            "start": 51,
+            "text_hash": "fa205803978790c9f598b20d4a59301b3bf63744d6edf7c9bb3bae9363c83362"
+          }
+        ],
+        "visual_plan": {
+          "angle": "平视",
+          "camera_position": "周面前近处",
+          "end_frame": "周说完以茶代酒",
+          "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+          "framing_relation": "周手持茶杯，面部为主位",
+          "motivation": "贴近周的克制，让拒绝姿态清楚成立。",
+          "movement_plan": {
+            "class": "compound_move_then_fixed",
+            "end_condition": "周说完以茶代酒",
+            "hold_reason": "",
+            "path": "缓慢推进后固定",
+            "speed": "缓慢",
+            "trigger": "主体动作或观看关系开始变化。"
+          },
+          "perspective_intent": "natural_relation",
+          "primary_subjects": [
+            "周"
+          ],
+          "secondary_subjects": [],
+          "shot_size": "中近景→近景",
+          "spatial_strategy": {
+            "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+            "type": "sequential_reframe"
+          },
+          "start_frame": "周沉默片刻",
+          "style_anchor_ids": [
+            "SA001"
+          ],
+          "viewpoint_owner": "周"
+        }
+      },
+      {
+        "beat_ids": [
+          "B005"
+        ],
+        "dialogue_design": {
+          "axis_id": "AX001",
+          "face_readable_speakers": [
+            "陈"
+          ],
+          "justification": "按本单元真实说话权安排可读面孔，并保持既定轴线。",
+          "listener_reaction_characters": [
+            "刘",
+            "周"
+          ],
+          "mode": "single_speaker",
+          "speaker_sequence": [
+            "陈"
+          ]
+        },
+        "estimated_duration_seconds": 3,
+        "narrative_purpose": "呈现B005的戏剧动作。",
+        "plan_order": 5,
+        "plan_unit_id": "PU005",
+        "scene_id": "SC001",
+        "screen_event_ids": [
+          "SEV008",
+          "SEV009"
+        ],
+        "source_spans": [
+          {
+            "end": 88,
+            "start": 69,
+            "text_hash": "10e25d16d15f2907df6c8aca84a0d0eec03096f88ff73a5410361c129c28479b"
+          }
+        ],
+        "visual_plan": {
+          "angle": "仰视",
+          "camera_position": "桌面低处向上",
+          "end_frame": "陈说完施压话语",
+          "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+          "framing_relation": "陈面部在画面高处，手持酒杯",
+          "motivation": "以低角度强化陈的压迫性注视。",
+          "movement_plan": {
+            "class": "fixed",
+            "end_condition": "",
+            "hold_reason": "保护完整表演与空间关系。",
+            "path": "",
+            "speed": "",
+            "trigger": ""
+          },
+          "perspective_intent": "natural_relation",
+          "primary_subjects": [
+            "陈"
+          ],
+          "secondary_subjects": [],
+          "shot_size": "中近景→近景",
+          "spatial_strategy": {
+            "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+            "type": "sequential_reframe"
+          },
+          "start_frame": "陈放下酒杯",
+          "style_anchor_ids": [
+            "SA001"
+          ],
+          "viewpoint_owner": "陈"
+        }
+      },
+      {
+        "beat_ids": [
+          "B006"
+        ],
+        "dialogue_design": {
+          "axis_id": "AX001",
+          "face_readable_speakers": [
+            "周"
+          ],
+          "justification": "按本单元真实说话权安排可读面孔，并保持既定轴线。",
+          "listener_reaction_characters": [
+            "陈",
+            "刘"
+          ],
+          "mode": "single_speaker",
+          "speaker_sequence": [
+            "周"
+          ]
+        },
+        "estimated_duration_seconds": 3,
+        "narrative_purpose": "呈现B006的戏剧动作。",
+        "plan_order": 6,
+        "plan_unit_id": "PU006",
+        "scene_id": "SC001",
+        "screen_event_ids": [
+          "SEV010",
+          "SEV011"
+        ],
+        "source_spans": [
+          {
+            "end": 114,
+            "start": 89,
+            "text_hash": "cc034a2211bb1d17d70f77759e48624d06233f321fa6a068b8294375407aa0bc"
+          }
+        ],
+        "visual_plan": {
+          "angle": "平视",
+          "camera_position": "包厢门口朝向周",
+          "end_frame": "周走出包厢",
+          "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+          "framing_relation": "周起身离席，向门口走去",
+          "motivation": "目送周退场，让拒绝成为可见结果。",
+          "movement_plan": {
+            "class": "compound_move_then_fixed",
+            "end_condition": "周走出包厢",
+            "hold_reason": "",
+            "path": "缓慢跟随后固定",
+            "speed": "缓慢",
+            "trigger": "主体动作或观看关系开始变化。"
+          },
+          "perspective_intent": "natural_relation",
+          "primary_subjects": [
+            "周"
+          ],
+          "secondary_subjects": [],
+          "shot_size": "中景→近景",
+          "spatial_strategy": {
+            "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+            "type": "sequential_reframe"
+          },
+          "start_frame": "周起身",
+          "style_anchor_ids": [
+            "SA001"
+          ],
+          "viewpoint_owner": "周"
+        }
+      }
+    ],
+    "reorders": [],
+    "viewing_decisions": [
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV001",
+        "mode": "reframe",
+        "non_cut_basis": "continuous_action",
+        "reframe_method": "scale_change",
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV002",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD001"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV002",
+        "mode": "cut",
+        "non_cut_basis": null,
+        "reframe_method": null,
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV003",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD002"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV003",
+        "mode": "cut",
+        "non_cut_basis": null,
+        "reframe_method": null,
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV004",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD003"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV004",
+        "mode": "reframe",
+        "non_cut_basis": "continuous_action",
+        "reframe_method": "scale_change",
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV005",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD004"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV005",
+        "mode": "cut",
+        "non_cut_basis": null,
+        "reframe_method": null,
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV006",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD005"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV006",
+        "mode": "reframe",
+        "non_cut_basis": "continuous_action",
+        "reframe_method": "scale_change",
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV007",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD006"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV007",
+        "mode": "cut",
+        "non_cut_basis": null,
+        "reframe_method": null,
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV008",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD007"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV008",
+        "mode": "reframe",
+        "non_cut_basis": "continuous_action",
+        "reframe_method": "scale_change",
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV009",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD008"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV009",
+        "mode": "cut",
+        "non_cut_basis": null,
+        "reframe_method": null,
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV010",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD009"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV010",
+        "mode": "reframe",
+        "non_cut_basis": "continuous_action",
+        "reframe_method": "scale_change",
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV011",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD010"
+      }
+    ],
+    "visual_uniformity_reviews": []
+  },
+  "shots": [
+    {
+      "beat_ids": [
+        "B001"
+      ],
+      "blocking": [
+        {
+          "action": "陈举起酒杯",
+          "character": "陈",
+          "end_position": "原位",
+          "eyeline": "周",
+          "facing": "周",
+          "start_position": "原位"
+        },
+        {
+          "action": "刘保持坐姿",
+          "character": "刘",
+          "end_position": "原位",
+          "eyeline": "周",
+          "facing": "周",
+          "start_position": "原位"
+        },
+        {
+          "action": "周保持坐姿",
+          "character": "周",
+          "end_position": "原位",
+          "eyeline": "周",
+          "facing": "周",
+          "start_position": "原位"
+        }
+      ],
+      "camera": {
+        "angle": "俯视",
+        "composition": "包厢内，陈、刘、周三人对坐圆桌。三人关系清楚可读",
+        "end_frame": "陈举起酒杯",
+        "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+        "foreground_characters": [],
+        "framing_mode": "single",
+        "logic": "从包厢顶部中央垂直向下观察圆桌",
+        "motivation": "先建立三人空间关系，让权力三角清楚可读。",
+        "movement": "缓慢推进后固定",
+        "movement_plan": {
+          "class": "compound_move_then_fixed",
+          "end_condition": "陈举起酒杯",
+          "hold_reason": "",
+          "path": "缓慢推进后固定",
+          "speed": "缓慢",
+          "trigger": "主体动作或观看关系开始变化。"
+        },
+        "perspective_intent": "wide_spatial",
+        "position": "包厢顶部中央",
+        "primary_subjects": [
+          "陈"
+        ],
+        "secondary_subjects": [
+          "刘",
+          "周"
+        ],
+        "shot_size": "全景→中景",
+        "spatial_strategy": {
+          "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+          "type": "sequential_reframe"
+        },
+        "start_frame": "三人落座圆桌",
+        "viewpoint_owner": "陈"
+      },
+      "continuity": {
+        "action_match": {
+          "incoming": null,
+          "outgoing": null
+        },
+        "axis_id": "AX001",
+        "axis_side": "side_a",
+        "eyelines": [
+          {
+            "character": "陈",
+            "direction": "screen_right",
+            "target": "周"
+          },
+          {
+            "character": "刘",
+            "direction": "screen_right",
+            "target": "周"
+          },
+          {
+            "character": "周",
+            "direction": "screen_right",
+            "target": "周"
+          }
+        ],
+        "intentional_exceptions": [],
+        "screen_directions": [
+          {
+            "direction": "screen_right",
+            "entity": "陈",
+            "kind": "eyeline"
+          },
+          {
+            "direction": "screen_right",
+            "entity": "刘",
+            "kind": "eyeline"
+          },
+          {
+            "direction": "screen_right",
+            "entity": "周",
+            "kind": "eyeline"
+          }
+        ]
+      },
+      "continuity_updates": [],
+      "coverage_evidence": [
+        {
+          "evidence_quote": "包厢内，陈、刘、周三人对坐圆桌。",
+          "fact_id": "F001",
+          "target_path": "camera.composition"
+        },
+        {
+          "evidence_quote": "陈举起酒杯",
+          "fact_id": "F002",
+          "target_path": "blocking[0].action"
+        }
+      ],
+      "covered_fact_ids": [
+        "F001",
+        "F002"
+      ],
+      "cut_design": {
+        "entry_trigger": "进入B001。",
+        "exit_trigger": "离开B001。",
+        "isolation_intent": "none"
+      },
+      "dialogue": [],
+      "duration_seconds": 4,
+      "end_state": [
+        "陈举起酒杯",
+        "刘保持坐姿",
+        "周保持坐姿"
+      ],
+      "environment_behavior": [],
+      "execution_text": "【画面内容】包厢内灯光柔和，圆桌饭局保持安静；摄影机从包厢顶部中央垂直向下观察圆桌；包厢内，陈、刘、周三人对坐圆桌。三人关系清楚可读。包厢内，陈、刘、周三人对坐圆桌。陈举起酒杯。三人围坐，目光在酒杯间交汇。最后停在陈举起酒杯；刘保持坐姿；周保持坐姿。",
+      "notes": "",
+      "performance": {
+        "emotion_arc_id": null,
+        "emotion_intent": "三人围坐，目光在酒杯间交汇",
+        "phase": "steady",
+        "visible_behavior": [
+          "三人围坐，目光在酒杯间交汇"
+        ]
+      },
+      "plan_unit_id": "PU001",
+      "primary_fact_id": "F002",
+      "rendered_shot_description": "【全景→中景｜俯视｜缓慢推进后固定】\n【画面内容】包厢内灯光柔和，圆桌饭局保持安静；摄影机从包厢顶部中央垂直向下观察圆桌；包厢内，陈、刘、周三人对坐圆桌。三人关系清楚可读。包厢内，陈、刘、周三人对坐圆桌。陈举起酒杯。三人围坐，目光在酒杯间交汇。最后停在陈举起酒杯；刘保持坐姿；周保持坐姿。",
+      "scene_id": "SC001",
+      "shot_id": "SH001",
+      "shot_order": 1,
+      "shot_phases": [
+        {
+          "camera_state": "第1阶段从既定画面继续，执行缓慢推进后固定，并朝林问话结束，周肩背仍在前景收束。",
+          "duration_seconds": 2,
+          "phase_id": "PH001-01",
+          "phase_order": 1,
+          "screen_event_ids": [
+            "SEV001"
+          ],
+          "sound_fact_ids": []
+        },
+        {
+          "camera_state": "第2阶段从既定画面继续，执行缓慢推进后固定，并朝林问话结束，周肩背仍在前景收束。",
+          "duration_seconds": 2,
+          "phase_id": "PH001-02",
+          "phase_order": 2,
+          "screen_event_ids": [
+            "SEV002"
+          ],
+          "sound_fact_ids": []
+        }
+      ],
+      "source_spans": [
+        {
+          "end": 31,
+          "start": 0,
+          "text_hash": "de7cd61faf88a927cb4485639e9b1c5aceac3503562c7678fce1e582df8e5c16"
+        }
+      ],
+      "speaker_presentation": [],
+      "transition_to_next": {
+        "edit_point_id": "EP001",
+        "notes": "",
+        "type": "gaze_cut"
+      },
+      "visible_characters": [
+        "陈",
+        "刘",
+        "周"
+      ],
+      "visible_props": []
+    },
+    {
+      "beat_ids": [
+        "B002"
+      ],
+      "blocking": [
+        {
+          "action": "陈举起酒杯",
+          "character": "陈",
+          "end_position": "原位",
+          "eyeline": "周",
+          "facing": "周",
+          "start_position": "原位"
+        }
+      ],
+      "camera": {
+        "angle": "平视",
+        "composition": "陈手持酒杯，面部为主位",
+        "end_frame": "陈说完敬酒词",
+        "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+        "foreground_characters": [],
+        "framing_mode": "single",
+        "logic": "朝陈面部观察，保持陈周轴线同侧",
+        "motivation": "让陈的敬酒姿态与表情成为观看中心。",
+        "movement": "固定",
+        "movement_plan": {
+          "class": "fixed",
+          "end_condition": "",
+          "hold_reason": "保护完整表演与空间关系。",
+          "path": "",
+          "speed": "",
+          "trigger": ""
+        },
+        "perspective_intent": "natural_relation",
+        "position": "陈面前近处",
+        "primary_subjects": [
+          "陈"
+        ],
+        "secondary_subjects": [],
+        "shot_size": "近景",
+        "spatial_strategy": {
+          "description": "",
+          "type": "not_applicable"
+        },
+        "start_frame": "陈举杯说话前",
+        "viewpoint_owner": "陈"
+      },
+      "continuity": {
+        "action_match": {
+          "incoming": null,
+          "outgoing": null
+        },
+        "axis_id": "AX001",
+        "axis_side": "side_a",
+        "eyelines": [
+          {
+            "character": "陈",
+            "direction": "screen_right",
+            "target": "周"
+          }
+        ],
+        "intentional_exceptions": [],
+        "screen_directions": [
+          {
+            "direction": "screen_right",
+            "entity": "陈",
+            "kind": "eyeline"
+          }
+        ]
+      },
+      "continuity_updates": [],
+      "coverage_evidence": [
+        {
+          "evidence_quote": "这杯我先敬大家。",
+          "fact_id": "F003",
+          "target_path": "dialogue[0].text"
+        }
+      ],
+      "covered_fact_ids": [
+        "F003"
+      ],
+      "cut_design": {
+        "entry_trigger": "进入B002。",
+        "exit_trigger": "离开B002。",
+        "isolation_intent": "none"
+      },
+      "dialogue": [
+        {
+          "addressee": "周",
+          "fact_id": "F003",
+          "shot_delivery": "onscreen",
+          "speaker": "陈",
+          "text": "这杯我先敬大家。",
+          "timing": "PH002-01"
+        }
+      ],
+      "duration_seconds": 3,
+      "end_state": [
+        "陈举杯说完"
+      ],
+      "environment_behavior": [],
+      "execution_text": "【画面内容】圆桌饭局环境保持安静；摄影机位于陈面前近处，朝陈面部观察，保持陈周轴线同侧；陈手持酒杯，面部清晰可读。陈：这杯我先敬大家。陈举杯，目光扫过圆桌。最后停在陈举杯说完。",
+      "notes": "",
+      "performance": {
+        "emotion_arc_id": null,
+        "emotion_intent": "陈举杯，目光扫过圆桌",
+        "phase": "steady",
+        "visible_behavior": [
+          "陈举杯，目光扫过圆桌"
+        ]
+      },
+      "plan_unit_id": "PU002",
+      "primary_fact_id": "F003",
+      "rendered_shot_description": "【近景｜平视｜固定】\n【画面内容】圆桌饭局环境保持安静；摄影机位于陈面前近处，朝陈面部观察，保持陈周轴线同侧；陈手持酒杯，面部清晰可读。陈：这杯我先敬大家。陈举杯，目光扫过圆桌。最后停在陈举杯说完。",
+      "scene_id": "SC001",
+      "shot_id": "SH002",
+      "shot_order": 2,
+      "shot_phases": [
+        {
+          "camera_state": "第1阶段从既定画面继续，执行缓慢拉出后固定，并朝陈说完敬酒词收束。",
+          "duration_seconds": 3,
+          "phase_id": "PH002-01",
+          "phase_order": 1,
+          "screen_event_ids": [
+            "SEV003"
+          ],
+          "sound_fact_ids": [
+            "F003"
+          ]
+        }
+      ],
+      "source_spans": [
+        {
+          "end": 31,
+          "start": 17,
+          "text_hash": "6dc3726e033acbd1e0da08ea421c338dfb6d46db6bf244deb2badf108474eacf"
+        }
+      ],
+      "speaker_presentation": [
+        {
+          "fact_id": "F003",
+          "presentation": "primary_face",
+          "speaker": "陈"
+        }
+      ],
+      "transition_to_next": {
+        "edit_point_id": "EP002",
+        "notes": "",
+        "type": "gaze_cut"
+      },
+      "visible_characters": [
+        "陈"
+      ],
+      "visible_props": []
+    },
+    {
+      "beat_ids": [
+        "B003"
+      ],
+      "blocking": [
+        {
+          "action": "刘笑着摆手",
+          "character": "刘",
+          "end_position": "原位",
+          "eyeline": "陈",
+          "facing": "陈",
+          "start_position": "原位"
+        },
+        {
+          "action": "陈保持举杯",
+          "character": "陈",
+          "end_position": "原位",
+          "eyeline": "陈",
+          "facing": "陈",
+          "start_position": "原位"
+        }
+      ],
+      "camera": {
+        "angle": "平视",
+        "composition": "刘面部为主位，陈肩背在前景",
+        "end_frame": "刘说完敬酒词",
+        "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+        "foreground_characters": [
+          "陈"
+        ],
+        "framing_mode": "over_shoulder",
+        "logic": "从陈肩后朝刘观察，保持陈刘轴线同侧",
+        "motivation": "在过肩关系中捕捉刘的逢迎反应。",
+        "movement": "缓慢推进后固定",
+        "movement_plan": {
+          "class": "compound_move_then_fixed",
+          "end_condition": "刘说完敬酒词",
+          "hold_reason": "",
+          "path": "缓慢推进后固定",
+          "speed": "缓慢",
+          "trigger": "主体动作或观看关系开始变化。"
+        },
+        "perspective_intent": "natural_relation",
+        "position": "陈肩后",
+        "primary_subjects": [
+          "刘"
+        ],
+        "secondary_subjects": [
+          "陈",
+          "周"
+        ],
+        "shot_size": "中近景→近景",
+        "spatial_strategy": {
+          "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+          "type": "sequential_reframe"
+        },
+        "start_frame": "刘笑着摆手",
+        "viewpoint_owner": "刘"
+      },
+      "continuity": {
+        "action_match": {
+          "incoming": null,
+          "outgoing": null
+        },
+        "axis_id": "AX001",
+        "axis_side": "side_a",
+        "eyelines": [
+          {
+            "character": "刘",
+            "direction": "screen_right",
+            "target": "陈"
+          },
+          {
+            "character": "陈",
+            "direction": "screen_right",
+            "target": "陈"
+          },
+          {
+            "character": "周",
+            "direction": "screen_right",
+            "target": "陈"
+          }
+        ],
+        "intentional_exceptions": [],
+        "screen_directions": [
+          {
+            "direction": "screen_right",
+            "entity": "刘",
+            "kind": "eyeline"
+          },
+          {
+            "direction": "screen_right",
+            "entity": "陈",
+            "kind": "eyeline"
+          },
+          {
+            "direction": "screen_right",
+            "entity": "周",
+            "kind": "eyeline"
+          }
+        ]
+      },
+      "continuity_updates": [],
+      "coverage_evidence": [
+        {
+          "evidence_quote": "刘笑着摆手",
+          "fact_id": "F004",
+          "target_path": "blocking[0].action"
+        },
+        {
+          "evidence_quote": "陈总客气了，我先干为敬。",
+          "fact_id": "F005",
+          "target_path": "dialogue[0].text"
+        }
+      ],
+      "covered_fact_ids": [
+        "F004",
+        "F005"
+      ],
+      "cut_design": {
+        "entry_trigger": "进入B003。",
+        "exit_trigger": "离开B003。",
+        "isolation_intent": "none"
+      },
+      "dialogue": [
+        {
+          "addressee": "陈",
+          "fact_id": "F005",
+          "shot_delivery": "onscreen",
+          "speaker": "刘",
+          "text": "陈总客气了，我先干为敬。",
+          "timing": "PH003-02"
+        }
+      ],
+      "duration_seconds": 3,
+      "end_state": [
+        "刘说完敬酒词",
+        "陈保持举杯"
+      ],
+      "environment_behavior": [],
+      "execution_text": "【画面内容】圆桌饭局环境保持安静；摄影机从陈肩后朝刘观察，保持陈刘轴线同侧；刘面部清晰可读，陈肩背在前景。刘笑着摆手。刘：陈总客气了，我先干为敬。最后停在刘说完敬酒词；陈保持举杯。",
+      "notes": "",
+      "performance": {
+        "emotion_arc_id": null,
+        "emotion_intent": "刘笑着摆手，语气逢迎",
+        "phase": "steady",
+        "visible_behavior": [
+          "刘笑着摆手，语气逢迎"
+        ]
+      },
+      "plan_unit_id": "PU003",
+      "primary_fact_id": "F005",
+      "rendered_shot_description": "【中近景→近景｜平视｜缓慢推进后固定】\n【画面内容】圆桌饭局环境保持安静；摄影机从陈肩后朝刘观察，保持陈刘轴线同侧；刘面部清晰可读，陈肩背在前景。刘笑着摆手。刘：陈总客气了，我先干为敬。最后停在刘说完敬酒词；陈保持举杯。",
+      "scene_id": "SC001",
+      "shot_id": "SH003",
+      "shot_order": 3,
+      "shot_phases": [
+        {
+          "camera_state": "第1阶段从既定画面继续，执行缓慢推进后固定，并朝刘说完敬酒词收束。",
+          "duration_seconds": 1,
+          "phase_id": "PH003-01",
+          "phase_order": 1,
+          "screen_event_ids": [
+            "SEV004"
+          ],
+          "sound_fact_ids": []
+        },
+        {
+          "camera_state": "第2阶段从既定画面继续，执行缓慢推进后固定，并朝刘说完敬酒词收束。",
+          "duration_seconds": 2,
+          "phase_id": "PH003-02",
+          "phase_order": 2,
+          "screen_event_ids": [
+            "SEV005"
+          ],
+          "sound_fact_ids": [
+            "F005"
+          ]
+        }
+      ],
+      "source_spans": [
+        {
+          "end": 50,
+          "start": 32,
+          "text_hash": "0c00acef9cc7cd8d2d5662419f29ebf4ad3eb865586a7e4745d9c7b24f6e3838"
+        }
+      ],
+      "speaker_presentation": [
+        {
+          "fact_id": "F005",
+          "presentation": "primary_face",
+          "speaker": "刘"
+        }
+      ],
+      "transition_to_next": {
+        "edit_point_id": "EP003",
+        "notes": "",
+        "type": "gaze_cut"
+      },
+      "visible_characters": [
+        "刘",
+        "陈",
+        "周"
+      ],
+      "visible_props": []
+    },
+    {
+      "beat_ids": [
+        "B004"
+      ],
+      "blocking": [
+        {
+          "action": "周沉默片刻，端起茶杯",
+          "character": "周",
+          "end_position": "原位",
+          "eyeline": "陈",
+          "facing": "陈",
+          "start_position": "原位"
+        }
+      ],
+      "camera": {
+        "angle": "平视",
+        "composition": "周手持茶杯，面部为主位",
+        "end_frame": "周说完以茶代酒",
+        "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+        "foreground_characters": [],
+        "framing_mode": "single",
+        "logic": "朝周面部观察，保持陈周轴线同侧",
+        "motivation": "贴近周的克制，让拒绝姿态清楚成立。",
+        "movement": "缓慢推进后固定",
+        "movement_plan": {
+          "class": "compound_move_then_fixed",
+          "end_condition": "周说完以茶代酒",
+          "hold_reason": "",
+          "path": "缓慢推进后固定",
+          "speed": "缓慢",
+          "trigger": "主体动作或观看关系开始变化。"
+        },
+        "perspective_intent": "natural_relation",
+        "position": "周面前近处",
+        "primary_subjects": [
+          "周"
+        ],
+        "secondary_subjects": [],
+        "shot_size": "中近景→近景",
+        "spatial_strategy": {
+          "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+          "type": "sequential_reframe"
+        },
+        "start_frame": "周沉默片刻",
+        "viewpoint_owner": "周"
+      },
+      "continuity": {
+        "action_match": {
+          "incoming": null,
+          "outgoing": null
+        },
+        "axis_id": "AX001",
+        "axis_side": "side_a",
+        "eyelines": [
+          {
+            "character": "周",
+            "direction": "screen_right",
+            "target": "陈"
+          }
+        ],
+        "intentional_exceptions": [],
+        "screen_directions": [
+          {
+            "direction": "screen_right",
+            "entity": "周",
+            "kind": "eyeline"
+          }
+        ]
+      },
+      "continuity_updates": [],
+      "coverage_evidence": [
+        {
+          "evidence_quote": "周沉默片刻，端起茶杯",
+          "fact_id": "F006",
+          "target_path": "blocking[0].action"
+        },
+        {
+          "evidence_quote": "我以茶代酒。",
+          "fact_id": "F007",
+          "target_path": "dialogue[0].text"
+        }
+      ],
+      "covered_fact_ids": [
+        "F006",
+        "F007"
+      ],
+      "cut_design": {
+        "entry_trigger": "进入B004。",
+        "exit_trigger": "离开B004。",
+        "isolation_intent": "none"
+      },
+      "dialogue": [
+        {
+          "addressee": "陈",
+          "fact_id": "F007",
+          "shot_delivery": "onscreen",
+          "speaker": "周",
+          "text": "我以茶代酒。",
+          "timing": "PH004-02"
+        }
+      ],
+      "duration_seconds": 3,
+      "end_state": [
+        "周端着茶杯"
+      ],
+      "environment_behavior": [],
+      "execution_text": "【画面内容】圆桌饭局环境保持安静；摄影机位于周面前近处，朝周面部观察，保持陈周轴线同侧；周手持茶杯，面部清晰可读。周沉默片刻，端起茶杯。周：我以茶代酒。周垂眼端茶杯，语气平静但坚定。最后停在周端着茶杯。",
+      "notes": "",
+      "performance": {
+        "emotion_arc_id": null,
+        "emotion_intent": "周垂眼端茶杯，语气平静但坚定",
+        "phase": "steady",
+        "visible_behavior": [
+          "周垂眼端茶杯，语气平静但坚定"
+        ]
+      },
+      "plan_unit_id": "PU004",
+      "primary_fact_id": "F007",
+      "rendered_shot_description": "【中近景→近景｜平视｜缓慢推进后固定】\n【画面内容】圆桌饭局环境保持安静；摄影机位于周面前近处，朝周面部观察，保持陈周轴线同侧；周手持茶杯，面部清晰可读。周沉默片刻，端起茶杯。周：我以茶代酒。周垂眼端茶杯，语气平静但坚定。最后停在周端着茶杯。",
+      "scene_id": "SC001",
+      "shot_id": "SH004",
+      "shot_order": 4,
+      "shot_phases": [
+        {
+          "camera_state": "第1阶段从既定画面继续，执行缓慢推进后固定，并朝周说完以茶代酒收束。",
+          "duration_seconds": 1,
+          "phase_id": "PH004-01",
+          "phase_order": 1,
+          "screen_event_ids": [
+            "SEV006"
+          ],
+          "sound_fact_ids": []
+        },
+        {
+          "camera_state": "第2阶段从既定画面继续，执行缓慢推进后固定，并朝周说完以茶代酒收束。",
+          "duration_seconds": 2,
+          "phase_id": "PH004-02",
+          "phase_order": 2,
+          "screen_event_ids": [
+            "SEV007"
+          ],
+          "sound_fact_ids": [
+            "F007"
+          ]
+        }
+      ],
+      "source_spans": [
+        {
+          "end": 68,
+          "start": 51,
+          "text_hash": "fa205803978790c9f598b20d4a59301b3bf63744d6edf7c9bb3bae9363c83362"
+        }
+      ],
+      "speaker_presentation": [
+        {
+          "fact_id": "F007",
+          "presentation": "primary_face",
+          "speaker": "周"
+        }
+      ],
+      "transition_to_next": {
+        "edit_point_id": "EP004",
+        "notes": "",
+        "type": "gaze_cut"
+      },
+      "visible_characters": [
+        "周"
+      ],
+      "visible_props": []
+    },
+    {
+      "beat_ids": [
+        "B005"
+      ],
+      "blocking": [
+        {
+          "action": "陈放下酒杯，看向周",
+          "character": "陈",
+          "end_position": "原位",
+          "eyeline": "周",
+          "facing": "周",
+          "start_position": "原位"
+        }
+      ],
+      "camera": {
+        "angle": "仰视",
+        "composition": "陈面部在画面高处，手持酒杯",
+        "end_frame": "陈说完施压话语",
+        "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+        "foreground_characters": [],
+        "framing_mode": "single",
+        "logic": "从桌面低处向上观察陈",
+        "motivation": "以低角度强化陈的压迫性注视。",
+        "movement": "固定",
+        "movement_plan": {
+          "class": "fixed",
+          "end_condition": "",
+          "hold_reason": "保护完整表演与空间关系。",
+          "path": "",
+          "speed": "",
+          "trigger": ""
+        },
+        "perspective_intent": "natural_relation",
+        "position": "桌面低处向上",
+        "primary_subjects": [
+          "陈"
+        ],
+        "secondary_subjects": [],
+        "shot_size": "中近景→近景",
+        "spatial_strategy": {
+          "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+          "type": "sequential_reframe"
+        },
+        "start_frame": "陈放下酒杯",
+        "viewpoint_owner": "陈"
+      },
+      "continuity": {
+        "action_match": {
+          "incoming": null,
+          "outgoing": null
+        },
+        "axis_id": "AX001",
+        "axis_side": "side_a",
+        "eyelines": [
+          {
+            "character": "陈",
+            "direction": "screen_right",
+            "target": "周"
+          }
+        ],
+        "intentional_exceptions": [],
+        "screen_directions": [
+          {
+            "direction": "screen_right",
+            "entity": "陈",
+            "kind": "eyeline"
+          }
+        ]
+      },
+      "continuity_updates": [],
+      "coverage_evidence": [
+        {
+          "evidence_quote": "陈放下酒杯，看向周",
+          "fact_id": "F008",
+          "target_path": "blocking[0].action"
+        },
+        {
+          "evidence_quote": "周小姐还是不赏脸？",
+          "fact_id": "F009",
+          "target_path": "dialogue[0].text"
+        }
+      ],
+      "covered_fact_ids": [
+        "F008",
+        "F009"
+      ],
+      "cut_design": {
+        "entry_trigger": "进入B005。",
+        "exit_trigger": "离开B005。",
+        "isolation_intent": "none"
+      },
+      "dialogue": [
+        {
+          "addressee": "周",
+          "fact_id": "F009",
+          "shot_delivery": "onscreen",
+          "speaker": "陈",
+          "text": "周小姐还是不赏脸？",
+          "timing": "PH005-02"
+        }
+      ],
+      "duration_seconds": 3,
+      "end_state": [
+        "陈放下酒杯"
+      ],
+      "environment_behavior": [],
+      "execution_text": "【画面内容】圆桌饭局环境保持安静；摄影机从桌面低处向上观察陈；陈面部在画面高处，手持酒杯。陈放下酒杯，看向周。陈：周小姐还是不赏脸？陈放下酒杯，眼神紧盯着周。最后停在陈放下酒杯。",
+      "notes": "",
+      "performance": {
+        "emotion_arc_id": null,
+        "emotion_intent": "陈放下酒杯，眼神紧盯着周",
+        "phase": "steady",
+        "visible_behavior": [
+          "陈放下酒杯，眼神紧盯着周"
+        ]
+      },
+      "plan_unit_id": "PU005",
+      "primary_fact_id": "F009",
+      "rendered_shot_description": "【中近景→近景｜仰视｜固定】\n【画面内容】圆桌饭局环境保持安静；摄影机从桌面低处向上观察陈；陈面部在画面高处，手持酒杯。陈放下酒杯，看向周。陈：周小姐还是不赏脸？陈放下酒杯，眼神紧盯着周。最后停在陈放下酒杯。",
+      "scene_id": "SC001",
+      "shot_id": "SH005",
+      "shot_order": 5,
+      "shot_phases": [
+        {
+          "camera_state": "第1阶段从既定画面继续，执行固定，并朝陈说完施压话语收束。",
+          "duration_seconds": 1,
+          "phase_id": "PH005-01",
+          "phase_order": 1,
+          "screen_event_ids": [
+            "SEV008"
+          ],
+          "sound_fact_ids": []
+        },
+        {
+          "camera_state": "第2阶段从既定画面继续，执行固定，并朝陈说完施压话语收束。",
+          "duration_seconds": 2,
+          "phase_id": "PH005-02",
+          "phase_order": 2,
+          "screen_event_ids": [
+            "SEV009"
+          ],
+          "sound_fact_ids": [
+            "F009"
+          ]
+        }
+      ],
+      "source_spans": [
+        {
+          "end": 88,
+          "start": 69,
+          "text_hash": "10e25d16d15f2907df6c8aca84a0d0eec03096f88ff73a5410361c129c28479b"
+        }
+      ],
+      "speaker_presentation": [
+        {
+          "fact_id": "F009",
+          "presentation": "primary_face",
+          "speaker": "陈"
+        }
+      ],
+      "transition_to_next": {
+        "edit_point_id": "EP005",
+        "notes": "",
+        "type": "gaze_cut"
+      },
+      "visible_characters": [
+        "陈"
+      ],
+      "visible_props": []
+    },
+    {
+      "beat_ids": [
+        "B006"
+      ],
+      "blocking": [
+        {
+          "action": "周起身，将茶杯轻轻搁在桌上",
+          "character": "周",
+          "end_position": "原位",
+          "eyeline": "陈",
+          "facing": "陈",
+          "start_position": "原位"
+        }
+      ],
+      "camera": {
+        "angle": "平视",
+        "composition": "周起身离席，向门口走去",
+        "end_frame": "周走出包厢",
+        "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+        "foreground_characters": [],
+        "framing_mode": "single",
+        "logic": "从门口朝周观察，保持陈周轴线同侧",
+        "motivation": "目送周退场，让拒绝成为可见结果。",
+        "movement": "缓慢跟随后固定",
+        "movement_plan": {
+          "class": "compound_move_then_fixed",
+          "end_condition": "周走出包厢",
+          "hold_reason": "",
+          "path": "缓慢跟随后固定",
+          "speed": "缓慢",
+          "trigger": "主体动作或观看关系开始变化。"
+        },
+        "perspective_intent": "natural_relation",
+        "position": "包厢门口朝向周",
+        "primary_subjects": [
+          "周"
+        ],
+        "secondary_subjects": [],
+        "shot_size": "中景→近景",
+        "spatial_strategy": {
+          "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+          "type": "sequential_reframe"
+        },
+        "start_frame": "周起身",
+        "viewpoint_owner": "周"
+      },
+      "continuity": {
+        "action_match": {
+          "incoming": null,
+          "outgoing": null
+        },
+        "axis_id": "AX001",
+        "axis_side": "side_a",
+        "eyelines": [
+          {
+            "character": "周",
+            "direction": "screen_right",
+            "target": "陈"
+          }
+        ],
+        "intentional_exceptions": [],
+        "screen_directions": [
+          {
+            "direction": "screen_right",
+            "entity": "周",
+            "kind": "eyeline"
+          }
+        ]
+      },
+      "continuity_updates": [
+        {
+          "entity": "茶杯",
+          "entity_type": "prop",
+          "evidence_fact_ids": [
+            "F010"
+          ],
+          "field": "state",
+          "from": "半满",
+          "to": "搁在桌上"
+        }
+      ],
+      "coverage_evidence": [
+        {
+          "evidence_quote": "周起身，将茶杯轻轻搁在桌上",
+          "fact_id": "F010",
+          "target_path": "blocking[0].action"
+        },
+        {
+          "evidence_quote": "我身体不舒服，先告辞。",
+          "fact_id": "F011",
+          "target_path": "dialogue[0].text"
+        }
+      ],
+      "covered_fact_ids": [
+        "F010",
+        "F011"
+      ],
+      "cut_design": {
+        "entry_trigger": "进入B006。",
+        "exit_trigger": "离开B006。",
+        "isolation_intent": "none"
+      },
+      "dialogue": [
+        {
+          "addressee": "陈",
+          "fact_id": "F011",
+          "shot_delivery": "onscreen",
+          "speaker": "周",
+          "text": "我身体不舒服，先告辞。",
+          "timing": "PH006-02"
+        }
+      ],
+      "duration_seconds": 3,
+      "end_state": [
+        "周走出包厢",
+        "陈刘留在桌边"
+      ],
+      "environment_behavior": [],
+      "execution_text": "【画面内容】包厢门口光线稍暗，圆桌留在背景；摄影机位于包厢门口，从门口朝周观察，保持陈周轴线同侧；周起身离席，向门口走去。周起身，将茶杯轻轻搁在桌上。周：我身体不舒服，先告辞。周将茶杯搁下，起身不回头。最后停在周走出包厢；陈刘留在桌边。",
+      "notes": "",
+      "performance": {
+        "emotion_arc_id": null,
+        "emotion_intent": "周将茶杯搁下，起身不回头",
+        "phase": "steady",
+        "visible_behavior": [
+          "周将茶杯搁下，起身不回头"
+        ]
+      },
+      "plan_unit_id": "PU006",
+      "primary_fact_id": "F011",
+      "rendered_shot_description": "【中景→近景｜平视｜缓慢跟随后固定】\n【画面内容】包厢门口光线稍暗，圆桌留在背景；摄影机位于包厢门口，从门口朝周观察，保持陈周轴线同侧；周起身离席，向门口走去。周起身，将茶杯轻轻搁在桌上。周：我身体不舒服，先告辞。周将茶杯搁下，起身不回头。最后停在周走出包厢；陈刘留在桌边。",
+      "scene_id": "SC001",
+      "shot_id": "SH006",
+      "shot_order": 6,
+      "shot_phases": [
+        {
+          "camera_state": "第1阶段从既定画面继续，执行缓慢跟随后固定，并朝周走出包厢收束。",
+          "duration_seconds": 1,
+          "phase_id": "PH006-01",
+          "phase_order": 1,
+          "screen_event_ids": [
+            "SEV010"
+          ],
+          "sound_fact_ids": []
+        },
+        {
+          "camera_state": "第2阶段从既定画面继续，执行缓慢跟随后固定，并朝周走出包厢收束。",
+          "duration_seconds": 2,
+          "phase_id": "PH006-02",
+          "phase_order": 2,
+          "screen_event_ids": [
+            "SEV011"
+          ],
+          "sound_fact_ids": [
+            "F011"
+          ]
+        }
+      ],
+      "source_spans": [
+        {
+          "end": 114,
+          "start": 89,
+          "text_hash": "cc034a2211bb1d17d70f77759e48624d06233f321fa6a068b8294375407aa0bc"
+        }
+      ],
+      "speaker_presentation": [
+        {
+          "fact_id": "F011",
+          "presentation": "primary_face",
+          "speaker": "周"
+        }
+      ],
+      "transition_to_next": {
+        "edit_point_id": null,
+        "notes": "",
+        "type": "scene_end"
+      },
+      "visible_characters": [
+        "周"
+      ],
+      "visible_props": []
+    }
+  ],
+  "source": {
+    "approved_corrections": [],
+    "boundary_lock": "entire_submitted_text",
+    "delivery_slug": "positive-253",
+    "input_kind": "continuous_text",
+    "locked_text": "包厢内，陈、刘、周三人对坐圆桌。\n陈举起酒杯：这杯我先敬大家。\n刘笑着摆手：陈总客气了，我先干为敬。\n周沉默片刻，端起茶杯：我以茶代酒。\n陈放下酒杯，看向周：周小姐还是不赏脸？\n周起身，将茶杯轻轻搁在桌上：我身体不舒服，先告辞。\n",
+    "locked_text_hash": "b01faf1ba75ba19ce94d0ee41851dcaafbecc007c7e211080dfd558896b159ad",
+    "scope": "dinner-party-scene 端到端 fixture"
+  },
+  "source_analysis": {
+    "character_relations": [
+      "陈处于权力上位，主动敬酒施压",
+      "刘附和陈，缓和气氛",
+      "周保持抵抗，最终以身体为由退场"
+    ],
+    "dramatic_progression": "陈主导酒局，刘逢迎，周以茶代酒并最终离席，冲突升级。",
+    "narrative_function": "通过敬酒与拒绝展示三人权力与亲疏关系。",
+    "source_boundary": "v2.5.3 正例：饭局场景完整交付。",
+    "source_constraints": [
+      "逐字保留六句对白",
+      "周起身离席必须完整"
+    ]
+  },
+  "source_skill": "su-fenjingskill",
+  "source_skill_version": "2.5.5"
+}
