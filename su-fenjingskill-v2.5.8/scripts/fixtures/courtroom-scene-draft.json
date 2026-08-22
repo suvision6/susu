@@ -1,0 +1,3142 @@
+{
+  "beats": [
+    {
+      "beat_id": "B001",
+      "beat_order": 1,
+      "dramatic_change": "节拍1：推动戏剧动作。",
+      "facts": [
+        {
+          "fact_id": "F001",
+          "performers": [
+            "法官",
+            "被告",
+            "律师",
+            "法警"
+          ],
+          "source_fragment": "法庭内，法官、被告、律师、法警各就其位。",
+          "source_spans": [
+            {
+              "end": 20,
+              "start": 0,
+              "text_hash": "41eea39dec8e4c1986b3446d666a7b68da6fcf74c085e6cd4baf9451802f1ee8"
+            }
+          ],
+          "text": "法庭内，法官、被告、律师、法警各就其位。",
+          "type": "position"
+        },
+        {
+          "fact_id": "F002",
+          "performers": [
+            "法官"
+          ],
+          "source_fragment": "法官敲响法槌：请保持安静。",
+          "source_spans": [
+            {
+              "end": 34,
+              "start": 21,
+              "text_hash": "e66e4e34cfb9e5e780f60563634487ab44995cff7f7f38c76b48a2e628f8222f"
+            }
+          ],
+          "text": "法官敲响法槌",
+          "type": "action"
+        }
+      ],
+      "scene_id": "SC001",
+      "source_spans": [
+        {
+          "end": 34,
+          "start": 0,
+          "text_hash": "b836aa1b0eb99a30176632db6995c25c491ff071178a70e2d0892d4719372e9b"
+        }
+      ]
+    },
+    {
+      "beat_id": "B002",
+      "beat_order": 2,
+      "dramatic_change": "节拍2：推动戏剧动作。",
+      "facts": [
+        {
+          "fact_id": "F004",
+          "performers": [
+            "被告"
+          ],
+          "source_fragment": "被告抬头，双手攥紧栏杆：我没有杀人。",
+          "source_spans": [
+            {
+              "end": 53,
+              "start": 35,
+              "text_hash": "e6ce9eb5866ca4d0e102c1cc33c3de16673e98019f549c6eb21336e80b822a47"
+            }
+          ],
+          "text": "被告抬头，双手攥紧栏杆",
+          "type": "action"
+        },
+        {
+          "fact_id": "F005",
+          "performers": [
+            "被告"
+          ],
+          "script_voice_type": "scene_dialogue",
+          "source_fragment": "被告抬头，双手攥紧栏杆：我没有杀人。",
+          "source_spans": [
+            {
+              "end": 53,
+              "start": 35,
+              "text_hash": "e6ce9eb5866ca4d0e102c1cc33c3de16673e98019f549c6eb21336e80b822a47"
+            }
+          ],
+          "speaker": "被告",
+          "text": "我没有杀人。",
+          "type": "dialogue"
+        }
+      ],
+      "scene_id": "SC001",
+      "source_spans": [
+        {
+          "end": 53,
+          "start": 35,
+          "text_hash": "e6ce9eb5866ca4d0e102c1cc33c3de16673e98019f549c6eb21336e80b822a47"
+        }
+      ]
+    },
+    {
+      "beat_id": "B003",
+      "beat_order": 3,
+      "dramatic_change": "节拍3：推动戏剧动作。",
+      "facts": [
+        {
+          "fact_id": "F006",
+          "performers": [
+            "律师"
+          ],
+          "source_fragment": "律师起身：审判长，我方申请出示新证据。",
+          "source_spans": [
+            {
+              "end": 73,
+              "start": 54,
+              "text_hash": "05be1fe834fe106bc4c1d9aaffddfec08a601cb6fe3a75ba1a39cf5514884335"
+            }
+          ],
+          "text": "律师起身",
+          "type": "action"
+        },
+        {
+          "fact_id": "F007",
+          "performers": [
+            "律师"
+          ],
+          "script_voice_type": "scene_dialogue",
+          "source_fragment": "律师起身：审判长，我方申请出示新证据。",
+          "source_spans": [
+            {
+              "end": 73,
+              "start": 54,
+              "text_hash": "05be1fe834fe106bc4c1d9aaffddfec08a601cb6fe3a75ba1a39cf5514884335"
+            }
+          ],
+          "speaker": "律师",
+          "text": "审判长，我方申请出示新证据。",
+          "type": "dialogue"
+        }
+      ],
+      "scene_id": "SC001",
+      "source_spans": [
+        {
+          "end": 73,
+          "start": 54,
+          "text_hash": "05be1fe834fe106bc4c1d9aaffddfec08a601cb6fe3a75ba1a39cf5514884335"
+        }
+      ]
+    },
+    {
+      "beat_id": "B004",
+      "beat_order": 4,
+      "dramatic_change": "节拍4：推动戏剧动作。",
+      "facts": [
+        {
+          "fact_id": "F008",
+          "performers": [
+            "法官"
+          ],
+          "source_fragment": "法官看向律师：请陈述理由。",
+          "source_spans": [
+            {
+              "end": 87,
+              "start": 74,
+              "text_hash": "ee4cffe423bae19b65536bd709ca82aefadcb79792b47b4d12ce83e7a2b1d6b3"
+            }
+          ],
+          "text": "法官看向律师",
+          "type": "action"
+        },
+        {
+          "fact_id": "F009",
+          "performers": [
+            "法官"
+          ],
+          "script_voice_type": "scene_dialogue",
+          "source_fragment": "法官看向律师：请陈述理由。",
+          "source_spans": [
+            {
+              "end": 87,
+              "start": 74,
+              "text_hash": "ee4cffe423bae19b65536bd709ca82aefadcb79792b47b4d12ce83e7a2b1d6b3"
+            }
+          ],
+          "speaker": "法官",
+          "text": "请陈述理由。",
+          "type": "dialogue"
+        }
+      ],
+      "scene_id": "SC001",
+      "source_spans": [
+        {
+          "end": 87,
+          "start": 74,
+          "text_hash": "ee4cffe423bae19b65536bd709ca82aefadcb79792b47b4d12ce83e7a2b1d6b3"
+        }
+      ]
+    },
+    {
+      "beat_id": "B005",
+      "beat_order": 5,
+      "dramatic_change": "节拍5：推动戏剧动作。",
+      "facts": [
+        {
+          "fact_id": "F010",
+          "performers": [
+            "律师"
+          ],
+          "source_fragment": "律师从公文包取出文件：这份笔录可以证明被告不在现场。",
+          "source_spans": [
+            {
+              "end": 114,
+              "start": 88,
+              "text_hash": "220a35b57e2db4452bd61e3fd384b229521d966ce5bf1dba377eb7739d58874b"
+            }
+          ],
+          "text": "律师从公文包取出文件",
+          "type": "action"
+        },
+        {
+          "fact_id": "F011",
+          "performers": [
+            "律师"
+          ],
+          "script_voice_type": "scene_dialogue",
+          "source_fragment": "律师从公文包取出文件：这份笔录可以证明被告不在现场。",
+          "source_spans": [
+            {
+              "end": 114,
+              "start": 88,
+              "text_hash": "220a35b57e2db4452bd61e3fd384b229521d966ce5bf1dba377eb7739d58874b"
+            }
+          ],
+          "speaker": "律师",
+          "text": "这份笔录可以证明被告不在现场。",
+          "type": "dialogue"
+        }
+      ],
+      "scene_id": "SC001",
+      "source_spans": [
+        {
+          "end": 114,
+          "start": 88,
+          "text_hash": "220a35b57e2db4452bd61e3fd384b229521d966ce5bf1dba377eb7739d58874b"
+        }
+      ]
+    },
+    {
+      "beat_id": "B006",
+      "beat_order": 6,
+      "dramatic_change": "节拍6：推动戏剧动作。",
+      "facts": [
+        {
+          "fact_id": "F012",
+          "performers": [
+            "法警"
+          ],
+          "source_fragment": "法警走向被告，按住他的肩：休庭后请随我来。",
+          "source_spans": [
+            {
+              "end": 136,
+              "start": 115,
+              "text_hash": "e3ac1a5060479a962386c482b91cbeb277f9061e5d7480bec6171ef433682ed1"
+            }
+          ],
+          "text": "法警走向被告，按住他的肩",
+          "type": "action"
+        },
+        {
+          "fact_id": "F013",
+          "performers": [
+            "法警"
+          ],
+          "script_voice_type": "scene_dialogue",
+          "source_fragment": "法警走向被告，按住他的肩：休庭后请随我来。",
+          "source_spans": [
+            {
+              "end": 136,
+              "start": 115,
+              "text_hash": "e3ac1a5060479a962386c482b91cbeb277f9061e5d7480bec6171ef433682ed1"
+            }
+          ],
+          "speaker": "法警",
+          "text": "休庭后请随我来。",
+          "type": "dialogue"
+        }
+      ],
+      "scene_id": "SC001",
+      "source_spans": [
+        {
+          "end": 136,
+          "start": 115,
+          "text_hash": "e3ac1a5060479a962386c482b91cbeb277f9061e5d7480bec6171ef433682ed1"
+        }
+      ]
+    },
+    {
+      "beat_id": "B007",
+      "beat_order": 7,
+      "dramatic_change": "节拍7：推动戏剧动作。",
+      "facts": [
+        {
+          "fact_id": "F014",
+          "performers": [
+            "被告"
+          ],
+          "source_fragment": "被告挣脱，指向律师：你早就知道！",
+          "source_spans": [
+            {
+              "end": 153,
+              "start": 137,
+              "text_hash": "f89b065dae88c300485522e4e84a195aea215d8b5f8da1a96fcb387c488990d7"
+            }
+          ],
+          "text": "被告挣脱，指向律师",
+          "type": "action"
+        },
+        {
+          "fact_id": "F015",
+          "performers": [
+            "被告"
+          ],
+          "script_voice_type": "scene_dialogue",
+          "source_fragment": "被告挣脱，指向律师：你早就知道！",
+          "source_spans": [
+            {
+              "end": 153,
+              "start": 137,
+              "text_hash": "f89b065dae88c300485522e4e84a195aea215d8b5f8da1a96fcb387c488990d7"
+            }
+          ],
+          "speaker": "被告",
+          "text": "你早就知道！",
+          "type": "dialogue"
+        }
+      ],
+      "scene_id": "SC001",
+      "source_spans": [
+        {
+          "end": 153,
+          "start": 137,
+          "text_hash": "f89b065dae88c300485522e4e84a195aea215d8b5f8da1a96fcb387c488990d7"
+        }
+      ]
+    }
+  ],
+  "confirmations": {
+    "gate_1": {
+      "confirmation_order": 1,
+      "notes": "fixture 自动确认",
+      "stage_digest": "7e81907d428d9b9303e2a05a4e2c84b36feb36715033b8cbd442d8037970629e",
+      "status": "confirmed"
+    },
+    "gate_2": {
+      "confirmation_order": 2,
+      "notes": "fixture 自动确认",
+      "stage_digest": "c6461794edeee684cdf5b33e12b8b08a557ba46f3348ea668261a2418d19c0a3",
+      "status": "confirmed"
+    }
+  },
+  "content_hash": "df9df076075200708a06949a49b000a9507f77e72ebcc10167547eb9a3a7a197",
+  "contract_name": "shot-data",
+  "contract_version": "2.5.3",
+  "director_profile": {
+    "camera_energy": "responsive",
+    "natural_language_intent": "先建立法庭空间，再用静态与缓推捕捉对峙中的面部反应。",
+    "performance_focus": "face",
+    "priorities": [
+      "保持法庭空间的庄严感",
+      "让面部反应承担戏剧推进"
+    ],
+    "rhythm": "restrained",
+    "space_strategy": "establish_then_enter",
+    "transition_language": [
+      "hard_cut",
+      "gaze_cut"
+    ],
+    "visual_distance": "observational"
+  },
+  "director_style_options": [
+    {
+      "label": "法庭纪实中的克制距离（参考大卫·芬奇）",
+      "option_id": "STYLE-01",
+      "profile": {
+        "camera_energy": "responsive",
+        "natural_language_intent": "先建立法庭空间，再用静态与缓推捕捉对峙中的面部反应。",
+        "performance_focus": "face",
+        "priorities": [
+          "保持法庭空间的庄严感",
+          "让面部反应承担戏剧推进"
+        ],
+        "rhythm": "restrained",
+        "space_strategy": "establish_then_enter",
+        "transition_language": [
+          "hard_cut",
+          "gaze_cut"
+        ],
+        "visual_distance": "observational"
+      },
+      "rationale": "适配依据：法庭审判的紧张来自对峙而非运动。\n时间与剪辑：在发言与反应之间保留停顿。\n摄影机：静态机位与缓慢推近捕捉面部表情。\n空间与调度：先建立法庭空间，再进入人物关系。\n表演与观看：观察法官、被告、律师的细微反应。\n主要收益：让审判压力自然积累。\n主要风险：可能显得节奏迟缓。"
+    },
+    {
+      "label": "社会剧式的隐忍观察（参考是枝裕和）",
+      "option_id": "STYLE-02",
+      "profile": {
+        "camera_energy": "static",
+        "natural_language_intent": "保持观察距离，以完整身体动作建立法庭空间。",
+        "performance_focus": "body",
+        "priorities": [
+          "先建立法庭空间",
+          "让动作承担节奏变化"
+        ],
+        "rhythm": "balanced",
+        "space_strategy": "establish_then_enter",
+        "transition_language": [
+          "hard_cut"
+        ],
+        "visual_distance": "observational"
+      },
+      "rationale": "适配依据：人物关系比庭辩结果更重要。\n时间与剪辑：让身体动作和沉默决定镜头长度。\n摄影机：保持观察距离，减少侵入。\n空间与调度：先建立法庭共同空间，再进入个人困境。\n表演与观看：捕捉被告的脆弱与律师的坚定。\n主要收益：保留人物的生活质感。\n主要风险：可能削弱庭辩的戏剧张力。"
+    },
+    {
+      "label": "高度戏剧化的审判舞台（参考保罗·索伦蒂诺）",
+      "option_id": "STYLE-03",
+      "profile": {
+        "camera_energy": "assertive",
+        "natural_language_intent": "让摄影机被庭辩动作牵引，以空间变化放大情绪。",
+        "performance_focus": "blocking",
+        "priorities": [
+          "让空间位移牵引观看",
+          "用身体姿态外化情绪"
+        ],
+        "rhythm": "kinetic",
+        "space_strategy": "subjective",
+        "transition_language": [
+          "sound_bridge",
+          "action_cut"
+        ],
+        "visual_distance": "mixed"
+      },
+      "rationale": "适配依据：法庭可以作为情绪爆发的舞台。\n时间与剪辑：用音乐和机位巡游放大高潮。\n摄影机：允许环绕与低角度推进。\n空间与调度：让法庭几何结构成为权力图景。\n表演与观看：用身体姿态外化情绪。\n主要收益：放大最后爆发的仪式感。\n主要风险：过度舞台化会损害真实法庭质感。"
+    }
+  ],
+  "project_id": "P-FIXTURE-253",
+  "scenes": [
+    {
+      "axes": [
+        {
+          "axis_id": "AX001",
+          "axis_type": "eyeline",
+          "endpoint_a": "法官",
+          "endpoint_b": "被告"
+        },
+        {
+          "axis_id": "AX002",
+          "axis_type": "eyeline",
+          "endpoint_a": "法官",
+          "endpoint_b": "律师"
+        },
+        {
+          "axis_id": "AX003",
+          "axis_type": "eyeline",
+          "endpoint_a": "法警",
+          "endpoint_b": "被告"
+        }
+      ],
+      "directing_plan": {
+        "entry_strategy": {
+          "mode": "spatial_establish",
+          "observer_position": "法庭旁听席后方高处，俯视审判区",
+          "reason": "先建立法庭庄严空间与四方位置，为后续权力拉扯提供容器。",
+          "required_spatial_information": [
+            "法官、被告、律师、法警各就其位"
+          ],
+          "withheld_information": [
+            "被告是否会认罪",
+            "律师证据是否有效"
+          ]
+        },
+        "pov_flow": [
+          "先建立法庭空间",
+          "随发言权与控制权转移观察位置"
+        ],
+        "progression": [
+          "建立法庭四方空间",
+          "被告否认杀人",
+          "律师申请出示证据",
+          "法官质疑证据",
+          "律师出示不在场证明",
+          "法警控制被告",
+          "被告情绪爆发指控律师"
+        ],
+        "scene_objective": "通过法庭对峙展示权力、辩护与被告崩溃的戏剧过程。",
+        "style_anchors": [
+          {
+            "avoidance": "避免手持晃动、快速环绕等破坏庄严感的运动。",
+            "profile_basis": [
+              {
+                "field": "priorities",
+                "value": "保持法庭空间的庄严感"
+              }
+            ],
+            "scene_application": "以静态和缓推为主，让面部反应成为戏剧推进力。",
+            "style_anchor_id": "SA001"
+          }
+        ]
+      },
+      "inherited_states": [],
+      "inherits_from": null,
+      "initial_continuity": {
+        "characters": [
+          {
+            "eyeline": "被告",
+            "facing": "被告",
+            "name": "法官",
+            "position": "审判台后",
+            "presence": "onscreen",
+            "state": "主持"
+          },
+          {
+            "eyeline": "法官",
+            "facing": "法官",
+            "name": "被告",
+            "position": "被告席",
+            "presence": "onscreen",
+            "state": "紧张"
+          },
+          {
+            "eyeline": "法官",
+            "facing": "法官",
+            "name": "律师",
+            "position": "辩护席",
+            "presence": "onscreen",
+            "state": "辩护"
+          },
+          {
+            "eyeline": "被告",
+            "facing": "被告",
+            "name": "法警",
+            "position": "法庭侧门",
+            "presence": "onscreen",
+            "state": "待命"
+          }
+        ],
+        "fixed_objects": [
+          {
+            "name": "审判台",
+            "position": "法庭前方中央",
+            "state": "完好"
+          },
+          {
+            "name": "被告席",
+            "position": "审判台前方",
+            "state": "完好"
+          },
+          {
+            "name": "辩护席",
+            "position": "被告席右侧",
+            "state": "完好"
+          },
+          {
+            "name": "旁听席",
+            "position": "法庭后方",
+            "state": "空座"
+          }
+        ],
+        "props": [
+          {
+            "name": "法槌",
+            "owner": "法官",
+            "position": "审判台",
+            "state": "待用"
+          },
+          {
+            "name": "栏杆",
+            "owner": "法庭",
+            "position": "被告席前",
+            "state": "完好"
+          },
+          {
+            "name": "公文包",
+            "owner": "律师",
+            "position": "辩护席",
+            "state": "关闭"
+          },
+          {
+            "name": "文件",
+            "owner": "律师",
+            "position": "公文包内",
+            "state": "待出示"
+          }
+        ],
+        "reality_layer": "现实",
+        "sound_sources": []
+      },
+      "reality_layer": "现实",
+      "scene": "刑事法庭",
+      "scene_id": "SC001"
+    }
+  ],
+  "screen_events": [
+    {
+      "beat_ids": [
+        "B001"
+      ],
+      "covered_fact_ids": [
+        "F001"
+      ],
+      "event_order": 1,
+      "event_role": "spatial",
+      "focus_scale": "relation",
+      "primary_viewing_subject": "法官",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV001",
+      "sound_fact_ids": [],
+      "source_spans": [
+        {
+          "end": 20,
+          "start": 0,
+          "text_hash": "41eea39dec8e4c1986b3446d666a7b68da6fcf74c085e6cd4baf9451802f1ee8"
+        }
+      ],
+      "spatial_zone": "刑事法庭",
+      "temporal_relation": "sequential",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "法庭内，法官、被告、律师、法警各就其位。",
+      "visual_subjects": [
+        "法官"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B001"
+      ],
+      "covered_fact_ids": [
+        "F002"
+      ],
+      "event_order": 2,
+      "event_role": "action",
+      "focus_scale": "body",
+      "primary_viewing_subject": "法官",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV002",
+      "sound_fact_ids": [],
+      "source_spans": [
+        {
+          "end": 34,
+          "start": 21,
+          "text_hash": "e66e4e34cfb9e5e780f60563634487ab44995cff7f7f38c76b48a2e628f8222f"
+        }
+      ],
+      "spatial_zone": "刑事法庭",
+      "temporal_relation": "continuous_from_previous",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "法官敲响法槌",
+      "visual_subjects": [
+        "法官"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B002"
+      ],
+      "covered_fact_ids": [
+        "F004"
+      ],
+      "event_order": 3,
+      "event_role": "action",
+      "focus_scale": "body",
+      "primary_viewing_subject": "被告",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV003",
+      "sound_fact_ids": [],
+      "source_spans": [
+        {
+          "end": 53,
+          "start": 35,
+          "text_hash": "e6ce9eb5866ca4d0e102c1cc33c3de16673e98019f549c6eb21336e80b822a47"
+        }
+      ],
+      "spatial_zone": "刑事法庭",
+      "temporal_relation": "sequential",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "被告抬头，双手攥紧栏杆",
+      "visual_subjects": [
+        "被告"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B002"
+      ],
+      "covered_fact_ids": [
+        "F005"
+      ],
+      "event_order": 4,
+      "event_role": "dialogue_turn",
+      "focus_scale": "face",
+      "primary_viewing_subject": "被告",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV004",
+      "sound_fact_ids": [
+        "F005"
+      ],
+      "source_spans": [
+        {
+          "end": 53,
+          "start": 35,
+          "text_hash": "e6ce9eb5866ca4d0e102c1cc33c3de16673e98019f549c6eb21336e80b822a47"
+        }
+      ],
+      "spatial_zone": "刑事法庭",
+      "temporal_relation": "continuous_from_previous",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "我没有杀人。",
+      "visual_subjects": [
+        "被告"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B003"
+      ],
+      "covered_fact_ids": [
+        "F006"
+      ],
+      "event_order": 5,
+      "event_role": "action",
+      "focus_scale": "body",
+      "primary_viewing_subject": "律师",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV005",
+      "sound_fact_ids": [],
+      "source_spans": [
+        {
+          "end": 73,
+          "start": 54,
+          "text_hash": "05be1fe834fe106bc4c1d9aaffddfec08a601cb6fe3a75ba1a39cf5514884335"
+        }
+      ],
+      "spatial_zone": "刑事法庭",
+      "temporal_relation": "sequential",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "律师起身",
+      "visual_subjects": [
+        "律师"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B003"
+      ],
+      "covered_fact_ids": [
+        "F007"
+      ],
+      "event_order": 6,
+      "event_role": "dialogue_turn",
+      "focus_scale": "face",
+      "primary_viewing_subject": "律师",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV006",
+      "sound_fact_ids": [
+        "F007"
+      ],
+      "source_spans": [
+        {
+          "end": 73,
+          "start": 54,
+          "text_hash": "05be1fe834fe106bc4c1d9aaffddfec08a601cb6fe3a75ba1a39cf5514884335"
+        }
+      ],
+      "spatial_zone": "刑事法庭",
+      "temporal_relation": "continuous_from_previous",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "审判长，我方申请出示新证据。",
+      "visual_subjects": [
+        "律师"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B004"
+      ],
+      "covered_fact_ids": [
+        "F008"
+      ],
+      "event_order": 7,
+      "event_role": "action",
+      "focus_scale": "body",
+      "primary_viewing_subject": "法官",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV007",
+      "sound_fact_ids": [],
+      "source_spans": [
+        {
+          "end": 87,
+          "start": 74,
+          "text_hash": "ee4cffe423bae19b65536bd709ca82aefadcb79792b47b4d12ce83e7a2b1d6b3"
+        }
+      ],
+      "spatial_zone": "刑事法庭",
+      "temporal_relation": "sequential",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "法官看向律师",
+      "visual_subjects": [
+        "法官"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B004"
+      ],
+      "covered_fact_ids": [
+        "F009"
+      ],
+      "event_order": 8,
+      "event_role": "dialogue_turn",
+      "focus_scale": "face",
+      "primary_viewing_subject": "法官",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV008",
+      "sound_fact_ids": [
+        "F009"
+      ],
+      "source_spans": [
+        {
+          "end": 87,
+          "start": 74,
+          "text_hash": "ee4cffe423bae19b65536bd709ca82aefadcb79792b47b4d12ce83e7a2b1d6b3"
+        }
+      ],
+      "spatial_zone": "刑事法庭",
+      "temporal_relation": "continuous_from_previous",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "请陈述理由。",
+      "visual_subjects": [
+        "法官"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B005"
+      ],
+      "covered_fact_ids": [
+        "F010"
+      ],
+      "event_order": 9,
+      "event_role": "action",
+      "focus_scale": "body",
+      "primary_viewing_subject": "律师",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV009",
+      "sound_fact_ids": [],
+      "source_spans": [
+        {
+          "end": 114,
+          "start": 88,
+          "text_hash": "220a35b57e2db4452bd61e3fd384b229521d966ce5bf1dba377eb7739d58874b"
+        }
+      ],
+      "spatial_zone": "刑事法庭",
+      "temporal_relation": "sequential",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "律师从公文包取出文件",
+      "visual_subjects": [
+        "律师"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B005"
+      ],
+      "covered_fact_ids": [
+        "F011"
+      ],
+      "event_order": 10,
+      "event_role": "dialogue_turn",
+      "focus_scale": "face",
+      "primary_viewing_subject": "律师",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV010",
+      "sound_fact_ids": [
+        "F011"
+      ],
+      "source_spans": [
+        {
+          "end": 114,
+          "start": 88,
+          "text_hash": "220a35b57e2db4452bd61e3fd384b229521d966ce5bf1dba377eb7739d58874b"
+        }
+      ],
+      "spatial_zone": "刑事法庭",
+      "temporal_relation": "continuous_from_previous",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "这份笔录可以证明被告不在现场。",
+      "visual_subjects": [
+        "律师"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B006"
+      ],
+      "covered_fact_ids": [
+        "F012"
+      ],
+      "event_order": 11,
+      "event_role": "action",
+      "focus_scale": "body",
+      "primary_viewing_subject": "法警",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV011",
+      "sound_fact_ids": [],
+      "source_spans": [
+        {
+          "end": 136,
+          "start": 115,
+          "text_hash": "e3ac1a5060479a962386c482b91cbeb277f9061e5d7480bec6171ef433682ed1"
+        }
+      ],
+      "spatial_zone": "刑事法庭",
+      "temporal_relation": "sequential",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "法警走向被告，按住他的肩",
+      "visual_subjects": [
+        "法警"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B006"
+      ],
+      "covered_fact_ids": [
+        "F013"
+      ],
+      "event_order": 12,
+      "event_role": "dialogue_turn",
+      "focus_scale": "face",
+      "primary_viewing_subject": "法警",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV012",
+      "sound_fact_ids": [
+        "F013"
+      ],
+      "source_spans": [
+        {
+          "end": 136,
+          "start": 115,
+          "text_hash": "e3ac1a5060479a962386c482b91cbeb277f9061e5d7480bec6171ef433682ed1"
+        }
+      ],
+      "spatial_zone": "刑事法庭",
+      "temporal_relation": "continuous_from_previous",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "休庭后请随我来。",
+      "visual_subjects": [
+        "法警"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B007"
+      ],
+      "covered_fact_ids": [
+        "F014"
+      ],
+      "event_order": 13,
+      "event_role": "action",
+      "focus_scale": "body",
+      "primary_viewing_subject": "被告",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV013",
+      "sound_fact_ids": [],
+      "source_spans": [
+        {
+          "end": 153,
+          "start": 137,
+          "text_hash": "f89b065dae88c300485522e4e84a195aea215d8b5f8da1a96fcb387c488990d7"
+        }
+      ],
+      "spatial_zone": "刑事法庭",
+      "temporal_relation": "sequential",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "被告挣脱，指向律师",
+      "visual_subjects": [
+        "被告"
+      ]
+    },
+    {
+      "beat_ids": [
+        "B007"
+      ],
+      "covered_fact_ids": [
+        "F015"
+      ],
+      "event_order": 14,
+      "event_role": "dialogue_turn",
+      "focus_scale": "face",
+      "primary_viewing_subject": "被告",
+      "scale_requirement": "由当前原子事件的观看尺度决定。",
+      "scene_id": "SC001",
+      "screen_event_id": "SEV014",
+      "sound_fact_ids": [
+        "F015"
+      ],
+      "source_spans": [
+        {
+          "end": 153,
+          "start": 137,
+          "text_hash": "f89b065dae88c300485522e4e84a195aea215d8b5f8da1a96fcb387c488990d7"
+        }
+      ],
+      "spatial_zone": "刑事法庭",
+      "temporal_relation": "continuous_from_previous",
+      "viewing_requirement": "观众能辨认当前主体、行动及其关系变化。",
+      "visual_action": "你早就知道！",
+      "visual_subjects": [
+        "被告"
+      ]
+    }
+  ],
+  "selected_style_option_id": "STYLE-01",
+  "shot_plan": {
+    "edit_points": [
+      {
+        "after_plan_unit_id": "PU001",
+        "before_plan_unit_id": "PU002",
+        "edit_point_id": "EP001",
+        "editorial_gain": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "source_spans": [
+          {
+            "end": 34,
+            "start": 21,
+            "text_hash": "e66e4e34cfb9e5e780f60563634487ab44995cff7f7f38c76b48a2e628f8222f"
+          },
+          {
+            "end": 53,
+            "start": 35,
+            "text_hash": "e6ce9eb5866ca4d0e102c1cc33c3de16673e98019f549c6eb21336e80b822a47"
+          }
+        ],
+        "trigger": "观看主体与关系重心发生明确变化。"
+      },
+      {
+        "after_plan_unit_id": "PU002",
+        "before_plan_unit_id": "PU003",
+        "edit_point_id": "EP002",
+        "editorial_gain": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "source_spans": [
+          {
+            "end": 53,
+            "start": 35,
+            "text_hash": "e6ce9eb5866ca4d0e102c1cc33c3de16673e98019f549c6eb21336e80b822a47"
+          },
+          {
+            "end": 73,
+            "start": 54,
+            "text_hash": "05be1fe834fe106bc4c1d9aaffddfec08a601cb6fe3a75ba1a39cf5514884335"
+          }
+        ],
+        "trigger": "观看主体与关系重心发生明确变化。"
+      },
+      {
+        "after_plan_unit_id": "PU003",
+        "before_plan_unit_id": "PU004",
+        "edit_point_id": "EP003",
+        "editorial_gain": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "source_spans": [
+          {
+            "end": 73,
+            "start": 54,
+            "text_hash": "05be1fe834fe106bc4c1d9aaffddfec08a601cb6fe3a75ba1a39cf5514884335"
+          },
+          {
+            "end": 87,
+            "start": 74,
+            "text_hash": "ee4cffe423bae19b65536bd709ca82aefadcb79792b47b4d12ce83e7a2b1d6b3"
+          }
+        ],
+        "trigger": "观看主体与关系重心发生明确变化。"
+      },
+      {
+        "after_plan_unit_id": "PU004",
+        "before_plan_unit_id": "PU005",
+        "edit_point_id": "EP004",
+        "editorial_gain": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "source_spans": [
+          {
+            "end": 87,
+            "start": 74,
+            "text_hash": "ee4cffe423bae19b65536bd709ca82aefadcb79792b47b4d12ce83e7a2b1d6b3"
+          },
+          {
+            "end": 114,
+            "start": 88,
+            "text_hash": "220a35b57e2db4452bd61e3fd384b229521d966ce5bf1dba377eb7739d58874b"
+          }
+        ],
+        "trigger": "观看主体与关系重心发生明确变化。"
+      },
+      {
+        "after_plan_unit_id": "PU005",
+        "before_plan_unit_id": "PU006",
+        "edit_point_id": "EP005",
+        "editorial_gain": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "source_spans": [
+          {
+            "end": 114,
+            "start": 88,
+            "text_hash": "220a35b57e2db4452bd61e3fd384b229521d966ce5bf1dba377eb7739d58874b"
+          },
+          {
+            "end": 136,
+            "start": 115,
+            "text_hash": "e3ac1a5060479a962386c482b91cbeb277f9061e5d7480bec6171ef433682ed1"
+          }
+        ],
+        "trigger": "观看主体与关系重心发生明确变化。"
+      },
+      {
+        "after_plan_unit_id": "PU006",
+        "before_plan_unit_id": "PU007",
+        "edit_point_id": "EP006",
+        "editorial_gain": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "source_spans": [
+          {
+            "end": 136,
+            "start": 115,
+            "text_hash": "e3ac1a5060479a962386c482b91cbeb277f9061e5d7480bec6171ef433682ed1"
+          },
+          {
+            "end": 153,
+            "start": 137,
+            "text_hash": "f89b065dae88c300485522e4e84a195aea215d8b5f8da1a96fcb387c488990d7"
+          }
+        ],
+        "trigger": "观看主体与关系重心发生明确变化。"
+      }
+    ],
+    "planned_edit_point_count": 6,
+    "planned_shot_count": 7,
+    "planned_total_duration_seconds": 22,
+    "planned_units": [
+      {
+        "beat_ids": [
+          "B001"
+        ],
+        "dialogue_design": null,
+        "estimated_duration_seconds": 4,
+        "narrative_purpose": "呈现B001的戏剧动作。",
+        "plan_order": 1,
+        "plan_unit_id": "PU001",
+        "scene_id": "SC001",
+        "screen_event_ids": [
+          "SEV001",
+          "SEV002"
+        ],
+        "source_spans": [
+          {
+            "end": 34,
+            "start": 0,
+            "text_hash": "b836aa1b0eb99a30176632db6995c25c491ff071178a70e2d0892d4719372e9b"
+          }
+        ],
+        "visual_plan": {
+          "angle": "俯视",
+          "camera_position": "法庭旁听席后方高处",
+          "end_frame": "法官敲响法槌前",
+          "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+          "framing_relation": "法庭内，法官、被告、律师、法警各就其位。国徽在背景",
+          "motivation": "先建立法庭空间与四方位置关系。",
+          "movement_plan": {
+            "class": "compound_move_then_fixed",
+            "end_condition": "法官敲响法槌前",
+            "hold_reason": "",
+            "path": "缓慢推进后固定",
+            "speed": "缓慢",
+            "trigger": "主体动作或观看关系开始变化。"
+          },
+          "perspective_intent": "wide_spatial",
+          "primary_subjects": [
+            "法官"
+          ],
+          "secondary_subjects": [
+            "被告",
+            "律师",
+            "法警"
+          ],
+          "shot_size": "全景→中景",
+          "spatial_strategy": {
+            "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+            "type": "sequential_reframe"
+          },
+          "start_frame": "四人各就其位",
+          "style_anchor_ids": [
+            "SA001"
+          ],
+          "viewpoint_owner": "法官"
+        }
+      },
+      {
+        "beat_ids": [
+          "B002"
+        ],
+        "dialogue_design": {
+          "axis_id": "AX001",
+          "face_readable_speakers": [
+            "被告"
+          ],
+          "justification": "按本单元真实说话权安排可读面孔，并保持既定轴线。",
+          "listener_reaction_characters": [
+            "法官",
+            "律师",
+            "法警"
+          ],
+          "mode": "single_speaker",
+          "speaker_sequence": [
+            "被告"
+          ]
+        },
+        "estimated_duration_seconds": 3,
+        "narrative_purpose": "呈现B002的戏剧动作。",
+        "plan_order": 2,
+        "plan_unit_id": "PU002",
+        "scene_id": "SC001",
+        "screen_event_ids": [
+          "SEV003",
+          "SEV004"
+        ],
+        "source_spans": [
+          {
+            "end": 53,
+            "start": 35,
+            "text_hash": "e6ce9eb5866ca4d0e102c1cc33c3de16673e98019f549c6eb21336e80b822a47"
+          }
+        ],
+        "visual_plan": {
+          "angle": "平视",
+          "camera_position": "被告正前方",
+          "end_frame": "被告说完否认",
+          "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+          "framing_relation": "被告抬头，双手攥紧栏杆，面部为主位",
+          "motivation": "贴近被告的紧张与否认。",
+          "movement_plan": {
+            "class": "compound_move_then_fixed",
+            "end_condition": "被告说完否认",
+            "hold_reason": "",
+            "path": "缓慢推进后固定",
+            "speed": "缓慢",
+            "trigger": "主体动作或观看关系开始变化。"
+          },
+          "perspective_intent": "natural_relation",
+          "primary_subjects": [
+            "被告"
+          ],
+          "secondary_subjects": [],
+          "shot_size": "中近景→近景",
+          "spatial_strategy": {
+            "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+            "type": "sequential_reframe"
+          },
+          "start_frame": "被告抬头前",
+          "style_anchor_ids": [
+            "SA001"
+          ],
+          "viewpoint_owner": "被告"
+        }
+      },
+      {
+        "beat_ids": [
+          "B003"
+        ],
+        "dialogue_design": {
+          "axis_id": "AX001",
+          "face_readable_speakers": [
+            "律师"
+          ],
+          "justification": "按本单元真实说话权安排可读面孔，并保持既定轴线。",
+          "listener_reaction_characters": [
+            "法官",
+            "被告",
+            "法警"
+          ],
+          "mode": "single_speaker",
+          "speaker_sequence": [
+            "律师"
+          ]
+        },
+        "estimated_duration_seconds": 3,
+        "narrative_purpose": "呈现B003的戏剧动作。",
+        "plan_order": 3,
+        "plan_unit_id": "PU003",
+        "scene_id": "SC001",
+        "screen_event_ids": [
+          "SEV005",
+          "SEV006"
+        ],
+        "source_spans": [
+          {
+            "end": 73,
+            "start": 54,
+            "text_hash": "05be1fe834fe106bc4c1d9aaffddfec08a601cb6fe3a75ba1a39cf5514884335"
+          }
+        ],
+        "visual_plan": {
+          "angle": "平视",
+          "camera_position": "法官肩后",
+          "end_frame": "律师说完申请",
+          "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+          "framing_relation": "律师面部为主位，法官肩背在前景",
+          "motivation": "在过肩关系中呈现律师的正式申请。",
+          "movement_plan": {
+            "class": "compound_move_then_fixed",
+            "end_condition": "律师说完申请",
+            "hold_reason": "",
+            "path": "缓慢推进后固定",
+            "speed": "缓慢",
+            "trigger": "主体动作或观看关系开始变化。"
+          },
+          "perspective_intent": "natural_relation",
+          "primary_subjects": [
+            "律师"
+          ],
+          "secondary_subjects": [
+            "法官",
+            "被告",
+            "法警"
+          ],
+          "shot_size": "中近景→近景",
+          "spatial_strategy": {
+            "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+            "type": "sequential_reframe"
+          },
+          "start_frame": "律师起身前",
+          "style_anchor_ids": [
+            "SA001"
+          ],
+          "viewpoint_owner": "律师"
+        }
+      },
+      {
+        "beat_ids": [
+          "B004"
+        ],
+        "dialogue_design": {
+          "axis_id": "AX001",
+          "face_readable_speakers": [
+            "法官"
+          ],
+          "justification": "按本单元真实说话权安排可读面孔，并保持既定轴线。",
+          "listener_reaction_characters": [
+            "被告",
+            "律师",
+            "法警"
+          ],
+          "mode": "single_speaker",
+          "speaker_sequence": [
+            "法官"
+          ]
+        },
+        "estimated_duration_seconds": 3,
+        "narrative_purpose": "呈现B004的戏剧动作。",
+        "plan_order": 4,
+        "plan_unit_id": "PU004",
+        "scene_id": "SC001",
+        "screen_event_ids": [
+          "SEV007",
+          "SEV008"
+        ],
+        "source_spans": [
+          {
+            "end": 87,
+            "start": 74,
+            "text_hash": "ee4cffe423bae19b65536bd709ca82aefadcb79792b47b4d12ce83e7a2b1d6b3"
+          }
+        ],
+        "visual_plan": {
+          "angle": "微仰视",
+          "camera_position": "律师席侧前方低处",
+          "end_frame": "法官说完理由要求",
+          "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+          "framing_relation": "法官手持法槌，面部为主位",
+          "motivation": "以微仰角度强化法官的裁决位置。",
+          "movement_plan": {
+            "class": "fixed",
+            "end_condition": "",
+            "hold_reason": "保护完整表演与空间关系。",
+            "path": "",
+            "speed": "",
+            "trigger": ""
+          },
+          "perspective_intent": "natural_relation",
+          "primary_subjects": [
+            "法官"
+          ],
+          "secondary_subjects": [],
+          "shot_size": "近景",
+          "spatial_strategy": {
+            "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+            "type": "sequential_reframe"
+          },
+          "start_frame": "法官看向律师",
+          "style_anchor_ids": [
+            "SA001"
+          ],
+          "viewpoint_owner": "法官"
+        }
+      },
+      {
+        "beat_ids": [
+          "B005"
+        ],
+        "dialogue_design": {
+          "axis_id": "AX001",
+          "face_readable_speakers": [
+            "律师"
+          ],
+          "justification": "按本单元真实说话权安排可读面孔，并保持既定轴线。",
+          "listener_reaction_characters": [
+            "法官",
+            "被告",
+            "法警"
+          ],
+          "mode": "single_speaker",
+          "speaker_sequence": [
+            "律师"
+          ]
+        },
+        "estimated_duration_seconds": 3,
+        "narrative_purpose": "呈现B005的戏剧动作。",
+        "plan_order": 5,
+        "plan_unit_id": "PU005",
+        "scene_id": "SC001",
+        "screen_event_ids": [
+          "SEV009",
+          "SEV010"
+        ],
+        "source_spans": [
+          {
+            "end": 114,
+            "start": 88,
+            "text_hash": "220a35b57e2db4452bd61e3fd384b229521d966ce5bf1dba377eb7739d58874b"
+          }
+        ],
+        "visual_plan": {
+          "angle": "平视",
+          "camera_position": "律师身侧",
+          "end_frame": "律师出示文件完毕",
+          "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+          "framing_relation": "律师从公文包取出文件，文件进入画面",
+          "motivation": "让证据物件成为画面落点。",
+          "movement_plan": {
+            "class": "compound_move_then_fixed",
+            "end_condition": "律师出示文件完毕",
+            "hold_reason": "",
+            "path": "缓慢推进后固定",
+            "speed": "缓慢",
+            "trigger": "主体动作或观看关系开始变化。"
+          },
+          "perspective_intent": "natural_relation",
+          "primary_subjects": [
+            "律师"
+          ],
+          "secondary_subjects": [],
+          "shot_size": "中景→近景",
+          "spatial_strategy": {
+            "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+            "type": "sequential_reframe"
+          },
+          "start_frame": "律师打开公文包",
+          "style_anchor_ids": [
+            "SA001"
+          ],
+          "viewpoint_owner": "律师"
+        }
+      },
+      {
+        "beat_ids": [
+          "B006"
+        ],
+        "dialogue_design": {
+          "axis_id": "AX001",
+          "face_readable_speakers": [
+            "法警"
+          ],
+          "justification": "按本单元真实说话权安排可读面孔，并保持既定轴线。",
+          "listener_reaction_characters": [
+            "法官",
+            "被告",
+            "律师"
+          ],
+          "mode": "single_speaker",
+          "speaker_sequence": [
+            "法警"
+          ]
+        },
+        "estimated_duration_seconds": 3,
+        "narrative_purpose": "呈现B006的戏剧动作。",
+        "plan_order": 6,
+        "plan_unit_id": "PU006",
+        "scene_id": "SC001",
+        "screen_event_ids": [
+          "SEV011",
+          "SEV012"
+        ],
+        "source_spans": [
+          {
+            "end": 136,
+            "start": 115,
+            "text_hash": "e3ac1a5060479a962386c482b91cbeb277f9061e5d7480bec6171ef433682ed1"
+          }
+        ],
+        "visual_plan": {
+          "angle": "平视",
+          "camera_position": "被告身后侧",
+          "end_frame": "法警按住被告肩膀",
+          "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+          "framing_relation": "法警走向被告，按住他的肩",
+          "motivation": "记录法警对被告的控制动作。",
+          "movement_plan": {
+            "class": "compound_move_then_fixed",
+            "end_condition": "法警按住被告肩膀",
+            "hold_reason": "",
+            "path": "缓慢跟随后固定",
+            "speed": "缓慢",
+            "trigger": "主体动作或观看关系开始变化。"
+          },
+          "perspective_intent": "natural_relation",
+          "primary_subjects": [
+            "法警"
+          ],
+          "secondary_subjects": [
+            "被告"
+          ],
+          "shot_size": "中近景→近景",
+          "spatial_strategy": {
+            "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+            "type": "sequential_reframe"
+          },
+          "start_frame": "法警起步",
+          "style_anchor_ids": [
+            "SA001"
+          ],
+          "viewpoint_owner": "法警"
+        }
+      },
+      {
+        "beat_ids": [
+          "B007"
+        ],
+        "dialogue_design": {
+          "axis_id": "AX001",
+          "face_readable_speakers": [
+            "被告"
+          ],
+          "justification": "按本单元真实说话权安排可读面孔，并保持既定轴线。",
+          "listener_reaction_characters": [
+            "法官",
+            "律师",
+            "法警"
+          ],
+          "mode": "single_speaker",
+          "speaker_sequence": [
+            "被告"
+          ]
+        },
+        "estimated_duration_seconds": 3,
+        "narrative_purpose": "呈现B007的戏剧动作。",
+        "plan_order": 7,
+        "plan_unit_id": "PU007",
+        "scene_id": "SC001",
+        "screen_event_ids": [
+          "SEV013",
+          "SEV014"
+        ],
+        "source_spans": [
+          {
+            "end": 153,
+            "start": 137,
+            "text_hash": "f89b065dae88c300485522e4e84a195aea215d8b5f8da1a96fcb387c488990d7"
+          }
+        ],
+        "visual_plan": {
+          "angle": "平视",
+          "camera_position": "律师席侧后方",
+          "end_frame": "被告喊完指控",
+          "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+          "framing_relation": "被告挣脱并指向律师，律师在背景",
+          "motivation": "捕捉被告情绪失控的瞬间。",
+          "movement_plan": {
+            "class": "compound_move_then_fixed",
+            "end_condition": "被告喊完指控",
+            "hold_reason": "",
+            "path": "缓慢推进后固定",
+            "speed": "缓慢",
+            "trigger": "主体动作或观看关系开始变化。"
+          },
+          "perspective_intent": "natural_relation",
+          "primary_subjects": [
+            "被告"
+          ],
+          "secondary_subjects": [
+            "律师"
+          ],
+          "shot_size": "中近景→近景",
+          "spatial_strategy": {
+            "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+            "type": "sequential_reframe"
+          },
+          "start_frame": "被告挣脱",
+          "style_anchor_ids": [
+            "SA001"
+          ],
+          "viewpoint_owner": "被告"
+        }
+      }
+    ],
+    "reorders": [],
+    "viewing_decisions": [
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV001",
+        "mode": "reframe",
+        "non_cut_basis": "continuous_action",
+        "reframe_method": "scale_change",
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV002",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD001"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV002",
+        "mode": "cut",
+        "non_cut_basis": null,
+        "reframe_method": null,
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV003",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD002"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV003",
+        "mode": "reframe",
+        "non_cut_basis": "continuous_action",
+        "reframe_method": "scale_change",
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV004",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD003"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV004",
+        "mode": "cut",
+        "non_cut_basis": null,
+        "reframe_method": null,
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV005",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD004"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV005",
+        "mode": "reframe",
+        "non_cut_basis": "continuous_action",
+        "reframe_method": "scale_change",
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV006",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD005"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV006",
+        "mode": "cut",
+        "non_cut_basis": null,
+        "reframe_method": null,
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV007",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD006"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV007",
+        "mode": "reframe",
+        "non_cut_basis": "continuous_action",
+        "reframe_method": "scale_change",
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV008",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD007"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV008",
+        "mode": "cut",
+        "non_cut_basis": null,
+        "reframe_method": null,
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV009",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD008"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV009",
+        "mode": "reframe",
+        "non_cut_basis": "continuous_action",
+        "reframe_method": "scale_change",
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV010",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD009"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV010",
+        "mode": "cut",
+        "non_cut_basis": null,
+        "reframe_method": null,
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV011",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD010"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV011",
+        "mode": "reframe",
+        "non_cut_basis": "continuous_action",
+        "reframe_method": "scale_change",
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV012",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD011"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV012",
+        "mode": "cut",
+        "non_cut_basis": null,
+        "reframe_method": null,
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV013",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD012"
+      },
+      {
+        "director_reason": "切开让新的观看重心获得独立且清楚的画面位置。",
+        "from_screen_event_id": "SEV013",
+        "mode": "reframe",
+        "non_cut_basis": "continuous_action",
+        "reframe_method": "scale_change",
+        "scene_id": "SC001",
+        "to_screen_event_id": "SEV014",
+        "trigger": "观看主体与关系重心发生明确变化。",
+        "viewing_change": "观看从前一主体转移到后一主体或新的信息落点。",
+        "viewing_decision_id": "VD013"
+      }
+    ],
+    "visual_uniformity_reviews": [
+      {
+        "dimension": "movement_class",
+        "dominant_value": "compound_move_then_fixed",
+        "reason": "本场景以movement_class=compound_move_then_fixed作为统一观看策略。",
+        "review_id": "VR001",
+        "scene_id": "SC001",
+        "scope": "scene",
+        "style_anchor_ids": [
+          "SA001"
+        ]
+      }
+    ]
+  },
+  "shots": [
+    {
+      "beat_ids": [
+        "B001"
+      ],
+      "blocking": [
+        {
+          "action": "法官敲响法槌",
+          "character": "法官",
+          "end_position": "原位",
+          "eyeline": "被告",
+          "facing": "被告",
+          "start_position": "原位"
+        },
+        {
+          "action": "被告双手攥紧栏杆",
+          "character": "被告",
+          "end_position": "原位",
+          "eyeline": "被告",
+          "facing": "被告",
+          "start_position": "原位"
+        },
+        {
+          "action": "律师坐在辩护席",
+          "character": "律师",
+          "end_position": "原位",
+          "eyeline": "被告",
+          "facing": "被告",
+          "start_position": "原位"
+        },
+        {
+          "action": "法警站在门边",
+          "character": "法警",
+          "end_position": "原位",
+          "eyeline": "被告",
+          "facing": "被告",
+          "start_position": "原位"
+        }
+      ],
+      "camera": {
+        "angle": "俯视",
+        "composition": "法庭内，法官、被告、律师、法警各就其位。国徽在背景",
+        "end_frame": "法官敲响法槌前",
+        "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+        "foreground_characters": [],
+        "framing_mode": "single",
+        "logic": "从法庭后方高处垂直向下观察审判区",
+        "motivation": "先建立法庭空间与四方位置关系。",
+        "movement": "缓慢推进后固定",
+        "movement_plan": {
+          "class": "compound_move_then_fixed",
+          "end_condition": "法官敲响法槌前",
+          "hold_reason": "",
+          "path": "缓慢推进后固定",
+          "speed": "缓慢",
+          "trigger": "主体动作或观看关系开始变化。"
+        },
+        "perspective_intent": "wide_spatial",
+        "position": "法庭旁听席后方高处",
+        "primary_subjects": [
+          "法官"
+        ],
+        "secondary_subjects": [
+          "被告",
+          "律师",
+          "法警"
+        ],
+        "shot_size": "全景→中景",
+        "spatial_strategy": {
+          "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+          "type": "sequential_reframe"
+        },
+        "start_frame": "四人各就其位",
+        "viewpoint_owner": "法官"
+      },
+      "continuity": {
+        "action_match": {
+          "incoming": null,
+          "outgoing": null
+        },
+        "axis_id": "AX001",
+        "axis_side": "side_a",
+        "eyelines": [
+          {
+            "character": "法官",
+            "direction": "screen_right",
+            "target": "被告"
+          },
+          {
+            "character": "被告",
+            "direction": "screen_right",
+            "target": "被告"
+          },
+          {
+            "character": "律师",
+            "direction": "screen_right",
+            "target": "被告"
+          },
+          {
+            "character": "法警",
+            "direction": "screen_right",
+            "target": "被告"
+          }
+        ],
+        "intentional_exceptions": [],
+        "screen_directions": [
+          {
+            "direction": "screen_right",
+            "entity": "法官",
+            "kind": "eyeline"
+          },
+          {
+            "direction": "screen_right",
+            "entity": "被告",
+            "kind": "eyeline"
+          },
+          {
+            "direction": "screen_right",
+            "entity": "律师",
+            "kind": "eyeline"
+          },
+          {
+            "direction": "screen_right",
+            "entity": "法警",
+            "kind": "eyeline"
+          }
+        ]
+      },
+      "continuity_updates": [],
+      "coverage_evidence": [
+        {
+          "evidence_quote": "法庭内，法官、被告、律师、法警各就其位。",
+          "fact_id": "F001",
+          "target_path": "camera.composition"
+        },
+        {
+          "evidence_quote": "法官敲响法槌",
+          "fact_id": "F002",
+          "target_path": "blocking[0].action"
+        }
+      ],
+      "covered_fact_ids": [
+        "F001",
+        "F002"
+      ],
+      "cut_design": {
+        "entry_trigger": "进入B001。",
+        "exit_trigger": "离开B001。",
+        "isolation_intent": "none"
+      },
+      "dialogue": [],
+      "duration_seconds": 4,
+      "end_state": [
+        "法官敲响法槌",
+        "其余三人保持原位"
+      ],
+      "environment_behavior": [],
+      "execution_text": "【画面内容】法庭内安静肃穆，国徽高悬；摄影机位于法庭旁听席后方高处，从法庭后方高处垂直向下观察审判区；法庭内，法官、被告、律师、法警各就其位。国徽在背景。法庭内，法官、被告、律师、法警各就其位。法官敲响法槌。法庭内肃静，四人各就其位。最后停在法官敲响法槌；其余三人保持原位。",
+      "notes": "",
+      "performance": {
+        "emotion_arc_id": null,
+        "emotion_intent": "法庭内肃静，四人各就其位",
+        "phase": "steady",
+        "visible_behavior": [
+          "法庭内肃静，四人各就其位"
+        ]
+      },
+      "plan_unit_id": "PU001",
+      "primary_fact_id": "F002",
+      "rendered_shot_description": "【全景→中景｜俯视｜缓慢推进后固定】\n【画面内容】法庭内安静肃穆，国徽高悬；摄影机位于法庭旁听席后方高处，从法庭后方高处垂直向下观察审判区；法庭内，法官、被告、律师、法警各就其位。国徽在背景。法庭内，法官、被告、律师、法警各就其位。法官敲响法槌。法庭内肃静，四人各就其位。最后停在法官敲响法槌；其余三人保持原位。",
+      "scene_id": "SC001",
+      "shot_id": "SH001",
+      "shot_order": 1,
+      "shot_phases": [
+        {
+          "camera_state": "第1阶段从既定画面继续，执行缓慢推进后固定，并朝林问话结束，周肩背仍在前景收束。",
+          "duration_seconds": 2,
+          "phase_id": "PH001-01",
+          "phase_order": 1,
+          "screen_event_ids": [
+            "SEV001"
+          ],
+          "sound_fact_ids": []
+        },
+        {
+          "camera_state": "第2阶段从既定画面继续，执行缓慢推进后固定，并朝林问话结束，周肩背仍在前景收束。",
+          "duration_seconds": 2,
+          "phase_id": "PH001-02",
+          "phase_order": 2,
+          "screen_event_ids": [
+            "SEV002"
+          ],
+          "sound_fact_ids": []
+        }
+      ],
+      "source_spans": [
+        {
+          "end": 34,
+          "start": 0,
+          "text_hash": "b836aa1b0eb99a30176632db6995c25c491ff071178a70e2d0892d4719372e9b"
+        }
+      ],
+      "speaker_presentation": [],
+      "transition_to_next": {
+        "edit_point_id": "EP001",
+        "notes": "",
+        "type": "gaze_cut"
+      },
+      "visible_characters": [
+        "法官",
+        "被告",
+        "律师",
+        "法警"
+      ],
+      "visible_props": []
+    },
+    {
+      "beat_ids": [
+        "B002"
+      ],
+      "blocking": [
+        {
+          "action": "被告抬头，双手攥紧栏杆",
+          "character": "被告",
+          "end_position": "原位",
+          "eyeline": "法官",
+          "facing": "法官",
+          "start_position": "原位"
+        }
+      ],
+      "camera": {
+        "angle": "平视",
+        "composition": "被告抬头，双手攥紧栏杆，面部为主位",
+        "end_frame": "被告说完否认",
+        "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+        "foreground_characters": [],
+        "framing_mode": "single",
+        "logic": "朝被告面部观察，保持法官被告轴线同侧",
+        "motivation": "贴近被告的紧张与否认。",
+        "movement": "缓慢推进后固定",
+        "movement_plan": {
+          "class": "compound_move_then_fixed",
+          "end_condition": "被告说完否认",
+          "hold_reason": "",
+          "path": "缓慢推进后固定",
+          "speed": "缓慢",
+          "trigger": "主体动作或观看关系开始变化。"
+        },
+        "perspective_intent": "natural_relation",
+        "position": "被告正前方",
+        "primary_subjects": [
+          "被告"
+        ],
+        "secondary_subjects": [],
+        "shot_size": "中近景→近景",
+        "spatial_strategy": {
+          "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+          "type": "sequential_reframe"
+        },
+        "start_frame": "被告抬头前",
+        "viewpoint_owner": "被告"
+      },
+      "continuity": {
+        "action_match": {
+          "incoming": null,
+          "outgoing": null
+        },
+        "axis_id": "AX001",
+        "axis_side": "side_a",
+        "eyelines": [
+          {
+            "character": "被告",
+            "direction": "screen_right",
+            "target": "法官"
+          }
+        ],
+        "intentional_exceptions": [],
+        "screen_directions": [
+          {
+            "direction": "screen_right",
+            "entity": "被告",
+            "kind": "eyeline"
+          }
+        ]
+      },
+      "continuity_updates": [],
+      "coverage_evidence": [
+        {
+          "evidence_quote": "被告抬头，双手攥紧栏杆",
+          "fact_id": "F004",
+          "target_path": "blocking[0].action"
+        },
+        {
+          "evidence_quote": "我没有杀人。",
+          "fact_id": "F005",
+          "target_path": "dialogue[0].text"
+        }
+      ],
+      "covered_fact_ids": [
+        "F004",
+        "F005"
+      ],
+      "cut_design": {
+        "entry_trigger": "进入B002。",
+        "exit_trigger": "离开B002。",
+        "isolation_intent": "none"
+      },
+      "dialogue": [
+        {
+          "addressee": "法官",
+          "fact_id": "F005",
+          "shot_delivery": "onscreen",
+          "speaker": "被告",
+          "text": "我没有杀人。",
+          "timing": "PH002-02"
+        }
+      ],
+      "duration_seconds": 3,
+      "end_state": [
+        "被告说完否认"
+      ],
+      "environment_behavior": [],
+      "execution_text": "【画面内容】法庭内安静肃穆；摄影机位于被告正前方，朝被告面部观察，保持法官被告轴线同侧；被告抬头，双手攥紧栏杆，面部清晰可读。被告抬头，双手攥紧栏杆。被告：我没有杀人。最后停在被告说完否认。",
+      "notes": "",
+      "performance": {
+        "emotion_arc_id": null,
+        "emotion_intent": "被告抬头，双手攥紧栏杆",
+        "phase": "steady",
+        "visible_behavior": [
+          "被告抬头，双手攥紧栏杆"
+        ]
+      },
+      "plan_unit_id": "PU002",
+      "primary_fact_id": "F005",
+      "rendered_shot_description": "【中近景→近景｜平视｜缓慢推进后固定】\n【画面内容】法庭内安静肃穆；摄影机位于被告正前方，朝被告面部观察，保持法官被告轴线同侧；被告抬头，双手攥紧栏杆，面部清晰可读。被告抬头，双手攥紧栏杆。被告：我没有杀人。最后停在被告说完否认。",
+      "scene_id": "SC001",
+      "shot_id": "SH002",
+      "shot_order": 2,
+      "shot_phases": [
+        {
+          "camera_state": "第1阶段从既定画面继续，执行缓慢拉出后固定，并朝被告说完否认收束。",
+          "duration_seconds": 1,
+          "phase_id": "PH002-01",
+          "phase_order": 1,
+          "screen_event_ids": [
+            "SEV003"
+          ],
+          "sound_fact_ids": []
+        },
+        {
+          "camera_state": "第2阶段从既定画面继续，执行缓慢拉出后固定，并朝被告说完否认收束。",
+          "duration_seconds": 2,
+          "phase_id": "PH002-02",
+          "phase_order": 2,
+          "screen_event_ids": [
+            "SEV004"
+          ],
+          "sound_fact_ids": [
+            "F005"
+          ]
+        }
+      ],
+      "source_spans": [
+        {
+          "end": 53,
+          "start": 35,
+          "text_hash": "e6ce9eb5866ca4d0e102c1cc33c3de16673e98019f549c6eb21336e80b822a47"
+        }
+      ],
+      "speaker_presentation": [
+        {
+          "fact_id": "F005",
+          "presentation": "primary_face",
+          "speaker": "被告"
+        }
+      ],
+      "transition_to_next": {
+        "edit_point_id": "EP002",
+        "notes": "",
+        "type": "gaze_cut"
+      },
+      "visible_characters": [
+        "被告"
+      ],
+      "visible_props": []
+    },
+    {
+      "beat_ids": [
+        "B003"
+      ],
+      "blocking": [
+        {
+          "action": "律师起身",
+          "character": "律师",
+          "end_position": "原位",
+          "eyeline": "法官",
+          "facing": "法官",
+          "start_position": "原位"
+        }
+      ],
+      "camera": {
+        "angle": "平视",
+        "composition": "律师面部为主位，法官肩背在前景",
+        "end_frame": "律师说完申请",
+        "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+        "foreground_characters": [
+          "法官"
+        ],
+        "framing_mode": "over_shoulder",
+        "logic": "从法官肩后朝律师观察，保持法官律师轴线同侧",
+        "motivation": "在过肩关系中呈现律师的正式申请。",
+        "movement": "缓慢推进后固定",
+        "movement_plan": {
+          "class": "compound_move_then_fixed",
+          "end_condition": "律师说完申请",
+          "hold_reason": "",
+          "path": "缓慢推进后固定",
+          "speed": "缓慢",
+          "trigger": "主体动作或观看关系开始变化。"
+        },
+        "perspective_intent": "natural_relation",
+        "position": "法官肩后",
+        "primary_subjects": [
+          "律师"
+        ],
+        "secondary_subjects": [
+          "法官",
+          "被告",
+          "法警"
+        ],
+        "shot_size": "中近景→近景",
+        "spatial_strategy": {
+          "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+          "type": "sequential_reframe"
+        },
+        "start_frame": "律师起身前",
+        "viewpoint_owner": "律师"
+      },
+      "continuity": {
+        "action_match": {
+          "incoming": null,
+          "outgoing": null
+        },
+        "axis_id": "AX001",
+        "axis_side": "side_a",
+        "eyelines": [
+          {
+            "character": "律师",
+            "direction": "screen_right",
+            "target": "法官"
+          },
+          {
+            "character": "法官",
+            "direction": "screen_right",
+            "target": "法官"
+          },
+          {
+            "character": "被告",
+            "direction": "screen_right",
+            "target": "法官"
+          },
+          {
+            "character": "法警",
+            "direction": "screen_right",
+            "target": "法官"
+          }
+        ],
+        "intentional_exceptions": [],
+        "screen_directions": [
+          {
+            "direction": "screen_right",
+            "entity": "律师",
+            "kind": "eyeline"
+          },
+          {
+            "direction": "screen_right",
+            "entity": "法官",
+            "kind": "eyeline"
+          },
+          {
+            "direction": "screen_right",
+            "entity": "被告",
+            "kind": "eyeline"
+          },
+          {
+            "direction": "screen_right",
+            "entity": "法警",
+            "kind": "eyeline"
+          }
+        ]
+      },
+      "continuity_updates": [],
+      "coverage_evidence": [
+        {
+          "evidence_quote": "律师起身",
+          "fact_id": "F006",
+          "target_path": "blocking[0].action"
+        },
+        {
+          "evidence_quote": "审判长，我方申请出示新证据。",
+          "fact_id": "F007",
+          "target_path": "dialogue[0].text"
+        }
+      ],
+      "covered_fact_ids": [
+        "F006",
+        "F007"
+      ],
+      "cut_design": {
+        "entry_trigger": "进入B003。",
+        "exit_trigger": "离开B003。",
+        "isolation_intent": "none"
+      },
+      "dialogue": [
+        {
+          "addressee": "法官",
+          "fact_id": "F007",
+          "shot_delivery": "onscreen",
+          "speaker": "律师",
+          "text": "审判长，我方申请出示新证据。",
+          "timing": "PH003-02"
+        }
+      ],
+      "duration_seconds": 3,
+      "end_state": [
+        "律师说完申请",
+        "法官保持注视"
+      ],
+      "environment_behavior": [],
+      "execution_text": "【画面内容】法庭内安静肃穆；摄影机从法官肩后朝律师观察，保持法官律师轴线同侧；律师面部清晰可读，法官肩背在前景。律师起身。律师：审判长，我方申请出示新证据。最后停在律师说完申请；法官保持注视。",
+      "notes": "",
+      "performance": {
+        "emotion_arc_id": null,
+        "emotion_intent": "律师起身，语气沉稳",
+        "phase": "steady",
+        "visible_behavior": [
+          "律师起身，语气沉稳"
+        ]
+      },
+      "plan_unit_id": "PU003",
+      "primary_fact_id": "F007",
+      "rendered_shot_description": "【中近景→近景｜平视｜缓慢推进后固定】\n【画面内容】法庭内安静肃穆；摄影机从法官肩后朝律师观察，保持法官律师轴线同侧；律师面部清晰可读，法官肩背在前景。律师起身。律师：审判长，我方申请出示新证据。最后停在律师说完申请；法官保持注视。",
+      "scene_id": "SC001",
+      "shot_id": "SH003",
+      "shot_order": 3,
+      "shot_phases": [
+        {
+          "camera_state": "第1阶段从既定画面继续，执行缓慢推进后固定，并朝律师说完申请收束。",
+          "duration_seconds": 1,
+          "phase_id": "PH003-01",
+          "phase_order": 1,
+          "screen_event_ids": [
+            "SEV005"
+          ],
+          "sound_fact_ids": []
+        },
+        {
+          "camera_state": "第2阶段从既定画面继续，执行缓慢推进后固定，并朝律师说完申请收束。",
+          "duration_seconds": 2,
+          "phase_id": "PH003-02",
+          "phase_order": 2,
+          "screen_event_ids": [
+            "SEV006"
+          ],
+          "sound_fact_ids": [
+            "F007"
+          ]
+        }
+      ],
+      "source_spans": [
+        {
+          "end": 73,
+          "start": 54,
+          "text_hash": "05be1fe834fe106bc4c1d9aaffddfec08a601cb6fe3a75ba1a39cf5514884335"
+        }
+      ],
+      "speaker_presentation": [
+        {
+          "fact_id": "F007",
+          "presentation": "primary_face",
+          "speaker": "律师"
+        }
+      ],
+      "transition_to_next": {
+        "edit_point_id": "EP003",
+        "notes": "",
+        "type": "gaze_cut"
+      },
+      "visible_characters": [
+        "律师",
+        "法官",
+        "被告",
+        "法警"
+      ],
+      "visible_props": []
+    },
+    {
+      "beat_ids": [
+        "B004"
+      ],
+      "blocking": [
+        {
+          "action": "法官看向律师",
+          "character": "法官",
+          "end_position": "原位",
+          "eyeline": "律师",
+          "facing": "律师",
+          "start_position": "原位"
+        }
+      ],
+      "camera": {
+        "angle": "微仰视",
+        "composition": "法官手持法槌，面部为主位",
+        "end_frame": "法官说完理由要求",
+        "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+        "foreground_characters": [],
+        "framing_mode": "single",
+        "logic": "从低处朝法官观察，保持法官律师轴线同侧",
+        "motivation": "以微仰角度强化法官的裁决位置。",
+        "movement": "固定",
+        "movement_plan": {
+          "class": "fixed",
+          "end_condition": "",
+          "hold_reason": "保护完整表演与空间关系。",
+          "path": "",
+          "speed": "",
+          "trigger": ""
+        },
+        "perspective_intent": "natural_relation",
+        "position": "律师席侧前方低处",
+        "primary_subjects": [
+          "法官"
+        ],
+        "secondary_subjects": [],
+        "shot_size": "近景",
+        "spatial_strategy": {
+          "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+          "type": "sequential_reframe"
+        },
+        "start_frame": "法官看向律师",
+        "viewpoint_owner": "法官"
+      },
+      "continuity": {
+        "action_match": {
+          "incoming": null,
+          "outgoing": null
+        },
+        "axis_id": "AX001",
+        "axis_side": "side_a",
+        "eyelines": [
+          {
+            "character": "法官",
+            "direction": "screen_right",
+            "target": "律师"
+          }
+        ],
+        "intentional_exceptions": [],
+        "screen_directions": [
+          {
+            "direction": "screen_right",
+            "entity": "法官",
+            "kind": "eyeline"
+          }
+        ]
+      },
+      "continuity_updates": [],
+      "coverage_evidence": [
+        {
+          "evidence_quote": "法官看向律师",
+          "fact_id": "F008",
+          "target_path": "blocking[0].action"
+        },
+        {
+          "evidence_quote": "请陈述理由。",
+          "fact_id": "F009",
+          "target_path": "dialogue[0].text"
+        }
+      ],
+      "covered_fact_ids": [
+        "F008",
+        "F009"
+      ],
+      "cut_design": {
+        "entry_trigger": "进入B004。",
+        "exit_trigger": "离开B004。",
+        "isolation_intent": "none"
+      },
+      "dialogue": [
+        {
+          "addressee": "律师",
+          "fact_id": "F009",
+          "shot_delivery": "onscreen",
+          "speaker": "法官",
+          "text": "请陈述理由。",
+          "timing": "PH004-02"
+        }
+      ],
+      "duration_seconds": 3,
+      "end_state": [
+        "法官说完理由要求"
+      ],
+      "environment_behavior": [],
+      "execution_text": "【画面内容】法庭内安静肃穆；摄影机位于律师席侧前方低处，从低处朝法官观察，保持法官律师轴线同侧；法官手持法槌，面部清晰可读。法官看向律师。法官：请陈述理由。法官手持法槌，目光审视。最后停在法官说完理由要求。",
+      "notes": "",
+      "performance": {
+        "emotion_arc_id": null,
+        "emotion_intent": "法官手持法槌，目光审视",
+        "phase": "steady",
+        "visible_behavior": [
+          "法官手持法槌，目光审视"
+        ]
+      },
+      "plan_unit_id": "PU004",
+      "primary_fact_id": "F009",
+      "rendered_shot_description": "【近景｜微仰视｜固定】\n【画面内容】法庭内安静肃穆；摄影机位于律师席侧前方低处，从低处朝法官观察，保持法官律师轴线同侧；法官手持法槌，面部清晰可读。法官看向律师。法官：请陈述理由。法官手持法槌，目光审视。最后停在法官说完理由要求。",
+      "scene_id": "SC001",
+      "shot_id": "SH004",
+      "shot_order": 4,
+      "shot_phases": [
+        {
+          "camera_state": "第1阶段从既定画面继续，执行固定，并朝法官说完理由要求收束。",
+          "duration_seconds": 1,
+          "phase_id": "PH004-01",
+          "phase_order": 1,
+          "screen_event_ids": [
+            "SEV007"
+          ],
+          "sound_fact_ids": []
+        },
+        {
+          "camera_state": "第2阶段从既定画面继续，执行固定，并朝法官说完理由要求收束。",
+          "duration_seconds": 2,
+          "phase_id": "PH004-02",
+          "phase_order": 2,
+          "screen_event_ids": [
+            "SEV008"
+          ],
+          "sound_fact_ids": [
+            "F009"
+          ]
+        }
+      ],
+      "source_spans": [
+        {
+          "end": 87,
+          "start": 74,
+          "text_hash": "ee4cffe423bae19b65536bd709ca82aefadcb79792b47b4d12ce83e7a2b1d6b3"
+        }
+      ],
+      "speaker_presentation": [
+        {
+          "fact_id": "F009",
+          "presentation": "primary_face",
+          "speaker": "法官"
+        }
+      ],
+      "transition_to_next": {
+        "edit_point_id": "EP004",
+        "notes": "",
+        "type": "gaze_cut"
+      },
+      "visible_characters": [
+        "法官"
+      ],
+      "visible_props": []
+    },
+    {
+      "beat_ids": [
+        "B005"
+      ],
+      "blocking": [
+        {
+          "action": "律师从公文包取出文件",
+          "character": "律师",
+          "end_position": "原位",
+          "eyeline": "法官",
+          "facing": "法官",
+          "start_position": "原位"
+        }
+      ],
+      "camera": {
+        "angle": "平视",
+        "composition": "律师从公文包取出文件，文件进入画面",
+        "end_frame": "律师出示文件完毕",
+        "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+        "foreground_characters": [],
+        "framing_mode": "single",
+        "logic": "朝律师手部与文件观察，保持法官律师轴线同侧",
+        "motivation": "让证据物件成为画面落点。",
+        "movement": "缓慢推进后固定",
+        "movement_plan": {
+          "class": "compound_move_then_fixed",
+          "end_condition": "律师出示文件完毕",
+          "hold_reason": "",
+          "path": "缓慢推进后固定",
+          "speed": "缓慢",
+          "trigger": "主体动作或观看关系开始变化。"
+        },
+        "perspective_intent": "natural_relation",
+        "position": "律师身侧",
+        "primary_subjects": [
+          "律师"
+        ],
+        "secondary_subjects": [],
+        "shot_size": "中景→近景",
+        "spatial_strategy": {
+          "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+          "type": "sequential_reframe"
+        },
+        "start_frame": "律师打开公文包",
+        "viewpoint_owner": "律师"
+      },
+      "continuity": {
+        "action_match": {
+          "incoming": null,
+          "outgoing": null
+        },
+        "axis_id": "AX001",
+        "axis_side": "side_a",
+        "eyelines": [
+          {
+            "character": "律师",
+            "direction": "screen_right",
+            "target": "法官"
+          }
+        ],
+        "intentional_exceptions": [],
+        "screen_directions": [
+          {
+            "direction": "screen_right",
+            "entity": "律师",
+            "kind": "eyeline"
+          }
+        ]
+      },
+      "continuity_updates": [],
+      "coverage_evidence": [
+        {
+          "evidence_quote": "律师从公文包取出文件",
+          "fact_id": "F010",
+          "target_path": "blocking[0].action"
+        },
+        {
+          "evidence_quote": "这份笔录可以证明被告不在现场。",
+          "fact_id": "F011",
+          "target_path": "dialogue[0].text"
+        }
+      ],
+      "covered_fact_ids": [
+        "F010",
+        "F011"
+      ],
+      "cut_design": {
+        "entry_trigger": "进入B005。",
+        "exit_trigger": "离开B005。",
+        "isolation_intent": "none"
+      },
+      "dialogue": [
+        {
+          "addressee": "法官",
+          "fact_id": "F011",
+          "shot_delivery": "onscreen",
+          "speaker": "律师",
+          "text": "这份笔录可以证明被告不在现场。",
+          "timing": "PH005-02"
+        }
+      ],
+      "duration_seconds": 3,
+      "end_state": [
+        "律师取出文件"
+      ],
+      "environment_behavior": [],
+      "execution_text": "【画面内容】法庭内安静肃穆；摄影机位于律师身侧，朝律师手部与文件观察，保持法官律师轴线同侧；律师从公文包取出文件，文件进入画面。律师从公文包取出文件。律师：这份笔录可以证明被告不在现场。最后停在律师取出文件。",
+      "notes": "",
+      "performance": {
+        "emotion_arc_id": null,
+        "emotion_intent": "律师从公文包取出文件",
+        "phase": "steady",
+        "visible_behavior": [
+          "律师从公文包取出文件"
+        ]
+      },
+      "plan_unit_id": "PU005",
+      "primary_fact_id": "F011",
+      "rendered_shot_description": "【中景→近景｜平视｜缓慢推进后固定】\n【画面内容】法庭内安静肃穆；摄影机位于律师身侧，朝律师手部与文件观察，保持法官律师轴线同侧；律师从公文包取出文件，文件进入画面。律师从公文包取出文件。律师：这份笔录可以证明被告不在现场。最后停在律师取出文件。",
+      "scene_id": "SC001",
+      "shot_id": "SH005",
+      "shot_order": 5,
+      "shot_phases": [
+        {
+          "camera_state": "第1阶段从既定画面继续，执行缓慢推进后固定，并朝律师出示文件完毕收束。",
+          "duration_seconds": 1,
+          "phase_id": "PH005-01",
+          "phase_order": 1,
+          "screen_event_ids": [
+            "SEV009"
+          ],
+          "sound_fact_ids": []
+        },
+        {
+          "camera_state": "第2阶段从既定画面继续，执行缓慢推进后固定，并朝律师出示文件完毕收束。",
+          "duration_seconds": 2,
+          "phase_id": "PH005-02",
+          "phase_order": 2,
+          "screen_event_ids": [
+            "SEV010"
+          ],
+          "sound_fact_ids": [
+            "F011"
+          ]
+        }
+      ],
+      "source_spans": [
+        {
+          "end": 114,
+          "start": 88,
+          "text_hash": "220a35b57e2db4452bd61e3fd384b229521d966ce5bf1dba377eb7739d58874b"
+        }
+      ],
+      "speaker_presentation": [
+        {
+          "fact_id": "F011",
+          "presentation": "primary_face",
+          "speaker": "律师"
+        }
+      ],
+      "transition_to_next": {
+        "edit_point_id": "EP005",
+        "notes": "",
+        "type": "gaze_cut"
+      },
+      "visible_characters": [
+        "律师"
+      ],
+      "visible_props": []
+    },
+    {
+      "beat_ids": [
+        "B006"
+      ],
+      "blocking": [
+        {
+          "action": "法警走向被告，按住他的肩",
+          "character": "法警",
+          "end_position": "原位",
+          "eyeline": "被告",
+          "facing": "被告",
+          "start_position": "原位"
+        },
+        {
+          "action": "被告保持坐姿",
+          "character": "被告",
+          "end_position": "原位",
+          "eyeline": "被告",
+          "facing": "被告",
+          "start_position": "原位"
+        }
+      ],
+      "camera": {
+        "angle": "平视",
+        "composition": "法警走向被告，按住他的肩",
+        "end_frame": "法警按住被告肩膀",
+        "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+        "foreground_characters": [],
+        "framing_mode": "single",
+        "logic": "从被告身后朝法警观察，保持法警被告轴线同侧",
+        "motivation": "记录法警对被告的控制动作。",
+        "movement": "缓慢跟随后固定",
+        "movement_plan": {
+          "class": "compound_move_then_fixed",
+          "end_condition": "法警按住被告肩膀",
+          "hold_reason": "",
+          "path": "缓慢跟随后固定",
+          "speed": "缓慢",
+          "trigger": "主体动作或观看关系开始变化。"
+        },
+        "perspective_intent": "natural_relation",
+        "position": "被告身后侧",
+        "primary_subjects": [
+          "法警"
+        ],
+        "secondary_subjects": [
+          "被告"
+        ],
+        "shot_size": "中近景→近景",
+        "spatial_strategy": {
+          "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+          "type": "sequential_reframe"
+        },
+        "start_frame": "法警起步",
+        "viewpoint_owner": "法警"
+      },
+      "continuity": {
+        "action_match": {
+          "incoming": null,
+          "outgoing": null
+        },
+        "axis_id": "AX001",
+        "axis_side": "side_a",
+        "eyelines": [
+          {
+            "character": "法警",
+            "direction": "screen_right",
+            "target": "被告"
+          },
+          {
+            "character": "被告",
+            "direction": "screen_right",
+            "target": "被告"
+          }
+        ],
+        "intentional_exceptions": [],
+        "screen_directions": [
+          {
+            "direction": "screen_right",
+            "entity": "法警",
+            "kind": "eyeline"
+          },
+          {
+            "direction": "screen_right",
+            "entity": "被告",
+            "kind": "eyeline"
+          }
+        ]
+      },
+      "continuity_updates": [],
+      "coverage_evidence": [
+        {
+          "evidence_quote": "法警走向被告，按住他的肩",
+          "fact_id": "F012",
+          "target_path": "blocking[0].action"
+        },
+        {
+          "evidence_quote": "休庭后请随我来。",
+          "fact_id": "F013",
+          "target_path": "dialogue[0].text"
+        }
+      ],
+      "covered_fact_ids": [
+        "F012",
+        "F013"
+      ],
+      "cut_design": {
+        "entry_trigger": "进入B006。",
+        "exit_trigger": "离开B006。",
+        "isolation_intent": "none"
+      },
+      "dialogue": [
+        {
+          "addressee": "被告",
+          "fact_id": "F013",
+          "shot_delivery": "onscreen",
+          "speaker": "法警",
+          "text": "休庭后请随我来。",
+          "timing": "PH006-02"
+        }
+      ],
+      "duration_seconds": 3,
+      "end_state": [
+        "法警按住被告肩膀"
+      ],
+      "environment_behavior": [],
+      "execution_text": "【画面内容】法庭内气氛紧张；摄影机位于被告身后侧，从被告身后朝法警观察，保持法警被告轴线同侧；法警走向被告，按住他的肩。法警走向被告，按住他的肩。法警：休庭后请随我来。最后停在法警按住被告肩膀。",
+      "notes": "",
+      "performance": {
+        "emotion_arc_id": null,
+        "emotion_intent": "法警走向被告，按住他的肩",
+        "phase": "steady",
+        "visible_behavior": [
+          "法警走向被告，按住他的肩"
+        ]
+      },
+      "plan_unit_id": "PU006",
+      "primary_fact_id": "F013",
+      "rendered_shot_description": "【中近景→近景｜平视｜缓慢跟随后固定】\n【画面内容】法庭内气氛紧张；摄影机位于被告身后侧，从被告身后朝法警观察，保持法警被告轴线同侧；法警走向被告，按住他的肩。法警走向被告，按住他的肩。法警：休庭后请随我来。最后停在法警按住被告肩膀。",
+      "scene_id": "SC001",
+      "shot_id": "SH006",
+      "shot_order": 6,
+      "shot_phases": [
+        {
+          "camera_state": "第1阶段从既定画面继续，执行缓慢跟随后固定，并朝法警按住被告肩膀收束。",
+          "duration_seconds": 1,
+          "phase_id": "PH006-01",
+          "phase_order": 1,
+          "screen_event_ids": [
+            "SEV011"
+          ],
+          "sound_fact_ids": []
+        },
+        {
+          "camera_state": "第2阶段从既定画面继续，执行缓慢跟随后固定，并朝法警按住被告肩膀收束。",
+          "duration_seconds": 2,
+          "phase_id": "PH006-02",
+          "phase_order": 2,
+          "screen_event_ids": [
+            "SEV012"
+          ],
+          "sound_fact_ids": [
+            "F013"
+          ]
+        }
+      ],
+      "source_spans": [
+        {
+          "end": 136,
+          "start": 115,
+          "text_hash": "e3ac1a5060479a962386c482b91cbeb277f9061e5d7480bec6171ef433682ed1"
+        }
+      ],
+      "speaker_presentation": [
+        {
+          "fact_id": "F013",
+          "presentation": "primary_face",
+          "speaker": "法警"
+        }
+      ],
+      "transition_to_next": {
+        "edit_point_id": "EP006",
+        "notes": "",
+        "type": "gaze_cut"
+      },
+      "visible_characters": [
+        "法警",
+        "被告"
+      ],
+      "visible_props": []
+    },
+    {
+      "beat_ids": [
+        "B007"
+      ],
+      "blocking": [
+        {
+          "action": "被告挣脱，指向律师",
+          "character": "被告",
+          "end_position": "原位",
+          "eyeline": "律师",
+          "facing": "律师",
+          "start_position": "原位"
+        }
+      ],
+      "camera": {
+        "angle": "平视",
+        "composition": "被告挣脱并指向律师，律师在背景",
+        "end_frame": "被告喊完指控",
+        "focus_plan": "焦点保持在当前主要观看主体及其动作上。",
+        "foreground_characters": [],
+        "framing_mode": "single",
+        "logic": "朝被告观察，保持被告律师轴线同侧",
+        "motivation": "捕捉被告情绪失控的瞬间。",
+        "movement": "缓慢推进后固定",
+        "movement_plan": {
+          "class": "compound_move_then_fixed",
+          "end_condition": "被告喊完指控",
+          "hold_reason": "",
+          "path": "缓慢推进后固定",
+          "speed": "缓慢",
+          "trigger": "主体动作或观看关系开始变化。"
+        },
+        "perspective_intent": "natural_relation",
+        "position": "律师席侧后方",
+        "primary_subjects": [
+          "被告"
+        ],
+        "secondary_subjects": [
+          "律师"
+        ],
+        "shot_size": "中近景→近景",
+        "spatial_strategy": {
+          "description": "在同一镜头内跟随动作与对白完成观看尺度递进。",
+          "type": "sequential_reframe"
+        },
+        "start_frame": "被告挣脱",
+        "viewpoint_owner": "被告"
+      },
+      "continuity": {
+        "action_match": {
+          "incoming": null,
+          "outgoing": null
+        },
+        "axis_id": "AX001",
+        "axis_side": "side_a",
+        "eyelines": [
+          {
+            "character": "被告",
+            "direction": "screen_right",
+            "target": "律师"
+          },
+          {
+            "character": "律师",
+            "direction": "screen_right",
+            "target": "律师"
+          }
+        ],
+        "intentional_exceptions": [],
+        "screen_directions": [
+          {
+            "direction": "screen_right",
+            "entity": "被告",
+            "kind": "eyeline"
+          },
+          {
+            "direction": "screen_right",
+            "entity": "律师",
+            "kind": "eyeline"
+          }
+        ]
+      },
+      "continuity_updates": [],
+      "coverage_evidence": [
+        {
+          "evidence_quote": "被告挣脱，指向律师",
+          "fact_id": "F014",
+          "target_path": "blocking[0].action"
+        },
+        {
+          "evidence_quote": "你早就知道！",
+          "fact_id": "F015",
+          "target_path": "dialogue[0].text"
+        }
+      ],
+      "covered_fact_ids": [
+        "F014",
+        "F015"
+      ],
+      "cut_design": {
+        "entry_trigger": "进入B007。",
+        "exit_trigger": "离开B007。",
+        "isolation_intent": "none"
+      },
+      "dialogue": [
+        {
+          "addressee": "律师",
+          "fact_id": "F015",
+          "shot_delivery": "onscreen",
+          "speaker": "被告",
+          "text": "你早就知道！",
+          "timing": "PH007-02"
+        }
+      ],
+      "duration_seconds": 3,
+      "end_state": [
+        "被告喊完指控"
+      ],
+      "environment_behavior": [],
+      "execution_text": "【画面内容】法庭内气氛紧张；摄影机位于律师席侧后方，朝被告观察，保持被告律师轴线同侧；被告挣脱并指向律师，律师在背景。被告挣脱，指向律师。被告：你早就知道！最后停在被告喊完指控。",
+      "notes": "",
+      "performance": {
+        "emotion_arc_id": null,
+        "emotion_intent": "被告挣脱，指向律师",
+        "phase": "steady",
+        "visible_behavior": [
+          "被告挣脱，指向律师"
+        ]
+      },
+      "plan_unit_id": "PU007",
+      "primary_fact_id": "F015",
+      "rendered_shot_description": "【中近景→近景｜平视｜缓慢推进后固定】\n【画面内容】法庭内气氛紧张；摄影机位于律师席侧后方，朝被告观察，保持被告律师轴线同侧；被告挣脱并指向律师，律师在背景。被告挣脱，指向律师。被告：你早就知道！最后停在被告喊完指控。",
+      "scene_id": "SC001",
+      "shot_id": "SH007",
+      "shot_order": 7,
+      "shot_phases": [
+        {
+          "camera_state": "第1阶段从既定画面继续，执行缓慢推进后固定，并朝被告喊完指控收束。",
+          "duration_seconds": 1,
+          "phase_id": "PH007-01",
+          "phase_order": 1,
+          "screen_event_ids": [
+            "SEV013"
+          ],
+          "sound_fact_ids": []
+        },
+        {
+          "camera_state": "第2阶段从既定画面继续，执行缓慢推进后固定，并朝被告喊完指控收束。",
+          "duration_seconds": 2,
+          "phase_id": "PH007-02",
+          "phase_order": 2,
+          "screen_event_ids": [
+            "SEV014"
+          ],
+          "sound_fact_ids": [
+            "F015"
+          ]
+        }
+      ],
+      "source_spans": [
+        {
+          "end": 153,
+          "start": 137,
+          "text_hash": "f89b065dae88c300485522e4e84a195aea215d8b5f8da1a96fcb387c488990d7"
+        }
+      ],
+      "speaker_presentation": [
+        {
+          "fact_id": "F015",
+          "presentation": "primary_face",
+          "speaker": "被告"
+        }
+      ],
+      "transition_to_next": {
+        "edit_point_id": null,
+        "notes": "",
+        "type": "scene_end"
+      },
+      "visible_characters": [
+        "被告",
+        "律师"
+      ],
+      "visible_props": []
+    }
+  ],
+  "source": {
+    "approved_corrections": [],
+    "boundary_lock": "entire_submitted_text",
+    "delivery_slug": "courtroom-scene",
+    "input_kind": "continuous_text",
+    "locked_text": "法庭内，法官、被告、律师、法警各就其位。\n法官敲响法槌：请保持安静。\n被告抬头，双手攥紧栏杆：我没有杀人。\n律师起身：审判长，我方申请出示新证据。\n法官看向律师：请陈述理由。\n律师从公文包取出文件：这份笔录可以证明被告不在现场。\n法警走向被告，按住他的肩：休庭后请随我来。\n被告挣脱，指向律师：你早就知道！\n",
+    "locked_text_hash": "8657ee3f94a1b591c9aa4e1690c91a5a7a4412554e3124ec543bd283eb3239d8",
+    "scope": "courtroom-scene 端到端 fixture"
+  },
+  "source_analysis": {
+    "character_relations": [
+      "法官掌控庭审程序与节奏",
+      "律师为被告辩护并提交证据",
+      "被告处于被审位置，情绪逐渐失控",
+      "法警代表强制力，最终控制被告"
+    ],
+    "dramatic_progression": "法官主持秩序，被告否认，律师申请证据，法官质疑，律师出示证据，法警控制被告，被告情绪爆发指控律师。",
+    "narrative_function": "通过法庭对峙展示权力、辩护与被告崩溃的戏剧过程。",
+    "source_boundary": "从四人各就其位到被告喊完指控。",
+    "source_constraints": [
+      "逐字保留七句对白",
+      "被告最终情绪爆发完整"
+    ]
+  },
+  "source_skill": "su-fenjingskill",
+  "source_skill_version": "2.5.5"
+}

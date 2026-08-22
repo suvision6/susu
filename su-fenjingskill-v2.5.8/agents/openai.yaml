@@ -1,0 +1,4 @@
+interface:
+  display_name: "导演分镜 v2.5.8"
+  short_description: "生成来源完整、对白跨镜且节奏可审计的六列导演分镜"
+  default_prompt: "使用 $su-fenjingskill 锁定剧本，经两次人工 Gate 生成对白播放轨完整、镜头节奏可审计并与 DOP 规划绑定的 shot-data/2.5.8 六列导演分镜。"

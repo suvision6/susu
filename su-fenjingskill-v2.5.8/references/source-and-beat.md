@@ -1,0 +1,278 @@
+# Source and Beat Contract
+
+本文件是输入边界、原文锁、source span、稳定内部 ID、Beat、受保护 fact、导演分析隔离、来源叙事顺序与输出命名素材的唯一规则源。
+
+## 目录
+
+- [1. 正式输入边界](#1-正式输入边界)
+- [2. 文本锁](#2-文本锁)
+- [3. Source span 与内部 ID](#3-source-span-与内部-id)
+- [4. 场景、Beat 与来源顺序](#4-场景beat-与来源顺序)
+- [5. Director Analysis](#5-director-analysis)
+- [6. Fact](#6-fact)
+- [7. 关键呈现](#7-关键呈现)
+- [8. 对白](#8-对白)
+- [9. 事实覆盖](#9-事实覆盖)
+- [10. Gate 影响](#10-gate-影响)
+- [11. 标题与编号解析](#11-标题与编号解析)
+
+## 1. 正式输入边界
+
+正式输入接受：
+
+- 完整剧本。
+- 有明确起止边界的剧本段落，无论是否带场号或段落编号。
+- 用户明确提交或锁定为本轮连续范围的台词、动作、场景片段或其他连续原文。
+
+不得强迫用户补完整剧本、外部场号、剧本编号或既有 `scene_id`。只要当前文本边界明确且能识别主体及动作、事件或对白，就可以锁源。
+
+只有梗概、零散设想或无法确认连续原文边界时，拒绝正式拆镜。用户可以明确声明“把当前文本本身锁定为待拆片段”；此时按 `user_locked_fragment` 处理，而不是假装它来自一份未提供的完整剧本。
+
+`source.input_kind` 只允许：
+
+```text
+full_screenplay | screenplay_segment | continuous_text
+```
+
+`source.boundary_lock` 只允许：
+
+```text
+entire_submitted_text | explicit_continuous_range | user_locked_fragment
+```
+
+把用户最新明确修正写入 `approved_corrections`；不得静默修正原文。
+
+若来源把两种语言相邻并列为台词候选，版式本身不证明哪一行是原始台词。必须在 Gate 1 前完成语言角色锁定：
+
+- 来源邻近位置明确写有“原文／原始台词／译文／字幕”等角色标记时，可使用 `resolution=source_explicit`，并在 `evidence` 中记录该依据。
+- 来源未明确标记时必须暂停并向用户确认；确认后使用 `resolution=user_confirmed`，且把同一 `evidence` 写入一条 `approved_corrections[].to`，`reason` 明确记录用户确认。
+- 未锁定主次时返回 `DIALOGUE_LANGUAGE_AMBIGUOUS`，不得选择较易理解的语言、中文在前的一行或英文斜体的一行作为对白。
+- 原始台词＋对照译文使用 `mode=original_with_translation`。若多种语言都是角色实际发言，使用 `mode=multilingual_actual`，登记至少两项 `spoken_languages[]`，并按来源事实分别建 dialogue fact，不得伪装成译文关系。
+- **人物台词原文锁定**：每个 dialogue fact 的 `text` 必须逐字来自 `locked_text`，不得翻译、改写或补齐主语。中英混用台词按原文原样保留；`script_voice_type` 与 `language` 字段仅做标注，不改变正文。若来源以两列台词呈现（如左列中文、右列英文），必须在 Gate 1 前暂停，向用户展示两种语言版本，并要求确认“最终镜头使用哪一列作为角色实际说出的台词”；确认结果写入 `approved_corrections` 与 `dialogue_language_policy`。
+
+连续剧项目可把已经确认的默认关系保存为 `project_dialogue_language_policy`，后续各集直接继承，不重复要求同一确认。项目对象在普通策略字段之外必须含 `scope="project"` 与 `exceptions_require_confirmation=true`。若某一集的语言角色不同，才增加本集 `dialogue_language_policy` 覆盖项目默认；该例外必须使用 `resolution=user_confirmed`，并把同一 `evidence` 写入本集 `approved_corrections`。本集策略与项目默认相同属于冗余错误，应删除本集对象。
+
+结构化策略为：
+
+```json
+{
+  "dialogue_language_policy": {
+    "mode": "original_with_translation",
+    "original_language": "en",
+    "translation_languages": ["zh-CN"],
+    "resolution": "user_confirmed",
+    "evidence": "英文为原始台词，中文为对照译文"
+  }
+}
+```
+
+实际多语对白结构为：
+
+```json
+{
+  "dialogue_language_policy": {
+    "mode": "multilingual_actual",
+    "spoken_languages": ["zh-CN", "en"],
+    "resolution": "user_confirmed",
+    "evidence": "两行都是角色实际说出的台词，不是互译"
+  }
+}
+```
+
+项目级示例：
+
+```json
+{
+  "project_dialogue_language_policy": {
+    "mode": "original_with_translation",
+    "original_language": "en",
+    "translation_languages": ["zh-CN"],
+    "resolution": "user_confirmed",
+    "evidence": "本项目英文为原始台词，中文为对照译文",
+    "scope": "project",
+    "exceptions_require_confirmation": true
+  }
+}
+```
+
+## 2. 文本锁
+
+1. 把 CRLF/CR 规范为 LF；正式 `locked_text` 不得再含 `\r`。
+2. 在任何 UTF-8 编码或 hash 前检测孤立 surrogate 等不可编码文本；返回稳定 validation issue，不得抛出裸 `UnicodeEncodeError`。
+3. 对规范化全文的 UTF-8 字节计算 64个小写十六进制字符的 SHA-256。
+4. 把边界说明写入 `source.scope`，不要用摘要替代锁定全文。
+5. 任何事实、对白和原剧本段落都从 `locked_text` 的 source span 回切。
+6. 文本改变后重新计算受影响的 span、hash、分析、Beat、规划与镜头；不得平移猜测。
+7. 锁定文本首行只用于提取可确认的编号与标题素材；正式文件名前缀由 `source.delivery_slug` 明确提供（见第 11 节）。
+
+### 2.1 来源清单反向覆盖
+
+Gate 2 前必须从 `locked_text` 确定性建立制作标签、非空叙事行、具名对白和来源声音清单：
+
+- `SCENE`、`CUT TO`、集标题和纯结束标签可作为制作标签排除。
+- 其他非空叙事行必须与至少一个 Fact 的坐标相交；完全未覆盖返回 `SOURCE_NARRATIVE_UNCOVERED`。
+- 每条具名对白必须有同说话者、同正文、坐标包含的 dialogue fact；遗漏返回 `SOURCE_DIALOGUE_OMITTED`。
+- 对白行内明确的表演说明必须从实际口播坐标中分离，建立独立 action fact；遗漏返回 `SOURCE_STAGE_DIRECTION_OMITTED`，仍混入 dialogue fact 返回 `DIALOGUE_STAGE_DIRECTION_INCLUDED`。
+- 花神低语、黑屏声音、媒介声音等来源声音同样必须建立 dialogue/sound fact；遗漏返回 `SOURCE_SOUND_OMITTED`。
+- 一个非对白 Fact 不得跨越多个不同说话者的完整发言；否则返回 `SOURCE_MULTI_SPEAKER_COLLAPSE`。
+- 来源清单摘要进入 Gate 2 digest；补删 Fact、说话者或声音身份后旧 Gate 2 失效。
+
+## 3. Source span 与内部 ID
+
+每个 span 使用 0-based Unicode code point 左闭右开区间：
+
+```json
+{"start": 12, "end": 28, "text_hash": "64个小写十六进制字符的 SHA-256"}
+```
+
+- `start`、`end` 必须是真正 JSON 整数，且 `0 <= start < end <= len(locked_text)`。
+- 同一 `source_spans` 数组按 `start` 严格递增，不重叠、不重复。
+- `text_hash` 对 `locked_text[start:end]` 直接计算，由构建器复核。
+- 多 span 的显示文本按数组顺序以 LF 拼接。
+- 禁止用相同字面、概述、删字、换序或人工改写代替坐标关系。
+
+缺少外部编号时，Skill 按锁定文本中的首次出现顺序生成：
+
+```text
+SC001, SC002, ...
+B001, B002, ...
+F001, F002, ...
+```
+
+这些是内部机器 ID，不声称恢复原剧本编号。只要锁定边界和前序单元不变，同一来源单元保持同一内部 ID；来源结构改变时重新生成受影响 ID 与引用。
+
+## 4. 场景、Beat 与来源顺序
+
+- 先识别时空、现实层和主要行动边界，再建立内部场景。
+- 每个场景在拆镜前必须先完成整场 `directing_plan`，至少说明场景目标、推进和视点策略；入口、出口、节奏、受保护过程与视觉转折在能影响拆镜时补充。它不是 source fact，也不是表格完整度证明。
+- 按人物目标、阻力、行动、信息或关系的实际变化建立 Beat。
+- 不预设镜头数；一个 Beat 可跨多镜，多 Beat 也可在同一镜内清楚推进。
+- 稳定推进本身可以是合法 Beat 功能，不得为了戏剧模板伪造转折。
+- `beat_order` 表达来源叙事顺序；`beats[]` 与各 Beat 内 `facts[]` 默认保持 source span 锚点单调，不得隐式倒序。
+- 导演性重排只改变已确认规划与最终镜头顺序，不改变 `beats[]`、`facts[]` 的来源事实顺序。
+- 任何重排必须在 Gate 2 的 `shot_plan.reorders[]` 中绑定具体来源范围和规划单元并得到确认。
+
+## 5. Director Analysis
+
+场景或 Beat 可以增加可选 `director_analysis`：
+
+```json
+{
+  "narrative_function": "建立两人互相试探的关系状态",
+  "dramatic_turn": null,
+  "pov_owner": "跟随周的观察位置",
+  "power_relation": "林发问，周控制回应时机",
+  "subtext": "双方都知道声音来源，却都不先点破",
+  "directorial_intent": "让观众先注意沉默中的权力拉扯"
+}
+```
+
+六项含义：
+
+- `narrative_function`：当前场景或 Beat 的叙事功能。
+- `dramatic_turn`：来源事实支持的认知、关系、决定或状态转折；没有时使用 `null` 或 `steady`。
+- `pov_owner`：观众主要跟随的人物或观察位置。
+- `power_relation`：人物间主动权、压力与回应力学。
+- `subtext`：基于事实的未说出口目标、回避或张力，不是已发生动作。
+- `directorial_intent`：希望观众注意、理解或感受什么。
+
+边界：
+
+- 整个对象可省略；存在时任一项都可为 `null`，不要为填字段发明分析。
+- 场景分析提供较宽背景，Beat 分析只收窄当前功能。
+- 不给分析项分配 source span，不把分析文字写入 `facts[]`、`dialogue[]` 或对白。
+- 不把潜台词改成剧情事实、因果、关键动作、道具状态或台词。与来源一致、不制造新事实的可逆表演或调度可以进入导演字段。
+- 分析只参与候选生成与比较，不设置 `presentation_requirement`、`shot_isolation` 或任何必须切镜规则。
+- 导演增加的表演或调度不得写入 `facts[]` 或对白，也不得借此声称来源已经发生了新的事实。
+- 分析与事实冲突时，删除或修正分析，绝不修改事实迎合分析。
+
+Gate 1 使用独立的 `source_analysis` 展示边界、叙事功能、推进、人物关系与来源约束；它同样不是 source fact。
+
+## 6. Fact
+
+事实类型：
+
+```text
+character | action | dialogue | prop | space | position | emotion | sound | reality
+```
+
+每个 fact 必须：
+
+- 有全局唯一 `fact_id`、所属 Beat、原文字面或直接指称的 `text`。
+- 有非空 `source_spans`，能回溯到锁定文本。
+- 其每个 source span 都按坐标完全包含于所属 Beat 的 source spans；相同字面不能替代坐标包含。
+- 由至少一个同场镜头通过 `covered_fact_ids` 与 source span 覆盖。
+- 不含镜头、焦段、构图、运镜或下游生成语言。
+
+`performers[]` 只在人物归属无法从 fact 本身判断时使用。旧 `2.5.3/2.5.4` 合同中的 `presentation_requirement`、`shot_isolation`、`isolation_reason` 与 `isolation_group_id` 只在只读验证兼容路径读取；2.5.8 不再生成，也不以它们反推镜头数。
+
+## 7. 关键呈现
+
+当一个事实虽已被镜头覆盖，但容易在复杂画面中被淹没时，可增加自然语言 `presentation_note`，说明观众需要看清什么。它不自动要求独立成镜。
+
+是否需要独立镜头只能在整场规划中，通过以下比较得出：
+
+- 留在主镜中能否清楚完成。
+- 单独改变观察位置能增加什么。
+- 切开是否会破坏同一物理过程。
+
+不得扫描“真相”“反应”“关键道具”等关键词自动生成插镜。
+
+## 8. 对白
+
+- dialogue fact 的 `text` 是逐字对白正文，不含角色名前缀、冒号、表演说明及任何非对白文字。
+- 2.5.8 dialogue fact 必须登记 `spoken_source_spans[]` 与 `stage_direction_fact_ids[]`。前者按来源顺序覆盖实际说出文字，后者引用同一发言内被分离的表演 action fact。
+- 明确的第三人称动作、视线、姿态、停顿、语气与音量括号说明不计入口播；引号内括号、术语或可能真实说出的括号内容不得自动删除。无法确定时以 `DIALOGUE_PARENTHETICAL_AMBIGUOUS` 阻断并取得确认。
+- dialogue fact 的 `text` 同时锁定原文语言：原文为中文就保留中文，原文为英文或其他语言就保留该语言。不得翻译、音译、转写、改换字符体系或用双语改写替换来源对白。
+- 用户明确追加翻译需求时，把译文作为独立辅助内容交付；来源 fact、镜头 `dialogue[].text` 与【画面内容】中的台词仍保留原文。若输入明确标注某行是译文、字幕或对照文本，不把它误认成新的原始对白；若输入把多种语言都明确写成角色实际发言，则分别逐字保留。
+- **中英混用台词**：按 `locked_text` 原样保留，不改变字符体系、不补齐主语、不翻译。`text_matches_language` 校验时允许少量嵌入外来词（品牌名、缩写、百分比、短英文名），只有连续外文片段或超过阈值时才视为语言不匹配。
+- **两列台词映射**：若来源以两列台词呈现（如左列中文、右列英文），必须在 Gate 1 前暂停并向用户确认最终使用哪一列作为角色实际说出的台词；确认结果写入 `approved_corrections` 与 `dialogue_language_policy`。未确认前返回 `DIALOGUE_LANGUAGE_AMBIGUOUS`。
+- `original_with_translation` 下，每个 dialogue fact 必须增加 `language=original_language` 与 `source_role=original_dialogue`；译文不得成为 dialogue fact。`multilingual_actual` 下，每个 dialogue fact 必须增加属于 `spoken_languages[]` 的 `language` 与 `source_role=spoken_dialogue`。
+- 未出现本集覆盖对象时，dialogue fact 使用项目级策略；出现已确认例外时，只对本集使用覆盖策略，不回写项目默认。
+- 同时登记 `speaker` 与来源声音性质 `script_voice_type`。闭合值为 `scene_dialogue | vo | os | mediated | unresolved`。
+- 用户明确允许暂存但来源不能区分 V.O./O.S. 时，使用 `script_voice_type=unresolved`；正文仍是 dialogue fact，必须进入声音覆盖和第五列，并在镜头备注写明待确认候选。该状态产生 WARN，不能宣称 READY。
+- 角色名、VO、OS 标记与台词正文必须从原文直接锁定；禁止根据相邻人物、反应对象或画面主体推断说话者。
+- `script_voice_type=vo` 永远是来源层 VO；摄影设计不能把它改成现场对白或 O.S.。现场对白即使在当前镜头看不见说话者，来源层仍是 `scene_dialogue`。
+- 同一句对白不得因逗号、顿号、冒号、分号或人工换行拆成多个 fact；它可以通过一个 `dialogue_playback` 的连续 segments 跨多个画面镜头播放。
+- 对白拆镜不由标点或固定正反打机械决定；每次发言权交接先形成新事件与默认切点，再由观看对象、声音位置、空间关系和不切收益决定是否以明确例外保留同镜。具体规则以 [dialogue-staging.md](dialogue-staging.md) 为准。
+- 镜头 `dialogue[*].fact_id` 必须指向 dialogue fact，`playback_segment_id` 必须指向当前规划单元的播放片段；单镜 `text` 等于该片段的逐字切片，全片按 segment 顺序拼接必须恰好等于完整 fact。
+- 不得把情绪意图、动作说明或 `speaker + ：` 混入对白正文。
+- 对白可以与动作和表演并行发生；时长归属由 [shot-design.md](shot-design.md) 决定。
+
+## 9. 事实覆盖
+
+- 每个镜头 source span 必须与已确认规划单元坐标一致。
+- 每个 covered fact 的全部来源坐标必须完全包含于该镜头 source spans。
+- `covered_fact_ids` 按来源 fact 顺序排列。
+- 所有 facts 必须至少被一个同场镜头覆盖；不得用一个不包含其来源范围的镜头冒充覆盖。
+- dialogue fact 必须由 `dialogue_playbacks[]` 无缝覆盖；各镜 `dialogue[]` 与权威执行正文只出现本镜片段，按镜头顺序拼接后逐字等于完整 fact，不得重复或漏写。
+- 不可逆动作、关键状态、现实层和因果信息必须在镜头执行中清楚成立。
+- 旧版 `coverage_evidence[]` 只在 `2.5.3/2.5.4` 只读验证路径继续校验；2.5.8 的来源完整性由锁源清单、spoken spans、stage-direction facts 与 playback 全文分区共同反向核对。
+
+## 10. Gate 影响
+
+- Gate 1 digest 覆盖 source、实际展示的源分析、风格材料与 `director_profile`。
+- Gate 2 digest 继承 Gate 1 digest，并覆盖实际展示的场级导演策略、`rhythm_policy`、`rhythm_design`、`dialogue_playbacks[]`、结构化时长步骤、`screen_events[]`、观看决策、规划单元、DOP 设计、节奏复核与导演可执行性报告。
+- 来源或风格改变时 Gate 1 失效；场级策略、镜头单元、顺序、时长或剪辑点改变时 Gate 2 失效。
+- 内部 Fact 分类、未展示的情绪分析或可选状态台账不充当用户已经确认的导演方案。
+- 不得把“继续”解释为后续 Gate 的预批准。
+- 正式交付只允许 Gate 1、Gate 2 两项确认，不设置最终分镜确认。
+
+## 11. 标题、编号与 delivery slug
+
+正式四文件必须先在 `source.delivery_slug` 中锁定 ASCII 小写 kebab-case 前缀：
+
+1. 优先使用用户显式提供的罗马字标识、英文标题或既有文件前缀。
+2. 可从 `locked_text` 第一行非空文本提取编号与标题素材，例如：
+
+```text
+第15集·《第八天》  →  number="15", title="第八天"
+EP15 · 第八天      →  number="15", title="第八天"
+《第八天》第15集    →  number="15", title="第八天"
+```
+
+3. 编号统一为阿拉伯数字并可前置 `ep`（如“第15集”→ `ep15`）。
+4. 中文标题没有用户确认的罗马字时必须询问用户；不得自行处理多音字，也不得声明脚本会自动转写。
+5. `delivery_slug` 只允许 ASCII 小写字母、数字和单个短横线分隔，不超过 80 字符，不含版本词、临时状态词或下划线。
+6. 例如用户确认标题罗马字为 `dibati` 时使用 `ep15-dibati`，四文件命名见 [output-contract.md](output-contract.md)。
+7. `project_id` 是项目身份，不代替 `delivery_slug`；二者不得混为一个字段。
