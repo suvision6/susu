@@ -1,0 +1,27 @@
+{
+  "contract_name": "director-shot-data",
+  "contract_version": "3.0.0",
+  "status": "READY_WITH_ASSUMPTIONS",
+  "error_count": 0,
+  "warning_count": 2,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "OPEN_ASSUMPTION",
+      "path": "assumptions[0]",
+      "message": "开放假设：暂定呼名声来自门外走廊，而不是房间内部；影响：只影响声音方向、她的视线和摄影机对门的建立；不决定呼名者身份。"
+    },
+    {
+      "code": "OPEN_ASSUMPTION",
+      "path": "assumptions[1]",
+      "message": "开放假设：使用床与门构成最小房间拓扑，其他陈设不承担剧情功能；影响：影响人物从床到门的行动方向，可在获得场景设计后整体替换。"
+    }
+  ],
+  "summary": {
+    "scene_count": 1,
+    "shot_count": 3,
+    "total_duration_seconds": 16.0,
+    "open_assumption_count": 2
+  },
+  "boundary": "后端只判断来源、引用、结构和确定性执行矛盾；镜头是否有导演价值仍由人工审片清单判断。"
+}

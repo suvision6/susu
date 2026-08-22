@@ -1,0 +1,270 @@
+{
+  "contract_name": "director-shot-data",
+  "contract_version": "3.0.0",
+  "source_skill": "su-fenjingskill",
+  "source_skill_version": "3.0.0",
+  "project_id": "kitchen-farewell-demo",
+  "source": {
+    "title": "厨房告别",
+    "delivery_slug": "kitchen-farewell",
+    "input_kind": "screenplay_segment",
+    "locked_text": "内景·厨房·夜\n林晓彤把一把钥匙放在餐桌上。\n林晓彤：我明天走。\n陈默继续切菜，刀声停下。\n陈默：什么时候决定的？",
+    "dialogue_lines": [
+      {
+        "dialogue_id": "D001",
+        "speaker": "林晓彤",
+        "text": "我明天走。",
+        "voice_type": "scene_dialogue"
+      },
+      {
+        "dialogue_id": "D002",
+        "speaker": "陈默",
+        "text": "什么时候决定的？",
+        "voice_type": "scene_dialogue"
+      }
+    ]
+  },
+  "assumptions": [],
+  "director_design": {
+    "scene_purpose": "让一段离开宣告从信息变成关系断裂的现实。",
+    "dramatic_question": "陈默会继续维持日常秩序，还是承认这句话已经改变两人的关系？",
+    "turning_point": "规律刀声在林晓彤说完后停下，陈默第一次无法用动作掩盖反应。",
+    "audience_position": "观众先作为厨房里的第三人观察两人，再被刀声停止拉近陈默的身体反应。",
+    "pov_strategy": "关系视点逐步偏向承受消息的陈默，但不进入完全主观镜头。",
+    "emotional_arc": "表面日常维持——离开信息落下——动作秩序中断——被迫发问。",
+    "blocking_strategy": "林晓彤停在餐桌一侧，陈默留在料理台；钥匙处于两人之间，空间距离不变但关系被物件切开。",
+    "visual_strategy": "从共享关系构图切到手部细节，再到陈默面孔；每次靠近都由信息对身体的作用触发。",
+    "sound_strategy": "用规律切菜声建立日常节拍，让钥匙金属声和突然静默成为真正的情绪转折。",
+    "rhythm_strategy": "前镜让动作完整发生，中镜保留台词后的半拍静默，末镜不急切回林晓彤，让问题悬在陈默身上。"
+  },
+  "scenes": [
+    {
+      "scene_id": "SC001",
+      "scene": "内景·厨房·夜",
+      "source_excerpt": "内景·厨房·夜\n林晓彤把一把钥匙放在餐桌上。\n林晓彤：我明天走。\n陈默继续切菜，刀声停下。\n陈默：什么时候决定的？",
+      "space_map": {
+        "anchors": [
+          "画面左侧餐桌",
+          "画面右侧料理台与砧板",
+          "两人之间的钥匙"
+        ],
+        "character_start_positions": [
+          "林晓彤站在餐桌靠门一侧",
+          "陈默站在料理台前，身体朝向砧板"
+        ],
+        "axis_notes": "主要关系轴连接餐桌与料理台；三镜保持林晓彤在银幕左侧、陈默在银幕右侧的基本方向。",
+        "protected_continuity": [
+          "钥匙从林晓彤手中落到餐桌后保持原位",
+          "菜刀从持续切菜变为停在砧板上",
+          "陈默在发问前不转身面对林晓彤"
+        ]
+      },
+      "lighting_strategy": "以料理台上方实用灯形成陈默侧上方硬光，餐桌区域较暗；不额外制造光线变化，让静默承担转折。",
+      "color_strategy": "暖灰厨房为主，钥匙冷色反光作为小面积视觉重心。"
+    }
+  ],
+  "shots": [
+    {
+      "shot_id": "SH001",
+      "scene_id": "SC001",
+      "source_excerpt": "林晓彤把一把钥匙放在餐桌上。",
+      "duration_seconds": 4.5,
+      "duration_basis": "建立两人位置约1.5秒，林晓彤抬手与放下钥匙约2秒，金属声后的停留约1秒。",
+      "motivation": {
+        "primary": "relationship",
+        "reason": "先让两人共享同一空间，使钥匙落在中间时成为可见的关系分隔，而不是单纯道具插镜。",
+        "cut_or_hold_reason": "保持到钥匙触桌并停稳；关系变化已经落地后，再切近陈默承受消息的身体区域。"
+      },
+      "camera": {
+        "shot_size": "中远景",
+        "angle": "平视",
+        "position": "厨房入口内侧，斜向同时看见餐桌与料理台",
+        "composition": "林晓彤在左侧餐桌旁，陈默在右侧料理台前；中间留出钥匙落点和一段未被跨越的负空间",
+        "lens_intent": "自然透视，保留两人真实距离与厨房纵深",
+        "movement": {
+          "type": "fixed",
+          "trigger": "",
+          "speed": "",
+          "path": "",
+          "end_condition": "",
+          "reason": "不替任何人靠近，让人物距离和钥匙落点自行改变关系。"
+        },
+        "focus": "两人和餐桌保持可读，钥匙触桌时允许注意力自然落向画面中部",
+        "lighting_change": ""
+      },
+      "staging": {
+        "subjects": ["林晓彤", "陈默", "钥匙"],
+        "blocking": "陈默保持切菜；林晓彤不靠近他，只向餐桌伸手放下钥匙。",
+        "performance": "林晓彤的动作没有解释性停顿；陈默仍维持原有切菜节拍。"
+      },
+      "sound": {
+        "perspective": "客观厨房空间，菜刀声来自画面右侧，钥匙声来自画面中部偏左。",
+        "dialogue_segments": [],
+        "effects": ["规律的切菜声", "钥匙触桌的金属轻响"],
+        "ambience": "低声冰箱运转与室内夜间底噪",
+        "music": ""
+      },
+      "edit": {
+        "entry": "从场景开始直接进入共享空间。",
+        "exit": "钥匙触桌并停稳，陈默的切菜节拍仍未改变。",
+        "transition_to_next": "硬切到陈默手部与砧板。",
+        "reason": "从关系全貌切到承受信息的身体动作，使声音节拍成为下一镜的注意力核心。"
+      },
+      "continuity": {
+        "axis": "餐桌—料理台关系轴，摄影机保持入口一侧。",
+        "screen_direction": "林晓彤保持银幕左侧，陈默保持银幕右侧。",
+        "state_updates": [
+          {
+            "entity": "钥匙",
+            "field": "位置",
+            "from": "林晓彤手中",
+            "to": "餐桌上"
+          }
+        ],
+        "intentional_breaks": []
+      },
+      "execution_text": "【中远景｜平视｜固定】\n【画面内容】厨房入口内侧同时收住餐桌与料理台。陈默在画面右侧维持均匀的切菜节拍，林晓彤站在左侧，没有靠近他，只把一把钥匙放到两人之间的餐桌上。金属轻响落下，钥匙停稳，陈默的动作仍未改变。",
+      "notes": ""
+    },
+    {
+      "shot_id": "SH002",
+      "scene_id": "SC001",
+      "source_excerpt": "林晓彤：我明天走。\n陈默继续切菜，刀声停下。",
+      "duration_seconds": 5.5,
+      "duration_basis": "对白最低可播约1.5秒；切菜继续约1.5秒，刀停与静默反应约2.5秒。",
+      "motivation": {
+        "primary": "emotion",
+        "reason": "不急于看陈默的脸，而让观众先从手部节拍被打断看见消息进入身体。",
+        "cut_or_hold_reason": "整句对白和刀声停止保持在同一镜内，避免把声音作用与身体反应切散；刀停后留足静默再切面孔。"
+      },
+      "camera": {
+        "shot_size": "近景",
+        "angle": "微俯视",
+        "position": "料理台外侧偏陈默右肩后方，朝向双手、菜刀与砧板",
+        "composition": "陈默的手与菜刀占据画面中心，林晓彤和钥匙均在画外",
+        "lens_intent": "隔离手部细节，压低背景信息，让节拍变化成为唯一事件",
+        "movement": {
+          "type": "fixed",
+          "trigger": "",
+          "speed": "",
+          "path": "",
+          "end_condition": "",
+          "reason": "固定观看才能让同一动作节拍的中断被准确感知。"
+        },
+        "focus": "焦点锁在刀刃与陈默握刀的手，刀停后不转移",
+        "lighting_change": "刀刃在实用灯下出现短促冷反光"
+      },
+      "staging": {
+        "subjects": ["陈默的手", "菜刀", "砧板"],
+        "blocking": "陈默继续原有切菜动作；林晓彤留在画外原位。",
+        "performance": "陈默听见离开宣告后不立刻抬头，先让下一刀没有落下，握刀的手停在砧板上方，随后缓慢落回砧板。"
+      },
+      "sound": {
+        "perspective": "贴近砧板的近距离听觉；林晓彤从画外左侧说话，菜刀声由近到突然消失。",
+        "dialogue_segments": [
+          {
+            "dialogue_id": "D001",
+            "text": "我明天走。",
+            "delivery": "os"
+          }
+        ],
+        "effects": ["切菜声在台词落下后停止", "菜刀轻触砧板"],
+        "ambience": "刀声停止后只剩冰箱低频底噪",
+        "music": ""
+      },
+      "edit": {
+        "entry": "接上一镜仍在持续的切菜声切入手部。",
+        "exit": "刀停在砧板上，静默持续到观众开始等待陈默回应。",
+        "transition_to_next": "硬切到陈默面孔。",
+        "reason": "先让身体反应成立，再把观看提升到他不得不开口的面孔。"
+      },
+      "continuity": {
+        "axis": "仍在入口一侧，不改变两人关系轴。",
+        "screen_direction": "陈默身体朝向与上一镜一致。",
+        "state_updates": [
+          {
+            "entity": "菜刀",
+            "field": "动作状态",
+            "from": "持续切菜",
+            "to": "停在砧板上"
+          }
+        ],
+        "intentional_breaks": []
+      },
+      "execution_text": "【近景｜微俯视｜固定】\n【画面内容】料理台外侧的固定近景只看见陈默的手、菜刀和砧板。林晓彤从画外左侧说：“我明天走。”陈默仍切完眼前的一刀，下一刀却没有落下；握刀的手停在半空，随后把刀轻轻放回砧板。规律声响消失，焦点仍留在他没有松开的手上。",
+      "notes": ""
+    },
+    {
+      "shot_id": "SH003",
+      "scene_id": "SC001",
+      "source_excerpt": "陈默：什么时候决定的？",
+      "duration_seconds": 4.5,
+      "duration_basis": "从手部切到面孔后的读取约1秒，对白约2秒，句后停留约1.5秒。",
+      "motivation": {
+        "primary": "relationship",
+        "reason": "刀声已经替陈默完成第一次反应，此时才看见他的脸，让问题显得是被迫承认关系变化，而非普通信息询问。",
+        "cut_or_hold_reason": "切到面孔是从身体反应进入语言反应的明确观看变化；发问后不反打林晓彤，让问题继续压在陈默身上。"
+      },
+      "camera": {
+        "shot_size": "近景",
+        "angle": "平视",
+        "position": "料理台对面略偏餐桌一侧，保持在既定关系轴同侧",
+        "composition": "陈默占画面右侧，左侧留出朝向林晓彤的画外空间；砧板边缘保留在下方",
+        "lens_intent": "自然面部透视，保留少量环境以连接刚才的手部动作",
+        "movement": {
+          "type": "fixed",
+          "trigger": "",
+          "speed": "",
+          "path": "",
+          "end_condition": "",
+          "reason": "让陈默是否抬眼和何时开口成为镜内唯一变化。"
+        },
+        "focus": "焦点在陈默面孔，砧板与菜刀保持可辨但略虚",
+        "lighting_change": ""
+      },
+      "staging": {
+        "subjects": ["陈默"],
+        "blocking": "陈默仍站在料理台前，不转身，只把视线从砧板抬向画外左侧。",
+        "performance": "他先确认刀已经停下，呼吸变浅，抬眼后才发问；语气控制在平静表面之下。"
+      },
+      "sound": {
+        "perspective": "保持厨房客观声场，但静默使陈默的呼吸和发问更近。",
+        "dialogue_segments": [
+          {
+            "dialogue_id": "D002",
+            "text": "什么时候决定的？",
+            "delivery": "onscreen"
+          }
+        ],
+        "effects": [],
+        "ambience": "冰箱低频持续，切菜声不再恢复",
+        "music": ""
+      },
+      "edit": {
+        "entry": "从停住的手切到陈默面孔。",
+        "exit": "陈默问完后仍看向画外左侧。",
+        "transition_to_next": "scene_end",
+        "reason": "不提供林晓彤的即时答案，把场景结束在陈默第一次主动面对离开的瞬间。"
+      },
+      "continuity": {
+        "axis": "摄影机保持餐桌—料理台关系轴同侧。",
+        "screen_direction": "陈默看向银幕左侧的林晓彤，与前两镜空间一致。",
+        "state_updates": [
+          {
+            "entity": "陈默",
+            "field": "视线",
+            "from": "砧板",
+            "to": "画外左侧的林晓彤"
+          }
+        ],
+        "intentional_breaks": []
+      },
+      "execution_text": "【近景｜平视｜固定】\n【画面内容】摄影机从料理台对面看住陈默，砧板和停住的菜刀留在画面下缘。他没有转身，只从刀上抬起视线，看向画外左侧的林晓彤，问：“什么时候决定的？”问题落下后，切菜声没有恢复，画面仍停在他等待回答的脸上。",
+      "notes": ""
+    }
+  ],
+  "validation": {
+    "status": "draft",
+    "warnings": []
+  }
+}

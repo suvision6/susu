@@ -1,0 +1,16 @@
+{
+  "contract_name": "director-shot-data",
+  "contract_version": "3.0.0",
+  "status": "READY",
+  "error_count": 0,
+  "warning_count": 0,
+  "errors": [],
+  "warnings": [],
+  "summary": {
+    "scene_count": 1,
+    "shot_count": 3,
+    "total_duration_seconds": 14.5,
+    "open_assumption_count": 0
+  },
+  "boundary": "后端只判断来源、引用、结构和确定性执行矛盾；镜头是否有导演价值仍由人工审片清单判断。"
+}

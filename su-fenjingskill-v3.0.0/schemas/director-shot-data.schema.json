@@ -1,0 +1,367 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://suvision.example/schemas/director-shot-data-3.0.0.json",
+  "title": "director-shot-data/3.0.0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "contract_name",
+    "contract_version",
+    "source_skill",
+    "source_skill_version",
+    "project_id",
+    "source",
+    "assumptions",
+    "director_design",
+    "scenes",
+    "shots",
+    "validation"
+  ],
+  "properties": {
+    "contract_name": {"const": "director-shot-data"},
+    "contract_version": {"const": "3.0.0"},
+    "source_skill": {"const": "su-fenjingskill"},
+    "source_skill_version": {"const": "3.0.0"},
+    "project_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+    },
+    "source": {"$ref": "#/$defs/source"},
+    "assumptions": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/assumption"}
+    },
+    "director_design": {"$ref": "#/$defs/directorDesign"},
+    "scenes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/scene"}
+    },
+    "shots": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/shot"}
+    },
+    "validation": {"$ref": "#/$defs/validation"}
+  },
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["title", "delivery_slug", "input_kind", "locked_text", "dialogue_lines"],
+      "properties": {
+        "title": {"$ref": "#/$defs/nonEmptyString"},
+        "delivery_slug": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "input_kind": {
+          "enum": ["screenplay", "screenplay_segment", "locked_fragment", "concept_board"]
+        },
+        "locked_text": {"$ref": "#/$defs/nonEmptyString"},
+        "dialogue_lines": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/dialogueLine"}
+        }
+      }
+    },
+    "dialogueLine": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["dialogue_id", "speaker", "text", "voice_type"],
+      "properties": {
+        "dialogue_id": {"type": "string", "pattern": "^D[0-9]{3,}$"},
+        "speaker": {"$ref": "#/$defs/nonEmptyString"},
+        "text": {"$ref": "#/$defs/nonEmptyString"},
+        "voice_type": {
+          "enum": ["scene_dialogue", "vo", "mediated", "unresolved"]
+        }
+      }
+    },
+    "assumption": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["assumption_id", "scope", "statement", "reason", "impact", "status"],
+      "properties": {
+        "assumption_id": {"type": "string", "pattern": "^A[0-9]{3,}$"},
+        "scope": {"enum": ["source", "scene", "shot", "delivery"]},
+        "statement": {"$ref": "#/$defs/nonEmptyString"},
+        "reason": {"$ref": "#/$defs/nonEmptyString"},
+        "impact": {"$ref": "#/$defs/nonEmptyString"},
+        "status": {"enum": ["open", "confirmed", "resolved"]}
+      }
+    },
+    "directorDesign": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "scene_purpose",
+        "dramatic_question",
+        "turning_point",
+        "audience_position",
+        "pov_strategy",
+        "emotional_arc",
+        "blocking_strategy",
+        "visual_strategy",
+        "sound_strategy",
+        "rhythm_strategy"
+      ],
+      "properties": {
+        "scene_purpose": {"$ref": "#/$defs/nonEmptyString"},
+        "dramatic_question": {"$ref": "#/$defs/nonEmptyString"},
+        "turning_point": {"$ref": "#/$defs/nonEmptyString"},
+        "audience_position": {"$ref": "#/$defs/nonEmptyString"},
+        "pov_strategy": {"$ref": "#/$defs/nonEmptyString"},
+        "emotional_arc": {"$ref": "#/$defs/nonEmptyString"},
+        "blocking_strategy": {"$ref": "#/$defs/nonEmptyString"},
+        "visual_strategy": {"$ref": "#/$defs/nonEmptyString"},
+        "sound_strategy": {"$ref": "#/$defs/nonEmptyString"},
+        "rhythm_strategy": {"$ref": "#/$defs/nonEmptyString"}
+      }
+    },
+    "spaceMap": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["anchors", "character_start_positions", "axis_notes", "protected_continuity"],
+      "properties": {
+        "anchors": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/nonEmptyString"}
+        },
+        "character_start_positions": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/nonEmptyString"}
+        },
+        "axis_notes": {"type": "string"},
+        "protected_continuity": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/nonEmptyString"}
+        }
+      }
+    },
+    "scene": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "scene_id",
+        "scene",
+        "source_excerpt",
+        "space_map",
+        "lighting_strategy",
+        "color_strategy"
+      ],
+      "properties": {
+        "scene_id": {"type": "string", "pattern": "^SC[0-9]{3,}$"},
+        "scene": {"$ref": "#/$defs/nonEmptyString"},
+        "source_excerpt": {"$ref": "#/$defs/nonEmptyString"},
+        "space_map": {"$ref": "#/$defs/spaceMap"},
+        "lighting_strategy": {"$ref": "#/$defs/nonEmptyString"},
+        "color_strategy": {"$ref": "#/$defs/nonEmptyString"}
+      }
+    },
+    "motivation": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["primary", "reason", "cut_or_hold_reason"],
+      "properties": {
+        "primary": {
+          "enum": ["information", "emotion", "relationship", "space", "subjective", "rhythm", "transition"]
+        },
+        "reason": {"$ref": "#/$defs/nonEmptyString"},
+        "cut_or_hold_reason": {"$ref": "#/$defs/nonEmptyString"}
+      }
+    },
+    "movement": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["type", "trigger", "speed", "path", "end_condition", "reason"],
+      "properties": {
+        "type": {
+          "enum": [
+            "fixed",
+            "push",
+            "pull",
+            "pan",
+            "tilt",
+            "track",
+            "follow",
+            "orbit",
+            "crane",
+            "handheld",
+            "vehicle",
+            "zoom",
+            "focus",
+            "compound",
+            "other"
+          ]
+        },
+        "trigger": {"type": "string"},
+        "speed": {"type": "string"},
+        "path": {"type": "string"},
+        "end_condition": {"type": "string"},
+        "reason": {"$ref": "#/$defs/nonEmptyString"}
+      }
+    },
+    "camera": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "shot_size",
+        "angle",
+        "position",
+        "composition",
+        "lens_intent",
+        "movement",
+        "focus",
+        "lighting_change"
+      ],
+      "properties": {
+        "shot_size": {"$ref": "#/$defs/nonEmptyString"},
+        "angle": {"$ref": "#/$defs/nonEmptyString"},
+        "position": {"$ref": "#/$defs/nonEmptyString"},
+        "composition": {"$ref": "#/$defs/nonEmptyString"},
+        "lens_intent": {"$ref": "#/$defs/nonEmptyString"},
+        "movement": {"$ref": "#/$defs/movement"},
+        "focus": {"$ref": "#/$defs/nonEmptyString"},
+        "lighting_change": {"type": "string"}
+      }
+    },
+    "staging": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["subjects", "blocking", "performance"],
+      "properties": {
+        "subjects": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/nonEmptyString"}
+        },
+        "blocking": {"$ref": "#/$defs/nonEmptyString"},
+        "performance": {"$ref": "#/$defs/nonEmptyString"}
+      }
+    },
+    "dialogueSegment": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["dialogue_id", "text", "delivery"],
+      "properties": {
+        "dialogue_id": {"type": "string", "pattern": "^D[0-9]{3,}$"},
+        "text": {"$ref": "#/$defs/nonEmptyString"},
+        "delivery": {"enum": ["onscreen", "os", "vo", "mediated", "unresolved"]}
+      }
+    },
+    "sound": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["perspective", "dialogue_segments", "effects", "ambience", "music"],
+      "properties": {
+        "perspective": {"$ref": "#/$defs/nonEmptyString"},
+        "dialogue_segments": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/dialogueSegment"}
+        },
+        "effects": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/nonEmptyString"}
+        },
+        "ambience": {"type": "string"},
+        "music": {"type": "string"}
+      }
+    },
+    "edit": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["entry", "exit", "transition_to_next", "reason"],
+      "properties": {
+        "entry": {"$ref": "#/$defs/nonEmptyString"},
+        "exit": {"$ref": "#/$defs/nonEmptyString"},
+        "transition_to_next": {"$ref": "#/$defs/nonEmptyString"},
+        "reason": {"$ref": "#/$defs/nonEmptyString"}
+      }
+    },
+    "stateUpdate": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["entity", "field", "from", "to"],
+      "properties": {
+        "entity": {"$ref": "#/$defs/nonEmptyString"},
+        "field": {"$ref": "#/$defs/nonEmptyString"},
+        "from": {"type": "string"},
+        "to": {"$ref": "#/$defs/nonEmptyString"}
+      }
+    },
+    "intentionalBreak": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["what_breaks", "audience_effect", "dramatic_reason", "reorientation"],
+      "properties": {
+        "what_breaks": {"$ref": "#/$defs/nonEmptyString"},
+        "audience_effect": {"$ref": "#/$defs/nonEmptyString"},
+        "dramatic_reason": {"$ref": "#/$defs/nonEmptyString"},
+        "reorientation": {"$ref": "#/$defs/nonEmptyString"}
+      }
+    },
+    "continuity": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["axis", "screen_direction", "state_updates", "intentional_breaks"],
+      "properties": {
+        "axis": {"type": "string"},
+        "screen_direction": {"type": "string"},
+        "state_updates": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/stateUpdate"}
+        },
+        "intentional_breaks": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/intentionalBreak"}
+        }
+      }
+    },
+    "shot": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "shot_id",
+        "scene_id",
+        "source_excerpt",
+        "duration_seconds",
+        "duration_basis",
+        "motivation",
+        "camera",
+        "execution_text",
+        "notes"
+      ],
+      "properties": {
+        "shot_id": {"type": "string", "pattern": "^SH[0-9]{3,}$"},
+        "scene_id": {"type": "string", "pattern": "^SC[0-9]{3,}$"},
+        "source_excerpt": {"$ref": "#/$defs/nonEmptyString"},
+        "duration_seconds": {"type": "number", "exclusiveMinimum": 0},
+        "duration_basis": {"$ref": "#/$defs/nonEmptyString"},
+        "motivation": {"$ref": "#/$defs/motivation"},
+        "camera": {"$ref": "#/$defs/camera"},
+        "staging": {"$ref": "#/$defs/staging"},
+        "sound": {"$ref": "#/$defs/sound"},
+        "edit": {"$ref": "#/$defs/edit"},
+        "continuity": {"$ref": "#/$defs/continuity"},
+        "execution_text": {"$ref": "#/$defs/nonEmptyString"},
+        "notes": {"type": "string"}
+      }
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["status", "warnings"],
+      "properties": {
+        "status": {"enum": ["draft", "ready", "ready_with_assumptions", "fail"]},
+        "warnings": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/nonEmptyString"}
+        }
+      }
+    }
+  }
+}

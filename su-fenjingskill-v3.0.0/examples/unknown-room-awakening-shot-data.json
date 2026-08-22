@@ -1,0 +1,257 @@
+{
+  "contract_name": "director-shot-data",
+  "contract_version": "3.0.0",
+  "source_skill": "su-fenjingskill",
+  "source_skill_version": "3.0.0",
+  "project_id": "unknown-room-awakening-demo",
+  "source": {
+    "title": "陌生房间醒来",
+    "delivery_slug": "unknown-room-awakening",
+    "input_kind": "concept_board",
+    "locked_text": "一个女人在陌生房间醒来，听见有人叫她的名字。她发现门打不开。",
+    "dialogue_lines": []
+  },
+  "assumptions": [
+    {
+      "assumption_id": "A001",
+      "scope": "scene",
+      "statement": "暂定呼名声来自门外走廊，而不是房间内部。",
+      "reason": "来源写明她听见呼名，但没有提供声源位置。",
+      "impact": "只影响声音方向、她的视线和摄影机对门的建立；不决定呼名者身份。",
+      "status": "open"
+    },
+    {
+      "assumption_id": "A002",
+      "scope": "scene",
+      "statement": "使用床与门构成最小房间拓扑，其他陈设不承担剧情功能。",
+      "reason": "来源没有房间平面和美术信息。",
+      "impact": "影响人物从床到门的行动方向，可在获得场景设计后整体替换。",
+      "status": "open"
+    }
+  ],
+  "director_design": {
+    "scene_purpose": "把醒来的迷失感迅速转化为被困事实，同时保留呼名者身份和目的。",
+    "dramatic_question": "门外声音是在引导她、确认她，还是把她留在房间里？",
+    "turning_point": "门把手转动却无法开门，声音带来的希望被改写为封闭压力。",
+    "audience_position": "先贴近女人刚恢复知觉的身体，再随她的听觉建立门的方向，最后与她一起撞上门的阻力。",
+    "pov_strategy": "有限主观：观众知道不多于女人，但仍能从外部看见她的身体和房间关系。",
+    "emotional_arc": "迟钝苏醒——被声音吸引——行动确认——封闭事实落下。",
+    "blocking_strategy": "女人从床上坐起，停下来辨认声源，再沿床与门之间的最短路径靠近门；呼名者始终不进入画面。",
+    "visual_strategy": "从身体近距离逐步扩展到床—门关系，再用跟随镜头把行动时间完整保留到门把手受阻。",
+    "sound_strategy": "呼名声暂定从门外传入，带走房间内的注意力；门锁和把手的机械声成为封闭事实的证据。",
+    "rhythm_strategy": "醒来和辨声保留停顿，走向门时节奏加快，在门无法打开的瞬间突然停止。"
+  },
+  "scenes": [
+    {
+      "scene_id": "SC001",
+      "scene": "内景·陌生房间·时间未明",
+      "source_excerpt": "一个女人在陌生房间醒来，听见有人叫她的名字。她发现门打不开。",
+      "space_map": {
+        "anchors": ["床", "房门", "床与门之间的通行路径"],
+        "character_start_positions": ["女人躺在床上，醒来后坐起"],
+        "axis_notes": "暂以床—门作为主要行动轴；摄影机在同一侧建立她朝门移动的方向。",
+        "protected_continuity": ["呼名者不进入画面", "女人从床移动到门", "门在尝试后仍保持关闭"]
+      },
+      "lighting_strategy": "采用低亮度、方向不明确的环境光，只保证身体轮廓和门的位置可读；不以光线断言具体时段。",
+      "color_strategy": "中性低饱和，让肤色、门把手反光和空间阴影承担注意力变化。"
+    }
+  ],
+  "shots": [
+    {
+      "shot_id": "SH001",
+      "scene_id": "SC001",
+      "source_excerpt": "一个女人在陌生房间醒来",
+      "duration_seconds": 6.5,
+      "duration_basis": "苏醒、呼吸恢复和坐起约4秒，第一次辨认陌生空间约2.5秒。",
+      "motivation": {
+        "primary": "subjective",
+        "reason": "先把观众限制在女人刚恢复知觉的身体范围内，不提前交代房间全貌。",
+        "cut_or_hold_reason": "保持到她坐起并开始辨认环境；呼名声出现后才切换观看方向。"
+      },
+      "camera": {
+        "shot_size": "中近景",
+        "angle": "平视",
+        "position": "床尾一侧，接近女人坐起后的视线高度",
+        "composition": "女人占据画面偏左位置，背景保持模糊，只留出她将转头的画外方向",
+        "lens_intent": "自然关系但限制背景信息，保持刚醒来的感知范围",
+        "movement": {
+          "type": "fixed",
+          "trigger": "",
+          "speed": "",
+          "path": "",
+          "end_condition": "",
+          "reason": "让身体恢复和呼吸变化完整发生，不用摄影机替她过早探索空间。"
+        },
+        "focus": "焦点从闭着的眼睛保持到她坐起后的面孔，背景不主动解释",
+        "lighting_change": ""
+      },
+      "staging": {
+        "subjects": ["女人"],
+        "blocking": "女人从躺卧缓慢坐起，手先撑住床面，不立即下床。",
+        "performance": "呼吸由浅变深，视线短暂失焦，随后开始确认自己所在的位置。"
+      },
+      "sound": {
+        "perspective": "贴近女人身体的有限听觉，先听见呼吸和床垫摩擦。",
+        "dialogue_segments": [],
+        "effects": ["床垫和衣料摩擦", "女人逐渐清晰的呼吸"],
+        "ambience": "陌生房间的低频室内底噪",
+        "music": ""
+      },
+      "edit": {
+        "entry": "从黑场或场景开始进入她刚醒来的身体状态。",
+        "exit": "她坐稳，第一次把注意力转向画外。",
+        "transition_to_next": "由门外呼名声触发硬切。",
+        "reason": "声音首次建立房间外部世界，并改变观众的观看方向。"
+      },
+      "continuity": {
+        "axis": "床—门行动轴，暂未完整显露门。",
+        "screen_direction": "女人转头朝银幕右侧寻找声源。",
+        "state_updates": [
+          {
+            "entity": "女人",
+            "field": "姿态",
+            "from": "躺卧",
+            "to": "坐在床上"
+          }
+        ],
+        "intentional_breaks": []
+      },
+      "execution_text": "【中近景｜平视｜固定】\n【画面内容】低亮度的陌生房间里，摄影机从床尾一侧看住一个刚恢复知觉的女人。她先睁眼，手掌压住床面，呼吸逐渐加深，随后缓慢坐起。背景仍然模糊，她没有立刻下床，只开始辨认周围，视线最终被画外右侧的一点声音牵住。",
+      "notes": "概念分镜：人物姓名、房间美术与时间未锁定。"
+    },
+    {
+      "shot_id": "SH002",
+      "scene_id": "SC001",
+      "source_excerpt": "听见有人叫她的名字。",
+      "duration_seconds": 4,
+      "duration_basis": "呼名声约1.5秒，视线寻找与房门方向建立约2.5秒。",
+      "motivation": {
+        "primary": "space",
+        "reason": "把刚才的画外声音连接到门的方向，但继续隐藏声源人物和房间外部。",
+        "cut_or_hold_reason": "声音改变了观看对象，切到床边关系视点；保持到女人确认门是唯一可行动目标。"
+      },
+      "camera": {
+        "shot_size": "中景",
+        "angle": "平视",
+        "position": "床侧略后于女人肩线，朝向暂定的房门",
+        "composition": "女人肩背在左前景，关闭的门位于右后方；两者之间保留空路径",
+        "lens_intent": "强调床与门的纵深关系，让声音方向和行动路径同时可读",
+        "movement": {
+          "type": "fixed",
+          "trigger": "",
+          "speed": "",
+          "path": "",
+          "end_condition": "",
+          "reason": "用稳定空间关系确认声音方向，不制造来源之外的移动威胁。"
+        },
+        "focus": "先保持女人肩背可读，呼名声落下后焦点轻移到关闭的门",
+        "lighting_change": "门把手获得一处微弱反光，作为可行动目标"
+      },
+      "staging": {
+        "subjects": ["女人", "房门"],
+        "blocking": "女人仍坐在床边，身体朝门转过去，停半拍后才准备起身。",
+        "performance": "她不回答呼名声，只用视线和身体朝向确认声音来自门的方向。"
+      },
+      "sound": {
+        "perspective": "呼名声暂定隔着门从右后方传入，文字内容不明确，只保留有人叫她名字这一事实。",
+        "dialogue_segments": [],
+        "effects": ["隔门的模糊呼名声"],
+        "ambience": "室内底噪持续，门外空间没有其他可辨信息",
+        "music": ""
+      },
+      "edit": {
+        "entry": "呼名声在切入前已开始。",
+        "exit": "女人与门的空间关系建立，她决定靠近。",
+        "transition_to_next": "动作切进入她起身走向门的连续过程。",
+        "reason": "从辨认方向进入验证行动，保持声音造成的单一行动目标。"
+      },
+      "continuity": {
+        "axis": "明确床—门行动轴，摄影机保持同侧。",
+        "screen_direction": "女人将从银幕左侧向右侧房门移动。",
+        "state_updates": [
+          {
+            "entity": "女人",
+            "field": "朝向",
+            "from": "房间内部未定方向",
+            "to": "房门"
+          }
+        ],
+        "intentional_breaks": []
+      },
+      "execution_text": "【中景｜平视｜固定】\n【画面内容】从女人肩线后方可以看见关闭的房门。一个模糊的声音隔门叫她的名字，声音来自画面右后方；她没有回答，只把身体转向门。焦点从左前景的肩背移到门把手的微弱反光，床与门之间的空路径第一次变得清楚。",
+      "notes": "暂定呼名声来自门外；不设定呼名者身份。"
+    },
+    {
+      "shot_id": "SH003",
+      "scene_id": "SC001",
+      "source_excerpt": "她发现门打不开。",
+      "duration_seconds": 5.5,
+      "duration_basis": "起身和走到门前约3秒，转动把手与再次确认约1.5秒，受阻后的停顿约1秒。",
+      "motivation": {
+        "primary": "information",
+        "reason": "让观众与女人共同经历从行动希望到物理受阻的完整时间，门打不开成为可验证事实。",
+        "cut_or_hold_reason": "用同一跟随镜头承接走近、握住、转动和受阻；若拆开会削弱动作因果和突然停止的节奏。"
+      },
+      "camera": {
+        "shot_size": "中景→近景",
+        "angle": "平视",
+        "position": "女人左后侧，沿床到门的路径跟随",
+        "composition": "起幅保留她与门的距离，终幅让肩背、手和门把手共同占据画面",
+        "lens_intent": "保持自然身体关系，靠摄影机接近而非长焦压缩完成尺度变化",
+        "movement": {
+          "type": "follow",
+          "trigger": "女人从床边起身",
+          "speed": "先与她同步，靠近门时略减速",
+          "path": "沿床—门行动轴同侧跟随到她左后方",
+          "end_condition": "门把手转动受阻并回弹后停住",
+          "reason": "分享她验证出口的行动时间，并让摄影机与身体一起在门前被迫停止。"
+        },
+        "focus": "从女人上半身保持到她握住门把手，受阻时焦点落在手与把手关系",
+        "lighting_change": "靠近门后人物进入稍暗区域，门把手反光更加集中"
+      },
+      "staging": {
+        "subjects": ["女人", "房门", "门把手"],
+        "blocking": "女人起身沿最短路径走到门前，握住把手并尝试打开；门没有移动。",
+        "performance": "第一次转动受阻后，她没有立刻用力撞门，而是再次压下把手确认，随后停住。"
+      },
+      "sound": {
+        "perspective": "听觉随人物靠近门，室内脚步与把手机械声变近；门外呼名声不再重复。",
+        "dialogue_segments": [],
+        "effects": ["赤脚或鞋底接触地面的脚步", "门把手转动与回弹", "门锁没有释放的金属阻力声"],
+        "ambience": "她停下后只剩隔门的低频空间感",
+        "music": ""
+      },
+      "edit": {
+        "entry": "承接女人从床边起身的动作。",
+        "exit": "门仍关闭，她的手停在把手上。",
+        "transition_to_next": "scene_end",
+        "reason": "结束在封闭事实而不是追加解释，保留呼名者和房间原因。"
+      },
+      "continuity": {
+        "axis": "沿床—门轴同侧完成跟随。",
+        "screen_direction": "女人持续由银幕左向右移动，终止在门前。",
+        "state_updates": [
+          {
+            "entity": "女人",
+            "field": "位置",
+            "from": "床边",
+            "to": "房门前"
+          },
+          {
+            "entity": "房门",
+            "field": "状态",
+            "from": "关闭且未知是否上锁",
+            "to": "尝试后仍无法打开"
+          }
+        ],
+        "intentional_breaks": []
+      },
+      "execution_text": "【中景→近景｜平视｜跟随】\n【画面内容】女人从床边起身，摄影机沿床与房门之间的路径在她左后侧同步跟随。她越靠近门，画面越收紧到肩背和伸出的手；她压下门把手，门没有移动，金属机构只发出受阻的回弹声。她再次尝试，摄影机随她一起停在门前，焦点落在仍握着把手的手上。",
+      "notes": "最小房间拓扑与门外声源均为可逆假设。"
+    }
+  ],
+  "validation": {
+    "status": "draft",
+    "warnings": []
+  }
+}

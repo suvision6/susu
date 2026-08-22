@@ -1,0 +1,4 @@
+interface:
+  display_name: "导演分镜 v3.0.0"
+  short_description: "以导演与摄影师的视听逻辑生成有镜头动机的六列分镜"
+  default_prompt: "使用 $su-fenjingskill 先理解场景任务、人物关系、Blocking、空间与视点，再完成摄影、剪辑、声音和节奏设计；逐字保护来源对白，直接生成六列导演分镜。代码与数据合同只负责后端校验和文件导出。"
