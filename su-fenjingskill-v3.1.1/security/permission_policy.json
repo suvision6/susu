@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "reviewed_at": "2026-08-24",
+  "capabilities": {
+    "file_write": {
+      "decision": "approved",
+      "reviewer": "suvision",
+      "scope": "scripts/storyboard_review.py may write one locked internal workspace or review report to an explicit --output/--report path; scripts/storyboard_delivery.py may write JSON, Markdown and validation only under the explicit --output-dir/--report path; scripts/export_xlsx.py may write one XLSX under the explicit --output path. No script deletes source material, writes remotely, or chooses a broad destination.",
+      "reason": "The authorized 3.1.1 implementation requires caller-scoped local review and fixed storyboard artifacts.",
+      "expires_at": "2027-08-24",
+      "evidence": [
+        "tests/test_storyboard_review.py",
+        "tests/test_storyboard_delivery.py",
+        "reports/security_trust_report.md",
+        "reports/package_verification.md"
+      ],
+      "target_enforcement": {
+        "openai": "metadata-only target_permission_contract; host approval and explicit paths remain required",
+        "claude": "not packaged in 3.1.1; any future adapter must preserve explicit output-path enforcement",
+        "generic": "adapter target_permission_contract; consuming installer must review file_write capability",
+        "vscode": "not packaged in 3.1.1; any future integration must use workspace trust and explicit output paths"
+      }
+    }
+  }
+}

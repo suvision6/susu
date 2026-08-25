@@ -1,0 +1,133 @@
+{
+  "schema_version": "2.0.0",
+  "name": "su-fenjingskill",
+  "title": "导演分镜 v3.1.1",
+  "job_to_be_done": "把完整剧本或锁定场景转换为按题材机制和导演方法组织的可拍、可剪六列文字分镜。",
+  "trigger_surface": {
+    "description": "将中文或多语言完整剧本、连续场景、锁定片段或概念材料转换为导演与摄影师视角的六列文字分镜和 director-shot-data/3.1.0。先完整理解剧本，再按逐场题材机制与指定或确认的导演方法设计时间、视点、调度、摄影、声音和剪辑；逐字保护中文对白、标点、称谓与语气，不生成图片、视频 Prompt、视频或下游 Cut 分组。",
+    "should_trigger": [
+      "完整理解这部剧本，再按导演和摄影师视角做六列文字分镜。",
+      "同一场戏按两种导演方法给出真正不同的剪辑方案。",
+      "先判断这场喜剧靠什么节拍工作，再设计镜头和反应。",
+      "把动作场面按目标、方向和因果拆成可拍分镜。",
+      "按是枝裕和的反应余波方法设计这段家庭对白分镜。",
+      "把这两个连续场景做成固定四文件导演交付。",
+      "Design a director and cinematographer storyboard using scene mechanism and a confirmed director method.",
+      "Create motivated shot topology, sound relations, blocking, and a six-column production storyboard."
+    ],
+    "should_not_trigger": [
+      "把已有分镜编译成 Seedance 视频 Prompt。",
+      "根据 shot_data 生成九宫格分镜图。",
+      "直接生成视频。",
+      "只比较两个导演的风格，不做分镜。",
+      "总结剧本。",
+      "翻译对白。",
+      "创作全新短剧剧本。",
+      "编辑已生成的分镜图片。"
+    ],
+    "edge_cases": [
+      "用户只说电影感但未指定方法时，应进入最多两个方法方案的 Gate 1。",
+      "用户指定导演但要求复制某部电影具体镜头时，编译可泛化方法并拒绝逐镜复刻。",
+      "用户给概念梗概时可做 concept board，但不得声称逐字来源完整。",
+      "中文来源中的角色标签、括号表演说明、全角标点和实际口播必须分离并逐字保护。"
+    ]
+  },
+  "workflow": {
+    "steps": [
+      "Lock source truth and reverse-audit source units without creating cuts.",
+      "Identify one primary and at most one secondary scene mechanism.",
+      "Compile or confirm an executable director method.",
+      "Resolve mechanism and method into a scene strategy.",
+      "Confirm mandatory Gate 2 shot topology and edit relations.",
+      "Execute cinematography, blocking, performance, sound, duration, and continuity.",
+      "Adapt to the director-shot-data/3.1.0 four-file delivery with Chinese-context checks and production risks outside remarks."
+    ],
+    "decision_points": [
+      "Skip stopping at Gate 1 only for an explicit, unambiguous user-specified method.",
+      "Never use a source line, speaker change, duration threshold, or minimum-shot principle as the universal boundary generator.",
+      "Invalidate review locks only according to source, method, strategy, topology, or execution-text dependency rules."
+    ],
+    "failure_modes": [
+      "Different director names produce the same topology with different adjectives.",
+      "Genre becomes a label rather than a scene mechanism.",
+      "Internal coverage or Gate material leaks into formal delivery.",
+      "Aesthetic statistics become hard failures.",
+      "A formal delivery is claimed without Gate 2 or actual four-file parity.",
+      "Chinese speaker labels or performance directions leak into spoken dialogue.",
+      "Production risks are written into the six-column remarks field."
+    ]
+  },
+  "resources": {
+    "references": [
+      "references/source-truth-audit.md",
+      "references/chinese-context-language.md",
+      "references/scene-mechanisms.md",
+      "references/director-method-contract.md",
+      "references/director-method-index.md",
+      "references/scene-strategy-gates.md",
+      "references/shot-edit-grammar.md",
+      "references/director-method.md",
+      "references/blocking-space-continuity.md",
+      "references/cinematography-language.md",
+      "references/dialogue-performance-sound.md",
+      "references/editing-rhythm-duration.md",
+      "references/graceful-degradation.md",
+      "references/output-contract.md",
+      "references/internal-workspace-contract.md",
+      "references/style-language.md"
+    ],
+    "scripts": [
+      "scripts/_chinese_context.py",
+      "scripts/storyboard_review.py",
+      "scripts/storyboard_delivery.py",
+      "scripts/export_xlsx.py"
+    ],
+    "assets": [
+      "templates/director-analysis.md",
+      "templates/storyboard-six-column.md"
+    ],
+    "reports": [
+      "reports/intent-context.json",
+      "reports/output-risk-profile.md",
+      "reports/output_quality_scorecard.md",
+      "reports/security_trust_report.md",
+      "reports/review-studio.html"
+    ]
+  },
+  "eval_plan": {
+    "trigger": [
+      "evals/trigger_cases.json",
+      "evals/semantic_config.json"
+    ],
+    "output": [
+      "evals/output/cases.jsonl"
+    ],
+    "adversarial": [
+      "same-topology-style-swap",
+      "source-line-to-shot-collapse",
+      "duration-threshold-artistic-failure",
+      "internal-delivery-leak"
+    ],
+    "baseline": "v3.0.0"
+  },
+  "risk": {
+    "output_risk": "high",
+    "execution_risk": "medium",
+    "trust_boundary": "external"
+  },
+  "governance": {
+    "owner": "suvision",
+    "maturity": "governed",
+    "review_cadence": "per-release",
+    "review_due": ""
+  },
+  "targets": ["openai", "generic"],
+  "source_files": [
+    "SKILL.md",
+    "manifest.json",
+    "agents/interface.yaml",
+    "references/director-method-contract.md",
+    "references/scene-mechanisms.md",
+    "references/output-contract.md"
+  ]
+}

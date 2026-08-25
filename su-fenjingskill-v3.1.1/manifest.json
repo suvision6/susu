@@ -1,0 +1,31 @@
+{
+  "name": "su-fenjingskill",
+  "version": "3.1.1",
+  "build_revision": "zh-cn-contract-sync-r1",
+  "owner": "suvision",
+  "license": "proprietary",
+  "updated_at": "2026-08-25",
+  "review_cadence": "per-release",
+  "status": "active",
+  "maturity_tier": "governed",
+  "lifecycle_stage": "governed",
+  "context_budget_tier": "governed",
+  "skill_ir_source": "skill-ir/su-fenjingskill.json",
+  "target_platforms": ["openai", "generic"],
+  "factory_components": [
+    "agents",
+    "references",
+    "scripts",
+    "schemas",
+    "templates",
+    "examples",
+    "tests",
+    "evals",
+    "reports",
+    "security",
+    "skill-ir"
+  ],
+  "output_contract": "director-shot-data/3.1.0 plus fixed six-column director storyboard",
+  "internal_contract": "director-workspace/3.1.0",
+  "rollback_boundary": "Preserve every prior global Skill under /Users/suvision/.codex/skill-backups outside active discovery before any replacement."
+}

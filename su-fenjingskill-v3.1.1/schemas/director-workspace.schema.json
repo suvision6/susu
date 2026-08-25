@@ -1,0 +1,311 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://suvision.example/schemas/director-workspace-3.1.0.json",
+  "title": "director-workspace/3.1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "workspace_contract",
+    "source",
+    "director_method",
+    "gate_1",
+    "scene_strategies",
+    "review_lock"
+  ],
+  "properties": {
+    "workspace_contract": {"const": "director-workspace/3.1.0"},
+    "source": {"$ref": "#/$defs/source"},
+    "director_method": {"$ref": "#/$defs/directorMethod"},
+    "gate_1": {"$ref": "#/$defs/gateOne"},
+    "scene_strategies": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/sceneStrategy"}
+    },
+    "review_lock": {"$ref": "#/$defs/reviewLock"}
+  },
+  "$defs": {
+    "nonEmpty": {"type": "string", "minLength": 1},
+    "stringArray": {"type": "array", "items": {"$ref": "#/$defs/nonEmpty"}},
+    "mechanism": {
+      "enum": [
+        "relationship_accumulation",
+        "information_suspense",
+        "offscreen_threat",
+        "comedy_setup_payoff",
+        "action_causality",
+        "ensemble_power",
+        "ritual_repetition",
+        "montage_music_concept",
+        "subjective_memory",
+        "spectacle_discovery"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["locked_text", "source_hash", "source_units"],
+      "properties": {
+        "locked_text": {"$ref": "#/$defs/nonEmpty"},
+        "source_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "source_units": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/sourceUnit"}
+        }
+      }
+    },
+    "sourceUnit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unit_id",
+        "scene_id",
+        "line_start",
+        "line_end",
+        "kind",
+        "exact_text",
+        "semantic_summary",
+        "coverage_status",
+        "shot_refs",
+        "reason"
+      ],
+      "properties": {
+        "unit_id": {"type": "string", "pattern": "^SU[0-9]{3,}$"},
+        "scene_id": {"type": "string", "pattern": "^SC[0-9]{3,}$"},
+        "line_start": {"type": "integer", "minimum": 1},
+        "line_end": {"type": "integer", "minimum": 1},
+        "kind": {
+          "enum": [
+            "scene_heading",
+            "action",
+            "dialogue",
+            "stage_direction",
+            "source_sound",
+            "transition",
+            "metadata"
+          ]
+        },
+        "exact_text": {"$ref": "#/$defs/nonEmpty"},
+        "speaker": {"type": "string"},
+        "voice_type": {"enum": ["scene_dialogue", "vo", "mediated", "unresolved"]},
+        "dialogue_id": {"type": "string", "pattern": "^D[0-9]{3,}$"},
+        "semantic_summary": {"$ref": "#/$defs/nonEmpty"},
+        "coverage_status": {"enum": ["covered", "intentionally_withheld", "intentionally_omitted"]},
+        "shot_refs": {"type": "array", "items": {"type": "string", "pattern": "^SH[0-9]{3,}$"}},
+        "reason": {"type": "string"}
+      }
+    },
+    "directorMethod": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "method_id",
+        "method_name",
+        "reference_source",
+        "applicability",
+        "time_model",
+        "base_editing_unit",
+        "boundary_priorities",
+        "hold_policy",
+        "montage_intercut_policy",
+        "viewpoint_knowledge",
+        "space_reveal",
+        "performance_editing",
+        "camera_agency",
+        "sound_image_relation",
+        "continuity_attitude",
+        "mechanism_adaptation",
+        "preferred_patterns",
+        "avoid_patterns",
+        "exception_conditions"
+      ],
+      "properties": {
+        "method_id": {"$ref": "#/$defs/nonEmpty"},
+        "method_name": {"$ref": "#/$defs/nonEmpty"},
+        "reference_source": {"$ref": "#/$defs/nonEmpty"},
+        "applicability": {"$ref": "#/$defs/nonEmpty"},
+        "time_model": {"$ref": "#/$defs/nonEmpty"},
+        "base_editing_unit": {"$ref": "#/$defs/nonEmpty"},
+        "boundary_priorities": {"$ref": "#/$defs/nonEmpty"},
+        "hold_policy": {"$ref": "#/$defs/nonEmpty"},
+        "montage_intercut_policy": {"$ref": "#/$defs/nonEmpty"},
+        "viewpoint_knowledge": {"$ref": "#/$defs/nonEmpty"},
+        "space_reveal": {"$ref": "#/$defs/nonEmpty"},
+        "performance_editing": {"$ref": "#/$defs/nonEmpty"},
+        "camera_agency": {"$ref": "#/$defs/nonEmpty"},
+        "sound_image_relation": {"$ref": "#/$defs/nonEmpty"},
+        "continuity_attitude": {"$ref": "#/$defs/nonEmpty"},
+        "mechanism_adaptation": {"$ref": "#/$defs/nonEmpty"},
+        "preferred_patterns": {"$ref": "#/$defs/stringArray"},
+        "avoid_patterns": {"$ref": "#/$defs/stringArray"},
+        "exception_conditions": {"$ref": "#/$defs/nonEmpty"}
+      }
+    },
+    "gateOne": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "status", "method_hash", "note"],
+      "properties": {
+        "mode": {"enum": ["user_specified", "confirmed", "required", "invalidated"]},
+        "status": {"enum": ["passed", "pending", "invalidated"]},
+        "method_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "note": {"$ref": "#/$defs/nonEmpty"}
+      }
+    },
+    "boundaryReason": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_change", "mechanism_need", "method_basis", "alternative_rejected"],
+      "properties": {
+        "source_change": {"$ref": "#/$defs/nonEmpty"},
+        "mechanism_need": {"$ref": "#/$defs/nonEmpty"},
+        "method_basis": {"$ref": "#/$defs/nonEmpty"},
+        "alternative_rejected": {"$ref": "#/$defs/nonEmpty"}
+      }
+    },
+    "topologyUnit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unit_id",
+        "shot_refs",
+        "source_unit_ids",
+        "intra_shot_operations",
+        "inter_shot_relation",
+        "boundary_reason"
+      ],
+      "properties": {
+        "unit_id": {"type": "string", "pattern": "^TU[0-9]{3,}$"},
+        "shot_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "pattern": "^SH[0-9]{3,}$"}
+        },
+        "source_unit_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "pattern": "^SU[0-9]{3,}$"}
+        },
+        "intra_shot_operations": {
+          "type": "array",
+          "items": {
+            "enum": ["hold", "blocking_recompose", "camera_reframe", "focus_shift", "light_shift", "sound_shift"]
+          }
+        },
+        "inter_shot_relation": {
+          "enum": [
+            "cut",
+            "reaction_cut",
+            "action_cut",
+            "gaze_cut",
+            "match_cut",
+            "jump_cut",
+            "ellipsis",
+            "intercut",
+            "montage",
+            "sound_lead",
+            "sound_lag",
+            "sound_bridge",
+            "sound_break",
+            "dissolve",
+            "fade",
+            "scene_transition",
+            "scene_end"
+          ]
+        },
+        "boundary_reason": {"$ref": "#/$defs/boundaryReason"}
+      }
+    },
+    "sceneStrategy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scene_id",
+        "entry_state",
+        "exit_state",
+        "dramatic_task",
+        "turn_or_progression",
+        "primary_mechanism",
+        "secondary_mechanism",
+        "mechanism_shift_trigger",
+        "protected_processes",
+        "required_clarity",
+        "delayed_information",
+        "timing_sensitive_beats",
+        "failure_risks",
+        "audience_knowledge_path",
+        "blocking_space_strategy",
+        "time_edit_structure",
+        "shot_density_curve",
+        "performance_strategy",
+        "sound_strategy",
+        "opening_function",
+        "turn_function",
+        "ending_function",
+        "method_application",
+        "conflict_resolution",
+        "intentional_exceptions",
+        "production_risks",
+        "topology"
+      ],
+      "properties": {
+        "scene_id": {"type": "string", "pattern": "^SC[0-9]{3,}$"},
+        "entry_state": {"$ref": "#/$defs/nonEmpty"},
+        "exit_state": {"$ref": "#/$defs/nonEmpty"},
+        "dramatic_task": {"$ref": "#/$defs/nonEmpty"},
+        "turn_or_progression": {"$ref": "#/$defs/nonEmpty"},
+        "primary_mechanism": {"$ref": "#/$defs/mechanism"},
+        "secondary_mechanism": {"anyOf": [{"$ref": "#/$defs/mechanism"}, {"type": "null"}]},
+        "mechanism_shift_trigger": {"type": "string"},
+        "protected_processes": {"$ref": "#/$defs/stringArray"},
+        "required_clarity": {"$ref": "#/$defs/stringArray"},
+        "delayed_information": {"type": "array", "items": {"type": "string"}},
+        "timing_sensitive_beats": {"type": "array", "items": {"type": "string"}},
+        "failure_risks": {"$ref": "#/$defs/stringArray"},
+        "audience_knowledge_path": {"$ref": "#/$defs/nonEmpty"},
+        "blocking_space_strategy": {"$ref": "#/$defs/nonEmpty"},
+        "time_edit_structure": {"$ref": "#/$defs/nonEmpty"},
+        "shot_density_curve": {"$ref": "#/$defs/nonEmpty"},
+        "performance_strategy": {"$ref": "#/$defs/nonEmpty"},
+        "sound_strategy": {"$ref": "#/$defs/nonEmpty"},
+        "opening_function": {"$ref": "#/$defs/nonEmpty"},
+        "turn_function": {"$ref": "#/$defs/nonEmpty"},
+        "ending_function": {"$ref": "#/$defs/nonEmpty"},
+        "method_application": {"$ref": "#/$defs/nonEmpty"},
+        "conflict_resolution": {"$ref": "#/$defs/nonEmpty"},
+        "intentional_exceptions": {"type": "array", "items": {"type": "string"}},
+        "production_risks": {"type": "array", "items": {"type": "string"}},
+        "topology": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/topologyUnit"}
+        }
+      }
+    },
+    "reviewLock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_hash",
+        "method_hash",
+        "strategy_hash",
+        "topology_hash",
+        "gate_1_status",
+        "gate_1_basis",
+        "gate_2_status",
+        "gate_2_confirmation_note"
+      ],
+      "properties": {
+        "source_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "method_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "strategy_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "topology_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "gate_1_status": {"enum": ["passed", "pending", "invalidated"]},
+        "gate_1_basis": {"$ref": "#/$defs/nonEmpty"},
+        "gate_2_status": {"enum": ["confirmed", "pending", "invalidated"]},
+        "gate_2_confirmation_note": {"$ref": "#/$defs/nonEmpty"}
+      }
+    }
+  }
+}

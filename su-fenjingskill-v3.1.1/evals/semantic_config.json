@@ -1,0 +1,64 @@
+{
+  "recommended_threshold": 0.18,
+  "fallback_positive_concepts": [
+    "storyboard_delivery",
+    "scene_mechanism",
+    "director_method",
+    "cinematography_editing",
+    "source_integrity"
+  ],
+  "positive_concepts": {
+    "storyboard_delivery": {
+      "weight": 0.34,
+      "phrases": ["分镜", "六列分镜", "六列表格", "storyboard", "director-shot-data"]
+    },
+    "scene_mechanism": {
+      "weight": 0.32,
+      "phrases": ["题材机制", "喜剧节拍", "动作因果", "悬念", "笑点", "铺垫", "误导", "反应", "scene mechanism", "setup", "payoff"]
+    },
+    "director_method": {
+      "weight": 0.32,
+      "phrases": ["导演方法", "按王家卫", "按是枝裕和", "按诺兰", "剪辑方案", "长对白", "完整长镜", "跨镜连续播放", "director method", "editing method"]
+    },
+    "cinematography_editing": {
+      "weight": 0.3,
+      "phrases": ["摄影师", "机位", "景别", "Blocking", "剪辑", "平行剪辑", "蒙太奇", "声音桥", "发言权", "画面所有权", "cinematography", "montage"]
+    },
+    "source_integrity": {
+      "weight": 0.22,
+      "phrases": ["逐字保留", "锁定片段", "完整剧本", "全部对白", "locked source"]
+    }
+  },
+  "negative_concepts": {
+    "style_only": {
+      "weight": 0.9,
+      "exclusive": true,
+      "phrases": ["只比较", "不需要拆镜", "不需要做任何分镜", "介绍蒙太奇理论", "风格介绍", "theory only"]
+    },
+    "video_prompt": {
+      "weight": 0.9,
+      "exclusive": true,
+      "phrases": ["视频 Prompt", "Seedance", "视频生成提示词", "video prompt"]
+    },
+    "storyboard_image": {
+      "weight": 0.9,
+      "exclusive": true,
+      "phrases": ["分镜图", "九宫格", "修改这张", "图片"]
+    },
+    "video_generation": {
+      "weight": 0.9,
+      "exclusive": true,
+      "phrases": ["生成视频", "十秒视频"]
+    },
+    "summary_translation_writing": {
+      "weight": 0.7,
+      "exclusive": true,
+      "phrases": ["总结一下", "翻译成英文", "全新的短剧剧本"]
+    },
+    "social_resize": {
+      "weight": 0.7,
+      "exclusive": true,
+      "phrases": ["社交媒体尺寸"]
+    }
+  }
+}

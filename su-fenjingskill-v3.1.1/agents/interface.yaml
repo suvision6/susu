@@ -1,0 +1,22 @@
+interface:
+  display_name: "导演分镜 v3.1.1"
+  short_description: "按场景机制和导演方法生成可拍、可剪的六列文字分镜"
+  default_prompt: "使用 $su-fenjingskill 完整理解中文或多语言剧本，逐场识别题材机制，按指定或确认的导演方法设计时间、视点、调度、摄影、声音与剪辑；逐字保护中文对白、标点、称谓与语气，完成 Gate 2 后交付 director-shot-data/3.1.0 和六列分镜，制作风险不进入备注列。"
+compatibility:
+  canonical_format: "agent-skills"
+  adapter_targets:
+    - "openai"
+    - "generic"
+  activation:
+    mode: "automatic"
+    paths: []
+  execution:
+    context: "inline"
+    shell: "bash"
+  trust:
+    source_tier: "local"
+    remote_inline_execution: "forbid"
+    remote_metadata_policy: "allow-metadata-only"
+  degradation:
+    openai: "metadata-adapter"
+    generic: "neutral-source"

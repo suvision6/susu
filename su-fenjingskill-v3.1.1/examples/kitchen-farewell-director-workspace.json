@@ -1,0 +1,238 @@
+{
+  "workspace_contract": "director-workspace/3.1.0",
+  "source": {
+    "locked_text": "内景·厨房·夜\n林晓彤把一把钥匙放在餐桌上。\n林晓彤：我明天走。\n陈默继续切菜，刀声停下。\n陈默：什么时候决定的？",
+    "source_hash": "0a6479a8b4bc85e1e8027ed6caa826e6e671517171ecd96d33b5a39c98ffb19d",
+    "source_units": [
+      {
+        "unit_id": "SU001",
+        "scene_id": "SC001",
+        "line_start": 1,
+        "line_end": 1,
+        "kind": "scene_heading",
+        "exact_text": "内景·厨房·夜",
+        "semantic_summary": "建立厨房夜景和场景边界。",
+        "coverage_status": "covered",
+        "shot_refs": [
+          "SH001"
+        ],
+        "reason": ""
+      },
+      {
+        "unit_id": "SU002",
+        "scene_id": "SC001",
+        "line_start": 2,
+        "line_end": 2,
+        "kind": "action",
+        "exact_text": "林晓彤把一把钥匙放在餐桌上。",
+        "semantic_summary": "钥匙从人物手中进入两人之间的空间。",
+        "coverage_status": "covered",
+        "shot_refs": [
+          "SH001"
+        ],
+        "reason": ""
+      },
+      {
+        "unit_id": "SU003",
+        "scene_id": "SC001",
+        "line_start": 3,
+        "line_end": 3,
+        "kind": "dialogue",
+        "exact_text": "林晓彤：我明天走。",
+        "speaker": "林晓彤",
+        "voice_type": "scene_dialogue",
+        "dialogue_id": "D001",
+        "semantic_summary": "林晓彤宣布次日离开。",
+        "coverage_status": "covered",
+        "shot_refs": [
+          "SH002"
+        ],
+        "reason": ""
+      },
+      {
+        "unit_id": "SU004",
+        "scene_id": "SC001",
+        "line_start": 4,
+        "line_end": 4,
+        "kind": "action",
+        "exact_text": "陈默继续切菜，刀声停下。",
+        "semantic_summary": "陈默维持日常动作，随后刀声停止。",
+        "coverage_status": "covered",
+        "shot_refs": [
+          "SH002"
+        ],
+        "reason": ""
+      },
+      {
+        "unit_id": "SU005",
+        "scene_id": "SC001",
+        "line_start": 5,
+        "line_end": 5,
+        "kind": "dialogue",
+        "exact_text": "陈默：什么时候决定的？",
+        "speaker": "陈默",
+        "voice_type": "scene_dialogue",
+        "dialogue_id": "D002",
+        "semantic_summary": "陈默第一次以问题正面承认离开事实。",
+        "coverage_status": "covered",
+        "shot_refs": [
+          "SH003"
+        ],
+        "reason": ""
+      }
+    ]
+  },
+  "director_method": {
+    "method_id": "koreeda-domestic-reaction-afterglow",
+    "method_name": "家庭日常中的反应余波",
+    "reference_source": "参考是枝裕和的可泛化工作倾向，不复刻具体镜头。",
+    "applicability": "家庭日常、隐忍关系、生活动作和迟到反应。",
+    "time_model": "保留动作前后、对白余波和生活过程，不抢着强调转折。",
+    "base_editing_unit": "生活流程、关系被小动作重新理解和迟到反应。",
+    "boundary_priorities": "生活过程自然结束、关系意义变化或迟到反应落地时切。",
+    "hold_policy": "共享劳动、倾听和动作余波需要完整时间时保持；任务失焦时转移观看。",
+    "montage_intercut_policy": "只用生活细节形成温和省略，不用概念蒙太奇替人物解释。",
+    "viewpoint_knowledge": "观众作为厨房里的第三人观察，逐步偏向承受消息的陈默。",
+    "space_reveal": "从餐桌、料理台、钥匙和切菜动作中自然显露关系。",
+    "performance_editing": "优先倾听者、身体节拍和动作后的沉默。",
+    "camera_agency": "克制、耐心，摄影机少于演员主动。",
+    "sound_image_relation": "切菜声建立生活节拍，停止和静默成为关系转折。",
+    "continuity_attitude": "保持厨房关系轴、钥匙位置和刀的动作状态。",
+    "mechanism_adaptation": "以 relationship_accumulation 为主，借钥匙和刀声的信息落点形成必要切点。",
+    "preferred_patterns": [
+      "生活过程",
+      "倾听者",
+      "动作余波"
+    ],
+    "avoid_patterns": [
+      "一味不切",
+      "煽情反打",
+      "无来源微表情"
+    ],
+    "exception_conditions": "钥匙和刀声形成可读信息落点时允许切近，但不切碎同一身体反应。"
+  },
+  "gate_1": {
+    "mode": "user_specified",
+    "status": "passed",
+    "method_hash": "00edac04ba31ea26918d3cc6776a00b5153101b48d0f3cc8f1f209e3e2fc8dfb",
+    "note": "评测明确指定家庭日常中的反应余波方法，方法摘要无实质歧义。"
+  },
+  "scene_strategies": [
+    {
+      "scene_id": "SC001",
+      "entry_state": "两人仍以切菜和站位维持厨房日常秩序。",
+      "exit_state": "陈默停止切菜并第一次主动询问离开决定。",
+      "dramatic_task": "让离开宣告从信息变为两人无法回避的关系事实。",
+      "turn_or_progression": "刀声停止，使陈默的身体先于语言承认变化。",
+      "primary_mechanism": "relationship_accumulation",
+      "secondary_mechanism": "information_suspense",
+      "mechanism_shift_trigger": "钥匙和离开宣告落下后，刀声停止把关系积累转为明确问题。",
+      "protected_processes": [
+        "林晓彤放下钥匙到陈默刀声停止的连续作用过程"
+      ],
+      "required_clarity": [
+        "两人空间距离没有改变",
+        "钥匙进入两人之间",
+        "陈默的切菜动作确实停止"
+      ],
+      "delayed_information": [
+        "不立即展示林晓彤对陈默问题的回答"
+      ],
+      "timing_sensitive_beats": [
+        "离开宣告后下一刀没有落下",
+        "刀声停止后的静默"
+      ],
+      "failure_risks": [
+        "按说话者机械反打",
+        "把钥匙和身体反应切成过多插镜"
+      ],
+      "audience_knowledge_path": "先读两人关系空间，再通过手部知道消息进入身体，最后才看陈默开口。",
+      "blocking_space_strategy": "林晓彤留在餐桌侧，陈默留在料理台；钥匙落在两人之间，人物不靠近。",
+      "time_edit_structure": "共享空间建立—身体节拍中断—语言反应，三段连续推进。",
+      "shot_density_curve": "前段保持关系完整，中段切近唯一身体变化，末段稳定停留。",
+      "performance_strategy": "让陈默先以没有落下的下一刀反应，再抬眼发问。",
+      "sound_strategy": "规律切菜声、钥匙金属声、刀声停止和冰箱底噪构成节奏。",
+      "opening_function": "建立厨房日常与两人未跨越的距离。",
+      "turn_function": "刀声停止，让关系变化成为可听见的事实。",
+      "ending_function": "停在陈默的问题上，不提供即时回答。",
+      "method_application": "以生活过程和迟到反应组织三镜，不按对白轮流覆盖人物。",
+      "conflict_resolution": "信息落点需要靠近时切到手部，但保持整句对白与刀停在同镜。",
+      "intentional_exceptions": [],
+      "production_risks": [
+        "第二镜手部节拍和声音停止需要精确表演与同期声配合"
+      ],
+      "topology": [
+        {
+          "unit_id": "TU001",
+          "shot_refs": [
+            "SH001"
+          ],
+          "source_unit_ids": [
+            "SU001",
+            "SU002"
+          ],
+          "intra_shot_operations": [
+            "hold"
+          ],
+          "inter_shot_relation": "cut",
+          "boundary_reason": {
+            "source_change": "钥匙放下后，离开宣告开始作用于陈默。",
+            "mechanism_need": "关系积累需要从共享空间进入承受消息的身体节拍。",
+            "method_basis": "生活过程完成后才改变观看距离。",
+            "alternative_rejected": "继续保持全景会让刀声停止的细微身体事件不可读。"
+          }
+        },
+        {
+          "unit_id": "TU002",
+          "shot_refs": [
+            "SH002"
+          ],
+          "source_unit_ids": [
+            "SU003",
+            "SU004"
+          ],
+          "intra_shot_operations": [
+            "hold",
+            "sound_shift"
+          ],
+          "inter_shot_relation": "reaction_cut",
+          "boundary_reason": {
+            "source_change": "刀声已经停止，身体反应完成，陈默即将以语言回应。",
+            "mechanism_need": "关系积累需要从身体余波进入被迫开口的面孔。",
+            "method_basis": "迟到反应落地后切，不在台词说话者变化时切。",
+            "alternative_rejected": "留在手部会丢失陈默终于抬眼和发问的关系选择。"
+          }
+        },
+        {
+          "unit_id": "TU003",
+          "shot_refs": [
+            "SH003"
+          ],
+          "source_unit_ids": [
+            "SU005"
+          ],
+          "intra_shot_operations": [
+            "hold"
+          ],
+          "inter_shot_relation": "scene_end",
+          "boundary_reason": {
+            "source_change": "陈默的问题完成本场从日常维持到正面承认的变化。",
+            "mechanism_need": "余波需要停留在提问者，不立即兑现回答。",
+            "method_basis": "让生活声不再恢复，使缺席答案继续作用。",
+            "alternative_rejected": "反打林晓彤会过早结束问题的悬置。"
+          }
+        }
+      ]
+    }
+  ],
+  "review_lock": {
+    "source_hash": "0a6479a8b4bc85e1e8027ed6caa826e6e671517171ecd96d33b5a39c98ffb19d",
+    "method_hash": "00edac04ba31ea26918d3cc6776a00b5153101b48d0f3cc8f1f209e3e2fc8dfb",
+    "strategy_hash": "e0ed31ded004d28ebc3565507dd6eae73fe8bdff9f259e500028b8f96f004e95",
+    "topology_hash": "5c9114cd595d76de0a4c0c70fdfdeba9ba869d078bd3c91e4294381b0ece1e87",
+    "gate_1_status": "passed",
+    "gate_1_basis": "用户指定方法，摘要无歧义。",
+    "gate_2_status": "confirmed",
+    "gate_2_confirmation_note": "评测锁定三镜拓扑、关系视点、声音节拍和核心摄影承诺。"
+  }
+}
