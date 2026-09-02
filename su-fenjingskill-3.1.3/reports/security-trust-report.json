@@ -1,0 +1,336 @@
+{
+  "ok": true,
+  "skill_dir": "/Users/suvision/Documents/Test/Su-fenjingskill-v3.1.3/candidate/su-fenjingskill",
+  "summary": {
+    "scanned_files": 62,
+    "script_count": 10,
+    "internal_module_count": 5,
+    "secret_findings": 0,
+    "dependency_files": [
+      "requirements.txt"
+    ],
+    "network_script_count": 0,
+    "network_policy_covered_count": 0,
+    "network_policy_missing_count": 0,
+    "file_write_script_count": 5,
+    "permission_required_count": 1,
+    "permission_approved_count": 0,
+    "permission_missing_count": 0,
+    "permission_invalid_count": 1,
+    "permission_expired_count": 0,
+    "help_smoke_checked_count": 5,
+    "help_smoke_failed_count": 0,
+    "interactive_script_count": 0,
+    "package_hash_scope": "source-contract-without-generated-reports",
+    "package_hash_file_count": 62,
+    "package_sha256": "d715ed5c0f268f0606a5b7226840be83568ef47f091bb576b6718faf7ce8d13f"
+  },
+  "failures": [],
+  "warnings": [
+    "Permission approvals invalid: file_write"
+  ],
+  "secrets": [],
+  "scripts": [
+    {
+      "path": "scripts/_chinese_context.py",
+      "interface": "internal-module",
+      "interface_declared": true,
+      "interface_reason": "Imported by storyboard_delivery.py for deterministic Chinese-language checks.",
+      "has_argparse": false,
+      "has_main_guard": false,
+      "uses_input": false,
+      "uses_network": false,
+      "uses_file_write": false,
+      "uses_subprocess": false,
+      "network_urls": [],
+      "network_hosts": []
+    },
+    {
+      "path": "scripts/_execution_text.py",
+      "interface": "internal-module",
+      "interface_declared": true,
+      "interface_reason": "Imported by the formal backend to serialize structured execution facts.",
+      "has_argparse": false,
+      "has_main_guard": false,
+      "uses_input": false,
+      "uses_network": false,
+      "uses_file_write": false,
+      "uses_subprocess": false,
+      "network_urls": [],
+      "network_hosts": []
+    },
+    {
+      "path": "scripts/_schema_validation.py",
+      "interface": "internal-module",
+      "interface_declared": true,
+      "interface_reason": "Imported by formal validators for Draft 2020-12 Schema checks.",
+      "has_argparse": false,
+      "has_main_guard": false,
+      "uses_input": false,
+      "uses_network": false,
+      "uses_file_write": false,
+      "uses_subprocess": false,
+      "network_urls": [],
+      "network_hosts": []
+    },
+    {
+      "path": "scripts/_xlsx_projection.py",
+      "interface": "internal-module",
+      "interface_declared": true,
+      "interface_reason": "Imported by export_xlsx.py to build the deterministic human-facing projection.",
+      "has_argparse": false,
+      "has_main_guard": false,
+      "uses_input": false,
+      "uses_network": false,
+      "uses_file_write": false,
+      "uses_subprocess": false,
+      "network_urls": [],
+      "network_hosts": []
+    },
+    {
+      "path": "scripts/export_xlsx.py",
+      "interface": "cli",
+      "interface_declared": false,
+      "interface_reason": "Default CLI classification; add SCRIPT_INTERFACE for internal modules.",
+      "has_argparse": true,
+      "has_main_guard": true,
+      "uses_input": false,
+      "uses_network": false,
+      "uses_file_write": true,
+      "uses_subprocess": false,
+      "network_urls": [],
+      "network_hosts": []
+    },
+    {
+      "path": "scripts/migrate_contract_3_1_0_to_3_1_2.py",
+      "interface": "file-read-write",
+      "interface_declared": true,
+      "interface_reason": "Explicit non-overwriting migration into a caller-selected empty directory.",
+      "has_argparse": true,
+      "has_main_guard": true,
+      "uses_input": false,
+      "uses_network": false,
+      "uses_file_write": true,
+      "uses_subprocess": false,
+      "network_urls": [],
+      "network_hosts": []
+    },
+    {
+      "path": "scripts/migrate_contract_3_1_2_to_3_1_3.py",
+      "interface": "file-read-write",
+      "interface_declared": true,
+      "interface_reason": "Explicit non-overwriting migration into a caller-selected empty directory.",
+      "has_argparse": true,
+      "has_main_guard": true,
+      "uses_input": false,
+      "uses_network": false,
+      "uses_file_write": true,
+      "uses_subprocess": false,
+      "network_urls": [],
+      "network_hosts": []
+    },
+    {
+      "path": "scripts/source_alignment.py",
+      "interface": "internal-module",
+      "interface_declared": true,
+      "interface_reason": "Imported by reviewer, formal builder, exporter, and migration tests for deterministic source alignment.",
+      "has_argparse": false,
+      "has_main_guard": false,
+      "uses_input": false,
+      "uses_network": false,
+      "uses_file_write": false,
+      "uses_subprocess": false,
+      "network_urls": [],
+      "network_hosts": []
+    },
+    {
+      "path": "scripts/storyboard_delivery.py",
+      "interface": "cli",
+      "interface_declared": false,
+      "interface_reason": "Default CLI classification; add SCRIPT_INTERFACE for internal modules.",
+      "has_argparse": true,
+      "has_main_guard": true,
+      "uses_input": false,
+      "uses_network": false,
+      "uses_file_write": true,
+      "uses_subprocess": false,
+      "network_urls": [],
+      "network_hosts": []
+    },
+    {
+      "path": "scripts/storyboard_review.py",
+      "interface": "cli",
+      "interface_declared": false,
+      "interface_reason": "Default CLI classification; add SCRIPT_INTERFACE for internal modules.",
+      "has_argparse": true,
+      "has_main_guard": true,
+      "uses_input": false,
+      "uses_network": false,
+      "uses_file_write": true,
+      "uses_subprocess": false,
+      "network_urls": [],
+      "network_hosts": []
+    }
+  ],
+  "dependencies": {
+    "present": [
+      "requirements.txt"
+    ],
+    "pinned": [],
+    "unpinned": []
+  },
+  "network_policy": {
+    "present": false,
+    "path": "security/network_policy.json",
+    "schema_version": "",
+    "network_script_count": 0,
+    "covered_scripts": [],
+    "missing_scripts": [],
+    "mismatches": [],
+    "default_policy": {}
+  },
+  "help_smoke": {
+    "enabled": true,
+    "timeout_seconds": 5.0,
+    "candidate_count": 5,
+    "checked_count": 5,
+    "passed_count": 5,
+    "failed_count": 0,
+    "skipped_count": 5,
+    "failed_scripts": [],
+    "results": [
+      {
+        "path": "scripts/export_xlsx.py",
+        "command": "python3 scripts/export_xlsx.py --help",
+        "returncode": 0,
+        "timed_out": false,
+        "passed": true,
+        "has_help_text": true,
+        "stdout_excerpt": "usage: export_xlsx.py [-h] --input INPUT --workspace WORKSPACE\n                      [--output OUTPUT] [--fail-on-warn]\n\n将通过 combined gate 的 director-shot-data/3.1.3 导出为 XLSX。\n\noptions:\n  -h, --help            show this help message and exi",
+        "stderr_excerpt": ""
+      },
+      {
+        "path": "scripts/migrate_contract_3_1_0_to_3_1_2.py",
+        "command": "python3 scripts/migrate_contract_3_1_0_to_3_1_2.py --help",
+        "returncode": 0,
+        "timed_out": false,
+        "passed": true,
+        "has_help_text": true,
+        "stdout_excerpt": "usage: migrate_contract_3_1_0_to_3_1_2.py [-h] --shot-data SHOT_DATA\n                                          [--workspace WORKSPACE] --output-dir\n                                          OUTPUT_DIR\n\n非覆盖迁移 director-shot-data/3.1.0 到 3.1.2",
+        "stderr_excerpt": ""
+      },
+      {
+        "path": "scripts/migrate_contract_3_1_2_to_3_1_3.py",
+        "command": "python3 scripts/migrate_contract_3_1_2_to_3_1_3.py --help",
+        "returncode": 0,
+        "timed_out": false,
+        "passed": true,
+        "has_help_text": true,
+        "stdout_excerpt": "usage: migrate_contract_3_1_2_to_3_1_3.py [-h] --shot-data SHOT_DATA\n                                          --workspace WORKSPACE --output-dir\n                                          OUTPUT_DIR\n\n非覆盖迁移 3.1.2 到 3.1.3 审阅草稿。\n\noptions:\n  -h",
+        "stderr_excerpt": ""
+      },
+      {
+        "path": "scripts/storyboard_delivery.py",
+        "command": "python3 scripts/storyboard_delivery.py --help",
+        "returncode": 0,
+        "timed_out": false,
+        "passed": true,
+        "has_help_text": true,
+        "stdout_excerpt": "usage: storyboard_delivery.py [-h]\n                              {structure-validate,validate,build-all,build}\n                              ...\n\nsu-fenjingskill 3.1.3 后端：来源保护、Gate、镜内 flow、XLSX 前端投影与原子四文件交付。\n\npositional arguments:\n  {struct",
+        "stderr_excerpt": ""
+      },
+      {
+        "path": "scripts/storyboard_review.py",
+        "command": "python3 scripts/storyboard_review.py --help",
+        "returncode": 0,
+        "timed_out": false,
+        "passed": true,
+        "has_help_text": true,
+        "stdout_excerpt": "usage: storyboard_review.py [-h]\n                            {lock,validate,approve-gate1,confirm-gate2,approve-alignment,approve-classification,status}\n                            ...\n\n验证并操作 su-fenjingskill 3.1.3 的来源、导演方法、Gate 与 alignment ",
+        "stderr_excerpt": ""
+      }
+    ],
+    "skipped": [
+      {
+        "path": "scripts/_chinese_context.py",
+        "reason": "internal module"
+      },
+      {
+        "path": "scripts/_execution_text.py",
+        "reason": "internal module"
+      },
+      {
+        "path": "scripts/_schema_validation.py",
+        "reason": "internal module"
+      },
+      {
+        "path": "scripts/_xlsx_projection.py",
+        "reason": "internal module"
+      },
+      {
+        "path": "scripts/source_alignment.py",
+        "reason": "internal module"
+      }
+    ]
+  },
+  "permission_governance": {
+    "present": true,
+    "path": "security/permission_policy.json",
+    "schema_version": "1.0",
+    "reviewed_at": "2026-09-01",
+    "required_capabilities": [
+      "file_write"
+    ],
+    "approved_capabilities": [],
+    "missing_capabilities": [],
+    "invalid_capabilities": [
+      "file_write"
+    ],
+    "expired_capabilities": [],
+    "approval_count": 0,
+    "required_count": 1,
+    "missing_count": 0,
+    "invalid_count": 1,
+    "expired_count": 0,
+    "approvals": [
+      {
+        "capability": "file_write",
+        "status": "invalid",
+        "scripts": [
+          "scripts/export_xlsx.py",
+          "scripts/migrate_contract_3_1_0_to_3_1_2.py",
+          "scripts/migrate_contract_3_1_2_to_3_1_3.py",
+          "scripts/storyboard_delivery.py",
+          "scripts/storyboard_review.py"
+        ],
+        "reviewer": "suvision",
+        "scope": "storyboard_review.py writes only explicit non-existing workspace/report paths; storyboard_delivery.py build-all stages and atomically commits exactly four formal files under an explicit output directory; export_xlsx.py writes one explicit non-existing XLSX as a compatibility utility after formal preflight; the migrator writes three drafts only in an explicit empty directory. No script performs network I/O, subprocess execution, package installation or source overwrite.",
+        "reason": "The 3.1.3 workflow requires caller-scoped local review, non-overwriting migration and atomic formal delivery.",
+        "expires_at": "2027-09-01",
+        "evidence": [
+          "tests/test_storyboard_review.py",
+          "tests/test_storyboard_delivery.py",
+          "tests/test_p0_regressions.py",
+          "reports/security-trust-report.md",
+          "reports/package-verification.md"
+        ],
+        "target_enforcement": {
+          "openai": "metadata-only adapter; host approval and explicit paths remain required",
+          "generic": "consuming installer must preserve explicit output-path and non-overwrite enforcement"
+        },
+        "validation": [
+          "target_enforcement missing: claude, vscode"
+        ]
+      }
+    ]
+  },
+  "trust_metadata": {
+    "source_tier": "local",
+    "remote_inline_execution": "forbid",
+    "remote_metadata_policy": "allow-metadata-only"
+  },
+  "artifacts": {
+    "json": "/Users/suvision/Documents/Test/Su-fenjingskill-v3.1.3/candidate/su-fenjingskill/reports/security-trust-report.json",
+    "markdown": "/Users/suvision/Documents/Test/Su-fenjingskill-v3.1.3/candidate/su-fenjingskill/reports/security-trust-report.md"
+  }
+}

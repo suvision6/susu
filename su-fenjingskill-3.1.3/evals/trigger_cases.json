@@ -1,0 +1,30 @@
+{
+  "should_trigger": [
+    {"text": "完整理解这部剧本，再按导演和摄影师视角做六列文字分镜。", "family": "full_screenplay"},
+    {"text": "同一场戏按是枝裕和和诺兰两种方法给出真正不同的剪辑方案。", "family": "method_comparison"},
+    {"text": "先判断这个笑点靠铺垫、误导还是反应工作，再设计镜头。", "family": "comedy_mechanism"},
+    {"text": "把追逐戏按目标、方向、障碍和动作因果拆成可拍分镜。", "family": "action_mechanism"},
+    {"text": "按王家卫的主观时间方法拆这段错过的爱情场景。", "family": "named_method"},
+    {"text": "给群像饭桌戏设计发言权、画面所有权、Blocking 和剪辑。", "family": "ensemble"},
+    {"text": "把这两个连续场景做成 director-shot-data 和六列表格。", "family": "contract_delivery"},
+    {"text": "这段长对白要判断完整长镜和跨镜连续播放哪种更适合。", "family": "long_dialogue"},
+    {"text": "请设计平行剪辑，让仪式和另一条行动线互相改变意义。", "family": "intercut"},
+    {"text": "Storyboard this screenplay using scene mechanisms and a confirmed director method.", "family": "english_method"},
+    {"text": "Create a six-column director storyboard with motivated montage, sound bridges, and blocking.", "family": "english_delivery"},
+    {"text": "把这个锁定片段转成可拍、可剪、可听的导演分镜，逐字保留对白。", "family": "locked_fragment"}
+  ],
+  "should_not_trigger": [
+    {"text": "只比较王家卫和大卫芬奇的导演风格，不需要拆镜。", "family": "style_only"},
+    {"text": "把现有分镜编译成 Seedance 视频 Prompt。", "family": "video_prompt"},
+    {"text": "根据 shot_data 生成九宫格黑白分镜图。", "family": "storyboard_images"},
+    {"text": "直接生成一段十秒视频。", "family": "video_generation"},
+    {"text": "总结一下这部剧本的故事。", "family": "summary"},
+    {"text": "把全部对白翻译成英文。", "family": "translation"},
+    {"text": "写一个全新的短剧剧本。", "family": "script_writing"},
+    {"text": "修改这张已经生成的分镜图片。", "family": "image_editing"},
+    {"text": "帮我分析这张电影截图的色彩。", "family": "image_analysis"},
+    {"text": "把 Excel 分镜表改成社交媒体尺寸。", "family": "social_resize"},
+    {"text": "给我一个单镜头视频生成提示词。", "family": "single_video_prompt"},
+    {"text": "介绍蒙太奇理论，不需要做任何分镜。", "family": "theory_only"}
+  ]
+}

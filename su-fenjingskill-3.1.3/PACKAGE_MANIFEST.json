@@ -1,0 +1,525 @@
+{
+  "package_name": "su-fenjingskill-3.1.3-camera-grammar",
+  "skill_name": "su-fenjingskill",
+  "version": "3.1.3",
+  "build_revision": "camera-grammar-01",
+  "generated_at": "2026-09-02",
+  "formal_output_contract": "director-shot-data/3.1.3",
+  "internal_contract": "director-workspace/3.1.3",
+  "scope": {
+    "same_version_repair": true,
+    "superseded_candidate_archived": true,
+    "original_archive_overwritten": false,
+    "installed": false,
+    "published": false,
+    "focus": [
+      "audiovisual storyboard design",
+      "picture ownership and subject visibility",
+      "motivated camera grammar",
+      "ordered shot flow",
+      "human XLSX frontend",
+      "Agent backend fact parity"
+    ],
+    "frontend_backend_boundary": "XLSX is the only human frontend; JSON, Markdown and validation remain Agent backend artifacts from the same shot model."
+  },
+  "verification": {
+    "unittest": "PASS: 121/121",
+    "schemas": "PASS: director-shot-data/3.1.3 and director-workspace/3.1.3",
+    "examples": "PASS: kitchen READY; unknown-room READY_WITH_ASSUMPTIONS",
+    "ep02_regression": "PASS: fresh-source READY; 32 shots; 38 dialogue segments; 91/91 required facts; 199 seconds",
+    "camera_grammar": "PASS: event-specific ownership, visibility, framing, angle and camera response; 14 single, 4 over-shoulder, 2 insert, 1 subjective, 9 two-shot, 2 group",
+    "xlsx_frontend": "PASS: two sheets; six columns; 10 whole-work design fields; 0 backend labels; 0 machine dialogue IDs; six rendered pages inspected",
+    "atomic_build": "PASS: JSON, Markdown, XLSX and validation committed atomically",
+    "deterministic_rebuild": "PASS: EP02 four files are byte-identical across consecutive builds",
+    "yao_validate": "PASS: initial-load estimate 1239/1300 tokens",
+    "skill_ir_compile": "PASS: Skill IR, OpenAI and generic",
+    "output_eval": "PASS: 31 cases; with-skill 100%; 0 regressions",
+    "trust": "PASS with non-blocking permission-metadata warning: 0 secrets; 0 network scripts; 5/5 CLI help smoke",
+    "downstream": "su-promptskill PASS on fresh EP02; su-image9 existing legacy-shape incompatibility disclosed"
+  },
+  "inventory_policy": {
+    "payload_file_count": 94,
+    "package_file_count": 96,
+    "inventory_excludes": [
+      "PACKAGE_MANIFEST.json (self-reference)",
+      "CHECKSUMS.sha256 (self-reference)",
+      "Git metadata",
+      "test caches",
+      "Python bytecode"
+    ],
+    "payload_composite_sha256": "3a584d451c562fdb45efdaf278c062168124d9d6623182c23d7a2d7451141f30"
+  },
+  "rollback_boundary": "Candidate only. Preserve global 3.1.2 and obtain separate approval before atomic installation; GitHub publication is separately authorized.",
+  "file_inventory": [
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "0c91b9a105978af84bdca6c032c88329a03de618c385f97d8c90bcdb9b345fa1",
+      "size_bytes": 3536
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "13de25ca6b48aadd4fc519261e972b42d132834c418d235128f6b692ecf61dcd",
+      "size_bytes": 218
+    },
+    {
+      "path": "MIGRATION.md",
+      "sha256": "ab8cfa5fc78c02f83a17b2ee3b66ece035d59881ef3edd9af7cf517bce8f4296",
+      "size_bytes": 4340
+    },
+    {
+      "path": "README.md",
+      "sha256": "7e6ec06b5b418e6863f9f05daa09ff1fbd12a169441f72aa49a056a0b760cf19",
+      "size_bytes": 5059
+    },
+    {
+      "path": "REFACTOR_REPORT.md",
+      "sha256": "5af130cf99f70a5be2bc85e3b1fefc24a68eceb78214aba569c3eef035f6ea23",
+      "size_bytes": 2527
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "57cdc8f2fe9e8e7a4e5cdef4f12d008aad3d06581d0fbe6e0f9832d98e312b20",
+      "size_bytes": 6982
+    },
+    {
+      "path": "VERSION",
+      "sha256": "2aaac27dade3045a30c64834f4c1ce9f5a5a4864c43e547bec804bc6e0186f43",
+      "size_bytes": 6
+    },
+    {
+      "path": "agents/interface.yaml",
+      "sha256": "a34c3474923fc1fa33b41eae6ff1e3b854547b760eb3e507fbdbf4e12e9959c6",
+      "size_bytes": 1068
+    },
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "263a50e16bccf7f7a95b84331239eb13be7db4dad3715155a85c016619426f77",
+      "size_bytes": 667
+    },
+    {
+      "path": "evals/baseline_description.txt",
+      "sha256": "70f50011d55622e663f37118fa3cf70994a25d764525e390f5b23da600860d6f",
+      "size_bytes": 61
+    },
+    {
+      "path": "evals/history/3.1.0.md",
+      "sha256": "c174fd3b5aa0be2d36238dabe119a47dabf2825f63a3c56e884d51bdd705eda8",
+      "size_bytes": 697
+    },
+    {
+      "path": "evals/history/3.1.1.md",
+      "sha256": "08d07bb365d7f4d437a06129e468c925cf467637ae1baf8114bddf6cb2791f71",
+      "size_bytes": 432
+    },
+    {
+      "path": "evals/history/3.1.2.md",
+      "sha256": "f846fface17702ab5f84f9aebbe85a5ed4c69f25d97e8a21cfde8371c14c77cd",
+      "size_bytes": 1106
+    },
+    {
+      "path": "evals/history/3.1.3.md",
+      "sha256": "446048702b74fbce614b1cfdf5235aa2ef8885a70b927bcf5672e04b7c8ccc56",
+      "size_bytes": 6117
+    },
+    {
+      "path": "evals/improved_description.txt",
+      "sha256": "b59adda94a5702a82f493a9060d721db64eab99d2502d874e601914f1108135f",
+      "size_bytes": 380
+    },
+    {
+      "path": "evals/output/cases.jsonl",
+      "sha256": "186d30538d5aecec381b08ee85195cc14cf3fd21288899114c680dab411e4999",
+      "size_bytes": 40148
+    },
+    {
+      "path": "evals/output/fixtures/chinese-romance-source.md",
+      "sha256": "77dc3a4837c998bd8095703afdafb2d29d2b581639255203249ac59885b07be2",
+      "size_bytes": 527
+    },
+    {
+      "path": "evals/output/fixtures/kitchen-farewell-source.md",
+      "sha256": "b5fc2d10d301230b49b03742c515d87b3a052c5d6ade61f098a7faf358a43eec",
+      "size_bytes": 250
+    },
+    {
+      "path": "evals/semantic_config.json",
+      "sha256": "72d9ad04bac756db2af5da82176007dcb4a21efaf6dd7190f775a187457d4952",
+      "size_bytes": 2183
+    },
+    {
+      "path": "evals/trigger_cases.json",
+      "sha256": "641d261f9f00037ea49d48c3f97a51418e0490fbc4a80d2fd852dc790fed49be",
+      "size_bytes": 2622
+    },
+    {
+      "path": "examples/kitchen-farewell-director-workspace.json",
+      "sha256": "d893c9aca1c309dc850d67d6ece391d73f86ccbef9010acf411a5069001ab7fa",
+      "size_bytes": 20016
+    },
+    {
+      "path": "examples/kitchen-farewell-shot-data.json",
+      "sha256": "48d6358479ab72d3bef54375836981bba4929aaf5084af2d9222e754904da006",
+      "size_bytes": 22688
+    },
+    {
+      "path": "examples/kitchen-farewell-storyboard-validation.json",
+      "sha256": "4ac3b82e3233c44d8df7b3a842e613b36a5611fdd378101643f800643551ed2c",
+      "size_bytes": 3548
+    },
+    {
+      "path": "examples/kitchen-farewell-storyboard.md",
+      "sha256": "47f45e30f97283512df5e2ffd6d28c58109945573dcbde2339bef551cfbea0c6",
+      "size_bytes": 8796
+    },
+    {
+      "path": "examples/kitchen-farewell-storyboard.xlsx",
+      "sha256": "9c23a84c5e7bcb3583d89d4239facef76c84e7999d122a3c8bc4b07e18fa96d4",
+      "size_bytes": 9144
+    },
+    {
+      "path": "examples/unknown-room-awakening-director-workspace.json",
+      "sha256": "f34aa36bdf0ecd6161f50df1ae7a3f96426d1bee06ee68450baf9819ac3d800c",
+      "size_bytes": 15833
+    },
+    {
+      "path": "examples/unknown-room-awakening-shot-data.json",
+      "sha256": "d6fd0232c4de65bf649cb7b1f56475bff2162978657aeed3296a3ba03234ce76",
+      "size_bytes": 23722
+    },
+    {
+      "path": "examples/unknown-room-awakening-storyboard-validation.json",
+      "sha256": "f15b35972ee1d1dc16e47a82b76cdcf0e85d22be6d63f62a7da4bdf22aa155d4",
+      "size_bytes": 4097
+    },
+    {
+      "path": "examples/unknown-room-awakening-storyboard.md",
+      "sha256": "61f78642b4ed5ff71a69a2b85d104f0b139a194793d4fe9c1ff3c428595d6193",
+      "size_bytes": 10209
+    },
+    {
+      "path": "examples/unknown-room-awakening-storyboard.xlsx",
+      "sha256": "94398208863ab8e9dfb8c261072c7c41ee448c650678b49a03f2d77217278378",
+      "size_bytes": 9675
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "86be67f226df17246716be9e8d429c22b926c469827b8b37bd528e02fc6eca4d",
+      "size_bytes": 954
+    },
+    {
+      "path": "references/blocking-space-continuity.md",
+      "sha256": "c36c8a17d6deb07f8b43991177acbdffd5d99992802f50919fa34478578e2859",
+      "size_bytes": 6804
+    },
+    {
+      "path": "references/chinese-context-language.md",
+      "sha256": "aca08069dbe726f214f18f4741236b85d74aa5352b1ae4a003adcefdb24e076d",
+      "size_bytes": 3588
+    },
+    {
+      "path": "references/cinematography-language.md",
+      "sha256": "5a8af40b68f07cec42ba09cac0fa0350a30018dd775adc8fb5e7cbd9f9823458",
+      "size_bytes": 11927
+    },
+    {
+      "path": "references/dialogue-performance-sound.md",
+      "sha256": "e1ebe9b29882a44d341efd4b8504b4fa308ddfcde28724b041a5ff538e8e4498",
+      "size_bytes": 8553
+    },
+    {
+      "path": "references/director-method-contract.md",
+      "sha256": "135a6095dc720898fc9970fed0ff961eab20a0c647872ee6d66e41c9e9cf09ef",
+      "size_bytes": 2760
+    },
+    {
+      "path": "references/director-method-index.md",
+      "sha256": "1689998d911221288cbdda813225b29e8307c932e52e79ad200e34edbc34ee68",
+      "size_bytes": 2780
+    },
+    {
+      "path": "references/director-method.md",
+      "sha256": "85c9b86e5676b4504bd52c4a7c2e1e0047011f65103c08408c2ff9034de8945d",
+      "size_bytes": 2188
+    },
+    {
+      "path": "references/director-methods/bong-joon-ho.md",
+      "sha256": "73d465acd4872ee8966a036f33ecbc89476ee883531c74d79942c000d6f57e5a",
+      "size_bytes": 1989
+    },
+    {
+      "path": "references/director-methods/christopher-nolan.md",
+      "sha256": "02e648985312c43a0efdf558c1d996cd2d1cb919d2d17c86a26752a3e15331b6",
+      "size_bytes": 2008
+    },
+    {
+      "path": "references/director-methods/coen-brothers.md",
+      "sha256": "76c269f18afafe2e4a61d5449919a3d87070d41158c05af6b1d70afc8de7ee1a",
+      "size_bytes": 1887
+    },
+    {
+      "path": "references/director-methods/david-fincher.md",
+      "sha256": "d01c1d649173ef76bb5ed374776e42f0467839745d889ba858fc41f826d06100",
+      "size_bytes": 1916
+    },
+    {
+      "path": "references/director-methods/david-lynch.md",
+      "sha256": "27266d38f9299bf9dd850c01d0bb14778dcd75f844dadd472bdb070ea240debf",
+      "size_bytes": 1923
+    },
+    {
+      "path": "references/director-methods/denis-villeneuve.md",
+      "sha256": "5be2295243ab58bb7f8c1d6a5f15c6cef0f1ae96ca33c8055efa6fb60ad6c58a",
+      "size_bytes": 1888
+    },
+    {
+      "path": "references/director-methods/francis-ford-coppola.md",
+      "sha256": "b1acbce5412f8b40f10c82d6374cd5ded6bdf9225d66b007a16ca3d64b0a3668",
+      "size_bytes": 1852
+    },
+    {
+      "path": "references/director-methods/hirokazu-koreeda.md",
+      "sha256": "de43c462976ebd284c2a1ab675e949bdee35054e9fc0c52daae11a80d8e95f28",
+      "size_bytes": 1910
+    },
+    {
+      "path": "references/director-methods/paolo-sorrentino.md",
+      "sha256": "f7e213dc693f1c2ce941485e1a209cebc7ef4f84b2cfe002461e6cf3ba34643b",
+      "size_bytes": 1894
+    },
+    {
+      "path": "references/director-methods/park-chan-wook.md",
+      "sha256": "ff11611385c43ccc0fc9c80539f5e027930b70f4c10a5c1d3d08abce92eb6d63",
+      "size_bytes": 1883
+    },
+    {
+      "path": "references/director-methods/quentin-tarantino.md",
+      "sha256": "a426cdec966b0e85d083d16ac767d1283446f45883b1f4ca1db264cfa9422344",
+      "size_bytes": 1939
+    },
+    {
+      "path": "references/director-methods/stanley-kubrick.md",
+      "sha256": "31886b6a33fc9c70451be119111495cc984fc1c68f60642b38c92ce5658bd284",
+      "size_bytes": 1803
+    },
+    {
+      "path": "references/director-methods/steven-spielberg.md",
+      "sha256": "ca895ed1237cdfa1499267dbfb0677d160fe7c523fa834f3d729c025fc52a795",
+      "size_bytes": 1923
+    },
+    {
+      "path": "references/director-methods/wes-anderson.md",
+      "sha256": "31c6ac66294bb71599e1b8e5a2c83566d555e41e5f6f5bb320667cd9437b7973",
+      "size_bytes": 1866
+    },
+    {
+      "path": "references/director-methods/wong-kar-wai.md",
+      "sha256": "bb39dde66003817cb40ef310f21572cebbc50307bc0c30fa42e1095f4a462495",
+      "size_bytes": 1933
+    },
+    {
+      "path": "references/editing-rhythm-duration.md",
+      "sha256": "2e503c17928dccd3c05f57c072ba0455fe0676f75000934094c6e468cb73e149",
+      "size_bytes": 8134
+    },
+    {
+      "path": "references/graceful-degradation.md",
+      "sha256": "d0ab30e76ff6897fc9b804eb5c9cdbe44a0dddd905d663bf5039188052043d05",
+      "size_bytes": 3755
+    },
+    {
+      "path": "references/internal-workspace-contract.md",
+      "sha256": "92a3ed15aa868146fdeab743a803dce0b5e7ecaca6fa4e83265d17ef44e2d049",
+      "size_bytes": 5606
+    },
+    {
+      "path": "references/output-contract.md",
+      "sha256": "468bd0546f22e4c1f8411ed571c102c26be36b7a4741500853b52a2c751338cf",
+      "size_bytes": 10742
+    },
+    {
+      "path": "references/scene-mechanisms.md",
+      "sha256": "89af0cdc96594eb257a86ac3b4f22cd59598c2c0fdbffae2d0134a27bed9569f",
+      "size_bytes": 3508
+    },
+    {
+      "path": "references/scene-strategy-gates.md",
+      "sha256": "83561202fb8701bcd0693597079792fad87d03375f784bcb43b4316a6c56869c",
+      "size_bytes": 5659
+    },
+    {
+      "path": "references/shot-edit-grammar.md",
+      "sha256": "73638f8dc44a0e62a61f0e77a9500425e159ad3efbed1deaa222967816f44922",
+      "size_bytes": 5566
+    },
+    {
+      "path": "references/source-truth-audit.md",
+      "sha256": "7ba8b186d66baedb118a8ad503eaa6b1eafd23d9506b421de268c9cea94dfee0",
+      "size_bytes": 5477
+    },
+    {
+      "path": "references/style-language.md",
+      "sha256": "094be6609bf458d3a26b6f62eeeaee63515ae0522e2e2f7d94d7fb0cf68f6467",
+      "size_bytes": 1079
+    },
+    {
+      "path": "reports/P0-ADVERSARIAL-TESTS.md",
+      "sha256": "b8f2dbf9dea3714072997e1500c98f08291935377681964650d467cafd0a98dd",
+      "size_bytes": 2752
+    },
+    {
+      "path": "reports/P0-REGRESSION-REPORT.json",
+      "sha256": "531e73b9d9021fbfdf0dce17d0c8acab7df036a109af65cde4d1542c72c9fa09",
+      "size_bytes": 10152
+    },
+    {
+      "path": "reports/P0-REPAIR-REPORT.md",
+      "sha256": "e7cbfbc1a5117b60c002f2cb9dbd924cecc05930b341e7f50704d811aef32bc2",
+      "size_bytes": 4524
+    },
+    {
+      "path": "reports/package-verification.md",
+      "sha256": "6f71faf1bbd31f276969d36d2a35683492c551b34738768b131ebd990268c0de",
+      "size_bytes": 2403
+    },
+    {
+      "path": "reports/security-trust-report.json",
+      "sha256": "29d45b3b1e7bcfbb142ce42fae012940abd1caa11e54525a06ca03f592bb25c0",
+      "size_bytes": 12297
+    },
+    {
+      "path": "reports/security-trust-report.md",
+      "sha256": "2249c41e9f515891c50cddfb7375f66ffa87714018b84dcdc77ef161485ef116",
+      "size_bytes": 3313
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "95914c2b367a0fa23a277b490a511706139c18939e455df1cca1e09f34533221",
+      "size_bytes": 35
+    },
+    {
+      "path": "schemas/director-shot-data.schema.json",
+      "sha256": "f25862684dba2fd7a31f890ec9f8970b98f45ca6a04ddfed9c93f5a78aaa498b",
+      "size_bytes": 18574
+    },
+    {
+      "path": "schemas/director-workspace.schema.json",
+      "sha256": "f23216e1d7749d7c16c5edc2e0731b66914f85a2dc30f02d0fe7159b58ace335",
+      "size_bytes": 31140
+    },
+    {
+      "path": "scripts/_chinese_context.py",
+      "sha256": "f48a6f5aefb53890dd8cd3a67d4206ae7287bd785cda44374f61f5d46bdaf099",
+      "size_bytes": 3571
+    },
+    {
+      "path": "scripts/_execution_text.py",
+      "sha256": "8132663e49d811c391d7fdc09f14a075c6dc1f024266f9700d8bea3e2f0eefac",
+      "size_bytes": 11759
+    },
+    {
+      "path": "scripts/_schema_validation.py",
+      "sha256": "b01905d3b0d86cb3ed42564647a8230931be628700c4a5d2e6b0fd6233d73355",
+      "size_bytes": 2304
+    },
+    {
+      "path": "scripts/_xlsx_projection.py",
+      "sha256": "13ef0ee590b309087624656840a8b2a17ffb6601cd26c2e795a03b83a065e190",
+      "size_bytes": 22628
+    },
+    {
+      "path": "scripts/export_xlsx.py",
+      "sha256": "c36c9dd617f9df50b6659986ec19bd7bc40f4424ecfd825abc3a690c31392606",
+      "size_bytes": 18274
+    },
+    {
+      "path": "scripts/migrate_contract_3_1_0_to_3_1_2.py",
+      "sha256": "a77b162cb16bd9bd3fb1c677e6686e6a7d47096fd3f46158c832370169650061",
+      "size_bytes": 12421
+    },
+    {
+      "path": "scripts/migrate_contract_3_1_2_to_3_1_3.py",
+      "sha256": "65f6f044b5c8d0b21dba78c70e1d3c986d238d897287cd22edb5d977548b39ea",
+      "size_bytes": 14198
+    },
+    {
+      "path": "scripts/source_alignment.py",
+      "sha256": "edf786ec392db73e153898423081d54845cd1b12daa2a10abc57439ed50c9079",
+      "size_bytes": 85562
+    },
+    {
+      "path": "scripts/storyboard_delivery.py",
+      "sha256": "a708bd839be4a9bd962a93a482ed0779e85e5fa3085de12b6a2d0694d35a785b",
+      "size_bytes": 62508
+    },
+    {
+      "path": "scripts/storyboard_review.py",
+      "sha256": "8dc84130df8afcb94a5285497cdca6d32e86d1aa918c2743736a90089f694f19",
+      "size_bytes": 69302
+    },
+    {
+      "path": "security/permission_policy.json",
+      "sha256": "f1006be5932927856b0dece90b67809da23f56538c262c5905613c69de91d0a8",
+      "size_bytes": 1307
+    },
+    {
+      "path": "security/permission_policy.md",
+      "sha256": "13fce1ca63e957aa2be8c74a693e5a75815becff0957390a78dcec953361c500",
+      "size_bytes": 956
+    },
+    {
+      "path": "skill-ir/su-fenjingskill.json",
+      "sha256": "424fcaa98c39880d214483b277a969a5040564a99edc5935fb4f6f1dc6610477",
+      "size_bytes": 6306
+    },
+    {
+      "path": "templates/director-analysis.md",
+      "sha256": "52c2df6acd84911847788e95a0dbaa505287d7f457898c431260c65863ab2690",
+      "size_bytes": 2455
+    },
+    {
+      "path": "templates/storyboard-six-column.md",
+      "sha256": "1726d1659c5cf970792a303373650838880c3f56f85db08dc1ffbaf74d957201",
+      "size_bytes": 1223
+    },
+    {
+      "path": "tests/DIRECTOR_EVALUATION.md",
+      "sha256": "a96c9b70061119a1808cd6e53375b961607a75b9fa8670964c26dda57fd4982b",
+      "size_bytes": 6833
+    },
+    {
+      "path": "tests/test_export_xlsx.py",
+      "sha256": "b38d8256041d6ad3212e446f974146f0d01ee073bc8ecc8549b2f3d6a6c2f04d",
+      "size_bytes": 12281
+    },
+    {
+      "path": "tests/test_frontend_backend_split.py",
+      "sha256": "48d4264cadd37a1908c6beb90bce492e1dad16bcd4c51885804fb01de45bf936",
+      "size_bytes": 34409
+    },
+    {
+      "path": "tests/test_migrate_contract_3_1_2_to_3_1_3.py",
+      "sha256": "aaa45d1f134708c43e105cdabeac5f1e3c272520291b2e9ae58948c1bf89e119",
+      "size_bytes": 12125
+    },
+    {
+      "path": "tests/test_p0_regressions.py",
+      "sha256": "cadd997ead01da0734a79104e176b92dae0c47a1709ec2a9709b64537e1cabed",
+      "size_bytes": 17890
+    },
+    {
+      "path": "tests/test_source_alignment.py",
+      "sha256": "9204da69b67d87790cf9b4d7acb692ab35329ce583fc096b9d284a6714ca506c",
+      "size_bytes": 23744
+    },
+    {
+      "path": "tests/test_storyboard_delivery.py",
+      "sha256": "fa5c148655496708639b3bd2cfdd9c8199adf64e83bb06ee5c1418daa827756d",
+      "size_bytes": 9725
+    },
+    {
+      "path": "tests/test_storyboard_review.py",
+      "sha256": "ea292bf293965e1186ecfc781302f7fa5583989a1b708189712200c6b52986af",
+      "size_bytes": 13303
+    }
+  ]
+}

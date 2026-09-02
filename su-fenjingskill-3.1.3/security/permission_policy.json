@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "reviewed_at": "2026-09-01",
+  "capabilities": {
+    "file_write": {
+      "decision": "approved",
+      "reviewer": "suvision",
+      "scope": "storyboard_review.py writes only explicit non-existing workspace/report paths; storyboard_delivery.py build-all stages and atomically commits exactly four formal files under an explicit output directory; export_xlsx.py writes one explicit non-existing XLSX as a compatibility utility after formal preflight; the migrator writes three drafts only in an explicit empty directory. No script performs network I/O, subprocess execution, package installation or source overwrite.",
+      "reason": "The 3.1.3 workflow requires caller-scoped local review, non-overwriting migration and atomic formal delivery.",
+      "expires_at": "2027-09-01",
+      "evidence": [
+        "tests/test_storyboard_review.py",
+        "tests/test_storyboard_delivery.py",
+        "tests/test_p0_regressions.py",
+        "reports/security-trust-report.md",
+        "reports/package-verification.md"
+      ],
+      "target_enforcement": {
+        "openai": "metadata-only adapter; host approval and explicit paths remain required",
+        "generic": "consuming installer must preserve explicit output-path and non-overwrite enforcement"
+      }
+    }
+  }
+}

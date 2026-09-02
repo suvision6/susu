@@ -1,0 +1,143 @@
+{
+  "schema_version": "2.0.0",
+  "name": "su-fenjingskill",
+  "title": "导演分镜 v3.1.3",
+  "job_to_be_done": "把完整剧本、连续场景、锁定片段或概念材料转换为按场景机制和导演方法组织的可拍、可剪六列文字分镜。",
+  "trigger_surface": {
+    "description": "将完整剧本、连续场景、锁定片段或概念材料拆解为具有视听逻辑的六列导演分镜和 director-shot-data/3.1.3。锁定来源与对白后，按场景机制和已确认方法决定观看、完整过程、切点与摄影执行；XLSX 是人类前端，其余三文件是同源 Agent 后端；不生成图片、视频 Prompt、视频或下游 Cut 分组。",
+    "should_trigger": [
+      "完整理解这部剧本，再按导演和摄影师视角做六列文字分镜。",
+      "同一场戏按两种导演方法给出真正不同的剪辑方案。",
+      "把动作场面按目标、方向和因果拆成可拍分镜。",
+      "把连续场景做成固定四文件导演交付。",
+      "Design motivated shot topology, blocking, sound and a six-column director storyboard."
+    ],
+    "should_not_trigger": [
+      "把已有分镜编译成视频 Prompt。",
+      "根据 shot_data 生成分镜图。",
+      "直接生成视频。",
+      "只比较导演风格，不做分镜。",
+      "创作全新短剧剧本。"
+    ],
+    "edge_cases": [
+      "用户未指定方法时最多提供两个实质不同的方案。",
+      "用户要求复刻具体镜头时只编译可泛化方法。",
+      "概念梗概必须登记 source gaps 与 assumption obligations。",
+      "中文角色标签、表演说明与实际口播必须分离。"
+    ]
+  },
+  "workflow": {
+    "steps": [
+      "Build an exact immutable source ledger and protect narrative classification, facts, gaps and language authority.",
+      "Identify one primary and at most one secondary scene mechanism.",
+      "Compile or confirm an executable director method.",
+      "Resolve mechanism and method into protected processes, scene camera grammar, per-unit viewing design and trigger/editorial_gain boundaries, then confirm Gate 2.",
+      "Execute viewpoint, framing, visibility, camera, staging, sound, edit, continuity, duration, motivation and ordered shot_flow against the confirmed viewing design.",
+      "Render the Agent backend execution record and the independent XLSX human projection, then approve Alignment for the current execution hash.",
+      "Atomically build and verify the fixed JSON, Markdown, XLSX and validation delivery."
+    ],
+    "decision_points": [
+      "Never use source lines, speaker changes, duration thresholds or minimum-shot rules as universal cut generators.",
+      "Do not equate relationship scenes with two-shots, restraint with flat/fixed cameras, or category variety with directing quality.",
+      "Apply the single Gate invalidation matrix: source/method → both Gates; strategy/topology → Gate 2; execution → Alignment only.",
+      "Formal shots may use only approved, bidirectionally bound director inferences.",
+      "Formal build is fail-closed and leaves no partial delivery."
+    ],
+    "failure_modes": [
+      "Narrative content is relabelled as metadata to delete obligations.",
+      "Runtime accepts data rejected by the published Schema.",
+      "Camera, edit or continuity changes preserve an old Alignment.",
+      "Deleting assumptions incorrectly produces READY.",
+      "Topology references the wrong scene, passage or fact.",
+      "A shot has no explicit picture owner, visibility state or framing rationale, or repeats generic camera reasons across distinct units.",
+      "A partial output directory contains a premature READY validation.",
+      "Aesthetic statistics become hard failures."
+    ]
+  },
+  "resources": {
+    "references": [
+      "references/source-truth-audit.md",
+      "references/chinese-context-language.md",
+      "references/scene-mechanisms.md",
+      "references/director-method-contract.md",
+      "references/director-method-index.md",
+      "references/scene-strategy-gates.md",
+      "references/shot-edit-grammar.md",
+      "references/director-method.md",
+      "references/blocking-space-continuity.md",
+      "references/cinematography-language.md",
+      "references/dialogue-performance-sound.md",
+      "references/editing-rhythm-duration.md",
+      "references/graceful-degradation.md",
+      "references/output-contract.md",
+      "references/internal-workspace-contract.md",
+      "references/style-language.md"
+    ],
+    "scripts": [
+      "scripts/_chinese_context.py",
+      "scripts/_execution_text.py",
+      "scripts/_xlsx_projection.py",
+      "scripts/_schema_validation.py",
+      "scripts/source_alignment.py",
+      "scripts/storyboard_review.py",
+      "scripts/storyboard_delivery.py",
+      "scripts/export_xlsx.py",
+      "scripts/migrate_contract_3_1_0_to_3_1_2.py",
+      "scripts/migrate_contract_3_1_2_to_3_1_3.py"
+    ],
+    "assets": [
+      "templates/director-analysis.md",
+      "templates/storyboard-six-column.md"
+    ],
+    "reports": [
+      "reports/P0-REPAIR-REPORT.md",
+      "reports/P0-REGRESSION-REPORT.json",
+      "reports/P0-ADVERSARIAL-TESTS.md",
+      "reports/package-verification.md",
+      "reports/security-trust-report.md"
+    ]
+  },
+  "eval_plan": {
+    "trigger": [
+      "evals/trigger_cases.json",
+      "evals/semantic_config.json"
+    ],
+    "output": [
+      "evals/output/cases.jsonl"
+    ],
+    "adversarial": [
+      "narrative-laundering",
+      "schema-required-mutation",
+      "execution-lock-drift",
+      "assumption-deletion",
+      "topology-swap",
+      "atomic-export-failure",
+      "gate-invalidation-matrix"
+    ],
+    "baseline": "installed 3.1.2 p0-repair-01"
+  },
+  "risk": {
+    "output_risk": "high",
+    "execution_risk": "medium",
+    "trust_boundary": "external"
+  },
+  "governance": {
+    "owner": "suvision",
+    "maturity": "governed",
+    "review_cadence": "per-repair",
+    "review_due": ""
+  },
+  "targets": [
+    "openai",
+    "generic"
+  ],
+  "source_files": [
+    "SKILL.md",
+    "manifest.json",
+    "agents/interface.yaml",
+    "references/source-truth-audit.md",
+    "references/scene-strategy-gates.md",
+    "references/output-contract.md",
+    "references/internal-workspace-contract.md"
+  ]
+}
