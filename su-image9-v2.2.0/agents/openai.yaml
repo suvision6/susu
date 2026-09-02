@@ -1,0 +1,4 @@
+interface:
+  display_name: "Image2 9格石墨分镜"
+  short_description: "只读适配任意版本分镜数据并生成可复验的3x3黑白石墨九格分镜"
+  default_prompt: "Use $su-image9 with locked shot_data.json from any su-fenjingskill version, adapt it read-only, preserve source order and camera composition, validate every artifact deterministically, and never modify or send requirements back to the upstream storyboard."

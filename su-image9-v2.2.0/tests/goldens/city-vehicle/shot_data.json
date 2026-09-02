@@ -1,0 +1,401 @@
+{
+  "metadata": {
+    "skill_name": "su-fenjingskill-zh",
+    "version": "2.4.2",
+    "title": "金样-城市车辆",
+    "reference_status": {
+      "continuity-shot-data": "loaded",
+      "camera-language": "loaded",
+      "seedance-prompt-rules": "loaded",
+      "hybrid-shot-audit": "loaded"
+    },
+    "rule_revision": "2.4.2-source-lock-entry-guard-2026-07-07",
+    "reference_proof": {
+      "continuity-shot-data": "# Continuity And Shot Data Contract",
+      "hybrid-shot-audit": "# 混合拆镜审计规则",
+      "camera-language": "# Camera Language Reference",
+      "seedance-prompt-rules": "# Seedance Prompt Rules"
+    },
+    "script_status": {
+      "storyboard_delivery.py": "available",
+      "validate_storyboard.js": "available"
+    },
+    "revision_log": []
+  },
+  "continuity_logs": [
+    {
+      "scene": "1 城市街道 日 外",
+      "first_shot_anchor_type": "single_continuation",
+      "spatial_axis": "A与B保持同侧关系，A从起点移向终点，摄影机不跨轴。",
+      "fixed_objects": [
+        "道路边线",
+        "路灯"
+      ],
+      "characters": [
+        {
+          "name": "A",
+          "position": "路边",
+          "facing": "B"
+        },
+        {
+          "name": "B",
+          "position": "车头一侧",
+          "facing": "A"
+        }
+      ],
+      "props": [
+        {
+          "name": "轿车",
+          "owner": "A",
+          "state": "位置锁定"
+        },
+        {
+          "name": "车钥匙",
+          "owner": "A",
+          "state": "握在手中"
+        }
+      ],
+      "sound_sources": [],
+      "reality_layer": "现实",
+      "scene_id": "S01"
+    }
+  ],
+  "beats": [
+    {
+      "beat_id": "B001",
+      "scene": "1 城市街道 日 外",
+      "source_text": "A和B站在路边轿车旁，A握着车钥匙。",
+      "facts": [
+        {
+          "fact_id": "B001-F01",
+          "type": "position",
+          "text": "A和B站在路边轿车旁，A握着车钥匙。",
+          "cut_priority": "normal",
+          "cut_reasons": [],
+          "cut_group": "B001-F01",
+          "cut_category": "space",
+          "cut_moment_id": "B001-space-moment"
+        },
+        {
+          "fact_id": "B001-F02",
+          "type": "prop",
+          "text": "车钥匙",
+          "cut_priority": "normal",
+          "cut_reasons": [],
+          "cut_group": "B001-F02",
+          "cut_category": "prop",
+          "cut_moment_id": "B001-prop-moment"
+        }
+      ],
+      "scene_id": "S01",
+      "source_span": {
+        "start": 0,
+        "end": 18
+      }
+    },
+    {
+      "beat_id": "B002",
+      "scene": "1 城市街道 日 外",
+      "source_text": "A和B走到驾驶门边，A仍握着车钥匙。",
+      "facts": [
+        {
+          "fact_id": "B002-F01",
+          "type": "position",
+          "text": "A和B走到驾驶门边，A仍握着车钥匙。",
+          "cut_priority": "normal",
+          "cut_reasons": [],
+          "cut_group": "B002-F01",
+          "cut_category": "space",
+          "cut_moment_id": "B002-space-moment"
+        },
+        {
+          "fact_id": "B002-F02",
+          "type": "prop",
+          "text": "车钥匙",
+          "cut_priority": "normal",
+          "cut_reasons": [],
+          "cut_group": "B002-F02",
+          "cut_category": "prop",
+          "cut_moment_id": "B002-prop-moment"
+        }
+      ],
+      "scene_id": "S01",
+      "source_span": {
+        "start": 19,
+        "end": 37
+      }
+    },
+    {
+      "beat_id": "B003",
+      "scene": "1 城市街道 日 外",
+      "source_text": "B说：出发。",
+      "facts": [
+        {
+          "fact_id": "B003-F01",
+          "type": "dialogue",
+          "text": "出发。",
+          "cut_priority": "normal",
+          "cut_reasons": [],
+          "cut_group": "B003-F01",
+          "cut_category": "dialogue",
+          "cut_moment_id": "B003-dialogue-moment"
+        }
+      ],
+      "scene_id": "S01",
+      "source_span": {
+        "start": 38,
+        "end": 44
+      }
+    }
+  ],
+  "shots": [
+    {
+      "shot_no": 1,
+      "scene": "1 城市街道 日 外",
+      "beat_ids": [
+        "B001"
+      ],
+      "covered_fact_ids": [
+        "B001-F01",
+        "B001-F02"
+      ],
+      "source_paragraph": "A和B站在路边轿车旁，A握着车钥匙。",
+      "duration_seconds": 2,
+      "duration_breakdown": {
+        "sync_action_seconds": 1,
+        "sync_dialogue_seconds": 0,
+        "non_sync_action_seconds": 0,
+        "emotional_pause_seconds": 1
+      },
+      "camera_main_image": "[平视, 双人中景, 固定镜头]\n【机位逻辑】摄影机位于道路同侧，沿轿车侧面看向A与B。\n【场景首镜站位】（A在路边轿车驾驶门外，B在车头一侧，两人同处轴线一侧。）\nA和B站在路边轿车旁，A握着车钥匙。",
+      "notes": "锁定城市车辆与人物起始位置。",
+      "prompt": "时间：0秒-2秒\n景别：双人中景\n构图：（A在路边轿车驾驶门外，B在车头一侧，两人同处轴线一侧。）\n运镜手法：固定镜头\n画面内容：A和B站在路边轿车旁，A握着车钥匙。",
+      "visible_characters": [
+        "A",
+        "B"
+      ],
+      "offscreen_characters": [],
+      "visible_props": [
+        "轿车",
+        "车钥匙"
+      ],
+      "continuity_updates": [],
+      "shot_type": "master",
+      "split_reason": [
+        "spatial_anchor"
+      ],
+      "insert_priority": "none",
+      "long_take_support": [],
+      "scene_id": "S01",
+      "source_span": {
+        "start": 0,
+        "end": 18
+      }
+    },
+    {
+      "shot_no": 2,
+      "scene": "1 城市街道 日 外",
+      "beat_ids": [
+        "B002",
+        "B003"
+      ],
+      "covered_fact_ids": [
+        "B002-F01",
+        "B002-F02",
+        "B003-F01"
+      ],
+      "source_paragraph": "A和B走到驾驶门边，A仍握着车钥匙。B说：出发。",
+      "duration_seconds": 3,
+      "duration_breakdown": {
+        "sync_action_seconds": 2,
+        "sync_dialogue_seconds": 1,
+        "non_sync_action_seconds": 0,
+        "emotional_pause_seconds": 1
+      },
+      "camera_main_image": "[侧面平视, 双人中景, 横移跟拍]\n【机位逻辑】摄影机沿道路同侧跟随A移动，不越过车辆轴线。\n【站位位移】A从路边走到驾驶门边，B留在车头一侧。\nA到达驾驶门边仍握着车钥匙，B说：“出发。”",
+      "notes": "车辆与人物轴线保持不变。",
+      "prompt": "时间：0秒-3秒\n景别：双人中景\n构图：可见主体：A、B；可见道具：轿车、车钥匙。\n运镜手法：横移跟拍\n画面内容：A到达驾驶门边仍握着车钥匙，B说：“出发。”",
+      "visible_characters": [
+        "A",
+        "B"
+      ],
+      "offscreen_characters": [],
+      "visible_props": [
+        "轿车",
+        "车钥匙"
+      ],
+      "continuity_updates": [
+        {
+          "entity_type": "character",
+          "entity": "A",
+          "field": "position",
+          "from": "路边",
+          "to": "驾驶门边",
+          "evidence_fact_ids": [
+            "B002-F01"
+          ]
+        }
+      ],
+      "shot_type": "action",
+      "split_reason": [
+        "performance_continuity",
+        "continuity_migration"
+      ],
+      "insert_priority": "none",
+      "long_take_support": [],
+      "scene_id": "S01",
+      "source_spans": [
+        {
+          "start": 19,
+          "end": 37
+        },
+        {
+          "start": 38,
+          "end": 44
+        }
+      ]
+    }
+  ],
+  "validation_report": {
+    "status": "PASS",
+    "warnings": [],
+    "warning_items": [],
+    "errors": [],
+    "version": "2.4.2",
+    "rule_revision": "2.4.2-source-lock-entry-guard-2026-07-07",
+    "source_json_hash": "68209feb43c8c19aa11d110d36d99b2747bfe40ce632c20b345aa58c962dbe29",
+    "reference_status": {
+      "continuity-shot-data": "loaded",
+      "camera-language": "loaded",
+      "seedance-prompt-rules": "loaded",
+      "hybrid-shot-audit": "loaded"
+    },
+    "warning_count": 0,
+    "error_count": 0,
+    "warning_budget": {
+      "status": "WARN is deliverable only when every warning is explained or accepted by the user",
+      "unresolved_warning_count": 0
+    },
+    "shot_count": 2,
+    "scene_counts": {
+      "S01": 2
+    },
+    "total_duration_seconds": 5,
+    "average_duration_seconds": 2.5,
+    "shots_over_6_seconds": 0,
+    "shots_over_8_seconds": 0,
+    "shots_over_10_seconds": 0,
+    "column_contract": "7-column stable storyboard table; keyframe column removed",
+    "first_shot_anchor_audit": [
+      {
+        "scene": "S01",
+        "shot_no": 1,
+        "anchor_type": "single_continuation",
+        "shot_size": "双人中景",
+        "visible_character_count": 2,
+        "requires_panoramic_first_shot": false,
+        "passed": true
+      }
+    ],
+    "hybrid_audit": {
+      "short_shots_le_3_seconds": 2,
+      "short_shot_ratio": 1.0,
+      "long_shots_ge_6_seconds": 0,
+      "long_shot_ratio": 0.0,
+      "cut_per_minute": 12.0,
+      "shot_type_counts": {
+        "master": 1,
+        "action": 1
+      },
+      "insert_priority_counts": {
+        "none": 2
+      },
+      "long_take_audit": [],
+      "soft_targets": {
+        "short_shot_ratio": "0.10-0.18 for full-episode references only",
+        "long_shot_ratio": "0.40-0.55 for full-episode references only",
+        "cut_per_minute": "10.5-12.5 for full-episode references only"
+      }
+    },
+    "overcompression_audit": {
+      "rule_revision": "2.4.2-source-lock-entry-guard-2026-07-07",
+      "at_risk_shots": [
+        {
+          "shot_no": 2,
+          "duration_seconds": 3,
+          "beat_count": 2,
+          "shot_type": "action",
+          "critical_fact_count": 0,
+          "must_isolate_groups": [],
+          "required_cut_points": [
+            "发言权转移",
+            "空间方向改变"
+          ],
+          "multi_beat_critical": false
+        }
+      ],
+      "multi_beat_critical_shots": 0,
+      "cut_per_minute": 12.0,
+      "short_shot_ratio": 1.0
+    },
+    "human_gate_audit": {
+      "required": [
+        "GATE_A",
+        "GATE_B"
+      ],
+      "approved": [
+        "GATE_A",
+        "GATE_B",
+        "GATE_C"
+      ],
+      "missing": []
+    },
+    "warn_resolution_audit": {
+      "required": [],
+      "resolved": [],
+      "missing": []
+    },
+    "scene_id_audit": {
+      "scene_ids": [
+        "S01"
+      ],
+      "shot_scene_ids": [
+        "S01",
+        "S01"
+      ],
+      "missing_in_logs": []
+    }
+  },
+  "batch_plan": null,
+  "human_reviews": [
+    {
+      "gate": "GATE_A",
+      "round": 1,
+      "status": "approved",
+      "reviewer": "user",
+      "notes": "GATE_A APPROVED"
+    },
+    {
+      "gate": "GATE_B",
+      "round": 1,
+      "status": "approved",
+      "reviewer": "user",
+      "notes": "GATE_B APPROVED"
+    },
+    {
+      "gate": "GATE_C",
+      "round": 1,
+      "status": "approved",
+      "reviewer": "user",
+      "notes": "final-signoff approved for image derivation"
+    }
+  ],
+  "warn_resolutions": [],
+  "script_lock": {
+    "status": "locked",
+    "approved_script_path": "outputs/2026-07-11/docs/金样-城市车辆.approved_script.txt",
+    "locked_text": "A和B站在路边轿车旁，A握着车钥匙。\nA和B走到驾驶门边，A仍握着车钥匙。\nB说：出发。",
+    "locked_text_hash": "d7b2754b11e61d8b3a0eb235fc22ab9d4a026aa9117083702f52b647ec12e640",
+    "approved_corrections": []
+  }
+}

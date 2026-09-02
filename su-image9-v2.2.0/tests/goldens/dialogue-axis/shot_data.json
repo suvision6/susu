@@ -1,0 +1,376 @@
+{
+  "metadata": {
+    "skill_name": "su-fenjingskill-zh",
+    "version": "2.4.2",
+    "title": "金样-双人对话轴线",
+    "reference_status": {
+      "continuity-shot-data": "loaded",
+      "camera-language": "loaded",
+      "seedance-prompt-rules": "loaded",
+      "hybrid-shot-audit": "loaded"
+    },
+    "rule_revision": "2.4.2-source-lock-entry-guard-2026-07-07",
+    "reference_proof": {
+      "continuity-shot-data": "# Continuity And Shot Data Contract",
+      "hybrid-shot-audit": "# 混合拆镜审计规则",
+      "camera-language": "# Camera Language Reference",
+      "seedance-prompt-rules": "# Seedance Prompt Rules"
+    },
+    "script_status": {
+      "storyboard_delivery.py": "available",
+      "validate_storyboard.js": "available"
+    },
+    "revision_log": []
+  },
+  "continuity_logs": [
+    {
+      "scene": "1 会客室 日 内",
+      "first_shot_anchor_type": "single_continuation",
+      "spatial_axis": "A与B保持同侧关系，A从起点移向终点，摄影机不跨轴。",
+      "fixed_objects": [
+        "门",
+        "桌子"
+      ],
+      "characters": [
+        {
+          "name": "A",
+          "position": "门口",
+          "facing": "B"
+        },
+        {
+          "name": "B",
+          "position": "桌边",
+          "facing": "A"
+        }
+      ],
+      "props": [
+        {
+          "name": "钥匙",
+          "owner": "A",
+          "state": "握在手中"
+        }
+      ],
+      "sound_sources": [],
+      "reality_layer": "现实",
+      "scene_id": "S01"
+    }
+  ],
+  "beats": [
+    {
+      "beat_id": "B001",
+      "scene": "1 会客室 日 内",
+      "source_text": "A和B站在门口，A握着钥匙。",
+      "facts": [
+        {
+          "fact_id": "B001-F01",
+          "type": "position",
+          "text": "A和B站在门口，A握着钥匙。",
+          "cut_priority": "normal",
+          "cut_reasons": [],
+          "cut_group": "B001-F01",
+          "cut_category": "space",
+          "cut_moment_id": "B001-space-moment"
+        },
+        {
+          "fact_id": "B001-F02",
+          "type": "prop",
+          "text": "钥匙",
+          "cut_priority": "normal",
+          "cut_reasons": [],
+          "cut_group": "B001-F02",
+          "cut_category": "prop",
+          "cut_moment_id": "B001-prop-moment"
+        }
+      ],
+      "scene_id": "S01",
+      "source_span": {
+        "start": 0,
+        "end": 14
+      }
+    },
+    {
+      "beat_id": "B002",
+      "scene": "1 会客室 日 内",
+      "source_text": "A和B走到桌边，A仍握着钥匙。",
+      "facts": [
+        {
+          "fact_id": "B002-F01",
+          "type": "position",
+          "text": "A和B走到桌边，A仍握着钥匙。",
+          "cut_priority": "normal",
+          "cut_reasons": [],
+          "cut_group": "B002-F01",
+          "cut_category": "space",
+          "cut_moment_id": "B002-space-moment"
+        },
+        {
+          "fact_id": "B002-F02",
+          "type": "prop",
+          "text": "钥匙",
+          "cut_priority": "normal",
+          "cut_reasons": [],
+          "cut_group": "B002-F02",
+          "cut_category": "prop",
+          "cut_moment_id": "B002-prop-moment"
+        }
+      ],
+      "scene_id": "S01",
+      "source_span": {
+        "start": 15,
+        "end": 30
+      }
+    },
+    {
+      "beat_id": "B003",
+      "scene": "1 会客室 日 内",
+      "source_text": "B说：到了。",
+      "facts": [
+        {
+          "fact_id": "B003-F01",
+          "type": "dialogue",
+          "text": "到了。",
+          "cut_priority": "normal",
+          "cut_reasons": [],
+          "cut_group": "B003-F01",
+          "cut_category": "dialogue",
+          "cut_moment_id": "B003-dialogue-moment"
+        }
+      ],
+      "scene_id": "S01",
+      "source_span": {
+        "start": 31,
+        "end": 37
+      }
+    }
+  ],
+  "shots": [
+    {
+      "shot_no": 1,
+      "scene": "1 会客室 日 内",
+      "beat_ids": [
+        "B001",
+        "B002",
+        "B003"
+      ],
+      "covered_fact_ids": [
+        "B001-F01",
+        "B001-F02",
+        "B002-F01",
+        "B002-F02",
+        "B003-F01"
+      ],
+      "source_paragraph": "A和B站在门口，A握着钥匙。A和B走到桌边，A仍握着钥匙。B说：到了。",
+      "duration_seconds": 5,
+      "duration_breakdown": {
+        "sync_action_seconds": 3,
+        "sync_dialogue_seconds": 1,
+        "non_sync_action_seconds": 0,
+        "emotional_pause_seconds": 2
+      },
+      "camera_main_image": "[同侧三分之四, 双人中景, 轻微横移]\n【机位逻辑】摄影机保持人物关系轴同侧，从门口方向跟随A走向B。\n【场景首镜站位】（A在门口，B在桌边，两人相对。）\n【站位位移】A从门口走到桌边，B留在桌边并面向A。\nA握着钥匙走到B面前，B说：“到了。”",
+      "notes": "单镜保持双人关系轴、眼线和动作阶段。",
+      "prompt": "时间：0秒-5秒\n景别：双人中景\n构图：（A在门口，B在桌边，两人相对。）\n运镜手法：轻微横移\n画面内容：A握着钥匙走到B面前，B说：“到了。”",
+      "visible_characters": [
+        "A",
+        "B"
+      ],
+      "offscreen_characters": [],
+      "visible_props": [
+        "钥匙"
+      ],
+      "continuity_updates": [
+        {
+          "entity_type": "character",
+          "entity": "A",
+          "field": "position",
+          "from": "门口",
+          "to": "桌边",
+          "evidence_fact_ids": [
+            "B002-F01"
+          ]
+        }
+      ],
+      "shot_type": "master",
+      "split_reason": [
+        "spatial_anchor",
+        "performance_continuity",
+        "continuity_migration"
+      ],
+      "insert_priority": "none",
+      "long_take_support": [],
+      "scene_id": "S01",
+      "source_spans": [
+        {
+          "start": 0,
+          "end": 14
+        },
+        {
+          "start": 15,
+          "end": 30
+        },
+        {
+          "start": 31,
+          "end": 37
+        }
+      ]
+    }
+  ],
+  "validation_report": {
+    "status": "WARN",
+    "warnings": [
+      "短镜比例 0.00% 低于 10%，疑似缺少必要插镜。"
+    ],
+    "warning_items": [
+      {
+        "warn_id": "W-910b678a48a5",
+        "message": "短镜比例 0.00% 低于 10%，疑似缺少必要插镜。"
+      }
+    ],
+    "errors": [],
+    "version": "2.4.2",
+    "rule_revision": "2.4.2-source-lock-entry-guard-2026-07-07",
+    "source_json_hash": "b86effc06d2588fc758b2c62a8ce202342d4799249782ef1b635e7cf46313aaa",
+    "reference_status": {
+      "continuity-shot-data": "loaded",
+      "camera-language": "loaded",
+      "seedance-prompt-rules": "loaded",
+      "hybrid-shot-audit": "loaded"
+    },
+    "warning_count": 1,
+    "error_count": 0,
+    "warning_budget": {
+      "status": "WARN is deliverable only when every warning is explained or accepted by the user",
+      "unresolved_warning_count": 1
+    },
+    "shot_count": 1,
+    "scene_counts": {
+      "S01": 1
+    },
+    "total_duration_seconds": 5,
+    "average_duration_seconds": 5.0,
+    "shots_over_6_seconds": 0,
+    "shots_over_8_seconds": 0,
+    "shots_over_10_seconds": 0,
+    "column_contract": "7-column stable storyboard table; keyframe column removed",
+    "first_shot_anchor_audit": [
+      {
+        "scene": "S01",
+        "shot_no": 1,
+        "anchor_type": "single_continuation",
+        "shot_size": "双人中景",
+        "visible_character_count": 2,
+        "requires_panoramic_first_shot": false,
+        "passed": true
+      }
+    ],
+    "hybrid_audit": {
+      "short_shots_le_3_seconds": 0,
+      "short_shot_ratio": 0.0,
+      "long_shots_ge_6_seconds": 0,
+      "long_shot_ratio": 0.0,
+      "cut_per_minute": 0,
+      "shot_type_counts": {
+        "master": 1
+      },
+      "insert_priority_counts": {
+        "none": 1
+      },
+      "long_take_audit": [],
+      "soft_targets": {
+        "short_shot_ratio": "0.10-0.18 for full-episode references only",
+        "long_shot_ratio": "0.40-0.55 for full-episode references only",
+        "cut_per_minute": "10.5-12.5 for full-episode references only"
+      }
+    },
+    "overcompression_audit": {
+      "rule_revision": "2.4.2-source-lock-entry-guard-2026-07-07",
+      "at_risk_shots": [
+        {
+          "shot_no": 1,
+          "duration_seconds": 5,
+          "beat_count": 3,
+          "shot_type": "master",
+          "critical_fact_count": 0,
+          "must_isolate_groups": [],
+          "required_cut_points": [
+            "发言权转移",
+            "空间方向改变"
+          ],
+          "multi_beat_critical": false
+        }
+      ],
+      "multi_beat_critical_shots": 0,
+      "cut_per_minute": 0,
+      "short_shot_ratio": 0.0
+    },
+    "human_gate_audit": {
+      "required": [
+        "GATE_A",
+        "GATE_B"
+      ],
+      "approved": [
+        "GATE_A",
+        "GATE_B",
+        "GATE_C"
+      ],
+      "missing": []
+    },
+    "warn_resolution_audit": {
+      "required": [
+        "W-910b678a48a5"
+      ],
+      "resolved": [
+        "W-910b678a48a5"
+      ],
+      "missing": []
+    },
+    "scene_id_audit": {
+      "scene_ids": [
+        "S01"
+      ],
+      "shot_scene_ids": [
+        "S01"
+      ],
+      "missing_in_logs": []
+    }
+  },
+  "batch_plan": null,
+  "human_reviews": [
+    {
+      "gate": "GATE_A",
+      "round": 1,
+      "status": "approved",
+      "reviewer": "user",
+      "notes": "GATE_A APPROVED"
+    },
+    {
+      "gate": "GATE_B",
+      "round": 1,
+      "status": "approved",
+      "reviewer": "user",
+      "notes": "GATE_B APPROVED"
+    },
+    {
+      "gate": "GATE_C",
+      "round": 1,
+      "status": "approved",
+      "reviewer": "user",
+      "notes": "final-signoff approved for image derivation"
+    }
+  ],
+  "warn_resolutions": [
+    {
+      "warn_id": "W-910b678a48a5",
+      "resolution": "accepted_without_change",
+      "resolved_by": "auto_whitelist",
+      "note": "test resolution"
+    }
+  ],
+  "script_lock": {
+    "status": "locked",
+    "approved_script_path": "outputs/2026-07-11/docs/金样-双人对话轴线.approved_script.txt",
+    "locked_text": "A和B站在门口，A握着钥匙。\nA和B走到桌边，A仍握着钥匙。\nB说：到了。",
+    "locked_text_hash": "07907a85cb6303f679ace4e55c9943467340bd5aef54bf53e3f880feefa58f68",
+    "approved_corrections": []
+  }
+}
