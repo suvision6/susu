@@ -1,0 +1,139 @@
+{
+  "contract_name": "director-shot-data",
+  "contract_version": "3.1.4",
+  "source_skill": "su-fenjingskill",
+  "source_skill_version": "3.1.4",
+  "status": "READY_WITH_ASSUMPTIONS",
+  "error_count": 0,
+  "warning_count": 2,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "OPEN_ASSUMPTION",
+      "path": "assumptions[0]",
+      "message": "开放假设：暂定呼名声来自门外走廊，而不是房间内部；影响：只影响声音方向、她的视线和摄影机对门的建立；不决定呼名者身份。"
+    },
+    {
+      "code": "OPEN_ASSUMPTION",
+      "path": "assumptions[1]",
+      "message": "开放假设：使用床与门构成最小房间拓扑，其他陈设不承担剧情功能；影响：影响人物从床到门的行动方向，可在获得场景设计后整体替换。"
+    }
+  ],
+  "dimensions": {
+    "source_integrity": "PASS",
+    "source_authority": "PASS",
+    "source_coverage": "PASS",
+    "source_alignment": "PASS",
+    "dialogue_playback": "PASS",
+    "gate_review": "PASS",
+    "formal_structure": "PASS",
+    "export_parity": "PASS"
+  },
+  "summary": {
+    "scene_count": 1,
+    "shot_count": 3,
+    "total_duration_seconds": 16.0,
+    "open_assumption_count": 2,
+    "rhythm_profile": "custom",
+    "aspect_ratio": "16:9",
+    "orientation": "horizontal",
+    "dialogue_pace_profile": "custom",
+    "dialogue_pace_range_cps": [
+      4.0,
+      5.0
+    ],
+    "dialogue_selected_cps": 4.5,
+    "timing_block_count": 3,
+    "source_line_count": 1,
+    "nonempty_source_line_count": 1,
+    "source_unit_count": 1,
+    "source_unit_role_counts": {
+      "performance_authority": 1
+    },
+    "source_passage_count": 1,
+    "coverage_status_counts": {
+      "covered": 1
+    },
+    "source_fact_count": 3,
+    "required_fact_count": 3,
+    "realized_required_fact_count": 3,
+    "shot_binding_count": 3,
+    "director_inference_count": 0,
+    "supplemental_reference_fact_count": 0,
+    "source_gap_count": 2,
+    "assumption_obligation_count": 2,
+    "formal_assumption_count": 2,
+    "approved_supplemental_reference_fact_count": 0,
+    "source_kind_counts": {
+      "action": 1
+    },
+    "formal_shot_count": 3,
+    "topology_unit_count": 3,
+    "dialogue_edit_plan_count": 0,
+    "gate_1_mode": "confirmed",
+    "gate_0_status": "confirmed",
+    "gate_2_status": "confirmed"
+  },
+  "boundary": "READY 只表示来源、权威、覆盖、语义对齐、对白、Gate 和正式结构均无确定性阻断；不替代导演审美判断。",
+  "build_transaction": "COMMITTED",
+  "export_checks": {
+    "json": {
+      "status": "PASS",
+      "shot_row_count": 3
+    },
+    "markdown": {
+      "status": "PASS",
+      "shot_row_count": 3,
+      "design_field_count": 10
+    },
+    "xlsx": {
+      "status": "PASS",
+      "sheet_names": [
+        "导演分镜",
+        "导演设计"
+      ],
+      "sheet_parity": {
+        "导演分镜": "PASS",
+        "导演设计": "PASS"
+      },
+      "shot_row_count": 3,
+      "projection_sha256": "374e06970df230db56c65f9905046033fa5dba87eab392f66caf681d5c8273c4",
+      "dialogue_segment_count": 0,
+      "director_design_field_count": 10
+    }
+  },
+  "artifact_sha256": {
+    "json": "ead709e87d400a63625ab2f83051fb1dab9006b1a3ea8a36eeb159d32b08a6dd",
+    "markdown": "8d261510cb5047b1d1f1adb7bf8c93e96625ceb8bfb4a423e9fff0b10e79deb6",
+    "xlsx": "f6f1c86fb3f5d898ddc8a35e4463438bd778d3f7e15e6c0835f72aa24ff91f7f"
+  },
+  "artifacts": {
+    "shot_data_json": {
+      "filename": "unknown-room-awakening-shot-data.json",
+      "sha256": "ead709e87d400a63625ab2f83051fb1dab9006b1a3ea8a36eeb159d32b08a6dd"
+    },
+    "storyboard_markdown": {
+      "filename": "unknown-room-awakening-storyboard.md",
+      "sha256": "8d261510cb5047b1d1f1adb7bf8c93e96625ceb8bfb4a423e9fff0b10e79deb6"
+    },
+    "storyboard_xlsx": {
+      "filename": "unknown-room-awakening-storyboard.xlsx",
+      "sha256": "f6f1c86fb3f5d898ddc8a35e4463438bd778d3f7e15e6c0835f72aa24ff91f7f",
+      "verification": {
+        "status": "PASS",
+        "sheet_names": [
+          "导演分镜",
+          "导演设计"
+        ],
+        "sheet_parity": {
+          "导演分镜": "PASS",
+          "导演设计": "PASS"
+        },
+        "shot_row_count": 3,
+        "projection_sha256": "374e06970df230db56c65f9905046033fa5dba87eab392f66caf681d5c8273c4",
+        "dialogue_segment_count": 0,
+        "director_design_field_count": 10
+      }
+    }
+  }
+}

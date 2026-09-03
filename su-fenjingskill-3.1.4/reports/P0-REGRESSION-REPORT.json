@@ -1,0 +1,355 @@
+{
+  "report_name": "su-fenjingskill 3.1.2 P0 regression report",
+  "version": "3.1.2",
+  "repair_revision": "p0-repair-01",
+  "generated_at": "2026-09-01",
+  "overall_status": "PASS",
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "jsonschema": "4.26.0",
+    "openpyxl": "3.1.5"
+  },
+  "pytest": {
+    "status": "PASS",
+    "test_functions_passed": 75,
+    "subtests_passed": 10,
+    "total_junit_cases": 85,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 5.524,
+    "summary": "75 passed, 10 subtests passed in 5.52s"
+  },
+  "baseline_examples": {
+    "kitchen_farewell": {
+      "status": "READY",
+      "errors": 0,
+      "warnings": 0
+    },
+    "unknown_room_awakening": {
+      "status": "READY_WITH_ASSUMPTIONS",
+      "errors": 0,
+      "warnings": 2
+    }
+  },
+  "p0_results": [
+    {
+      "id": "P0-01",
+      "title": "Narrative laundering",
+      "status": "PASS",
+      "observed_status": "FAIL",
+      "codes": [
+        "SOURCE_NARRATIVE_CLASSIFICATION_FORBIDDEN",
+        "SOURCE_NON_NARRATIVE_CLASSIFICATION_UNAPPROVED"
+      ]
+    },
+    {
+      "id": "P0-02",
+      "title": "Schema runtime enforcement",
+      "status": "PASS",
+      "formal_required_probes": 202,
+      "formal_leaks": [],
+      "workspace_required_probes": 327,
+      "workspace_leaks": [],
+      "formal_seconds": 0.601,
+      "workspace_seconds": 2.369
+    },
+    {
+      "id": "P0-03",
+      "title": "Complete execution lock and canonical fifth column",
+      "status": "PASS",
+      "execution_mutations": [
+        {
+          "field": "camera.position",
+          "old_lock_status": "FAIL",
+          "old_lock_codes": [
+            "ALIGNMENT_APPROVAL_EVENT_MISSING",
+            "ALIGNMENT_INVALIDATED",
+            "EXECUTION_LOCK_INVALIDATED",
+            "SOURCE_ALIGNMENT_INVALIDATED"
+          ],
+          "after_lock": {
+            "gate_1": "passed",
+            "gate_2": "confirmed",
+            "alignment": "invalidated"
+          }
+        },
+        {
+          "field": "edit.transition_to_next",
+          "old_lock_status": "FAIL",
+          "old_lock_codes": [
+            "ALIGNMENT_APPROVAL_EVENT_MISSING",
+            "ALIGNMENT_INVALIDATED",
+            "EXECUTION_LOCK_INVALIDATED",
+            "SOURCE_ALIGNMENT_INVALIDATED"
+          ],
+          "after_lock": {
+            "gate_1": "passed",
+            "gate_2": "confirmed",
+            "alignment": "invalidated"
+          }
+        },
+        {
+          "field": "continuity.axis",
+          "old_lock_status": "FAIL",
+          "old_lock_codes": [
+            "ALIGNMENT_APPROVAL_EVENT_MISSING",
+            "ALIGNMENT_INVALIDATED",
+            "EXECUTION_LOCK_INVALIDATED",
+            "SOURCE_ALIGNMENT_INVALIDATED"
+          ],
+          "after_lock": {
+            "gate_1": "passed",
+            "gate_2": "confirmed",
+            "alignment": "invalidated"
+          }
+        },
+        {
+          "field": "duration_seconds",
+          "old_lock_status": "FAIL",
+          "old_lock_codes": [
+            "ALIGNMENT_APPROVAL_EVENT_MISSING",
+            "ALIGNMENT_INVALIDATED",
+            "EXECUTION_LOCK_INVALIDATED",
+            "SOURCE_ALIGNMENT_INVALIDATED"
+          ],
+          "after_lock": {
+            "gate_1": "passed",
+            "gate_2": "confirmed",
+            "alignment": "invalidated"
+          }
+        },
+        {
+          "field": "motivation.reason",
+          "old_lock_status": "FAIL",
+          "old_lock_codes": [
+            "ALIGNMENT_APPROVAL_EVENT_MISSING",
+            "ALIGNMENT_INVALIDATED",
+            "EXECUTION_LOCK_INVALIDATED",
+            "SOURCE_ALIGNMENT_INVALIDATED"
+          ],
+          "after_lock": {
+            "gate_1": "passed",
+            "gate_2": "confirmed",
+            "alignment": "invalidated"
+          }
+        }
+      ],
+      "text_divergence_codes": [
+        "EXECUTION_TEXT_DIVERGED"
+      ]
+    },
+    {
+      "id": "P0-04",
+      "title": "Assumption obligations",
+      "status": "PASS",
+      "empty_assumptions_codes": [
+        "ALIGNMENT_APPROVAL_EVENT_MISSING",
+        "ALIGNMENT_INVALIDATED",
+        "ASSUMPTION_OBLIGATION_UNRESOLVED",
+        "EXECUTION_LOCK_INVALIDATED",
+        "SOURCE_ALIGNMENT_INVALIDATED"
+      ],
+      "missing_assumptions_codes": [
+        "FORMAL_SCHEMA_INVALID"
+      ],
+      "gap_ledger_deletion_after_lock": {
+        "gate_1_status": "invalidated",
+        "gate_2_status": "invalidated",
+        "alignment_status": "invalidated"
+      }
+    },
+    {
+      "id": "P0-05",
+      "title": "Topology ownership and exact bindings",
+      "status": "PASS",
+      "swapped_binding_codes": [
+        "TOPOLOGY_FACT_BINDING_DIVERGED",
+        "TOPOLOGY_PASSAGE_BINDING_DIVERGED"
+      ],
+      "cross_scene_codes": [
+        "SCENE_STRATEGY_PARITY",
+        "SOURCE_SCENE_RANGE_MISMATCH",
+        "TOPOLOGY_SCENE_MISMATCH"
+      ]
+    },
+    {
+      "id": "P0-06",
+      "title": "Atomic four-file transaction",
+      "status": "PASS",
+      "injected_failure": {
+        "status": "FAIL",
+        "codes": [
+          "BUILD_TRANSACTION_ABORTED"
+        ],
+        "build_transaction": "ROLLED_BACK",
+        "returned_paths": [],
+        "output_exists": false,
+        "parent_residue": []
+      },
+      "successful_commit": {
+        "status": "READY",
+        "build_transaction": "COMMITTED",
+        "files": [
+          "kitchen-farewell-shot-data.json",
+          "kitchen-farewell-storyboard-validation.json",
+          "kitchen-farewell-storyboard.md",
+          "kitchen-farewell-storyboard.xlsx"
+        ],
+        "export_parity": "PASS",
+        "artifact_sha256_keys": [
+          "json",
+          "markdown",
+          "xlsx"
+        ]
+      }
+    },
+    {
+      "id": "P0-07",
+      "title": "Single Gate invalidation matrix",
+      "status": "PASS",
+      "observed_matrix": [
+        {
+          "change": "source_model",
+          "gate_1": "invalidated",
+          "gate_2": "invalidated",
+          "alignment": "invalidated"
+        },
+        {
+          "change": "director_method",
+          "gate_1": "invalidated",
+          "gate_2": "invalidated",
+          "alignment": "invalidated"
+        },
+        {
+          "change": "scene_strategy",
+          "gate_1": "passed",
+          "gate_2": "invalidated",
+          "alignment": "invalidated"
+        },
+        {
+          "change": "topology",
+          "gate_1": "passed",
+          "gate_2": "invalidated",
+          "alignment": "invalidated"
+        },
+        {
+          "change": "execution_only",
+          "gate_1": "passed",
+          "gate_2": "confirmed",
+          "alignment": "invalidated"
+        }
+      ]
+    }
+  ],
+  "related_hardening": {
+    "mid_line_negation": {
+      "status": "PASS",
+      "codes": [
+        "SOURCE_NEGATION_POLARITY_MISMATCH",
+        "SOURCE_REQUIRED_FACT_INVENTORY_MISSING"
+      ]
+    },
+    "exact_entity_ownership": {
+      "status": "PASS",
+      "codes": [
+        "SOURCE_EXECUTION_SUBJECT_DIVERGED"
+      ]
+    },
+    "approved_inference_only": {
+      "status": "PASS",
+      "rejected_codes": [
+        "DIRECTOR_INFERENCE_NOT_APPROVED"
+      ],
+      "one_way_codes": [
+        "DIRECTOR_INFERENCE_SHOT_BINDING_DIVERGED"
+      ]
+    },
+    "approval_hash_status_and_note": {
+      "status": "PASS",
+      "pending": "80dd0291cba2436c8a78cc81921e97316992fd2915f6c0a6a09b70f678f1eae6",
+      "approved": "ad8110cc93a97e544c890cf1f31a949b633576357ae7f0b7d867b917a2172d0f",
+      "approved_with_new_note": "7c2d6b7f26c1e22c7412a02a0ba7aafbc5360efe6b353449ce3cdb75a07b8531"
+    },
+    "fail_dimension_consistency": {
+      "status": "PASS",
+      "overall": "FAIL",
+      "dimensions": {
+        "source_integrity": "NOT_RUN",
+        "source_authority": "NOT_RUN",
+        "source_coverage": "NOT_RUN",
+        "source_alignment": "NOT_RUN",
+        "gate_review": "NOT_RUN",
+        "formal_structure": "FAIL"
+      }
+    },
+    "module_cli": [
+      {
+        "module": "scripts.storyboard_delivery",
+        "returncode": 0,
+        "status": "PASS"
+      },
+      {
+        "module": "scripts.storyboard_review",
+        "returncode": 0,
+        "status": "PASS"
+      },
+      {
+        "module": "scripts.export_xlsx",
+        "returncode": 0,
+        "status": "PASS"
+      },
+      {
+        "module": "scripts.migrate_contract_3_1_0_to_3_1_2",
+        "returncode": 0,
+        "status": "PASS"
+      }
+    ],
+    "ready_with_assumptions_exit_codes": {
+      "normal": 0,
+      "fail_on_warn": 1,
+      "status": "PASS"
+    },
+    "compileall": {
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": ""
+    },
+    "json_parse": {
+      "status": "PASS",
+      "failures": []
+    },
+    "deterministic_four_file_rebuild": {
+      "status": "PASS",
+      "examples": [
+        "kitchen-farewell",
+        "unknown-room-awakening"
+      ],
+      "artifacts": [
+        "json",
+        "markdown",
+        "xlsx",
+        "validation"
+      ],
+      "comparison": "byte-identical on consecutive builds"
+    }
+  },
+  "removed_mechanism": {
+    "status": "PASS",
+    "active_contract_or_runtime_hits": [],
+    "legacy_migration_delete_only_hits": [
+      {
+        "path": "scripts/migrate_contract_3_1_0_to_3_1_2.py",
+        "token": "production_risks"
+      }
+    ],
+    "note": "The legacy field name is retained only in the migrator so old input is stripped, and in regression tests so reintroduction is rejected. It is absent from active schemas, runtime validation/rendering, rules and formal examples."
+  },
+  "limitations": [
+    "Approval-event hashes provide internal consistency and auditability, not external identity authentication or a digital signature.",
+    "Natural-language fact semantics still require director/reviewer judgment; deterministic checks cannot prove every proposition is a perfect semantic paraphrase of source text.",
+    "Chinese dialogue duration has an automated Han-character floor; mixed-language phonetic timing still requires human review.",
+    "Provider-backed generative execution and independent blind human adjudication were not performed and are not claimed."
+  ]
+}

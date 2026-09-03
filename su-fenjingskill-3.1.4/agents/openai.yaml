@@ -1,0 +1,4 @@
+interface:
+  display_name: "导演分镜 v3.1.4"
+  short_description: "按场景机制和导演方法生成可拍、可剪的六列文字分镜"
+  default_prompt: "使用 $su-fenjingskill 锁定来源；拆镜前确认 Gate 0 的节奏、目标时长、画幅、方向，以及 su-dialogue-pace/1.0 固定区间、默认值和最终选值。越界必须使用 scope 匹配的 pace override。逐句建立 dialogue edit plan并选择 cut、hold 或 reframe；再确认 Gate 2 topology、frame axis 与画幅执行。正式景别只用规范中文词表；XLSX shot_flow 不得重复投影普通机位、构图、焦点、环境或出口。每个 timing block 通过 pace_ref 重算镜长，批准 Alignment 后原子交付 director-shot-data/3.1.4 四文件。"

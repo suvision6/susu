@@ -1,0 +1,513 @@
+{
+  "workspace_contract": "director-workspace/3.1.4",
+  "source": {
+    "locked_text": "一个女人在陌生房间醒来，听见有人叫她的名字。她发现门打不开。",
+    "source_hash": "c10b9b4d03ad26f438eaccacfcd8ffda8a09b0ae09785bce218cc0e95f5eeaa5",
+    "authority_policy": {
+      "performance_authority": "zh-CN",
+      "reference_languages": [],
+      "bilingual_relation": "independent",
+      "authority_basis": "单一中文概念材料，无平行参考语言。"
+    },
+    "scopes": [
+      {
+        "scope_id": "SC001",
+        "scope_kind": "scene",
+        "authority_line_ranges": [
+          {
+            "line_start": 1,
+            "line_end": 1
+          }
+        ],
+        "reference_line_ranges": []
+      }
+    ],
+    "source_units": [
+      {
+        "unit_id": "SU001",
+        "scope_id": "SC001",
+        "line_start": 1,
+        "line_end": 1,
+        "kind": "action",
+        "language": "zh-CN",
+        "authority_role": "performance_authority",
+        "exact_text": "一个女人在陌生房间醒来，听见有人叫她的名字。她发现门打不开。",
+        "semantic_summary": "女人醒来、听见呼名并确认房门无法打开。"
+      }
+    ],
+    "source_passages": [
+      {
+        "passage_id": "SP001",
+        "scope_id": "SC001",
+        "source_unit_ids": [
+          "SU001"
+        ],
+        "coverage_status": "covered",
+        "shot_refs": [
+          "SH001",
+          "SH002",
+          "SH003"
+        ],
+        "reason": ""
+      }
+    ],
+    "source_facts": [
+      {
+        "fact_id": "SF001",
+        "passage_id": "SP001",
+        "source_unit_ids": [
+          "SU001"
+        ],
+        "source_span": "一个女人在陌生房间醒来，听见有人叫她的名字。她发现门打不开。",
+        "kind": "action",
+        "subjects": [
+          "女人"
+        ],
+        "predicate": "在陌生房间醒来",
+        "objects": [
+          "陌生房间"
+        ],
+        "polarity": "positive",
+        "qualifiers": [],
+        "importance": "required",
+        "anchors": [
+          "女人",
+          "醒来"
+        ],
+        "cause_fact_ids": [],
+        "effect_fact_ids": []
+      },
+      {
+        "fact_id": "SF002",
+        "passage_id": "SP001",
+        "source_unit_ids": [
+          "SU001"
+        ],
+        "source_span": "一个女人在陌生房间醒来，听见有人叫她的名字。她发现门打不开。",
+        "kind": "source_sound",
+        "subjects": [
+          "呼名者"
+        ],
+        "predicate": "叫女人的名字",
+        "objects": [
+          "女人"
+        ],
+        "polarity": "positive",
+        "qualifiers": [
+          "声源身份未决"
+        ],
+        "importance": "required",
+        "anchors": [
+          "叫她的名字"
+        ],
+        "cause_fact_ids": [],
+        "effect_fact_ids": []
+      },
+      {
+        "fact_id": "SF003",
+        "passage_id": "SP001",
+        "source_unit_ids": [
+          "SU001"
+        ],
+        "source_span": "一个女人在陌生房间醒来，听见有人叫她的名字。她发现门打不开。",
+        "kind": "action_result",
+        "subjects": [
+          "女人",
+          "房门"
+        ],
+        "predicate": "尝试开门后确认门打不开",
+        "objects": [
+          "门把手"
+        ],
+        "polarity": "negative",
+        "qualifiers": [],
+        "importance": "required",
+        "anchors": [
+          "门打不开"
+        ],
+        "cause_fact_ids": [],
+        "effect_fact_ids": []
+      }
+    ],
+    "classification_reviews": [],
+    "source_gaps": [
+      {
+        "gap_id": "SG001",
+        "scope": "SC001",
+        "statement": "呼名声的空间来源未在概念文本中确定。",
+        "basis": "来源仅写明女人听见有人叫她的名字，没有给出声源位置。"
+      },
+      {
+        "gap_id": "SG002",
+        "scope": "SC001",
+        "statement": "陌生房间的最小空间拓扑未在概念文本中确定。",
+        "basis": "来源只确认陌生房间与打不开的门，没有房间平面或陈设信息。"
+      }
+    ]
+  },
+  "supplemental_reference_facts": [],
+  "director_method": {
+    "method_id": "limited-subjective-discovery",
+    "method_name": "有限主观中的空间发现",
+    "reference_source": "概念板评测指定的有限主观与行动发现方法。",
+    "applicability": "信息不足、画外威胁和封闭空间发现。",
+    "time_model": "先保留苏醒时间，再让声音和行动逐步改变空间理解。",
+    "base_editing_unit": "身体恢复、声源定位和行动结果。",
+    "boundary_priorities": "观看任务或来源事实发生变化时切。",
+    "hold_policy": "身体与行动结果尚未完成时保持。",
+    "montage_intercut_policy": "不使用蒙太奇替代空间确认。",
+    "viewpoint_knowledge": "观众不早于女人知道房间和门的状态。",
+    "space_reveal": "通过她的视线和从床到门的行动显露空间。",
+    "performance_editing": "保护迟钝苏醒、辨声和门受阻后的停顿。",
+    "camera_agency": "摄影机跟随注意力和行动，不替人物预知。",
+    "sound_image_relation": "呼名声保持画外，门锁声证明封闭。",
+    "continuity_attitude": "保持床到门的行动轴和关闭状态。",
+    "mechanism_adaptation": "offscreen threat 与 spectacle discovery 共同控制信息兑现。",
+    "preferred_patterns": [
+      "画外声先行",
+      "行动中显露空间"
+    ],
+    "avoid_patterns": [
+      "提前展示呼名者",
+      "无来源房间细节"
+    ],
+    "exception_conditions": "声源方向未决时登记假设，不伪装来源事实。"
+  },
+  "gate_1": {
+    "mode": "confirmed",
+    "status": "passed",
+    "method_hash": "e7f706385abe1d215d98e0af17360234ba2357b62417875e2f8b322dfeb2a52f",
+    "note": "确认示例来源与导演方法。"
+  },
+  "scene_strategies": [
+    {
+      "scene_id": "SC001",
+      "entry_state": "女人失去环境和声源信息。",
+      "exit_state": "女人确认自己被关闭的门困住。",
+      "dramatic_task": "把迷失感转为可验证的封闭事实。",
+      "turn_or_progression": "门把手受阻，把呼名带来的方向感改写为压力。",
+      "primary_mechanism": "offscreen_threat",
+      "secondary_mechanism": "spectacle_discovery",
+      "mechanism_shift_trigger": "门无法打开。",
+      "protected_processes": [
+        "醒来—辨声—走向门—门受阻"
+      ],
+      "required_clarity": [
+        "呼名者保持画外",
+        "门确实打不开"
+      ],
+      "delayed_information": [
+        "呼名者身份"
+      ],
+      "timing_sensitive_beats": [
+        "呼名后的停顿",
+        "第二次确认门受阻"
+      ],
+      "failure_risks": [
+        "提前展示呼名者",
+        "用美术细节替代来源事实"
+      ],
+      "audience_knowledge_path": "从身体恢复到声源方向，再到门的机械阻力。",
+      "blocking_space_strategy": "女人从床到门沿最短路径移动。",
+      "time_edit_structure": "苏醒保持—辨声建立—行动确认。",
+      "shot_density_curve": "前两镜稳定，末镜随行动收紧。",
+      "performance_strategy": "不立即惊叫，以行动确认压力。",
+      "sound_strategy": "呼名声画外，门把手回弹声近距离。",
+      "opening_function": "建立有限身体知觉。",
+      "turn_function": "呼名把注意力转向门。",
+      "ending_function": "门无法打开成为结束事实。",
+      "method_application": "每次切换都对应观看任务变化。",
+      "conflict_resolution": "声源位置作为开放假设，不改变来源身份。",
+      "intentional_exceptions": [],
+      "topology": [
+        {
+          "unit_id": "TU001",
+          "shot_refs": [
+            "SH001"
+          ],
+          "source_passage_ids": [
+            "SP001"
+          ],
+          "source_fact_ids": [
+            "SF001"
+          ],
+          "intra_shot_operations": [
+            "hold"
+          ],
+          "boundary_to_next": {
+            "relation": "sound_lead",
+            "trigger": "女人已经醒来并被呼名吸引。",
+            "editorial_gain": "画外威胁需要把注意力交给门。；相对继续不切，继续停在床上会丢失声源方向。"
+          },
+          "viewing_design": {
+            "owner_type": "subject",
+            "owner_refs": [
+              "女人"
+            ],
+            "visible_subjects": [
+              "女人"
+            ],
+            "offscreen_subjects": [],
+            "reading_priority": "face",
+            "framing_intent": "single",
+            "camera_response": "observe",
+            "reason": "醒来后的第一段时间只属于女人辨认自身状态的过程。",
+            "frame_axis": "centered",
+            "aspect_ratio_fit": "在16:9画框中以中心轴组织“呼吸由浅变深，视线短暂失焦，随后开始”发生时的主体与空间关系。"
+          }
+        },
+        {
+          "unit_id": "TU002",
+          "shot_refs": [
+            "SH002"
+          ],
+          "source_passage_ids": [
+            "SP001"
+          ],
+          "source_fact_ids": [
+            "SF002"
+          ],
+          "intra_shot_operations": [
+            "focus_shift"
+          ],
+          "boundary_to_next": {
+            "relation": "action_cut",
+            "trigger": "女人决定走向门确认。",
+            "editorial_gain": "空间发现必须进入行动。；相对继续不切，直接切门特写会跳过人物决定。"
+          },
+          "viewing_design": {
+            "owner_type": "object",
+            "owner_refs": [
+              "房门"
+            ],
+            "visible_subjects": [
+              "女人",
+              "房门"
+            ],
+            "offscreen_subjects": [
+              "呼名者"
+            ],
+            "reading_priority": "space",
+            "framing_intent": "over_shoulder",
+            "camera_response": "reveal",
+            "reason": "呼名声改变注意力后，以女人肩背为前景显露唯一出口。",
+            "frame_axis": "horizontal",
+            "aspect_ratio_fit": "在16:9画框中以横向分布组织“她不回答呼名声，只用视线和身体朝向确”发生时的主体与空间关系。"
+          }
+        },
+        {
+          "unit_id": "TU003",
+          "shot_refs": [
+            "SH003"
+          ],
+          "source_passage_ids": [
+            "SP001"
+          ],
+          "source_fact_ids": [
+            "SF003"
+          ],
+          "intra_shot_operations": [
+            "camera_reframe"
+          ],
+          "viewing_design": {
+            "owner_type": "subject",
+            "owner_refs": [
+              "女人"
+            ],
+            "visible_subjects": [
+              "女人",
+              "房门",
+              "门把手"
+            ],
+            "offscreen_subjects": [],
+            "reading_priority": "body",
+            "framing_intent": "single",
+            "camera_response": "follow",
+            "reason": "跟随女人走向门并握住把手，让观众共享她的行动和受阻结果。",
+            "frame_axis": "centered",
+            "aspect_ratio_fit": "在16:9画框中以中心轴组织“第一次转动受阻后，她没有立刻用力撞门”发生时的主体与空间关系。"
+          }
+        }
+      ],
+      "camera_grammar": {
+        "dominant_principle": "从女人受限的醒来感知，转向肩后显露房门，再跟随身体抵达并验证出口。",
+        "change_triggers": [
+          "女人坐起辨认环境",
+          "呼名声把注意力引向房门",
+          "女人决定走近并转动门把手"
+        ],
+        "progression": "女人单人观察 → 肩后门景揭示 → 跟随身体走到门前。",
+        "uniformity_intent": ""
+      },
+      "dialogue_edit_plan": []
+    }
+  ],
+  "shot_bindings": [
+    {
+      "shot_id": "SH001",
+      "passage_ids": [
+        "SP001"
+      ],
+      "fact_realizations": [
+        {
+          "fact_id": "SF001",
+          "mode": "visual",
+          "execution_span": "女人从躺卧缓慢坐起",
+          "subject_owners": [
+            "女人"
+          ],
+          "result_span": "",
+          "polarity": "positive"
+        }
+      ],
+      "director_inference_ids": [],
+      "offscreen_subjects": []
+    },
+    {
+      "shot_id": "SH002",
+      "passage_ids": [
+        "SP001"
+      ],
+      "fact_realizations": [
+        {
+          "fact_id": "SF002",
+          "mode": "sound",
+          "execution_span": "隔门的模糊呼名声",
+          "subject_owners": [
+            "呼名者"
+          ],
+          "result_span": "",
+          "polarity": "positive"
+        }
+      ],
+      "director_inference_ids": [],
+      "offscreen_subjects": [
+        "呼名者"
+      ]
+    },
+    {
+      "shot_id": "SH003",
+      "passage_ids": [
+        "SP001"
+      ],
+      "fact_realizations": [
+        {
+          "fact_id": "SF003",
+          "mode": "visual",
+          "execution_span": "门没有移动",
+          "subject_owners": [
+            "女人",
+            "房门"
+          ],
+          "result_span": "门没有移动",
+          "polarity": "negative"
+        }
+      ],
+      "director_inference_ids": [],
+      "offscreen_subjects": []
+    }
+  ],
+  "director_inferences": [],
+  "review_lock": {
+    "source_hash": "c10b9b4d03ad26f438eaccacfcd8ffda8a09b0ae09785bce218cc0e95f5eeaa5",
+    "format_hash": "b3c2e9fb3c2b0b0380fa745c17b7e2fd11903f941018614919d1616725cb36b8",
+    "method_hash": "e7f706385abe1d215d98e0af17360234ba2357b62417875e2f8b322dfeb2a52f",
+    "strategy_hash": "060da4cff6cb8421991e31c5902edca6fe219e79b7879aee89668ea156aac74a",
+    "topology_hash": "395f088310d114114f5a4c38b858368114d0d48e29ef4bd242d39e5a04891f15",
+    "source_model_hash": "678ea128f9504ac00c0f0a8dfac859a9d0ef23dd7cbc8a1e91255eb7922d9e43",
+    "execution_hash": "711be2d23bae78b2aec954a621dd8d252cc554e02afac3d3a7450a19d902aa67",
+    "alignment_hash": "c426d48eb9ebb71a061384e57b3ba288ecbd0abac642c6711c3c01295cf1e480",
+    "alignment_status": "passed",
+    "alignment_note": "确认示例正式摄影、时长和来源对齐。",
+    "gate_0_status": "confirmed",
+    "gate_0_note": "确认示例格式、画幅、节奏与对白速度参数。",
+    "gate_1_status": "passed",
+    "gate_1_basis": "确认示例来源与导演方法。",
+    "gate_2_status": "confirmed",
+    "gate_2_confirmation_note": "确认示例对白观看计划、摄影语法与切点。"
+  },
+  "approval_events": [
+    {
+      "event_id": "AE001",
+      "event_type": "gate_0_confirmed",
+      "content_hash": "827a4018eb11d693727a3bd840b7d7127cb5b74caaee47a9e296f496713f4e7b",
+      "reviewer": "example",
+      "note": "确认示例格式、画幅、节奏与对白速度参数。",
+      "timestamp_utc": "2026-09-03T03:37:28Z",
+      "previous_event_hash": null,
+      "event_hash": "1f1c9ba64679be5f09d1be36335ad4d1e76e93e785473fb45e34f10cbd69212e"
+    },
+    {
+      "event_id": "AE002",
+      "event_type": "gate_1_approved",
+      "content_hash": "4d337abdcdec7438e4663a1576e147cacbb6db71ad728ea9d3ad051dc4190743",
+      "reviewer": "example",
+      "note": "确认示例来源与导演方法。",
+      "timestamp_utc": "2026-09-03T03:37:28Z",
+      "previous_event_hash": "1f1c9ba64679be5f09d1be36335ad4d1e76e93e785473fb45e34f10cbd69212e",
+      "event_hash": "618d883e0486f7684085b6d6b43240e114198e82f201202d951a2fe2bc7fe40a"
+    },
+    {
+      "event_id": "AE003",
+      "event_type": "gate_2_confirmed",
+      "content_hash": "b1b099c9c2177af1da66ddbaedd3dad5eca92153e57032b3decb9b0d69879bfe",
+      "reviewer": "example",
+      "note": "确认示例对白观看计划、摄影语法与切点。",
+      "timestamp_utc": "2026-09-03T03:37:28Z",
+      "previous_event_hash": "618d883e0486f7684085b6d6b43240e114198e82f201202d951a2fe2bc7fe40a",
+      "event_hash": "56e9057635fe18b9ee94edf86c4609d53f0794d8f1ab8fd5ab88a1e1f8747abf"
+    },
+    {
+      "event_id": "AE004",
+      "event_type": "alignment_approved",
+      "content_hash": "c426d48eb9ebb71a061384e57b3ba288ecbd0abac642c6711c3c01295cf1e480",
+      "reviewer": "example",
+      "note": "确认示例正式摄影、时长和来源对齐。",
+      "timestamp_utc": "2026-09-03T03:37:28Z",
+      "previous_event_hash": "56e9057635fe18b9ee94edf86c4609d53f0794d8f1ab8fd5ab88a1e1f8747abf",
+      "event_hash": "573e56366ae6d1fd07f12046b464e1fb3d76b8fab27721157f19f5f81268b20d"
+    }
+  ],
+  "assumption_obligations": [
+    {
+      "obligation_id": "AO001",
+      "gap_id": "SG001",
+      "resolution": "assumption_required",
+      "assumption_id": "A001",
+      "reference_fact_id": null
+    },
+    {
+      "obligation_id": "AO002",
+      "gap_id": "SG002",
+      "resolution": "assumption_required",
+      "assumption_id": "A002",
+      "reference_fact_id": null
+    }
+  ],
+  "format_brief": {
+    "rhythm_profile": "custom",
+    "target_runtime_seconds": 16.0,
+    "aspect_ratio": "16:9",
+    "orientation": "horizontal",
+    "dialogue_pace": {
+      "standard_id": "su-dialogue-pace/1.0",
+      "pace_profile": "custom",
+      "rate_basis": "articulation_rate_excluding_pauses",
+      "range_min_cps": 4.0,
+      "range_max_cps": 5.0,
+      "default_cps": 4.5,
+      "selected_cps": 4.5,
+      "strong_pause_seconds": 0.18,
+      "soft_pause_seconds": 0.08,
+      "basis": "测试示例显式参数，仅用于验证可计算合同，不作为制作默认语速。",
+      "overrides": []
+    },
+    "coverage_bias": "示例逐句检查说话者、倾听者与共享关系，不按角色轮换镜头。",
+    "confirmation_note": "3.1.4 示例确认 16:9、自定义节奏和显式对白速度参数。"
+  },
+  "gate_0": {
+    "status": "confirmed",
+    "format_hash": "b3c2e9fb3c2b0b0380fa745c17b7e2fd11903f941018614919d1616725cb36b8",
+    "note": "确认示例格式、画幅、节奏与对白速度参数。"
+  }
+}

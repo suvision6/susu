@@ -1,0 +1,1054 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://suvision.example/schemas/director-shot-data-3.1.4.json",
+  "title": "director-shot-data/3.1.4",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_name",
+    "contract_version",
+    "source_skill",
+    "source_skill_version",
+    "project_id",
+    "source",
+    "format_brief",
+    "assumptions",
+    "director_design",
+    "scenes",
+    "shots",
+    "validation"
+  ],
+  "properties": {
+    "contract_name": {
+      "const": "director-shot-data"
+    },
+    "contract_version": {
+      "const": "3.1.4"
+    },
+    "source_skill": {
+      "const": "su-fenjingskill"
+    },
+    "source_skill_version": {
+      "const": "3.1.4"
+    },
+    "project_id": {
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "source": {
+      "$ref": "#/$defs/source"
+    },
+    "format_brief": {
+      "$ref": "#/$defs/formatBrief"
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/assumption"
+      }
+    },
+    "director_design": {
+      "$ref": "#/$defs/directorDesign"
+    },
+    "scenes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/scene"
+      }
+    },
+    "shots": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/shot"
+      }
+    },
+    "validation": {
+      "$ref": "#/$defs/validation"
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dialoguePaceOverride": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["override_id", "scope", "scope_ref", "selected_cps", "strong_pause_seconds", "soft_pause_seconds", "reason"],
+      "properties": {
+        "override_id": {"type": "string", "pattern": "^PO[0-9]{3,}$"},
+        "scope": {"enum": ["scene", "character", "dialogue"]},
+        "scope_ref": {"$ref": "#/$defs/nonEmptyString"},
+        "selected_cps": {"type": "number", "exclusiveMinimum": 0},
+        "strong_pause_seconds": {"type": "number", "minimum": 0},
+        "soft_pause_seconds": {"type": "number", "minimum": 0},
+        "reason": {"$ref": "#/$defs/nonEmptyString"}
+      }
+    },
+    "dialoguePace": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "standard_id",
+        "pace_profile",
+        "rate_basis",
+        "range_min_cps",
+        "range_max_cps",
+        "default_cps",
+        "selected_cps",
+        "strong_pause_seconds",
+        "soft_pause_seconds",
+        "basis",
+        "overrides"
+      ],
+      "properties": {
+        "standard_id": {
+          "enum": ["su-dialogue-pace/1.0", "unresolved"]
+        },
+        "pace_profile": {
+          "enum": ["fast", "natural", "deliberate", "variable", "custom", "unresolved"]
+        },
+        "rate_basis": {
+          "enum": ["articulation_rate_excluding_pauses", "unresolved"]
+        },
+        "range_min_cps": {
+          "type": "number",
+          "minimum": 0
+        },
+        "range_max_cps": {
+          "type": "number",
+          "minimum": 0
+        },
+        "default_cps": {
+          "type": "number",
+          "minimum": 0
+        },
+        "selected_cps": {
+          "type": "number",
+          "minimum": 0
+        },
+        "strong_pause_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "soft_pause_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "basis": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "overrides": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/dialoguePaceOverride"}
+        }
+      }
+    },
+    "formatBrief": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rhythm_profile",
+        "target_runtime_seconds",
+        "aspect_ratio",
+        "orientation",
+        "dialogue_pace",
+        "coverage_bias",
+        "confirmation_note"
+      ],
+      "properties": {
+        "rhythm_profile": {
+          "enum": [
+            "short_drama_under_10m",
+            "platform_series_episode",
+            "short_film_3_20m",
+            "feature_film",
+            "custom",
+            "unresolved"
+          ]
+        },
+        "target_runtime_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "aspect_ratio": {
+          "enum": ["9:16", "16:9", "1.85:1", "2.35:1", "2.39:1", "4:3", "custom", "unresolved"]
+        },
+        "orientation": {
+          "enum": ["vertical", "horizontal", "custom", "unresolved"]
+        },
+        "dialogue_pace": {
+          "$ref": "#/$defs/dialoguePace"
+        },
+        "coverage_bias": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "confirmation_note": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "delivery_slug",
+        "input_kind",
+        "locked_text",
+        "dialogue_lines"
+      ],
+      "properties": {
+        "title": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "delivery_slug": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "input_kind": {
+          "enum": [
+            "screenplay",
+            "screenplay_segment",
+            "locked_fragment",
+            "concept_board"
+          ]
+        },
+        "locked_text": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "dialogue_lines": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/dialogueLine"
+          }
+        }
+      }
+    },
+    "dialogueLine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dialogue_id",
+        "speaker",
+        "text",
+        "voice_type"
+      ],
+      "properties": {
+        "dialogue_id": {
+          "type": "string",
+          "pattern": "^D[0-9]{3,}$"
+        },
+        "speaker": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "text": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "voice_type": {
+          "enum": [
+            "scene_dialogue",
+            "vo",
+            "mediated",
+            "unresolved"
+          ]
+        }
+      }
+    },
+    "assumption": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assumption_id",
+        "scope",
+        "statement",
+        "reason",
+        "impact",
+        "status"
+      ],
+      "properties": {
+        "assumption_id": {
+          "type": "string",
+          "pattern": "^A[0-9]{3,}$"
+        },
+        "scope": {
+          "enum": [
+            "source",
+            "scene",
+            "shot",
+            "delivery"
+          ]
+        },
+        "statement": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "reason": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "impact": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "status": {
+          "enum": [
+            "open",
+            "confirmed",
+            "resolved"
+          ]
+        }
+      }
+    },
+    "directorDesign": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scene_purpose",
+        "dramatic_question",
+        "turning_point",
+        "audience_position",
+        "pov_strategy",
+        "emotional_arc",
+        "blocking_strategy",
+        "visual_strategy",
+        "sound_strategy",
+        "rhythm_strategy"
+      ],
+      "properties": {
+        "scene_purpose": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "dramatic_question": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "turning_point": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "audience_position": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "pov_strategy": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "emotional_arc": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "blocking_strategy": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "visual_strategy": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "sound_strategy": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "rhythm_strategy": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "spaceMap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "anchors",
+        "character_start_positions",
+        "axis_notes",
+        "protected_continuity"
+      ],
+      "properties": {
+        "anchors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        },
+        "character_start_positions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        },
+        "axis_notes": {
+          "type": "string"
+        },
+        "protected_continuity": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        }
+      }
+    },
+    "scene": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scene_id",
+        "scene",
+        "source_excerpt",
+        "space_map",
+        "lighting_strategy",
+        "color_strategy"
+      ],
+      "properties": {
+        "scene_id": {
+          "type": "string",
+          "pattern": "^SC[0-9]{3,}$"
+        },
+        "scene": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "source_excerpt": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "space_map": {
+          "$ref": "#/$defs/spaceMap"
+        },
+        "lighting_strategy": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "color_strategy": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "motivation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary",
+        "reason"
+      ],
+      "properties": {
+        "primary": {
+          "enum": [
+            "information",
+            "emotion",
+            "relationship",
+            "space",
+            "subjective",
+            "rhythm",
+            "transition"
+          ]
+        },
+        "reason": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "viewpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owner_type",
+        "owner_refs",
+        "reading_priority",
+        "camera_response",
+        "reason"
+      ],
+      "properties": {
+        "owner_type": {
+          "enum": [
+            "subject",
+            "relationship",
+            "object",
+            "space",
+            "subjective",
+            "unresolved"
+          ]
+        },
+        "owner_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        },
+        "reading_priority": {
+          "enum": [
+            "space",
+            "relationship",
+            "body",
+            "face",
+            "detail",
+            "unresolved"
+          ]
+        },
+        "camera_response": {
+          "enum": [
+            "observe",
+            "isolate",
+            "reframe",
+            "follow",
+            "reveal",
+            "withhold",
+            "unresolved"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      }
+    },
+    "movement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "trigger",
+        "speed",
+        "path",
+        "end_condition",
+        "reason"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "fixed",
+            "push",
+            "pull",
+            "pan",
+            "tilt",
+            "track",
+            "follow",
+            "orbit",
+            "crane",
+            "handheld",
+            "vehicle",
+            "zoom",
+            "focus",
+            "compound",
+            "other"
+          ]
+        },
+        "trigger": {
+          "type": "string"
+        },
+        "speed": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "end_condition": {
+          "type": "string"
+        },
+        "reason": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "camera": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "framing_mode",
+        "primary_subjects",
+        "foreground_subjects",
+        "shot_size",
+        "shot_size_reason",
+        "angle",
+        "angle_reason",
+        "frame_axis",
+        "aspect_ratio_reason",
+        "position",
+        "composition",
+        "lens_intent",
+        "movement",
+        "focus",
+        "lighting_change"
+      ],
+      "properties": {
+        "framing_mode": {
+          "enum": [
+            "single",
+            "two_shot",
+            "group",
+            "over_shoulder",
+            "insert",
+            "subjective",
+            "space",
+            "unresolved"
+          ]
+        },
+        "primary_subjects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        },
+        "foreground_subjects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        },
+        "shot_size": {
+          "anyOf": [
+            {
+              "const": "unresolved"
+            },
+            {
+              "type": "string",
+              "pattern": "^(大远景|远景|中远景|全景|中全景|中景|中近景|近景|特写|大特写|极特写)(→(大远景|远景|中远景|全景|中全景|中景|中近景|近景|特写|大特写|极特写))*$"
+            }
+          ]
+        },
+        "shot_size_reason": {
+          "type": "string"
+        },
+        "angle": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "angle_reason": {
+          "type": "string"
+        },
+        "frame_axis": {
+          "enum": ["horizontal", "vertical", "depth", "layered", "centered", "diagonal", "subjective", "unresolved"]
+        },
+        "aspect_ratio_reason": {
+          "type": "string"
+        },
+        "position": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "composition": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "lens_intent": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "movement": {
+          "$ref": "#/$defs/movement"
+        },
+        "focus": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "lighting_change": {
+          "type": "string"
+        }
+      }
+    },
+    "staging": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "subjects",
+        "visible_subjects",
+        "offscreen_subjects",
+        "blocking",
+        "performance"
+      ],
+      "properties": {
+        "subjects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        },
+        "visible_subjects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        },
+        "offscreen_subjects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        },
+        "blocking": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "performance": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "dialogueSegment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dialogue_id",
+        "text",
+        "delivery"
+      ],
+      "properties": {
+        "dialogue_id": {
+          "type": "string",
+          "pattern": "^D[0-9]{3,}$"
+        },
+        "text": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "delivery": {
+          "enum": [
+            "onscreen",
+            "os",
+            "vo",
+            "mediated",
+            "unresolved"
+          ]
+        }
+      }
+    },
+    "sound": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "perspective",
+        "dialogue_segments",
+        "effects",
+        "ambience",
+        "music"
+      ],
+      "properties": {
+        "perspective": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "dialogue_segments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/dialogueSegment"
+          }
+        },
+        "effects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        },
+        "ambience": {
+          "type": "string"
+        },
+        "music": {
+          "type": "string"
+        }
+      }
+    },
+    "edit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "entry",
+        "exit",
+        "transition_to_next"
+      ],
+      "properties": {
+        "entry": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "exit": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "transition_to_next": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "shotFlowItem": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "owner"
+          ],
+          "properties": {
+            "owner": {
+              "enum": [
+                "camera_setup",
+                "movement"
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "owner",
+            "index"
+          ],
+          "properties": {
+            "owner": {
+              "enum": [
+                "dialogue_segment",
+                "effect",
+                "state_update"
+              ]
+            },
+            "index": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "owner"
+          ],
+          "properties": {
+            "owner": {
+              "enum": [
+                "blocking",
+                "performance",
+                "ambience",
+                "focus",
+                "edit_exit"
+              ]
+            },
+            "span": {
+              "$ref": "#/$defs/nonEmptyString"
+            }
+          }
+        }
+      ]
+    },
+    "stateUpdate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "entity",
+        "field",
+        "from",
+        "to"
+      ],
+      "properties": {
+        "entity": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "field": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "intentionalBreak": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "what_breaks",
+        "audience_effect",
+        "dramatic_reason",
+        "reorientation"
+      ],
+      "properties": {
+        "what_breaks": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "audience_effect": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "dramatic_reason": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "reorientation": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "continuity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "axis",
+        "screen_direction",
+        "state_updates",
+        "intentional_breaks"
+      ],
+      "properties": {
+        "axis": {
+          "type": "string"
+        },
+        "screen_direction": {
+          "type": "string"
+        },
+        "state_updates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/stateUpdate"
+          }
+        },
+        "intentional_breaks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/intentionalBreak"
+          }
+        }
+      }
+    },
+    "timingBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "block_id",
+        "pace_ref",
+        "flow_start_index",
+        "flow_end_index",
+        "mode",
+        "dialogue_seconds",
+        "action_seconds",
+        "camera_seconds",
+        "sound_seconds",
+        "reaction_seconds",
+        "hold_seconds",
+        "computed_seconds"
+      ],
+      "properties": {
+        "block_id": {
+          "type": "string",
+          "pattern": "^TB[0-9]{3,}$"
+        },
+        "pace_ref": {
+          "anyOf": [
+            {"const": "BASE"},
+            {"type": "string", "pattern": "^PO[0-9]{3,}$"},
+            {"const": "unresolved"}
+          ]
+        },
+        "flow_start_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "flow_end_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "mode": {
+          "enum": ["sequential", "parallel"]
+        },
+        "dialogue_seconds": {"type": "number", "minimum": 0},
+        "action_seconds": {"type": "number", "minimum": 0},
+        "camera_seconds": {"type": "number", "minimum": 0},
+        "sound_seconds": {"type": "number", "minimum": 0},
+        "reaction_seconds": {"type": "number", "minimum": 0},
+        "hold_seconds": {"type": "number", "minimum": 0},
+        "computed_seconds": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "timingPlan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "blocks", "computed_duration_seconds", "confidence", "basis"],
+      "properties": {
+        "status": {"enum": ["ready", "unresolved"]},
+        "blocks": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/timingBlock"}
+        },
+        "computed_duration_seconds": {"type": "number", "minimum": 0},
+        "confidence": {"enum": ["high", "medium", "low", "unresolved"]},
+        "basis": {"$ref": "#/$defs/nonEmptyString"}
+      }
+    },
+    "shot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "shot_id",
+        "scene_id",
+        "source_excerpt",
+        "duration_seconds",
+        "duration_basis",
+        "timing_plan",
+        "motivation",
+        "viewpoint",
+        "camera",
+        "staging",
+        "sound",
+        "edit",
+        "continuity",
+        "shot_flow",
+        "execution_text",
+        "notes"
+      ],
+      "properties": {
+        "shot_id": {
+          "type": "string",
+          "pattern": "^SH[0-9]{3,}$"
+        },
+        "scene_id": {
+          "type": "string",
+          "pattern": "^SC[0-9]{3,}$"
+        },
+        "source_excerpt": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "duration_seconds": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "duration_basis": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "timing_plan": {
+          "$ref": "#/$defs/timingPlan"
+        },
+        "motivation": {
+          "$ref": "#/$defs/motivation"
+        },
+        "viewpoint": {
+          "$ref": "#/$defs/viewpoint"
+        },
+        "camera": {
+          "$ref": "#/$defs/camera"
+        },
+        "staging": {
+          "$ref": "#/$defs/staging"
+        },
+        "sound": {
+          "$ref": "#/$defs/sound"
+        },
+        "edit": {
+          "$ref": "#/$defs/edit"
+        },
+        "continuity": {
+          "$ref": "#/$defs/continuity"
+        },
+        "shot_flow": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/shotFlowItem"
+          }
+        },
+        "execution_text": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "warnings"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "draft",
+            "ready",
+            "ready_with_assumptions",
+            "fail"
+          ]
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        }
+      }
+    }
+  }
+}
