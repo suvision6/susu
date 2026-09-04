@@ -1,0 +1,142 @@
+{
+  "schema_version": "2.0.0",
+  "name": "su-fenjingskill",
+  "title": "导演分镜 v3.1.6",
+  "job_to_be_done": "把完整剧本、连续场景、锁定片段或概念材料转换为按场景机制和导演方法组织的可拍、可剪六列文字分镜。",
+  "trigger_surface": {
+    "description": "将剧本、连续场景、锁定片段或概念材料拆解为六列导演分镜和 director-shot-data/3.1.6；也用于比较导演方法，处理喜剧、群像、长对白长镜与平行剪辑。拆镜前确认节奏、时长、画幅和对白速度，再逐句决定切、留或镜内重构，以时间块测量并用整秒交付镜长；XLSX 是人类前端，其余三文件是同源 Agent 后端。",
+    "should_trigger": [
+      "完整理解这部剧本，再按导演和摄影师视角做六列文字分镜。",
+      "同一场戏按两种导演方法给出真正不同的剪辑方案。",
+      "把动作场面按目标、方向和因果拆成可拍分镜。",
+      "把连续场景做成固定四文件导演交付。",
+      "Design motivated shot topology, blocking, sound and a six-column director storyboard."
+    ],
+    "should_not_trigger": [
+      "把已有分镜编译成视频 Prompt。",
+      "根据 shot_data 生成分镜图。",
+      "直接生成视频。",
+      "只比较导演风格，不做分镜。",
+      "创作全新短剧剧本。"
+    ],
+    "edge_cases": [
+      "用户未指定方法时最多提供两个实质不同的方案。",
+      "用户要求复刻具体镜头时只编译可泛化方法。",
+      "概念梗概必须登记 source gaps 与 assumption obligations。",
+      "中文角色标签、表演说明与实际口播必须分离。"
+    ]
+  },
+  "workflow": {
+    "steps": [
+      "Build an exact immutable source ledger and protect narrative classification, facts, gaps and language authority.",
+      "Confirm Gate 0 rhythm profile, target runtime, aspect ratio, orientation, dialogue pace and coverage bias before shot design.",
+      "Identify one primary and at most one secondary scene mechanism.",
+      "Compile or confirm an executable director method.",
+      "Map every source dialogue turn to a dialogue edit plan, then resolve mechanism and method into protected processes, scene camera grammar, per-unit viewing design and trigger/editorial_gain boundaries before Gate 2.",
+      "Execute viewpoint, framing, aspect-ratio use, visibility, camera, staging, sound, edit, continuity, ordered shot_flow and recomputable timing blocks.",
+      "Render the Agent backend execution record and an independent XLSX projection that uses canonical Chinese shot-size terms and rejects redundant front-end source clauses, then approve Alignment for the current execution hash.",
+      "Atomically build and verify the fixed JSON, Markdown, XLSX and validation delivery."
+    ],
+    "decision_points": [
+      "Never use source lines, speaker changes, duration thresholds or minimum-shot rules as universal cut generators.",
+      "Do not equate relationship scenes with two-shots, restraint with flat/fixed cameras, or category variety with directing quality.",
+      "Apply the single invalidation matrix: format → Gate 0/1/2/Alignment; source/method → Gate 1/2/Alignment; strategy/topology/dialogue plan → Gate 2/Alignment; execution → Alignment only.",
+      "Treat rhythm profiles as directing biases, never as fixed cut intervals or shot-count quotas.",
+      "Deliver every formal shot in whole seconds with a minimum of one second; retain fractional timing components only as measurement evidence whose total lands on that integer.",
+      "Treat one- and two-second shots as exceptional review items that require observable bounds and a concrete compression function, without a numeric quota.",
+      "Use target runtime only to reconcile the completed per-shot measurement; never allocate hold time backward from the target.",
+      "Treat hold_seconds as an independent silent, waiting or afterglow phase, never as the duration of an active dialogue/action block.",
+      "Formal shots may use only approved, bidirectionally bound director inferences.",
+      "Formal build is fail-closed and leaves no partial delivery."
+    ],
+    "failure_modes": [
+      "Narrative content is relabelled as metadata to delete obligations.",
+      "Runtime accepts data rejected by the published Schema.",
+      "Camera, edit or continuity changes preserve an old Alignment.",
+      "Deleting assumptions incorrectly produces READY.",
+      "Topology references the wrong scene, passage or fact.",
+      "A shot has no explicit picture owner, visibility state or framing rationale, or repeats generic camera reasons across distinct units.",
+      "Multiple dialogue turns are hidden inside one static listener shot without per-turn visible development.",
+      "Dialogue, viewing, camera or boundary evidence differs only by IDs, shot numbers, quoted dialogue or boilerplate suffixes.",
+      "A claimed visible development is not realized in formal blocking, performance, focus, movement, effects or state updates.",
+      "Aspect ratio is selected after shot design or used as a generic movement ban.",
+      "Duration is a free-text guess rather than a recomputable timing plan aligned to shot_flow.",
+      "A formal shot is shorter than one second, uses a fractional final duration, or reaches an integer only through unsupported rounding.",
+      "A one- or two-second shot lacks observable start, end and compression-function evidence, or clusters without being surfaced for human review.",
+      "hold_seconds overlaps active dialogue, action, camera or reaction, or a positive component has no matching flow owner.",
+      "A vague type label is used instead of the fixed su-dialogue-pace/1.0 range, or a shot silently leaves that range without an explicit scoped override.",
+      "Subtitle reading CPS is incorrectly reused as spoken-dialogue articulation rate.",
+      "A non-standard shot-size label such as 紧中景 reaches the formal camera or XLSX header.",
+      "XLSX parity passes while camera setup, action, focus, ambience or edit-exit clauses repeat the same front-end information.",
+      "A partial output directory contains a premature READY validation.",
+      "Aesthetic statistics become hard failures."
+    ]
+  },
+  "resources": {
+    "references": [
+      "references/source-truth-audit.md",
+      "references/chinese-context-language.md",
+      "references/scene-mechanisms.md",
+      "references/director-method-contract.md",
+      "references/director-method-index.md",
+      "references/scene-strategy-gates.md",
+      "references/shot-edit-grammar.md",
+      "references/director-method.md",
+      "references/blocking-space-continuity.md",
+      "references/cinematography-language.md",
+      "references/dialogue-performance-sound.md",
+      "references/editing-rhythm-duration.md",
+      "references/dialogue-pace-standard.md",
+      "references/dialogue-pace-standard.json",
+      "references/graceful-degradation.md",
+      "references/output-contract.md",
+      "references/internal-workspace-contract.md",
+      "references/style-language.md"
+    ],
+    "scripts": [
+      "scripts/_chinese_context.py",
+      "scripts/_execution_text.py",
+      "scripts/_xlsx_projection.py",
+      "scripts/_schema_validation.py",
+      "scripts/source_alignment.py",
+      "scripts/storyboard_review.py",
+      "scripts/storyboard_delivery.py",
+      "scripts/export_xlsx.py",
+      "scripts/migrate_contract_3_1_0_to_3_1_2.py",
+      "scripts/migrate_contract_3_1_2_to_3_1_3.py",
+      "scripts/migrate_contract_3_1_3_to_3_1_6.py",
+      "scripts/migrate_contract_3_1_4_to_3_1_5.py",
+      "scripts/migrate_contract_3_1_5_to_3_1_6.py"
+    ],
+    "assets": [],
+    "reports": []
+  },
+  "eval_plan": {
+    "trigger": [],
+    "output": [],
+    "adversarial": [],
+    "baseline": "runtime-only release; evaluation artifacts retained outside this package"
+  },
+  "risk": {
+    "output_risk": "high",
+    "execution_risk": "medium",
+    "trust_boundary": "external"
+  },
+  "governance": {
+    "owner": "suvision",
+    "maturity": "governed",
+    "review_cadence": "per-release",
+    "review_due": ""
+  },
+  "targets": [
+    "openai",
+    "generic"
+  ],
+  "source_files": [
+    "SKILL.md",
+    "manifest.json",
+    "agents/interface.yaml",
+    "references/output-contract.md",
+    "references/internal-workspace-contract.md"
+  ]
+}

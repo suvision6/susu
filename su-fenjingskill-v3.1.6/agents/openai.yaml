@@ -1,0 +1,4 @@
+interface:
+  display_name: "导演分镜 v3.1.6"
+  short_description: "按场景机制和导演方法生成可拍、可剪的六列文字分镜"
+  default_prompt: "使用 $su-fenjingskill 锁定来源；拆镜前确认 Gate 0，但目标总时长只在逐镜测量后核对。逐句建立 dialogue edit plan 并选择 cut、hold 或 reframe；编号、复述台词和固定尾句不构成新的画内发展。时间分量可保留小数，但正式镜长必须是大于等于 1 的整数秒；1–2 秒超短镜必须说明可观察起点、结束条件和短促功能。hold_seconds 只属于独立静默、等待、凝视、停滞或余波块。确认 Gate 2 与 Alignment 后原子交付 director-shot-data/3.1.6 四文件。"

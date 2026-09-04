@@ -1,0 +1,49 @@
+{
+  "standard_id": "su-dialogue-pace/1.0",
+  "rate_basis": "articulation_rate_excluding_pauses",
+  "unit": "han_characters_per_second",
+  "profiles": {
+    "short_drama_under_10m": {
+      "pace_profile": "fast",
+      "range_min_cps": 4.3,
+      "range_max_cps": 5.5,
+      "default_cps": 4.8,
+      "soft_pause_range_seconds": [0.08, 0.18],
+      "default_soft_pause_seconds": 0.12,
+      "strong_pause_range_seconds": [0.15, 0.35],
+      "default_strong_pause_seconds": 0.22
+    },
+    "platform_series_episode": {
+      "pace_profile": "natural",
+      "range_min_cps": 3.3,
+      "range_max_cps": 4.3,
+      "default_cps": 3.8,
+      "soft_pause_range_seconds": [0.15, 0.35],
+      "default_soft_pause_seconds": 0.22,
+      "strong_pause_range_seconds": [0.3, 0.6],
+      "default_strong_pause_seconds": 0.42
+    },
+    "short_film_3_20m": {
+      "pace_profile": "variable",
+      "range_min_cps": 2.3,
+      "range_max_cps": 3.3,
+      "default_cps": 2.8,
+      "soft_pause_range_seconds": [0.25, 0.65],
+      "default_soft_pause_seconds": 0.4,
+      "strong_pause_range_seconds": [0.6, 1.2],
+      "default_strong_pause_seconds": 0.9
+    },
+    "feature_film": {
+      "pace_profile": "variable",
+      "range_min_cps": 2.7,
+      "range_max_cps": 3.7,
+      "default_cps": 3.2,
+      "soft_pause_range_seconds": [0.2, 0.55],
+      "default_soft_pause_seconds": 0.35,
+      "strong_pause_range_seconds": [0.45, 1.0],
+      "default_strong_pause_seconds": 0.7
+    }
+  },
+  "custom_policy": "Custom profiles must declare their own min, max, default and selected CPS values. Any project, scene, character or dialogue value outside the selected profile range requires an explicit pace override with a reason.",
+  "subtitle_boundary": "Subtitle reading speed is a separate downstream metric and is not used to calculate spoken dialogue duration."
+}

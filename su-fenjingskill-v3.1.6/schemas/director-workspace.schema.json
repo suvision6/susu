@@ -1,0 +1,1478 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://suvision.example/schemas/director-workspace-3.1.6.json",
+  "title": "director-workspace/3.1.6",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "workspace_contract",
+    "source",
+    "format_brief",
+    "gate_0",
+    "supplemental_reference_facts",
+    "assumption_obligations",
+    "director_method",
+    "gate_1",
+    "scene_strategies",
+    "shot_bindings",
+    "director_inferences",
+    "approval_events",
+    "review_lock"
+  ],
+  "properties": {
+    "workspace_contract": {
+      "const": "director-workspace/3.1.6"
+    },
+    "source": {
+      "$ref": "#/$defs/source"
+    },
+    "format_brief": {
+      "$ref": "#/$defs/formatBrief"
+    },
+    "gate_0": {
+      "$ref": "#/$defs/gateZero"
+    },
+    "director_method": {
+      "$ref": "#/$defs/directorMethod"
+    },
+    "gate_1": {
+      "$ref": "#/$defs/gateOne"
+    },
+    "scene_strategies": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/sceneStrategy"
+      }
+    },
+    "shot_bindings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/shotBinding"
+      }
+    },
+    "supplemental_reference_facts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/supplementalReferenceFact"
+      }
+    },
+    "director_inferences": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/directorInference"
+      }
+    },
+    "review_lock": {
+      "$ref": "#/$defs/reviewLock"
+    },
+    "assumption_obligations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/assumptionObligation"
+      }
+    },
+    "approval_events": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/approvalEvent"
+      }
+    }
+  },
+  "$defs": {
+    "nonEmpty": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dialoguePaceOverride": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["override_id", "scope", "scope_ref", "selected_cps", "strong_pause_seconds", "soft_pause_seconds", "reason"],
+      "properties": {
+        "override_id": {"type": "string", "pattern": "^PO[0-9]{3,}$"},
+        "scope": {"enum": ["scene", "character", "dialogue"]},
+        "scope_ref": {"$ref": "#/$defs/nonEmpty"},
+        "selected_cps": {"type": "number", "exclusiveMinimum": 0},
+        "strong_pause_seconds": {"type": "number", "minimum": 0},
+        "soft_pause_seconds": {"type": "number", "minimum": 0},
+        "reason": {"$ref": "#/$defs/nonEmpty"}
+      }
+    },
+    "dialoguePace": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["standard_id", "pace_profile", "rate_basis", "range_min_cps", "range_max_cps", "default_cps", "selected_cps", "strong_pause_seconds", "soft_pause_seconds", "basis", "overrides"],
+      "properties": {
+        "standard_id": {"enum": ["su-dialogue-pace/1.0", "unresolved"]},
+        "pace_profile": {"enum": ["fast", "natural", "deliberate", "variable", "custom", "unresolved"]},
+        "rate_basis": {"enum": ["articulation_rate_excluding_pauses", "unresolved"]},
+        "range_min_cps": {"type": "number", "minimum": 0},
+        "range_max_cps": {"type": "number", "minimum": 0},
+        "default_cps": {"type": "number", "minimum": 0},
+        "selected_cps": {"type": "number", "minimum": 0},
+        "strong_pause_seconds": {"type": "number", "minimum": 0},
+        "soft_pause_seconds": {"type": "number", "minimum": 0},
+        "basis": {"$ref": "#/$defs/nonEmpty"},
+        "overrides": {"type": "array", "items": {"$ref": "#/$defs/dialoguePaceOverride"}}
+      }
+    },
+    "formatBrief": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rhythm_profile", "target_runtime_seconds", "aspect_ratio", "orientation", "dialogue_pace", "coverage_bias", "confirmation_note"],
+      "properties": {
+        "rhythm_profile": {
+          "enum": ["short_drama_under_10m", "platform_series_episode", "short_film_3_20m", "feature_film", "custom", "unresolved"]
+        },
+        "target_runtime_seconds": {"type": "number", "minimum": 0},
+        "aspect_ratio": {"enum": ["9:16", "16:9", "1.85:1", "2.35:1", "2.39:1", "4:3", "custom", "unresolved"]},
+        "orientation": {"enum": ["vertical", "horizontal", "custom", "unresolved"]},
+        "dialogue_pace": {"$ref": "#/$defs/dialoguePace"},
+        "coverage_bias": {"$ref": "#/$defs/nonEmpty"},
+        "confirmation_note": {"$ref": "#/$defs/nonEmpty"}
+      }
+    },
+    "gateZero": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "format_hash", "note"],
+      "properties": {
+        "status": {"enum": ["confirmed", "pending", "invalidated"]},
+        "format_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "note": {"$ref": "#/$defs/nonEmpty"}
+      }
+    },
+    "stringArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/nonEmpty"
+      }
+    },
+    "nonEmptyStringArray": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/nonEmpty"
+      }
+    },
+    "lineRange": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "line_start",
+        "line_end"
+      ],
+      "properties": {
+        "line_start": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "line_end": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "authorityPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "performance_authority",
+        "reference_languages",
+        "bilingual_relation",
+        "authority_basis"
+      ],
+      "properties": {
+        "performance_authority": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "reference_languages": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "bilingual_relation": {
+          "enum": [
+            "literal_equivalent",
+            "adapted_equivalent",
+            "independent"
+          ]
+        },
+        "authority_basis": {
+          "$ref": "#/$defs/nonEmpty"
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope_id",
+        "scope_kind",
+        "authority_line_ranges",
+        "reference_line_ranges"
+      ],
+      "properties": {
+        "scope_id": {
+          "anyOf": [
+            {
+              "const": "GLOBAL"
+            },
+            {
+              "type": "string",
+              "pattern": "^SC[0-9]{3,}$"
+            }
+          ]
+        },
+        "scope_kind": {
+          "enum": [
+            "global",
+            "scene"
+          ]
+        },
+        "authority_line_ranges": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/lineRange"
+          }
+        },
+        "reference_line_ranges": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/lineRange"
+          }
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "locked_text",
+        "source_hash",
+        "authority_policy",
+        "scopes",
+        "source_units",
+        "classification_reviews",
+        "source_gaps",
+        "source_passages",
+        "source_facts"
+      ],
+      "properties": {
+        "locked_text": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "source_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "authority_policy": {
+          "$ref": "#/$defs/authorityPolicy"
+        },
+        "scopes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/scope"
+          }
+        },
+        "source_units": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/sourceUnit"
+          }
+        },
+        "source_passages": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/sourcePassage"
+          }
+        },
+        "source_facts": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/sourceFact"
+          }
+        },
+        "classification_reviews": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/classificationReview"
+          }
+        },
+        "source_gaps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sourceGap"
+          }
+        }
+      }
+    },
+    "sourceUnit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unit_id",
+        "scope_id",
+        "line_start",
+        "line_end",
+        "kind",
+        "language",
+        "authority_role",
+        "exact_text",
+        "semantic_summary"
+      ],
+      "properties": {
+        "unit_id": {
+          "type": "string",
+          "pattern": "^SU[0-9]{3,}$"
+        },
+        "scope_id": {
+          "anyOf": [
+            {
+              "const": "GLOBAL"
+            },
+            {
+              "type": "string",
+              "pattern": "^SC[0-9]{3,}$"
+            }
+          ]
+        },
+        "line_start": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "line_end": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "kind": {
+          "enum": [
+            "scene_heading",
+            "action",
+            "dialogue",
+            "stage_direction",
+            "source_sound",
+            "transition",
+            "metadata"
+          ]
+        },
+        "language": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "authority_role": {
+          "enum": [
+            "performance_authority",
+            "adapted_reference",
+            "non_narrative"
+          ]
+        },
+        "exact_text": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "speaker": {
+          "type": "string"
+        },
+        "voice_type": {
+          "enum": [
+            "scene_dialogue",
+            "vo",
+            "mediated",
+            "unresolved"
+          ]
+        },
+        "dialogue_id": {
+          "type": "string",
+          "pattern": "^D[0-9]{3,}$"
+        },
+        "semantic_summary": {
+          "$ref": "#/$defs/nonEmpty"
+        }
+      }
+    },
+    "sourcePassage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "passage_id",
+        "scope_id",
+        "source_unit_ids",
+        "coverage_status",
+        "shot_refs",
+        "reason"
+      ],
+      "properties": {
+        "passage_id": {
+          "type": "string",
+          "pattern": "^SP[0-9]{3,}$"
+        },
+        "scope_id": {
+          "anyOf": [
+            {
+              "const": "GLOBAL"
+            },
+            {
+              "type": "string",
+              "pattern": "^SC[0-9]{3,}$"
+            }
+          ]
+        },
+        "source_unit_ids": {
+          "$ref": "#/$defs/nonEmptyStringArray"
+        },
+        "coverage_status": {
+          "enum": [
+            "covered",
+            "intentionally_withheld",
+            "intentionally_omitted"
+          ]
+        },
+        "shot_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^SH[0-9]{3,}$"
+          }
+        },
+        "reason": {
+          "type": "string"
+        }
+      }
+    },
+    "sourceFact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fact_id",
+        "passage_id",
+        "source_unit_ids",
+        "source_span",
+        "kind",
+        "subjects",
+        "predicate",
+        "objects",
+        "polarity",
+        "qualifiers",
+        "importance",
+        "anchors",
+        "cause_fact_ids",
+        "effect_fact_ids"
+      ],
+      "properties": {
+        "fact_id": {
+          "type": "string",
+          "pattern": "^SF[0-9]{3,}$"
+        },
+        "passage_id": {
+          "type": "string",
+          "pattern": "^SP[0-9]{3,}$"
+        },
+        "source_unit_ids": {
+          "$ref": "#/$defs/nonEmptyStringArray"
+        },
+        "source_span": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "kind": {
+          "enum": [
+            "entity_attribute",
+            "action",
+            "action_result",
+            "state",
+            "negation",
+            "causal_link",
+            "relation",
+            "source_sound",
+            "reality_change",
+            "world_rule"
+          ]
+        },
+        "subjects": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "predicate": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "objects": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "polarity": {
+          "enum": [
+            "positive",
+            "negative"
+          ]
+        },
+        "qualifiers": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "importance": {
+          "enum": [
+            "required",
+            "supporting"
+          ]
+        },
+        "anchors": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "cause_fact_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "effect_fact_ids": {
+          "$ref": "#/$defs/stringArray"
+        }
+      }
+    },
+    "factRealization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fact_id",
+        "mode",
+        "execution_span",
+        "subject_owners",
+        "result_span",
+        "polarity"
+      ],
+      "properties": {
+        "fact_id": {
+          "type": "string",
+          "pattern": "^SF[0-9]{3,}$"
+        },
+        "mode": {
+          "enum": [
+            "visual",
+            "dialogue",
+            "sound",
+            "offscreen"
+          ]
+        },
+        "execution_span": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "subject_owners": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "result_span": {
+          "type": "string"
+        },
+        "polarity": {
+          "enum": [
+            "positive",
+            "negative"
+          ]
+        }
+      }
+    },
+    "shotBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "shot_id",
+        "passage_ids",
+        "fact_realizations",
+        "director_inference_ids",
+        "offscreen_subjects"
+      ],
+      "properties": {
+        "shot_id": {
+          "type": "string",
+          "pattern": "^SH[0-9]{3,}$"
+        },
+        "passage_ids": {
+          "$ref": "#/$defs/nonEmptyStringArray"
+        },
+        "fact_realizations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/factRealization"
+          }
+        },
+        "director_inference_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "offscreen_subjects": {
+          "$ref": "#/$defs/stringArray"
+        }
+      }
+    },
+    "supplementalReferenceFact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reference_fact_id",
+        "statement",
+        "source_excerpt",
+        "source_hash",
+        "provenance",
+        "approval_status",
+        "approval_hash",
+        "approval_note"
+      ],
+      "properties": {
+        "reference_fact_id": {
+          "type": "string",
+          "pattern": "^RF[0-9]{3,}$"
+        },
+        "statement": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "source_excerpt": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "source_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "provenance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source_type",
+            "source_title",
+            "locator",
+            "owner"
+          ],
+          "properties": {
+            "source_type": {
+              "enum": [
+                "user_supplied",
+                "document",
+                "film_reference",
+                "research",
+                "other"
+              ]
+            },
+            "source_title": {
+              "$ref": "#/$defs/nonEmpty"
+            },
+            "locator": {
+              "$ref": "#/$defs/nonEmpty"
+            },
+            "owner": {
+              "$ref": "#/$defs/nonEmpty"
+            }
+          }
+        },
+        "approval_status": {
+          "enum": [
+            "approved",
+            "pending",
+            "rejected"
+          ]
+        },
+        "approval_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "approval_note": {
+          "$ref": "#/$defs/nonEmpty"
+        }
+      }
+    },
+    "directorInference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "inference_id",
+        "scope",
+        "statement",
+        "basis_fact_ids",
+        "reference_fact_ids",
+        "shot_refs",
+        "reversibility",
+        "status",
+        "conflicts_with_fact_ids"
+      ],
+      "properties": {
+        "inference_id": {
+          "type": "string",
+          "pattern": "^DI[0-9]{3,}$"
+        },
+        "scope": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "statement": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "basis_fact_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "reference_fact_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "shot_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^SH[0-9]{3,}$"
+          }
+        },
+        "reversibility": {
+          "enum": [
+            "reversible",
+            "confirmation_required"
+          ]
+        },
+        "status": {
+          "enum": [
+            "proposed",
+            "approved",
+            "rejected"
+          ]
+        },
+        "conflicts_with_fact_ids": {
+          "$ref": "#/$defs/stringArray"
+        }
+      }
+    },
+    "mechanism": {
+      "enum": [
+        "relationship_accumulation",
+        "information_suspense",
+        "offscreen_threat",
+        "comedy_setup_payoff",
+        "action_causality",
+        "ensemble_power",
+        "ritual_repetition",
+        "montage_music_concept",
+        "subjective_memory",
+        "spectacle_discovery"
+      ]
+    },
+    "directorMethod": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "method_id",
+        "method_name",
+        "reference_source",
+        "applicability",
+        "time_model",
+        "base_editing_unit",
+        "boundary_priorities",
+        "hold_policy",
+        "montage_intercut_policy",
+        "viewpoint_knowledge",
+        "space_reveal",
+        "performance_editing",
+        "camera_agency",
+        "sound_image_relation",
+        "continuity_attitude",
+        "mechanism_adaptation",
+        "preferred_patterns",
+        "avoid_patterns",
+        "exception_conditions"
+      ],
+      "properties": {
+        "method_id": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "method_name": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "reference_source": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "applicability": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "time_model": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "base_editing_unit": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "boundary_priorities": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "hold_policy": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "montage_intercut_policy": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "viewpoint_knowledge": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "space_reveal": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "performance_editing": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "camera_agency": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "sound_image_relation": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "continuity_attitude": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "mechanism_adaptation": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "preferred_patterns": {
+          "$ref": "#/$defs/nonEmptyStringArray"
+        },
+        "avoid_patterns": {
+          "$ref": "#/$defs/nonEmptyStringArray"
+        },
+        "exception_conditions": {
+          "$ref": "#/$defs/nonEmpty"
+        }
+      }
+    },
+    "gateOne": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "status",
+        "method_hash",
+        "note"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "user_specified",
+            "confirmed",
+            "required",
+            "invalidated"
+          ]
+        },
+        "status": {
+          "enum": [
+            "passed",
+            "pending",
+            "invalidated"
+          ]
+        },
+        "method_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "note": {
+          "$ref": "#/$defs/nonEmpty"
+        }
+      }
+    },
+    "boundaryToNext": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "relation",
+        "trigger",
+        "editorial_gain"
+      ],
+      "properties": {
+        "relation": {
+          "enum": [
+            "cut",
+            "reaction_cut",
+            "action_cut",
+            "gaze_cut",
+            "match_cut",
+            "jump_cut",
+            "ellipsis",
+            "intercut",
+            "montage",
+            "sound_lead",
+            "sound_lag",
+            "sound_bridge",
+            "sound_break",
+            "dissolve",
+            "fade",
+            "scene_transition"
+          ]
+        },
+        "trigger": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "editorial_gain": {
+          "$ref": "#/$defs/nonEmpty"
+        }
+      }
+    },
+    "viewingDesign": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owner_type",
+        "owner_refs",
+        "visible_subjects",
+        "offscreen_subjects",
+        "reading_priority",
+        "framing_intent",
+        "camera_response",
+        "frame_axis",
+        "aspect_ratio_fit",
+        "reason"
+      ],
+      "properties": {
+        "owner_type": {
+          "enum": ["subject", "relationship", "object", "space", "subjective", "unresolved"]
+        },
+        "owner_refs": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "visible_subjects": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "offscreen_subjects": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "reading_priority": {
+          "enum": ["space", "relationship", "body", "face", "detail", "unresolved"]
+        },
+        "framing_intent": {
+          "enum": ["single", "two_shot", "group", "over_shoulder", "insert", "subjective", "space", "unresolved"]
+        },
+        "camera_response": {
+          "enum": ["observe", "isolate", "reframe", "follow", "reveal", "withhold", "unresolved"]
+        },
+        "frame_axis": {
+          "enum": ["horizontal", "vertical", "depth", "layered", "centered", "diagonal", "subjective", "unresolved"]
+        },
+        "aspect_ratio_fit": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        }
+      }
+    },
+    "cameraGrammar": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dominant_principle",
+        "change_triggers",
+        "progression",
+        "uniformity_intent"
+      ],
+      "properties": {
+        "dominant_principle": {
+          "type": "string"
+        },
+        "change_triggers": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "progression": {
+          "type": "string"
+        },
+        "uniformity_intent": {
+          "type": "string"
+        }
+      }
+    },
+    "dialoguePictureStep": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text_span",
+        "topology_unit_id",
+        "entry_decision",
+        "cut_phase",
+        "owner_type",
+        "owner_refs",
+        "framing_intent",
+        "visible_development",
+        "picture_value"
+      ],
+      "properties": {
+        "text_span": {"$ref": "#/$defs/nonEmpty"},
+        "topology_unit_id": {"type": "string", "pattern": "^TU[0-9]{3,}$"},
+        "entry_decision": {"enum": ["establish", "cut", "hold", "reframe"]},
+        "cut_phase": {"enum": ["pre_line", "line_start", "keyword", "line_end", "reaction", "action", "sound_lead", "hold"]},
+        "owner_type": {"enum": ["subject", "relationship", "object", "space", "subjective"]},
+        "owner_refs": {"$ref": "#/$defs/nonEmptyStringArray"},
+        "framing_intent": {"enum": ["single", "two_shot", "group", "over_shoulder", "insert", "subjective", "space"]},
+        "visible_development": {"$ref": "#/$defs/nonEmpty"},
+        "picture_value": {"$ref": "#/$defs/nonEmpty"}
+      }
+    },
+    "dialogueEditPlanItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dialogue_id",
+        "speaker",
+        "listener_refs",
+        "power_center_refs",
+        "attention_shift",
+        "picture_steps"
+      ],
+      "properties": {
+        "dialogue_id": {"type": "string", "pattern": "^D[0-9]{3,}$"},
+        "speaker": {"$ref": "#/$defs/nonEmpty"},
+        "listener_refs": {"$ref": "#/$defs/stringArray"},
+        "power_center_refs": {"$ref": "#/$defs/stringArray"},
+        "attention_shift": {"$ref": "#/$defs/nonEmpty"},
+        "picture_steps": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/dialoguePictureStep"}
+        }
+      }
+    },
+    "topologyUnit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unit_id",
+        "shot_refs",
+        "source_passage_ids",
+        "source_fact_ids",
+        "intra_shot_operations",
+        "viewing_design"
+      ],
+      "properties": {
+        "unit_id": {
+          "type": "string",
+          "pattern": "^TU[0-9]{3,}$"
+        },
+        "shot_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "pattern": "^SH[0-9]{3,}$"
+          }
+        },
+        "source_passage_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "pattern": "^SP[0-9]{3,}$"
+          }
+        },
+        "source_fact_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^SF[0-9]{3,}$"
+          }
+        },
+        "intra_shot_operations": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "hold",
+              "blocking_recompose",
+              "camera_reframe",
+              "focus_shift",
+              "light_shift",
+              "sound_shift"
+            ]
+          }
+        },
+        "viewing_design": {
+          "$ref": "#/$defs/viewingDesign"
+        },
+        "boundary_to_next": {
+          "$ref": "#/$defs/boundaryToNext"
+        }
+      }
+    },
+    "sceneStrategy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scene_id",
+        "entry_state",
+        "exit_state",
+        "dramatic_task",
+        "turn_or_progression",
+        "primary_mechanism",
+        "secondary_mechanism",
+        "mechanism_shift_trigger",
+        "protected_processes",
+        "required_clarity",
+        "delayed_information",
+        "timing_sensitive_beats",
+        "failure_risks",
+        "audience_knowledge_path",
+        "blocking_space_strategy",
+        "time_edit_structure",
+        "shot_density_curve",
+        "performance_strategy",
+        "sound_strategy",
+        "opening_function",
+        "turn_function",
+        "ending_function",
+        "method_application",
+        "conflict_resolution",
+        "intentional_exceptions",
+        "camera_grammar",
+        "dialogue_edit_plan",
+        "topology"
+      ],
+      "properties": {
+        "scene_id": {
+          "type": "string",
+          "pattern": "^SC[0-9]{3,}$"
+        },
+        "entry_state": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "exit_state": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "dramatic_task": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "turn_or_progression": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "primary_mechanism": {
+          "$ref": "#/$defs/mechanism"
+        },
+        "secondary_mechanism": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/mechanism"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mechanism_shift_trigger": {
+          "type": "string"
+        },
+        "protected_processes": {
+          "$ref": "#/$defs/nonEmptyStringArray"
+        },
+        "required_clarity": {
+          "$ref": "#/$defs/nonEmptyStringArray"
+        },
+        "delayed_information": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "timing_sensitive_beats": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "failure_risks": {
+          "$ref": "#/$defs/nonEmptyStringArray"
+        },
+        "audience_knowledge_path": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "blocking_space_strategy": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "time_edit_structure": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "shot_density_curve": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "performance_strategy": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "sound_strategy": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "opening_function": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "turn_function": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "ending_function": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "method_application": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "conflict_resolution": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "intentional_exceptions": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "camera_grammar": {
+          "$ref": "#/$defs/cameraGrammar"
+        },
+        "dialogue_edit_plan": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/dialogueEditPlanItem"}
+        },
+        "topology": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/topologyUnit"
+          }
+        }
+      }
+    },
+    "reviewLock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_hash",
+        "format_hash",
+        "method_hash",
+        "strategy_hash",
+        "topology_hash",
+        "source_model_hash",
+        "execution_hash",
+        "alignment_hash",
+        "alignment_status",
+        "alignment_note",
+        "gate_0_status",
+        "gate_0_note",
+        "gate_1_status",
+        "gate_1_basis",
+        "gate_2_status",
+        "gate_2_confirmation_note"
+      ],
+      "properties": {
+        "source_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "format_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "method_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "strategy_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "topology_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "source_model_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "alignment_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "alignment_status": {
+          "enum": [
+            "passed",
+            "pending",
+            "invalidated"
+          ]
+        },
+        "alignment_note": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "gate_0_status": {
+          "enum": ["confirmed", "pending", "invalidated"]
+        },
+        "gate_0_note": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "gate_1_status": {
+          "enum": [
+            "passed",
+            "pending",
+            "invalidated"
+          ]
+        },
+        "gate_1_basis": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "gate_2_status": {
+          "enum": [
+            "confirmed",
+            "pending",
+            "invalidated"
+          ]
+        },
+        "gate_2_confirmation_note": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "execution_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "classificationReview": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unit_id",
+        "decision",
+        "status",
+        "reason",
+        "source_text_hash",
+        "reviewer",
+        "review_hash"
+      ],
+      "properties": {
+        "unit_id": {
+          "type": "string",
+          "pattern": "^SU[0-9]{3,}$"
+        },
+        "decision": {
+          "const": "non_narrative"
+        },
+        "status": {
+          "const": "approved"
+        },
+        "reason": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "source_text_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "reviewer": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "review_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "assumptionObligation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "obligation_id",
+        "gap_id",
+        "resolution",
+        "assumption_id",
+        "reference_fact_id"
+      ],
+      "properties": {
+        "obligation_id": {
+          "type": "string",
+          "pattern": "^AO[0-9]{3,}$"
+        },
+        "gap_id": {
+          "type": "string",
+          "pattern": "^SG[0-9]{3,}$"
+        },
+        "resolution": {
+          "enum": [
+            "assumption_required",
+            "supplemental_source_confirmed"
+          ]
+        },
+        "assumption_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^A[0-9]{3,}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reference_fact_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^RF[0-9]{3,}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "approvalEvent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "event_id",
+        "event_type",
+        "content_hash",
+        "reviewer",
+        "note",
+        "timestamp_utc",
+        "previous_event_hash",
+        "event_hash"
+      ],
+      "properties": {
+        "event_id": {
+          "type": "string",
+          "pattern": "^AE[0-9]{3,}$"
+        },
+        "event_type": {
+          "enum": [
+            "gate_0_confirmed",
+            "gate_1_approved",
+            "gate_2_confirmed",
+            "alignment_approved",
+            "classification_approved"
+          ]
+        },
+        "content_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "reviewer": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "note": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "timestamp_utc": {
+          "type": "string",
+          "minLength": 1
+        },
+        "previous_event_hash": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "event_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "sourceGap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gap_id",
+        "scope",
+        "statement",
+        "basis"
+      ],
+      "properties": {
+        "gap_id": {
+          "type": "string",
+          "pattern": "^SG[0-9]{3,}$"
+        },
+        "scope": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "statement": {
+          "$ref": "#/$defs/nonEmpty"
+        },
+        "basis": {
+          "$ref": "#/$defs/nonEmpty"
+        }
+      }
+    }
+  }
+}
