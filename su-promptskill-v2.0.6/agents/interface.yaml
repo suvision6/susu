@@ -1,0 +1,22 @@
+interface:
+  display_name: "su-promptskill 2.0.6"
+  short_description: "只读编译锁定镜头与条件素材，交付确定性视频 Prompt"
+  default_prompt: "使用 $su-promptskill 锁定来源并按字段形状只读标准化，完成任务和素材路由、合镜审阅、一源镜一 Cut、固定声音台账、Profile 适配与 prompt-plan/2.0.6 四文件复验。"
+compatibility:
+  canonical_format: "agent-skills"
+  adapter_targets:
+    - "openai"
+    - "generic"
+  activation:
+    mode: "automatic"
+    paths: []
+  execution:
+    context: "inline"
+    shell: "bash"
+  trust:
+    source_tier: "local"
+    remote_inline_execution: "forbid"
+    remote_metadata_policy: "allow-metadata-only"
+  degradation:
+    openai: "metadata-adapter"
+    generic: "neutral-source"

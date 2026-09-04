@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "reviewed_at": "2026-09-04",
+  "capabilities": {
+    "file_write": {
+      "decision": "approved",
+      "reviewer": "suvision",
+      "scope": "Write only the isolated su-promptskill 2.0.6 candidate, its test reports, and the explicitly selected new Prompt delivery directory. Never write back to user source files or upstream Skills. Managed global installation requires a separate confirmation.",
+      "reason": "The user explicitly approved the isolated 2.0.6 Chinese-semantic repair and EP02 rebuild, but did not authorize global installation.",
+      "expires_at": "2026-12-31",
+      "evidence": [
+        "SKILL.md",
+        "references/source-fidelity-adapters.md",
+        "reports/security_trust_report.md"
+      ],
+      "target_enforcement": {
+        "openai": "Skill instructions require a new output directory and explicit confirmation before managed global replacement.",
+        "claude": "Metadata-only approval; operator must enforce the same source-read-only and new-output-directory boundary.",
+        "generic": "Metadata-only approval; caller must enforce the declared file-write scope.",
+        "vscode": "Workspace trust plus metadata-only approval; managed Skill replacement remains confirmation-gated."
+      }
+    }
+  }
+}

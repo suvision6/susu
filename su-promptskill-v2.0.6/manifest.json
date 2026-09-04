@@ -1,0 +1,23 @@
+{
+  "name": "su-promptskill",
+  "version": "2.0.6",
+  "owner": "suvision",
+  "updated_at": "2026-09-04",
+  "status": "active",
+  "maturity_tier": "production",
+  "lifecycle_stage": "production",
+  "context_budget_tier": "production",
+  "review_cadence": "per-release",
+  "skill_ir_source": "skill-ir/su-promptskill.json",
+  "category": "video-prompt-compilation",
+  "complexity_tier": "complex",
+  "factory_components": [
+    "agents",
+    "evals",
+    "references",
+    "scripts",
+    "tests",
+    "reports",
+    "skill-ir"
+  ]
+}

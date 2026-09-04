@@ -1,0 +1,4 @@
+interface:
+  display_name: "su-promptskill"
+  short_description: "条件素材、来源声音与逐镜视频Prompt交付"
+  default_prompt: "使用 $su-promptskill 锁定来源和条件素材，完成合镜审阅、一源镜一 Cut、来源声音与四文件 Prompt 交付。"

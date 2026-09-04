@@ -1,0 +1,82 @@
+{
+  "schema_version": "2.0.0",
+  "name": "su-promptskill",
+  "title": "su-promptskill 2.0.6",
+  "job_to_be_done": "将剧本、导演分镜、JSON、Markdown、Excel 与多模态参考只读编译为可提交的视频 Prompt 和确定性四文件；默认适配 Seedance 2.5，也支持 Seedance 2.0 与 generic-video。用于生成、编辑、延长、合镜审阅和交付复验；不得重新导演、改写对白或回写来源。",
+  "trigger_surface": {
+    "description": "将剧本、导演分镜、JSON、Markdown、Excel 与多模态参考只读编译为可提交的视频 Prompt 和确定性四文件；默认适配 Seedance 2.5，也支持 Seedance 2.0 与 generic-video。用于生成、编辑、延长、合镜审阅和交付复验；不得重新导演、改写对白或回写来源。",
+    "should_trigger": [
+      "将剧本、导演分镜、JSON、Markdown、Excel 与多模态参考只读编译为可提交的视频 Prompt 和确定性四文件；默认适配 Seedance 2.5，也支持 Seedance 2.0 与 generic-video。用于生成、编辑、延长、合镜审阅和交付复验；不得重新导演、改写对白或回写来源。"
+    ],
+    "should_not_trigger": [],
+    "edge_cases": []
+  },
+  "workflow": {
+    "steps": [
+      "Understand the request.",
+      "Execute the main task.",
+      "Validate the result."
+    ],
+    "decision_points": [],
+    "failure_modes": []
+  },
+  "resources": {
+    "references": [
+      "references/cut-chain.md",
+      "references/emotion-visualization.md",
+      "references/grouping-rules.md",
+      "references/input-normalization.md",
+      "references/model-profiles.md",
+      "references/output-contract.md",
+      "references/prompt-compiler.md",
+      "references/seedance-2-5-adapter.md",
+      "references/source-fidelity-adapters.md"
+    ],
+    "scripts": [
+      "scripts/prompt_delivery.py",
+      "scripts/test_prompt_delivery.py"
+    ],
+    "assets": [],
+    "reports": [
+      "reports/output_quality_scorecard.json",
+      "reports/output_quality_scorecard.md",
+      "reports/output_blind_review_pack.json",
+      "reports/output_blind_review_pack.md",
+      "reports/output_blind_answer_key.json",
+      "reports/security_trust_report.json",
+      "reports/security_trust_report.md"
+    ]
+  },
+  "eval_plan": {
+    "trigger": [
+      "evals/output/cases.jsonl",
+      "evals/output/fixtures/director-shot-data-v310.json"
+    ],
+    "output": [
+      "evals/output/cases.jsonl",
+      "evals/output/fixtures/director-shot-data-v310.json"
+    ],
+    "adversarial": [],
+    "baseline": "without_skill"
+  },
+  "risk": {
+    "output_risk": "low",
+    "execution_risk": "medium",
+    "trust_boundary": "team"
+  },
+  "governance": {
+    "owner": "suvision",
+    "maturity": "production",
+    "review_cadence": "per-release",
+    "review_due": ""
+  },
+  "targets": [
+    "openai",
+    "generic"
+  ],
+  "source_files": [
+    "SKILL.md",
+    "manifest.json",
+    "agents/interface.yaml"
+  ]
+}
