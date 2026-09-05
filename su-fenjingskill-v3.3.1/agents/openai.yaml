@@ -1,0 +1,6 @@
+interface:
+  display_name: "导演分镜 3.3.1"
+  short_description: "理解剧本并设计摄影、调度与声音，先保存Markdown分镜主稿，再派生Excel阅读版"
+  default_prompt: "使用 $su-fenjingskill 理解输入，沿用已有设置与授权，完成合理整数镜长的Markdown分镜主稿并派生六列Excel阅读版。"
+policy:
+  allow_implicit_invocation: true

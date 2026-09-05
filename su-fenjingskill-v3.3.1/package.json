@@ -1,0 +1,9 @@
+{
+  "name": "su-fenjingskill",
+  "version": "3.3.1",
+  "private": true,
+  "type": "module",
+  "engines": {"node": ">=20"},
+  "peerDependencies": {"@oai/artifact-tool": ">=2.8.52 <3", "@napi-rs/canvas": ">=0.1.100 <1"},
+  "peerDependenciesMeta": {"@napi-rs/canvas": {"optional": true}}
+}
