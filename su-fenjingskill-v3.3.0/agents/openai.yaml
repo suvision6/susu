@@ -1,0 +1,6 @@
+interface:
+  display_name: "导演分镜 3.3.0"
+  short_description: "理解剧本并设计摄影、调度、声音与剪辑，交付合理整数镜长的六列分镜表"
+  default_prompt: "使用 $su-fenjingskill 理解输入，先确认一次简短导演方案，再完成预计整数镜长的六列Excel与Markdown分镜。"
+policy:
+  allow_implicit_invocation: true
