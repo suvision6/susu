@@ -1,0 +1,78 @@
+{
+  "project_id": "kitchen-farewell",
+  "shots": [
+    {
+      "audio": [
+        "规律的切菜声与钥匙触桌的金属轻响。"
+      ],
+      "blocking": [
+        "林晓彤在画面左侧餐桌旁，把钥匙放在桌上；陈默在画面右侧料理台前继续切菜。"
+      ],
+      "camera": {
+        "angle": "平视",
+        "movement": {
+          "type": "fixed"
+        },
+        "position": "厨房入口内侧",
+        "shot_size": "中景"
+      },
+      "duration_seconds": 4.5,
+      "scene_context": {
+        "scene": "内景·厨房·夜"
+      },
+      "source_shot_id": "SH001"
+    },
+    {
+      "audio": [
+        "切菜声停止，菜刀轻触砧板后只剩冰箱低频底噪。"
+      ],
+      "blocking": [
+        "话音落下后，陈默手中的刀停在砧板上方，随后缓慢落回砧板。"
+      ],
+      "camera": {
+        "angle": "微俯视",
+        "composition": "画面只见陈默的手、菜刀与砧板。",
+        "movement": {
+          "type": "fixed"
+        },
+        "shot_size": "近景"
+      },
+      "dialogue": [
+        {
+          "position": "os",
+          "speaker": "林晓彤",
+          "text": "我明天走。"
+        }
+      ],
+      "duration_seconds": 5.5,
+      "scene_context": {
+        "scene": "内景·厨房·夜"
+      },
+      "source_shot_id": "SH002"
+    },
+    {
+      "blocking": [
+        "陈默抬眼看向画外左侧，没有转身。"
+      ],
+      "camera": {
+        "angle": "平视",
+        "movement": {
+          "type": "fixed"
+        },
+        "shot_size": "中近景"
+      },
+      "dialogue": [
+        {
+          "position": "onscreen",
+          "speaker": "陈默",
+          "text": "什么时候决定的？"
+        }
+      ],
+      "duration_seconds": 4,
+      "scene_context": {
+        "scene": "内景·厨房·夜"
+      },
+      "source_shot_id": "SH003"
+    }
+  ]
+}

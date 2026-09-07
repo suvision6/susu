@@ -1,0 +1,6 @@
+name: su-promptskill
+version: 2.1.0
+entry: SKILL.md
+source_mode: read-only
+content_master: markdown
+external_calls: none

@@ -1,0 +1,15 @@
+{
+  "joins": [
+    {
+      "left": "SH001",
+      "reason": "厨房同一连续时空，切菜动作与声音承接。",
+      "right": "SH002"
+    },
+    {
+      "left": "SH002",
+      "reason": "离开宣告后的动作反应和追问连续。",
+      "right": "SH003"
+    }
+  ],
+  "source_sha256": "9384566b3f5b41aaac79c0477ba89aea012f2f5bc18cf9205aff63446e2712ca"
+}

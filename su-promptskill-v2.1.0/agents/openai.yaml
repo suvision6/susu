@@ -1,0 +1,4 @@
+interface:
+  display_name: "视频 Prompt 转写与交付"
+  short_description: "忠实转写中文视频提示词，以 Markdown 主稿派生阅读表。"
+  default_prompt: "使用 su-promptskill 2.1.0；先读取来源，保留事实和对白，在 Markdown 中完成中文转写并对照原文复核，之后导出。不要把文件通过等同于语义或平台已验证。"

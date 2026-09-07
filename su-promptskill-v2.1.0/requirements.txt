@@ -1,0 +1,2 @@
+# Python 3.10+; the runtime uses the Python standard library only.
+# No API SDK, model credential, spreadsheet engine or font download is required.

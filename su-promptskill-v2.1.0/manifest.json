@@ -1,0 +1,12 @@
+{
+  "name": "su-promptskill",
+  "version": "2.1.0",
+  "entrypoint": "SKILL.md",
+  "runtime": "Python >= 3.10",
+  "contract": "prompt-master/2.1.0",
+  "release_status": "candidate-local-validation",
+  "requires_external_api": false,
+  "source_access": "read-only",
+  "writes": "new delivery directory only",
+  "evaluation_limit": "No 60-run fresh-context Agent benchmark or video-model validation is claimed."
+}

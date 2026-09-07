@@ -1,0 +1,29 @@
+{
+  "seedance-2.5-default": {
+    "profile_id": "seedance-2.5-default",
+    "model_id": "doubao-seedance-2-5-260628",
+    "planning_limits": {"duration_seconds": 30, "cuts": 10},
+    "max_prompt_characters": null,
+    "verification": {
+      "status": "partial",
+      "checked_at": "2026-09-05",
+      "platform": "Volcengine Ark China",
+      "sources": ["https://ark.volcengine.com/promotion?modelName=seedance-2-5", "https://exp.volcengine.com/ark/gen_video?ApiDrawerModel=%7B%22Name%22%3A%22doubao-seedance-2-5%22%7D&model=doubao-seedance-2-5-260628"],
+      "verified_facts": ["官方展示 Seedance 2.5，宣传 30 秒叙事；官方体验 URL 使用该模型 ID"],
+      "unverified": ["本次未取得完整可读取的 API 参数、素材数量、字符、分辨率与角色互斥规范", "10 Cut 是沿用的本地规划配置，不称官方限制"]
+    }
+  },
+  "seedance-2.0-default": {
+    "profile_id": "seedance-2.0-default",
+    "model_id": "doubao-seedance-2-0-260128",
+    "planning_limits": {"duration_seconds": 15, "cuts": 5},
+    "max_prompt_characters": null,
+    "verification": {"status": "unverified", "checked_at": "2026-09-05", "platform": "需按用户实际平台确认", "sources": [], "unverified": ["本地规划值沿用历史兼容配置；不是当前平台完整认证"]}
+  },
+  "generic-video": {
+    "profile_id": "generic-video",
+    "planning_limits": {"duration_seconds": null, "cuts": null},
+    "max_prompt_characters": null,
+    "verification": {"status": "unverified", "checked_at": "2026-09-05", "platform": "未指定", "sources": [], "unverified": ["不虚构通用模型的时长、Cut 数或字符上限"]}
+  }
+}
