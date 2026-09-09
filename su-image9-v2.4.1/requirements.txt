@@ -1,0 +1,3 @@
+# Python 3.10+ standard library for Markdown, JSON, prompt preparation and labels.
+# Optional raster registration, contact sheets and PDFs:
+# see requirements-review.txt; install explicitly in a virtual environment.
