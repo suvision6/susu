@@ -1,0 +1,6 @@
+interface:
+  display_name: "导演分镜 4.0.0"
+  short_description: "理解剧本与表演节拍，完成Markdown分镜并派生六列Excel"
+  default_prompt: "使用 $su-fenjingskill 读取完整来源，按表演节拍、声画覆盖与实际过程估时，完成Markdown导演分镜主稿并派生JSON和六列Excel。"
+policy:
+  allow_implicit_invocation: true

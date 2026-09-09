@@ -1,0 +1,5 @@
+# Runtime: Python 3.10+ with its standard library (including zipfile/zlib).
+# Mandatory third-party dependencies: NONE. Do not pip install artifact_tool.
+# scripts/native_xlsx.py is bundled and writes the supported XLSX reading views.
+# Optional only: Pillow + fontconfig improve font measurement when already present.
+# Optional --preview-dir needs a host renderer; its failure does not fail XLSX export.
