@@ -1,0 +1,19 @@
+{
+  "scope": [
+    "01",
+    "02"
+  ],
+  "scene_keys": {
+    "01": "S01",
+    "02": "S01"
+  },
+  "boundaries": [],
+  "assets": [],
+  "inventory_complete": true,
+  "units": {
+    "G01": {
+      "references": [],
+      "request": {}
+    }
+  }
+}

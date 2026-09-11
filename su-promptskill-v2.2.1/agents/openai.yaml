@@ -1,0 +1,4 @@
+interface:
+  display_name: "su-promptskill｜Seedance结构化Prompt"
+  short_description: "读取采用分镜与素材，合理合镜，直接交可复制的Seedance提示词。"
+  default_prompt: "按su-promptskill读取本轮来源，使用Seedance模板组织完整Prompt。保留一源镜一Cut、原序和30秒组合上限；区分真实语义结束、提交分段与历史组尾；新组用G编号；单条直接给纯正文，批量按需派生四列，不先给审计报告。"
