@@ -1,0 +1,5 @@
+# Optional only for actual image registration, labelled PNG, and PDF export.
+# Baseline Markdown/JSON/Prompt tools continue to use the standard library.
+# This candidate was tested with Pillow 12.3.0 and reportlab 4.4.9.
+Pillow>=10.4,<13
+reportlab>=4.4,<5

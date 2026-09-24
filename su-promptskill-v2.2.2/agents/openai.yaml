@@ -1,0 +1,4 @@
+interface:
+  display_name: "su-promptskill 2.2.2-candidate｜视频Prompt"
+  short_description: "忠实转写采用分镜，按语义组织相邻Cut，准确表达当前状态和实际素材范围。"
+  default_prompt: "按su-promptskill读取本轮采用稿，保持原序一源镜一Cut；区分语义结束、容量分段与历史组尾，按当前初态和真实可访问素材写独立Prompt。单条交纯正文，批量按需交四列表格和TXT，不重新导演或调用生成接口。"

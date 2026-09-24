@@ -1,0 +1,6 @@
+interface:
+  display_name: "导演分镜 4.0.1-candidate"
+  short_description: "整场观看、调度和真实切点共同设计；局部修改不重拆无关镜头"
+  default_prompt: "使用 $su-fenjingskill 读取完整来源与本次授权范围，区分初次导演和局部修改，联合设计声画、摄影与表演，按实际过程估时，完成Markdown主稿并派生JSON和六列Excel。"
+policy:
+  allow_implicit_invocation: true

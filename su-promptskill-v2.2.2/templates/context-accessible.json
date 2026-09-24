@@ -1,0 +1,40 @@
+{
+  "assets": [
+    {
+      "tag": "@图片1",
+      "available": true
+    },
+    {
+      "tag": "@图片2",
+      "available": true
+    },
+    {
+      "tag": "@图片3",
+      "available": true
+    },
+    {
+      "tag": "@图片4",
+      "available": true
+    }
+  ],
+  "inventory_complete": true,
+  "units": {
+    "G01": {
+      "accessible_asset_tags": [
+        "@图片1",
+        "@图片2",
+        "@图片3"
+      ],
+      "references": [
+        {
+          "tag": "@图片1",
+          "role": "character"
+        },
+        {
+          "tag": "@图片2",
+          "role": "scene"
+        }
+      ]
+    }
+  }
+}

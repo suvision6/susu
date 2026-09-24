@@ -1,0 +1,2 @@
+# Python 3.10+; runtime scripts require only the standard library.
+# No pip installation, network, account, or private host package required.

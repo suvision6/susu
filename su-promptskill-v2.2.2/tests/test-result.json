@@ -1,0 +1,10 @@
+{
+  "tests_run": 17,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "scope": "offline_structural_regression",
+  "live_model_calls": 0,
+  "professional_acceptance": "not_performed_end_to_end",
+  "base_commit": "868d795ee7a43d8ae41bdb465fc36d489b2cb77a"
+}
